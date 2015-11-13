@@ -17,14 +17,13 @@
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular.min.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.min.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.min.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.js"></script>
-
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.min.js"></script>
 </head>
 
 <body role="document">
@@ -132,8 +131,7 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script
 		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	<script
-		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/docs.min.js"></script>
+	
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script
 		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
