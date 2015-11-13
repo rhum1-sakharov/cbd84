@@ -124,6 +124,22 @@
 	</div>
 	<!-- /container -->
 
+	<!-- Facebook SDK JavaScript
+    ================================================== -->
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
+
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
@@ -131,7 +147,7 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script
 		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-	
+
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script
 		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
