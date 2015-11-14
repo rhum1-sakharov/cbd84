@@ -24,12 +24,7 @@
 		<statement>
 			<prepared-statement-cache-size>32</prepared-statement-cache-size>
 			<share-prepared-statements />
-		</statement>
-
-		<security>
-			<user-name>root</user-name>
-			<password></password>
-		</security>
+		</statement>		
 	</datasource>
 </datasources>
  
