@@ -2,6 +2,7 @@
    <deployment>
    	   <dependencies>
    	   		<module name="com.h2database.h2"/>
+   	   		<module name="com.mysql"/>
    	   		<module name="org.codehaus.jackson.jackson-core-asl"/>
    	   		<module name="org.codehaus.jackson.jackson-mapper-asl"/>
             <module name="org.slf4j"/>

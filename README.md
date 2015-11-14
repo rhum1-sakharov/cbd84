@@ -62,4 +62,54 @@ If you want to debug the source code or look at the Javadocs of any library in t
 
         mvn dependency:sources
         mvn dependency:resolve -Dclassifier=javadoc
+        
+ADDING DATASOURCE MYSQL in JBOSS 7.1
+-------------------------------------
+
+create a module.xml in $JBOSS/modules/com/mysql/main with content below :
+	
+	<?xml version="1.0" encoding="UTF-8"?>
+	<module xmlns="urn:jboss:module:1.1" name="com.mysql">
+  <resources>
+    <resource-root path="mysql-connector-java-5.1.37-bin.jar"/>
+  </resources>
+  <dependencies>
+    <module name="javax.api"/>
+    <module name="javax.transaction.api"/>
+  </dependencies>
+</module>
+
+add the mysql-connector-java-5.1.37-bin.jar to the same path
+
+add the datasource to the standalone.xml with the module name com.mysql, add the driver-class option in the driver definition
+
+	<datasource jndi-name="java:jboss/datasources/MySqlDS" pool-name="MySqlDS" enabled="true">
+                    <connection-url>jdbc:mysql://localhost:3306/test</connection-url>
+                    **<driver>mysql</driver>**
+                    <transaction-isolation>TRANSACTION_READ_COMMITTED</transaction-isolation>
+                    <pool>
+                        <min-pool-size>10</min-pool-size>
+                        <max-pool-size>100</max-pool-size>
+                        <prefill>true</prefill>
+                    </pool>
+                    <security>
+                        <user-name>root</user-name>
+                    </security>
+                    <statement>
+                        <prepared-statement-cache-size>32</prepared-statement-cache-size>
+                        <share-prepared-statements>true</share-prepared-statements>
+                    </statement>
+                </datasource>
+                <drivers>
+                    **<driver name="mysql" module="com.mysql">**
+                        **<driver-class>com.mysql.jdbc.Driver</driver-class>**
+                        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="h2" module="com.h2database.h2">
+                        <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
+                    </driver>
+                </drivers>
+            </datasources>
+
+
 
