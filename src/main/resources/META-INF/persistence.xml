@@ -14,8 +14,41 @@
 			<property name="jboss.entity.manager.factory.jndi.name"
 				value="java:jboss/cbd/persistence" />
 			<!-- Properties for Hibernate -->
-			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
+			<!-- <property name="hibernate.hbm2ddl.auto" value="create-drop" /> -->
 			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
 		</properties>
 	</persistence-unit>
+	
+	<persistence-unit name="exportSchemaPU" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>org.rvemorel.cbd.domain.Member</class>
+		<class>org.rvemorel.cbd.domain.News</class>       
+        
+        <properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect" />
+			<property name="hibernate.cache.use_second_level_cache" value="false" />
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.generate_statistics" value="false" />
+			<property name="hibernate.connection.release_mode" value="auto" />
+
+			<!-- fix bug: NoSuchMethodException: org.hibernate.validator.ClassValidator in JBoss-4.2 -->
+			<property name="hibernate.validator.apply_to_ddl" value="false" />
+			<property name="hibernate.validator.autoregister_listeners" value="false" />
+
+			<!-- CF. ehcache.xml -->
+			<property name="org.hibernate.readOnly" value="true" />
+
+			<!-- update DDL database schema at startup -->
+			<!-- <property name="hibernate.hbm2ddl.auto" value="validate" /> -->
+
+			<!-- No datasource for standalone job -->
+			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
+			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/test" />
+			<property name="hibernate.connection.username" value="root" />
+			<property name="hibernate.connection.password" value="toto9797" />
+		</properties>
+	</persistence-unit>
+	
 </persistence>
