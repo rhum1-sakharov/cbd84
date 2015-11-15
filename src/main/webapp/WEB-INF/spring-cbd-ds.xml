@@ -19,7 +19,7 @@
 		</pool>
 		<security>
 			<user-name>root</user-name>
-			<password></password>
+			<password>toto9797</password>
 		</security>
 		<statement>
 			<prepared-statement-cache-size>32</prepared-statement-cache-size>
