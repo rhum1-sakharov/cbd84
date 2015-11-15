@@ -1,33 +1,16 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Le mot du Pr&#233;sident</h3>
-	</div>
-	<div class="panel-body">
-		<p>J'ai voulu cr&#233;er ce blog pour faire connaitre notre
-			passion qui est le sport boule lyonnaise. Grace &#224; nos
-			b&#233n&#233voles, notre association organise des concours et des
-			repas dans la convivialit&#233; avec toutes les personnes qui
-			l'entoure dans une bonne ambiance.</p>
-		<p>
-	</div>
-</div>
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Inscriptions au Concours d'Orange</h3>
-	</div>
-	<div class="panel-body">
-		<p>Depechez vous de venir vous inscrire au concours d'Orange.
-			Beaucoup de lots &#224; gagner et super ambiance assur&#233;e !!</p>
-		<p>
-		<div class="fb-like"></div>
-	</div>
-</div>
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Le site est compatible avec les smartphones !!!</h3>
-	</div>
-	<div class="panel-body">
-		<p>Consultez les actus du CBD Vaucluse sur votre r&#233;l&#233phone portable ;)</p>
-		<p>		
+<div ng-repeat="feed in feeds">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title" ng-bind-html="feed.title"></h3>
+		</div>
+		<div class="panel-body">
+			<p ng-bind-html="feed.content"></p>
+		</div>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-md-7" ><span class="fb-like" ng-if="feed.facebookLike"></span></div>				
+				<div class="col-md-5 feed-infos" ng-bind-html="formatInfoFeed(feed.author, feed.creationDate)"></div>
+			</div>			
+		</div>
 	</div>
 </div>

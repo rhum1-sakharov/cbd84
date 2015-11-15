@@ -34,8 +34,8 @@ public class FeedDaoImpl implements FeedDao {
 		 * criteria queries, a new feature in JPA 2.0
 		 * criteria.select(member).orderBy(cb.asc(member.get(Member_.name)));
 		 */
-
-		criteria.select(news).orderBy(cb.asc(news.get("creationDate")));
+		
+		criteria.select(news).orderBy(cb.desc(news.get("top")),cb.desc(news.get("creationDate")));
 		return em.createQuery(criteria).getResultList();
 	}
 

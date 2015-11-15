@@ -17,6 +17,7 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -30,15 +31,10 @@ public class Member implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_member", unique = true, nullable = false)
 	private Long id;
-	
-
 
 	@NotNull
 	@NotEmpty	
-	private String name;
-
-	@OneToMany(fetch = FetchType.EAGER, mappedBy = "member")	
-	private Set<Feed> feeds = new HashSet<Feed>();
+	private String name;	
 
 	@NotNull
 	@NotEmpty
@@ -83,13 +79,7 @@ public class Member implements Serializable {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public Set<Feed> getFeeds() {
-		return feeds;
-	}
-
-	public void setFeeds(Set<Feed> feeds) {
-		this.feeds = feeds;
-	}
+	
 
 	
 }

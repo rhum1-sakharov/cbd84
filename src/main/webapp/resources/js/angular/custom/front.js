@@ -1,6 +1,6 @@
 angular.module('frontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource' ])
 
-.controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q) {
+.controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter) {
 
 	$scope.menu = {id : 1};
 	
@@ -30,11 +30,26 @@ angular.module('frontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource' ])
     };
 })
 
-.directive("news", function( $timeout) {
+.directive("news", function( $timeout, $q, $http, $filter) {
     return {
         restrict : 'E',
         templateUrl : "resources/js/angular/custom/partials/news.html",
-        link : function(scope, element, attrs) {           
+        link : function(scope, element, attrs) {         
+        	
+        		scope.feeds = [];
+        	   var promiseStart = $q.when('start');
+               var promise1 = promiseStart.then(function(value) {
+                   return $http.get('feeds').then(function(response) {
+                       scope.feeds = response.data;
+                       return response.data;
+                   });
+               });
+               
+               scope.formatInfoFeed = function(author, date){
+            	  
+            	   var dateFeed = $filter('date')(date, 'dd/MM/yyyy');
+            	   return author+", le "+dateFeed;
+               };
         }
     };
 })

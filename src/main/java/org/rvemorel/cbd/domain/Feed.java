@@ -2,18 +2,15 @@ package org.rvemorel.cbd.domain;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -37,17 +34,22 @@ public class Feed implements Serializable {
 
 	@NotNull
 	@NotEmpty
+	@Column(length=1024)
 	private String content;
-
-	@NotNull
-	private Timestamp creationDate;
+		
+	private Date creationDate;
 	
 	private String pathFile;
+	
+	private boolean facebookLike;
+	
+	private boolean top;
+	
+	private String imagePosition;
 
-	@ManyToOne(fetch = FetchType.LAZY)
+	
 	@NotNull	
-	@JoinColumn(name="id_member")
-	private Member member;
+	private String author;
 		
 
 	public Long getId() {
@@ -74,13 +76,7 @@ public class Feed implements Serializable {
 		this.content = content;
 	}
 
-	public Timestamp getCreationDate() {
-		return creationDate;
-	}
 
-	public void setCreationDate(Timestamp creationDate) {
-		this.creationDate = creationDate;
-	}
 
 
 	public String getPathFile() {
@@ -91,14 +87,48 @@ public class Feed implements Serializable {
 		this.pathFile = pathFile;
 	}
 
-	public Member getMember() {
-		return member;
+	public String getAuthor() {
+		return author;
 	}
 
-	public void setMember(Member member) {
-		this.member = member;
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+
+	public boolean isFacebookLike() {
+		return facebookLike;
+	}
+
+	public void setFacebookLike(boolean facebookLike) {
+		this.facebookLike = facebookLike;
+	}
+
+	public boolean isTop() {
+		return top;
+	}
+
+	public void setTop(boolean top) {
+		this.top = top;
+	}
+
+	public Date getCreationDate() {
+		return creationDate;
+	}
+
+	public void setCreationDate(Date creationDate) {
+		this.creationDate = creationDate;
+	}
+
+	public String getImagePosition() {
+		return imagePosition;
+	}
+
+	public void setImagePosition(String imagePosition) {
+		this.imagePosition = imagePosition;
 	}
 
 	
 
-}
+	
+
+	}

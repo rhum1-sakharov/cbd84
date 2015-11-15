@@ -26,3 +26,8 @@ img.calendar-sheets{
 	width : 100%;
 	
 }
+
+div.feed-infos{
+	font-size: 12px;
+	text-align : right;
+}

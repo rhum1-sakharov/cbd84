@@ -20,7 +20,7 @@ public class JpaSchemaExport {
 			final Properties persistenceProperties = new Properties();
 
 			// XXX force persistence properties : remove database target
-			persistenceProperties.setProperty(org.hibernate.cfg.AvailableSettings.HBM2DDL_AUTO, "");
+			persistenceProperties.setProperty(org.hibernate.cfg.AvailableSettings.HBM2DDL_AUTO, "update");
 			persistenceProperties.setProperty(AvailableSettings.SCHEMA_GEN_DATABASE_ACTION, "none");
 
 			// XXX force persistence properties : define create script target from metadata to destination

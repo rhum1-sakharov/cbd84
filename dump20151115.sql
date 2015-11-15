@@ -26,15 +26,16 @@ DROP TABLE IF EXISTS `feeds`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `feeds` (
   `id_feed` bigint(20) NOT NULL AUTO_INCREMENT,
-  `content` varchar(255) DEFAULT NULL,
-  `creationDate` datetime DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `content` varchar(1024) DEFAULT NULL,
   `pathFile` varchar(255) DEFAULT NULL,
+  `creationDate` datetime DEFAULT NULL,
   `title` varchar(255) DEFAULT NULL,
-  `id_member` bigint(20) DEFAULT NULL,
-  PRIMARY KEY (`id_feed`),
-  KEY `FK_t2kw6ry5yjc68s839hm9cxk2u` (`id_member`),
-  CONSTRAINT `FK_t2kw6ry5yjc68s839hm9cxk2u` FOREIGN KEY (`id_member`) REFERENCES `members` (`id_member`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+  `facebookLike` bit(1) NOT NULL,
+  `top` bit(1) NOT NULL,
+  `imagePosition` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id_feed`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +44,7 @@ CREATE TABLE `feeds` (
 
 LOCK TABLES `feeds` WRITE;
 /*!40000 ALTER TABLE `feeds` DISABLE KEYS */;
-INSERT INTO `feeds` VALUES (2,NULL,'2013-08-25 17:00:00',NULL,'Le mot du président',1),(3,NULL,'2015-11-15 17:00:00',NULL,'Inscription au concours d\'orange',2);
+INSERT INTO `feeds` VALUES (2,'Raymond Vich','J\'ai voulu cr&#233;er ce blog pour faire connaitre notre passion qui est le sport boule lyonnaise. Grace &#224; nos b&#233n&#233voles, notre association organise des concours et des repas dans la convivialit&#233; avec toutes les personnes qui l\'entoure dans une bonne ambiance.',NULL,'2015-09-25 18:00:00','Le mot du président','\0','',NULL),(3,'Alain Canonge','Depechez vous de venir vous inscrire au concours d\'Orange. Beaucoup de lots &#224; gagner et super ambiance assur&#233;e !!',NULL,'2015-10-27 17:00:00','Inscription au concours d\'orange','','\0',NULL),(4,'Romain Vermorel','Consultez les actus du CBD Vaucluse sur votre t&#233;l&#233phone portable ;)',NULL,'2015-11-15 22:06:00','Le site est compatible avec les smartphones !!!','','\0',NULL);
 /*!40000 ALTER TABLE `feeds` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -83,4 +84,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-11-15 16:40:24
+-- Dump completed on 2015-11-15 22:13:48

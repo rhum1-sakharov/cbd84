@@ -8,7 +8,6 @@ public interface FeedDao
 {
     public Feed findById(Long id);
    
-
     public List<Feed> findAllOrderedByCreationDate();
 
     public void register(Feed news);

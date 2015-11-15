@@ -1,13 +1,13 @@
 package org.rvemorel.cbd.test;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.rvemorel.cbd.domain.Member;
 import org.rvemorel.cbd.domain.Feed;
-import org.rvemorel.cbd.repo.MemberDao;
 import org.rvemorel.cbd.repo.FeedDao;
+import org.rvemorel.cbd.repo.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -29,18 +29,14 @@ public class NewsDaoTest {
 
 	@Test
 	public void testRegister() {
-		Member member = new Member();
-		member.setEmail("jane.doe@mailinator.com");
-		member.setName("Jane Doe");
-		member.setPhoneNumber("2125552121");
-		memberDao.register(member);
+		
 
 		Feed news = new Feed();
-		Timestamp ts = new Timestamp(System.currentTimeMillis());
-		news.setCreationDate(ts);
+		
+		news.setCreationDate(new Timestamp(System.currentTimeMillis()));
 		news.setContent("Bonjour, voici le mot du président");
 		
-		news.setMember(member);
+		news.setAuthor("Jane Doe");
 		news.setTitle("le mot du président");
 
 		newsDao.register(news);
@@ -52,7 +48,7 @@ public class NewsDaoTest {
 
 		Assert.assertEquals("Bonjour, voici le mot du président", newNews.getContent());
 		Assert.assertEquals("le mot du président", newNews.getTitle());
-		Assert.assertEquals("Jane Doe", newNews.getMember().getName());
+		Assert.assertEquals("Jane Doe", newNews.getAuthor());
 		//Assert.assertEquals("2125552121", newNews.getCreationDate());
 		return;
 	}
