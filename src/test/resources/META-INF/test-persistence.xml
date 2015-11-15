@@ -4,8 +4,9 @@
 	<persistence-unit name="testPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.rvemorel.cbd.domain.Member</class>
+		<class>org.rvemorel.cbd.domain.Feed</class>
         <properties>
-	        <property name="hibernate.hbm2ddl.auto" value="create-drop" />
+	        <property name="hibernate.hbm2ddl.auto" value="create-drop" /> 
         	<property name="hibernate.show_sql" value="true" />
         </properties>
 	</persistence-unit>

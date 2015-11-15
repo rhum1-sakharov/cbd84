@@ -3,16 +3,23 @@ package org.rvemorel.cbd.domain;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
-public class News implements Serializable {
+@Table(name = "feeds")
+public class Feed implements Serializable {
 
 	/**
 	 * 
@@ -20,20 +27,28 @@ public class News implements Serializable {
 	private static final long serialVersionUID = -8698063873066222672L;
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_feed", unique = true, nullable = false)
 	private Long id;
 
-	@NotNull
-	@Size(min = 1, max = 255)
+	@NotNull	
+	@NotEmpty
 	private String title;
 
 	@NotNull
 	@NotEmpty
 	private String content;
 
+	@NotNull
 	private Timestamp creationDate;
+	
+	private String pathFile;
 
-	private String author;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@NotNull	
+	@JoinColumn(name="id_member")
+	private Member member;
+		
 
 	public Long getId() {
 		return id;
@@ -67,12 +82,23 @@ public class News implements Serializable {
 		this.creationDate = creationDate;
 	}
 
-	public String getAuthor() {
-		return author;
+
+	public String getPathFile() {
+		return pathFile;
 	}
 
-	public void setAuthor(String author) {
-		this.author = author;
+	public void setPathFile(String pathFile) {
+		this.pathFile = pathFile;
 	}
+
+	public Member getMember() {
+		return member;
+	}
+
+	public void setMember(Member member) {
+		this.member = member;
+	}
+
+	
 
 }
