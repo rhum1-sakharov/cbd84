@@ -4,13 +4,30 @@
 			<h3 class="panel-title" ng-bind-html="feed.title"></h3>
 		</div>
 		<div class="panel-body">
-			<p ng-bind-html="feed.content"></p>
+			<div ng-switch="feed.imagePosition">
+				<div ng-switch-when="left">
+					<span><img class="feeds-image-left" 
+						ng-src="{{feed.imageUrl}}" title="{{feed.imageTitle}}"></span><span
+						ng-bind-html="feed.content"></span>
+				</div>
+				<div ng-switch-when="right">
+					<span ng-bind-html="feed.content"></span><span><img
+						class="feeds-image-right" ng-src="{{feed.imageUrl}}"
+						title="{{feed.imageTitle}}"></span>
+				</div>
+				<div ng-switch-default>
+					<span ng-bind-html="feed.content"></span>
+				</div>
+			</div>
 		</div>
 		<div class="panel-footer">
 			<div class="row">
-				<div class="col-md-7" ><span class="fb-like" ng-if="feed.facebookLike"></span></div>				
-				<div class="col-md-5 feed-infos" ng-bind-html="formatInfoFeed(feed.author, feed.creationDate)"></div>
-			</div>			
+				<div class="col-md-7">
+					<span class="fb-like" ng-if="feed.facebookLike"></span>
+				</div>
+				<div class="col-md-5 feed-infos"
+					ng-bind-html="formatInfoFeed(feed.author, feed.creationDate)"></div>
+			</div>
 		</div>
 	</div>
 </div>

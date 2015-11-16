@@ -1,4 +1,4 @@
-package org.rvemorel.cbd.repo;
+package org.rvermorel.cbd.repo;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.rvemorel.cbd.domain.Member;
+import org.rvermorel.cbd.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

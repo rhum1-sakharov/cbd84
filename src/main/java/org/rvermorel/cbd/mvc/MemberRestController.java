@@ -1,9 +1,9 @@
-package org.rvemorel.cbd.mvc;
+package org.rvermorel.cbd.mvc;
 
 import java.util.List;
 
-import org.rvemorel.cbd.domain.Member;
-import org.rvemorel.cbd.repo.MemberDao;
+import org.rvermorel.cbd.domain.Member;
+import org.rvermorel.cbd.repo.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -1,7 +1,6 @@
-package org.rvemorel.cbd.domain;
+package org.rvermorel.cbd.domain;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -28,29 +27,31 @@ public class Feed implements Serializable {
 	@Column(name = "id_feed", unique = true, nullable = false)
 	private Long id;
 
-	@NotNull	
+	@NotNull
 	@NotEmpty
 	private String title;
 
 	@NotNull
 	@NotEmpty
-	@Column(length=1024)
+	@Column(length = 1024)
 	private String content;
-		
+
 	private Date creationDate;
-	
-	private String pathFile;
-	
+
 	private boolean facebookLike;
-	
+
 	private boolean top;
 	
-	private String imagePosition;
-
+	private String imageUrl;
 	
-	@NotNull	
+	private String imageTitle;
+
+	private String imagePosition;
+	
+	private String imageExtension;
+
+	@NotNull
 	private String author;
-		
 
 	public Long getId() {
 		return id;
@@ -74,17 +75,6 @@ public class Feed implements Serializable {
 
 	public void setContent(String content) {
 		this.content = content;
-	}
-
-
-
-
-	public String getPathFile() {
-		return pathFile;
-	}
-
-	public void setPathFile(String pathFile) {
-		this.pathFile = pathFile;
 	}
 
 	public String getAuthor() {
@@ -128,7 +118,30 @@ public class Feed implements Serializable {
 	}
 
 	
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
 	
 
+	public String getImageTitle() {
+		return imageTitle;
 	}
+
+	public void setImageTitle(String imageTitle) {
+		this.imageTitle = imageTitle;
+	}
+
+	public String getImageExtension() {
+		return imageExtension;
+	}
+
+	public void setImageExtension(String imageExtension) {
+		this.imageExtension = imageExtension;
+	}
+
+}

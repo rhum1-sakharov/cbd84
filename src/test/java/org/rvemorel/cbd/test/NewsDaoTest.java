@@ -5,9 +5,9 @@ import java.util.Date;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.rvemorel.cbd.domain.Feed;
-import org.rvemorel.cbd.repo.FeedDao;
-import org.rvemorel.cbd.repo.MemberDao;
+import org.rvermorel.cbd.domain.Feed;
+import org.rvermorel.cbd.repo.FeedDao;
+import org.rvermorel.cbd.repo.MemberDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;

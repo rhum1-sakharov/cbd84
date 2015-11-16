@@ -1,4 +1,4 @@
-package org.rvemorel.cbd.mvc;
+package org.rvermorel.cbd.mvc;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

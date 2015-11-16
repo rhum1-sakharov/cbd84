@@ -36,8 +36,8 @@
 	<persistence-unit name="exportSchemaPU"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
-		<class>org.rvemorel.cbd.domain.Member</class>
-		<class>org.rvemorel.cbd.domain.Feed</class>
+		<class>org.rvermorel.cbd.domain.Member</class>
+		<class>org.rvermorel.cbd.domain.Feed</class>
 
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />

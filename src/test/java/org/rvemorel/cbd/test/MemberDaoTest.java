@@ -4,8 +4,8 @@ import java.util.List;
 
 import junit.framework.Assert;
 
-import org.rvemorel.cbd.domain.Member;
-import org.rvemorel.cbd.repo.MemberDao;
+import org.rvermorel.cbd.domain.Member;
+import org.rvermorel.cbd.repo.MemberDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -39,7 +39,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">CBD Vaucluse</a>
+				<a class="navbar-brand" href="#"><span>CBD Vaucluse</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -119,7 +119,7 @@
 		<hr>
 
 		<footer>
-			<p>&copy; CBD Vaucluse - Romain VERMOREL 2015</p>
+			<span><img src="static/resources/images/logo.png"></span><span>&copy; CBD Vaucluse - r&#233;alisation du site - Romain VERMOREL 2015</span>
 		</footer>
 	</div>
 	<!-- /container -->

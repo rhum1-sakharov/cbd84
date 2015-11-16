@@ -1,6 +1,7 @@
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  background-image: url("../images/bg.png");
 }
 
 .theme-dropdown .dropdown-menu {
@@ -23,8 +24,17 @@ img.partners{
 }
 
 img.calendar-sheets{
-	width : 100%;
-	
+	width : 100%;	
+}
+
+img.feeds-image-left{
+	 float: left; 
+    margin: 4px; 
+}
+
+img.feeds-image-right { 
+    float: right; 
+    margin: 4px; 
 }
 
 div.feed-infos{

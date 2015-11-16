@@ -1,8 +1,8 @@
-package org.rvemorel.cbd.repo;
+package org.rvermorel.cbd.repo;
 
 import java.util.List;
 
-import org.rvemorel.cbd.domain.Feed;
+import org.rvermorel.cbd.domain.Feed;
 
 public interface FeedDao
 {

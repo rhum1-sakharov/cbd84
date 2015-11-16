@@ -6,7 +6,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<context:component-scan base-package="org.rvemorel.cbd.mvc"/>
+	<context:component-scan base-package="org.rvermorel.cbd.mvc"/>
+	<context:component-scan base-package="org.rvermorel.cbd.config"/>
+	<context:component-scan base-package="org.rvermorel.cbd.datastore"/>
 
 	<mvc:annotation-driven />
 

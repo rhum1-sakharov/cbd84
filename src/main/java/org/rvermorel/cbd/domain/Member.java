@@ -1,4 +1,4 @@
-package org.rvemorel.cbd.domain;
+package org.rvermorel.cbd.domain;
 
 import java.io.Serializable;
 import java.util.HashSet;
