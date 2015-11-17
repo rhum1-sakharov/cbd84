@@ -36,6 +36,11 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 			scope.editFeed = function(feed) {					
 					scope.feedSelected = feed;				
 			};
+			
+			scope.formatDate = function(date) {
+				
+				return cbdUtils.formatDate(date);
+			};
 
 		}
 	};
