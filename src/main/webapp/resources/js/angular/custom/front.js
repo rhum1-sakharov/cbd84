@@ -1,24 +1,17 @@
-angular.module('frontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource' ])
+angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
-.controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter) {
+.controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', 'cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter, cbdUtils) {
 
 	$scope.menu = {
 		id : 1
 	};
 
-	$log.info($scope.menu.id);
-
 	$scope.selectMenu = function(idMenu) {
-
-		$scope.menu.id = idMenu;
+		cbdUtils.selectMenu(idMenu, $scope.menu.id)
 	};
 
 	$scope.isMenuSelected = function(idMenu) {
-		if (idMenu === $scope.menu.id) {
-			return true;
-		} else {
-			return false;
-		}
+		return cbdUtils.isMenuSelected(idMenu, $scope.menu.id);
 	};
 
 } ])
@@ -53,9 +46,10 @@ angular.module('frontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource' ])
 				return author + ", le " + dateFeed;
 			};
 
-//			scope.displayImg = function(id, creationDate, extension) {
-//				return 'feeds/' + id + '/' + creationDate + '/image/' + extension;
-//			};
+			// scope.displayImg = function(id, creationDate, extension) {
+			// return 'feeds/' + id + '/' + creationDate + '/image/' +
+			// extension;
+			// };
 		}
 	};
 })

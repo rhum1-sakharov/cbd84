@@ -41,3 +41,7 @@ div.feed-infos{
 	font-size: 12px;
 	text-align : right;
 }
+
+body.bg-admin {
+	background-image: url("../images/bg-admin.png");
+}

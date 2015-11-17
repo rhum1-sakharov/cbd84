@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class MainController {
 
 	@RequestMapping(method=RequestMethod.GET)
-    public String displaySortedMembers(Model model)
+    public String front(Model model)
     {
-//        model.addAttribute("newMember", new Member());
-//        model.addAttribute("members", memberDao.findAllOrderedByName());
-        return "index";
+        return "front";
+    }
+	
+	@RequestMapping(value="/back",method=RequestMethod.GET)
+    public String back(Model model)
+    {
+        return "back";
     }
 	
 }
