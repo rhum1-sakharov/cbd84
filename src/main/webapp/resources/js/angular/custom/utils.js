@@ -1,5 +1,5 @@
 angular.module('cbdUtilsModule', [])
-.factory('cbdUtils', [ '$log', '$location', '$rootScope', '$timeout', function($log, $location, $rootScope, $timeout) {
+.factory('cbdUtils', [ '$log', '$location', '$rootScope', '$timeout', '$filter', function($log, $location, $rootScope, $timeout,$filter) {
 
   
 
@@ -16,8 +16,11 @@ angular.module('cbdUtilsModule', [])
     		} else {
     			return false;
     		}
+    	},
+    	
+    	formatDate : function(date ){
+    		return $filter('date')(date, 'dd/MM/yyyy');
     	}
-
     };
 
 } ]);

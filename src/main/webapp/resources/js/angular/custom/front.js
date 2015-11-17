@@ -25,7 +25,7 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 	};
 })
 
-.directive("news", function($timeout, $q, $http, $filter) {
+.directive("news", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
 		templateUrl : "resources/js/angular/custom/partials/news.html",
@@ -41,9 +41,8 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 			});
 
 			scope.formatInfoFeed = function(author, date) {
-
-				var dateFeed = $filter('date')(date, 'dd/MM/yyyy');
-				return author + ", le " + dateFeed;
+				
+				return author + ", le " + cbdUtils.formatDate(date);
 			};
 
 			// scope.displayImg = function(id, creationDate, extension) {
