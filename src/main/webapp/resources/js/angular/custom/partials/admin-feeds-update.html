@@ -1,0 +1,99 @@
+<!-- Modal Update Feed -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Mise &#224; jour "{{feedSelected.title}}"</h4>
+			</div>
+			<form novalidate name="feedForm" class="form-horizontal" role="form">
+				<div class="modal-body">
+
+					<div class="form-group">
+						<label for="title" class="col-sm-3 control-label">Titre</label>
+						<div class="col-sm-9">
+							<input id="title" ng-model="feedSelected.title" type="text"
+								name="title" size="60" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="creationDate" class="col-sm-3 control-label">Date de cr&#233;ation</label>
+						<div class="col-sm-9">
+							<input id="creationDate" ng-model="formatDate(feedSelected.creationDate) | date:'dd/MM/yyyy'" type="date"
+								name="creationDate" size="60" required>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="content" class="col-sm-3 control-label">Contenu</label>
+						<div class="col-sm-9">
+							<textarea id="content" ng-model="feedSelected.content"
+								class="form-control" rows="10" required></textarea>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="checkbox">
+							<label class="col-sm-3 control-label"> Facebook Like</label>
+							<div class="col-sm-9">
+								<input type="checkbox" ng-model="feedSelected.facebookLike">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="checkbox">
+							<label class="col-sm-3 control-label"> Top position</label>
+							<div class="col-sm-9">
+								<input type="checkbox" ng-model="feedSelected.top">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="radio">
+							<label class="col-sm-3 control-label">Image &#224; gauche
+							</label>
+							<div class="col-sm-9">
+								<input type="radio" name="optionsRadios" id="optionsRadios1"
+									ng-model="feedSelected.imagePosition" value="left">
+							</div>
+						</div>
+						<div class="radio">
+							<label class="col-sm-3 control-label">Image &#224; droite
+							</label>
+							<div class="col-sm-9">
+								<input type="radio" name="optionsRadios" id="optionsRadios2"
+									ng-model="feedSelected.imagePosition" value="right">
+							</div>
+
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="imageTitle" class="col-sm-3 control-label">Titre
+							de la photo</label>
+						<div class="col-sm-9">
+							<input id="imageTitle" ng-model="feedSelected.imageTitle"
+								type="text" name="imageTitle" size="60">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="imageFile" class="col-sm-3 control-label">Photo</label>
+
+						<div class="col-sm-9">
+							<img ng-src="{{feedSelected.imageUrl}}">
+						</div>
+					</div>
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary">Mettre
+						&#224; jour</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>

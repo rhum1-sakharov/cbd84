@@ -17,13 +17,13 @@
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular.min.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.min.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.min.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.min.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.js"></script>
 </head>
 
 <body role="document" class="bg-admin">
@@ -58,31 +58,13 @@
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
-	<div class="container">
+	<div class="container">	
 
-		<!-- <div class="row">
-			<div class="jumbotron">
-				<div class="container">
-					<h1>Hello, world!</h1>
-					<p>This is a template for a simple marketing or informational
-						website. It includes a large callout called a jumbotron and three
-						supporting pieces of content. Use it as a starting point to create
-						something more unique.</p>
-					<p>
-						<a class="btn btn-primary btn-lg" href="#" role="button">Learn
-							more &raquo;</a>
-					</p>
-				</div>
-			</div>
-		</div> -->
-
-		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-8">
-				<div ng-show="isMenuSelected(1)">
-					<admin-news></admin-news>
-				</div>				
+			<div ng-show="isMenuSelected(1)">
+				<admin-feeds></admin-feeds>
 			</div>
+
 			<hr>
 
 			<footer>
@@ -126,7 +108,7 @@
 
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/app-back.js"></script>
-			<script type="text/javascript"
+		<script type="text/javascript"
 			src="static/resources/js/angular/custom/utils.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/back.js"></script>

@@ -1,47 +1,54 @@
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
-  background-image: url("../images/bg.png");
+	padding-top: 70px;
+	padding-bottom: 30px;
+	background-image: url("../images/bg.png");
 }
 
 .theme-dropdown .dropdown-menu {
-  position: static;
-  display: block;
-  margin-bottom: 20px;
+	position: static;
+	display: block;
+	margin-bottom: 20px;
 }
 
-.theme-showcase > p > .btn {
-  margin: 5px 0;
+.theme-showcase>p>.btn {
+	margin: 5px 0;
 }
 
 .theme-showcase .navbar .container {
-  width: auto;
+	width: auto;
 }
 
-img.partners{
-	width : 100%;
-	height : 60px;
+img.partners {
+	width: 100%;
+	height: 60px;
 }
 
-img.calendar-sheets{
-	width : 100%;	
+img.calendar-sheets {
+	width: 100%;
 }
 
-img.feeds-image-left{
-	 float: left; 
-    margin: 4px; 
+img.feeds-image-left {
+	float: left;
+	margin: 4px;
 }
 
-img.feeds-image-right { 
-    float: right; 
-    margin: 4px; 
+img.feeds-image-right {
+	float: right;
+	margin: 4px;
 }
 
-div.feed-infos{
+div.feed-infos {
 	font-size: 12px;
-	text-align : right;
+	text-align: right;
 }
 
 body.bg-admin {
 	background-image: url("../images/bg-admin.png");
+}
+
+/*
+Original Bootstrap's CSS depends on empty href attributes to style cursors for several components (pagination, tabs etc.). But in AngularJS adding empty href attributes to link tags will cause unwanted route changes. This is why we need to remove empty href attributes from directive templates and as a result styling is not applied correctly. The remedy is simple, just add the following styling to your application: 
+*/
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
 }

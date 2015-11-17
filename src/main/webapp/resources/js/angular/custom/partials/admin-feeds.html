@@ -1,0 +1,36 @@
+<admin-feeds-update></admin-feeds-update>
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des actualit&#233;s <span><button
+					class="btn btn-primary btn-sm" data-toggle="modal"
+					data-target="#addModal">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter une actu
+				</button></span>
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Actualit&#233;</th>
+				<th>Auteur</th>
+				<th>Date de cr&#233;ation</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="feed in feeds">
+			<td ng-bind-html="feed.title"></td>
+			<td ng-bind-html="feed.author"></td>
+			<td ng-bind-html="formatDate(feed.creationDate)"></td>
+			<td><span><button class="btn btn-primary btn-sm" data-toggle="modal"
+					data-target="#deleteModal">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span><span><button class="btn btn-primary btn-sm" data-toggle="modal"
+					data-target="#updateModal" ng-click="editFeed(feed)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span></td>
+		</tr>
+	</table>
+</div>

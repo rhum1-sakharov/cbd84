@@ -1,4 +1,4 @@
-angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule'])
 
 .controller('CbdBackCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter','cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter,cbdUtils) {
 
@@ -16,13 +16,14 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 
 } ])
 
-.directive("adminNews", function($timeout, $q, $http, $filter, cbdUtils) {
+.directive("adminFeeds", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/admin-news.html",
+		templateUrl : "resources/js/angular/custom/partials/admin-feeds.html",
 		link : function(scope, element, attrs) {
 
 			scope.feeds = [];
+			
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 				return $http.get('feeds').then(function(response) {
@@ -31,9 +32,20 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 				});
 			});
 
-			scope.formatDate = function(date) {					
-					return cbdUtils.formatDate(date);				
+			scope.feedSelected = {};
+			scope.editFeed = function(feed) {					
+					scope.feedSelected = feed;				
 			};
+
+		}
+	};
+})
+
+.directive("adminFeedsUpdate", function($timeout, $q, $http, $filter, cbdUtils) {
+	return {
+		restrict : 'E',
+		templateUrl : "resources/js/angular/custom/partials/admin-feeds-update.html",
+		link : function(scope, element, attrs) {			
 
 		}
 	};
