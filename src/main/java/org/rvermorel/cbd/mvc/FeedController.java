@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping(value = "/feeds")
-
 public class FeedController {
 
 	private static final Logger LOG = LoggerFactory.getLogger(FeedController.class);
