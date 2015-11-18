@@ -3,7 +3,8 @@
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<form novalidate name="feedForm" class="form-horizontal" role="form">
+			<form novalidate name="feedForm" class="form-horizontal" role="form"
+				ng-submit="submitForm()">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
 						aria-label="Close">
@@ -99,8 +100,14 @@
 					<div class="form-group">
 						<label for="imageFile" class="col-sm-3 control-label">Photo</label>
 
-						<div class="col-sm-9">
+						<div class="col-sm-9"
+							ng-class="{'has-error':fileValue.notValidImage || fileValue.serverError != ''}">
+							<input type="file" file-model="fileValue">
+							<p ng-show="fileValue.notValidImage" class="help-block">La
+								photo doit etre au format jpg !</p>
+							<p ng-show="fileValue.serverError != ''" class="help-block" ng-bind-html="fileValue.serverError"></p>
 							<img ng-src="{{feedSelected.imageUrl}}">
+
 						</div>
 					</div>
 
@@ -108,8 +115,7 @@
 
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary"
-						ng-disabled="feedForm.$invalid">Mettre
-						&#224; jour</button>
+						ng-disabled="feedForm.$invalid">Mettre &#224; jour</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
 				</div>
 

@@ -37,7 +37,11 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 			scope.editFeed = function(feed) {
 				scope.feedSelected = feed;
 				scope.creationDate = cbdUtils.formatTs2Date(scope.feedSelected.creationDate);
-
+				scope.fileValue = {
+						notValidImage : false,
+						type : 'image/jpeg',
+						serverError : ''
+					};
 			};
 
 			scope.formatDate = function(ts) {
@@ -45,7 +49,7 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 			};
 
 			scope.$watch('creationDate', function(newVal, oldVal) {
-				scope.feedSelected.creationDate = cbdUtils.formatDate2Ts(newVal);			
+				scope.feedSelected.creationDate = cbdUtils.formatDate2Ts(newVal);
 			});
 
 		}
@@ -58,20 +62,68 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 		templateUrl : "resources/js/angular/custom/partials/admin-feeds-update.html",
 		link : function(scope, element, attrs) {
 
+			scope.submitForm = function() {
+			};
+
+			
+
+			scope.$watch('fileValue', function(newVal, oldVal) {
+				var mimetype = 'image/jpeg';
+
+				if (mimetype != newVal.type) {
+					newVal.notValidImage = true;
+
+				} else if(newVal.name){
+					newVal.notValidImage = false;
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						var fd = new FormData();
+						fd.append('file', scope.fileValue);
+						return $http.post('feeds/update/image/' + scope.feedSelected.id, fd, {
+							transformRequest : angular.identity,
+							headers : {
+								'Content-Type' : undefined
+							}
+						}).then(function(response) {
+							scope.fileValue.serverError='';
+						}, function(reason) {
+							scope.fileValue.serverError= 'HTTP ERROR : '+reason.status+', '+reason.statusText;
+							return $q.reject(reason);
+						});
+					});
+
+				}
+			});
 		}
 	};
 })
 
-.directive("frenchDateValidator", function () {
-    return {
-        require : 'ngModel',
-        restrict: 'A',
-        link: function (scope, element, attrs, ngModel) {
-            ngModel.$validators.frenchDate = function(value) {
-                return !value || /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.test(value);
-            };
-        }
-    };
+.directive('fileModel', [ '$parse', function($parse) {
+	return {
+		restrict : 'A',
+		link : function(scope, element, attrs) {
+			var getter = $parse(attrs.fileModel);
+			var setter = getter.assign;
+
+			element.bind('change', function() {
+				scope.$apply(function() {
+					setter(scope, element[0].files[0]);
+				});
+			});
+		}
+	};
+} ])
+
+.directive("frenchDateValidator", function() {
+	return {
+		require : 'ngModel',
+		restrict : 'A',
+		link : function(scope, element, attrs, ngModel) {
+			ngModel.$validators.frenchDate = function(value) {
+				return !value || /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/.test(value);
+			};
+		}
+	};
 })
 
 .directive('datePicker', function($timeout, $filter) {
