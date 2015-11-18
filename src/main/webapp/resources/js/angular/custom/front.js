@@ -40,9 +40,9 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 				});
 			});
 
-			scope.formatInfoFeed = function(author, date) {
+			scope.formatInfoFeed = function(author, ts) {
 				
-				return author + ", le " + cbdUtils.formatDate(date);
+				return author + ", le " + cbdUtils.formatTs2Date(ts);
 			};
 
 			// scope.displayImg = function(id, creationDate, extension) {

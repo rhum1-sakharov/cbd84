@@ -18,8 +18,16 @@ angular.module('cbdUtilsModule', [])
     		}
     	},
     	
-    	formatDate : function(date ){
-    		return $filter('date')(date, 'dd/MM/yyyy');
+    	formatTs2Date : function(timestamp ){
+    		return $filter('date')(timestamp, 'dd/MM/yyyy');
+    	},
+    	
+    	formatDate2Ts : function(date ){
+    		if(date != ''){
+    			var from = date.split('/');
+    			return new Date(from[2], from[1] - 1, from[0]);	
+    		}
+    		return date;
     	}
     };
 

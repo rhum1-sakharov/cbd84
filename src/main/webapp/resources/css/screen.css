@@ -42,6 +42,11 @@ div.feed-infos {
 	text-align: right;
 }
 
+img.admin-feed-thumb {
+	width : 64px;
+	
+}
+
 body.bg-admin {
 	background-image: url("../images/bg-admin.png");
 }

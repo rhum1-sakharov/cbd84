@@ -3,35 +3,53 @@
 	aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal"
-					aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-				<h4 class="modal-title" id="myModalLabel">Mise &#224; jour "{{feedSelected.title}}"</h4>
-			</div>
 			<form novalidate name="feedForm" class="form-horizontal" role="form">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Mise &#224; jour
+						"{{feedSelected.title}}"</h4>
+				</div>
+
 				<div class="modal-body">
 
 					<div class="form-group">
 						<label for="title" class="col-sm-3 control-label">Titre</label>
-						<div class="col-sm-9">
+						<div class="col-sm-9"
+							ng-class="{'has-error':feedForm.title.$invalid && !feedForm.title.$pristine}">
 							<input id="title" ng-model="feedSelected.title" type="text"
 								name="title" size="60" required>
+							<p ng-show="feedForm.title.$invalid && !feedForm.title.$pristine"
+								class="help-block">Veuillez saisir un titre</p>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="creationDate" class="col-sm-3 control-label">Date de cr&#233;ation</label>
-						<div class="col-sm-9">
-							<input id="creationDate" ng-model="formatDate(feedSelected.creationDate) | date:'dd/MM/yyyy'" type="date"
-								name="creationDate" size="60" required>
+						<label for="creationDate" class="col-sm-3 control-label">Date
+							de cr&#233;ation</label>
+						<div class="col-sm-9"
+							ng-class="{'has-error':feedForm.creationDate.$invalid && !feedForm.creationDate.$pristine}">
+							<!-- <date-input ng-model="feedSelected.creationDate"></date-input> -->
+							<input id="creationDate" ng-model="creationDate" type="text"
+								date-picker name="creationDate" size="60" required
+								french-date-validator>
+							<p
+								ng-show="feedForm.creationDate.$invalid && !feedForm.creationDate.$pristine"
+								class="help-block">Veuillez saisir une date au format
+								dd/MM/yyyy</p>
 						</div>
 					</div>
+
 					<div class="form-group">
 						<label for="content" class="col-sm-3 control-label">Contenu</label>
-						<div class="col-sm-9">
+						<div class="col-sm-9"
+							ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
 							<textarea id="content" ng-model="feedSelected.content"
 								class="form-control" rows="10" required></textarea>
+							<p
+								ng-show="feedForm.content.$invalid && !feedForm.content.$pristine"
+								class="help-block">Veuillez saisir votre article</p>
 						</div>
 					</div>
 
@@ -87,13 +105,15 @@
 					</div>
 
 				</div>
+
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary">Mettre
+					<button type="button" class="btn btn-primary"
+						ng-disabled="feedForm.$invalid">Mettre
 						&#224; jour</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
 				</div>
-			</form>
 
+			</form>
 		</div>
 	</div>
 </div>

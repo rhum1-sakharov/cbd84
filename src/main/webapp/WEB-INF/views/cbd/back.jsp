@@ -11,7 +11,16 @@
 <link rel="stylesheet" type="text/css"
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css"
+	href="static/resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css"
 	href="static/resources/css/screen.css" />
+
+<!-- JQuery Vendor JavaScript
+    ================================================== -->
+<script
+	src="static/resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+<script
+	src="static/resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 
 
 <!-- Angular Vendor JavaScript
@@ -58,7 +67,7 @@
 
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
-	<div class="container">	
+	<div class="container">
 
 		<div class="row">
 			<div ng-show="isMenuSelected(1)">
@@ -93,8 +102,7 @@
 		<!-- Bootstrap core JavaScript
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script
-			src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
 		<script
 			src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 

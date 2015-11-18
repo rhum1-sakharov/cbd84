@@ -145,7 +145,7 @@
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		src="static/resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 	<script
 		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
@@ -160,10 +160,10 @@
 	<script type="text/javascript"
 		src="static/resources/js/angular/custom/app-front.js"></script>
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/utils.js"></script>	
+		src="static/resources/js/angular/custom/utils.js"></script>
 	<script type="text/javascript"
 		src="static/resources/js/angular/custom/front.js"></script>
-		
+
 </body>
 
 </html>

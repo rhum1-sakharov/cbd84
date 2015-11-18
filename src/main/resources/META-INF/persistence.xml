@@ -33,7 +33,7 @@
 		</properties>
 	</persistence-unit>
 
-	<persistence-unit name="exportSchemaPU"
+<!-- 	<persistence-unit name="exportSchemaPU"
 		transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>org.rvermorel.cbd.domain.Member</class>
@@ -43,29 +43,29 @@
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect" />
 			<property name="hibernate.cache.use_second_level_cache"
 				value="false" />
-			<!-- <property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" /> -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
 			<property name="hibernate.generate_statistics" value="false" />
 			<property name="hibernate.connection.release_mode" value="auto" />
 
-			<!-- fix bug: NoSuchMethodException: org.hibernate.validator.ClassValidator 
-				in JBoss-4.2 -->
+			fix bug: NoSuchMethodException: org.hibernate.validator.ClassValidator 
+				in JBoss-4.2
 			<property name="hibernate.validator.apply_to_ddl" value="false" />
 			<property name="hibernate.validator.autoregister_listeners"
 				value="false" />
 
-			<!-- CF. ehcache.xml -->
+			CF. ehcache.xml
 			<property name="org.hibernate.readOnly" value="true" />
 
-			<!-- update DDL database schema at startup -->
+			update DDL database schema at startup
 			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 
-			<!-- No datasource for standalone job -->
+			No datasource for standalone job
 			<property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
 			<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/cbd84" />
 			<property name="hibernate.connection.username" value="root" />
 			<property name="hibernate.connection.password" value="toto9797" />
 		</properties>
 	</persistence-unit>
-
+ -->
 </persistence>
