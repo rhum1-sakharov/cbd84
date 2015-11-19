@@ -68,8 +68,7 @@ angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource',
 				scope.buttonSubmit.disabled = true;			
 				var promiseStart = $q.when('start');
 				var promise1 = promiseStart.then(function(value) {
-					var fd = new FormData();
-					fd.append('file', scope.fileValue);
+					
 					return $http.post('feeds/update', scope.feedSelected).then(function(response) {
 						
 						scope.buttonSubmit.disabled = false;
