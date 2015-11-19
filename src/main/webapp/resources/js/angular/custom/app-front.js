@@ -1,1 +1,1 @@
-angular.module("app-front", ['cbdFrontModule']);
+angular.module('app-front', ['cbdFrontModule']);

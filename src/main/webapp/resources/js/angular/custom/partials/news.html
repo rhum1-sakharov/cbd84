@@ -11,9 +11,9 @@
 						ng-bind-html="feed.content"></span>
 				</div>
 				<div ng-switch-when="right">
-					<span ng-bind-html="feed.content"></span><span><img
-						class="feeds-image-right" ng-src="{{feed.imageUrl}}"
-						title="{{feed.imageTitle}}"></span>
+					<span><img class="feeds-image-right"
+						ng-src="{{feed.imageUrl}}" title="{{feed.imageTitle}}"></span> <span
+						ng-bind-html="feed.content"></span>
 				</div>
 				<div ng-switch-default>
 					<span ng-show="feed.imageUrl != null"><img

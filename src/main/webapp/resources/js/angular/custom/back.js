@@ -7,11 +7,13 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 	};
 
 	$scope.selectMenu = function(idMenu) {
-		cbdUtils.selectMenu(idMenu, $scope.menu.id)
+		$scope.menu.id = idMenu;
+		//cbdUtils.selectMenu(idMenu, $scope.menu.id)
 	};
 
 	$scope.isMenuSelected = function(idMenu) {
-		return cbdUtils.isMenuSelected(idMenu, $scope.menu.id);
+		return (idMenu === $scope.menu.id);
+		//return cbdUtils.isMenuSelected(idMenu, $scope.menu.id);
 	};
 
 } ])

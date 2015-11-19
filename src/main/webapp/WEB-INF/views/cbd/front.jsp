@@ -39,7 +39,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#"><span>CBD Vaucluse</span></a>
+				<a class="navbar-brand" href="#" ><span>CBD Vaucluse</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -48,7 +48,7 @@
 					<li ng-class="{active:menu.id === 2}"><a href="#"
 						ng-click="selectMenu(2);">Calendrier 2015/2016</a></li>
 					<li ng-class="{active:menu.id === 3}"><a href="#"
-						ng-click="selectMenu(3);">Contact</a></li>
+						ng-click="selectMenu(3);">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
