@@ -56,15 +56,50 @@ angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource',
 		restrict : 'E',
 		templateUrl : "resources/js/angular/custom/partials/admin-feeds-update.html",
 		link : function(scope, element, attrs) {
+			
+			
 
 			scope.buttonSubmit = {
 				disabled : false
 			};
 
 			scope.submitForm = function() {
+				
+				scope.buttonSubmit.disabled = true;			
+				var promiseStart = $q.when('start');
+				var promise1 = promiseStart.then(function(value) {
+					var fd = new FormData();
+					fd.append('file', scope.fileValue);
+					return $http.post('feeds/update', scope.feedSelected).then(function(response) {
+						
+						scope.buttonSubmit.disabled = false;
+					}, function(reason) {
+
+						scope.submit.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText ;
+						scope.buttonSubmit.disabled = false;
+						return $q.reject(reason);
+					});
+				});
+				
 			};
 
 			scope.eraseImage = function(feed) {
+				scope.buttonSubmit.disabled = true;
+				promiseStart = $q.when('start');
+				promise1 = promiseStart.then(function(value) {
+					
+					return $http.get('feeds/delete/image/' + scope.feedSelected.id).then(function(response) {
+						scope.fileValue.serverError = '';						
+						scope.feedSelected.imageUrl = null;						
+						scope.buttonSubmit.disabled = false;
+					}, function(reason) {
+
+						scope.fileValue.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText ;
+						scope.buttonSubmit.disabled = false;
+						return $q.reject(reason);
+					});
+				});
+				
 			};
 
 			scope.$watch('fileValue', function(newVal, oldVal) {

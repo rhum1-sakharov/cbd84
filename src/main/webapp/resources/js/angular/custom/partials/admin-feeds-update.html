@@ -100,7 +100,7 @@
 							<p>
 								<button class="btn btn-danger btn-sm"
 									ng-show="feedSelected.imageUrl != null"
-									ng-click="eraseImage(feedSelected)">
+									ng-click="eraseImage(feedSelected)" ng-disabled="buttonSubmit.disabled">
 									<i class="glyphicon glyphicon-minus-sign"></i> Supprimer la
 									photo
 								</button>
@@ -110,7 +110,7 @@
 				</div>
 
 				<div class="modal-footer">
-					<button type="button" class="btn btn-success"
+					<button type="submit" type="button" class="btn btn-success"
 						ng-disabled="feedForm.$invalid || buttonSubmit.disabled">Mettre
 						&#224; jour</button>
 					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>

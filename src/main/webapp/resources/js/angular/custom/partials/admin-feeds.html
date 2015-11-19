@@ -25,7 +25,7 @@
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
 			<td ng-bind-html="formatDate(feed.creationDate)"></td>
-			<td><img class="admin-feed-thumb"
+			<td><img class="admin-feed-thumb" ng-show="feed.imageUrl != null"
 				ng-src="{{formatImageUrl(feed);}}"></td>
 			<td><span><button class="btn btn-success btn-sm"
 						data-toggle="modal" data-target="#updateModal"

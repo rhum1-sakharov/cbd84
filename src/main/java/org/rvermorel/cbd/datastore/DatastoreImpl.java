@@ -37,4 +37,11 @@ public class DatastoreImpl implements IDatastore {
 
 	}
 
+	@Override
+	public void deleteFeedContent(String id, String extension) throws IOException {
+		String path = getFeedPath( id, extension);
+		File file = new File(path);
+		FileUtils.forceDelete(file);
+	}
+
 }
