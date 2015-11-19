@@ -118,6 +118,8 @@
 			src="static/resources/js/angular/custom/app-back.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/utils.js"></script>
+			<script type="text/javascript"
+			src="static/resources/js/angular/custom/admin-feeds.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/back.js"></script>
 </body>

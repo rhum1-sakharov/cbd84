@@ -6,7 +6,7 @@
 		<div class="panel-body">
 			<div ng-switch="feed.imagePosition">
 				<div ng-switch-when="left">
-					<span><img class="feeds-image-left" 
+					<span><img class="feeds-image-left"
 						ng-src="{{feed.imageUrl}}" title="{{feed.imageTitle}}"></span><span
 						ng-bind-html="feed.content"></span>
 				</div>
@@ -16,7 +16,10 @@
 						title="{{feed.imageTitle}}"></span>
 				</div>
 				<div ng-switch-default>
-					<span ng-bind-html="feed.content"></span>
+					<span ng-show="feed.imageUrl != null"><img
+						class="feeds-image-right" ng-src="{{feed.imageUrl}}"
+						title="{{feed.imageTitle}}"></span> <span
+						ng-bind-html="feed.content"></span>
 				</div>
 			</div>
 		</div>

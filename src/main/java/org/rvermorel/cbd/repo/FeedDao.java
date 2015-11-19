@@ -11,4 +11,8 @@ public interface FeedDao
     public List<Feed> findAllOrderedByCreationDate();
 
     public void register(Feed news);
+    
+    public void update(Feed feed);
+    
+    public void deleteById(Long id);
 }

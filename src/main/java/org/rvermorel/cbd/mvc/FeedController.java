@@ -85,6 +85,9 @@ public class FeedController {
 
 				byte[] resized = iImageEnhancement.resizeImg(bytes, 256);
 				idatastore.writeFeedContent(resized, id, "jpg");
+				Feed feed = feedDao.findById(Long.valueOf(id));
+				feed.setImageUrl("feeds/"+id+"/image/jpg");
+				feedDao.update(feed);
 
 			} catch (IOException e) {
 				LOG.error(e.getMessage(), e);
@@ -94,9 +97,21 @@ public class FeedController {
 
 		return new ResponseEntity<String>(responseMessage, null, HttpStatus.OK);
 	}
+	
+	@RequestMapping(value = "/delete/image/{id}", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<String> deleteImage( @PathVariable String id) {
+		String responseMessage = "";
 
-	@ExceptionHandler(SizeLimitExceededException.class)
-	public ResponseEntity<String> handleSizeLimitExceededException(SizeLimitExceededException ex) {
+		Feed feed = feedDao.findById(Long.valueOf(id));
+		feed.setImageUrl(null);
+		
+		return new ResponseEntity<String>(responseMessage, null, HttpStatus.OK);
+	}
+
+
+	@ExceptionHandler(org.hibernate.PersistentObjectException.class)
+	public ResponseEntity<String> handleSizeLimitExceededException(org.hibernate.PersistentObjectException ex) {
 
 		return new ResponseEntity<String>(ex.getMessage(), null, HttpStatus.BANDWIDTH_LIMIT_EXCEEDED);
 	}

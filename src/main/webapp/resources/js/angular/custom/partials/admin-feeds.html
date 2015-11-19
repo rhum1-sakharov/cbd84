@@ -4,7 +4,7 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">
 			Gestion des actualit&#233;s <span><button
-					class="btn btn-primary btn-sm" data-toggle="modal"
+					class="btn btn-success btn-sm" data-toggle="modal"
 					data-target="#addModal">
 					<i class="glyphicon glyphicon-plus-sign"></i> ajouter une actu
 				</button></span>
@@ -25,13 +25,15 @@
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
 			<td ng-bind-html="formatDate(feed.creationDate)"></td>
-			<td><img class="admin-feed-thumb" ng-src="{{formatImageUrl(feed);}}"></td>
-			<td><span><button class="btn btn-primary btn-sm" data-toggle="modal"
-					data-target="#deleteModal">
-						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
-					</button></span><span><button class="btn btn-primary btn-sm" data-toggle="modal"
-					data-target="#updateModal" ng-click="editFeed(feed)">
+			<td><img class="admin-feed-thumb"
+				ng-src="{{formatImageUrl(feed);}}"></td>
+			<td><span><button class="btn btn-success btn-sm"
+						data-toggle="modal" data-target="#updateModal"
+						ng-click="editFeed(feed)">
 						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						data-toggle="modal" data-target="#deleteModal">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
 					</button></span></td>
 		</tr>
 	</table>

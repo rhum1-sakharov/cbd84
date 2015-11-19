@@ -1,1 +1,1 @@
-angular.module("app-back", ['cbdBackModule']);
+angular.module("app-back", ['cbdBackModule','cbdAdminFeedsModule']);

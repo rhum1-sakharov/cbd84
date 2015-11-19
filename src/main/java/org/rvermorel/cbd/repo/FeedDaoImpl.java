@@ -22,6 +22,7 @@ public class FeedDaoImpl implements FeedDao {
 	public Feed findById(Long id) {
 		return em.find(Feed.class, id);
 	}
+	
 
 	@Override
 	public List<Feed> findAllOrderedByCreationDate() {
@@ -43,5 +44,19 @@ public class FeedDaoImpl implements FeedDao {
 	public void register(Feed news) {
 		em.persist(news);
 		return;
+	}
+	
+	@Override
+	public void update(Feed feed) {
+		em.merge(feed);
+		return ;
+	}
+
+
+	@Override
+	public void deleteById(Long id ) {
+		Feed feed = this.findById(id);
+		em.remove(feed);
+		
 	}
 }
