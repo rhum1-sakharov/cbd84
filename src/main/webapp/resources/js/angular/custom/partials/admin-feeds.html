@@ -25,7 +25,7 @@
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
 			<td ng-bind-html="formatDate(feed.creationDate)"></td>
-			<td><img class="admin-feed-thumb" ng-src="{{feed.imageUrl}}"></td>
+			<td><img class="admin-feed-thumb" ng-src="{{formatImageUrl(feed);}}"></td>
 			<td><span><button class="btn btn-primary btn-sm" data-toggle="modal"
 					data-target="#deleteModal">
 						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer

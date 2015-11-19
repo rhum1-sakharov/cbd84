@@ -25,6 +25,16 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 			scope.feeds = [];
 			scope.feedSelected = {};
 			scope.creationDate = "";
+			scope.random = '1';
+			scope.formatImageUrl = function(feed) {
+				// feedSelected.imageUrl?random
+				if(feed.imageUrl){
+					return feed.imageUrl + '?' + scope.random;	
+				}
+				
+				return '';
+				
+			};
 
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
@@ -38,10 +48,10 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 				scope.feedSelected = feed;
 				scope.creationDate = cbdUtils.formatTs2Date(scope.feedSelected.creationDate);
 				scope.fileValue = {
-						notValidImage : false,
-						type : 'image/jpeg',
-						serverError : ''
-					};
+					notValidImage : false,
+					type : 'image/jpeg',
+					serverError : ''
+				};
 			};
 
 			scope.formatDate = function(ts) {
@@ -70,28 +80,33 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 			scope.$watch('fileValue', function(newVal, oldVal) {
 				var mimetype = 'image/jpeg';
 
-				if (mimetype != newVal.type) {
-					newVal.notValidImage = true;
+				if (newVal) {
 
-				} else if(newVal.name){
-					newVal.notValidImage = false;
-					var promiseStart = $q.when('start');
-					var promise1 = promiseStart.then(function(value) {
-						var fd = new FormData();
-						fd.append('file', scope.fileValue);
-						return $http.post('feeds/update/image/' + scope.feedSelected.id, fd, {
-							transformRequest : angular.identity,
-							headers : {
-								'Content-Type' : undefined
-							}
-						}).then(function(response) {
-							scope.fileValue.serverError='';
-						}, function(reason) {
-							scope.fileValue.serverError= 'HTTP ERROR : '+reason.status+', '+reason.statusText;
-							return $q.reject(reason);
+					if (mimetype != newVal.type) {
+						newVal.notValidImage = true;
+
+					} else if (newVal.name) {
+						newVal.notValidImage = false;
+						var promiseStart = $q.when('start');
+						var promise1 = promiseStart.then(function(value) {
+							var fd = new FormData();
+							fd.append('file', scope.fileValue);
+							return $http.post('feeds/update/image/' + scope.feedSelected.id, fd, {
+								transformRequest : angular.identity,
+								headers : {
+									'Content-Type' : undefined
+								}
+							}).then(function(response) {
+								scope.fileValue.serverError = '';
+								scope.random = cbdUtils.random();
+							}, function(reason) {
+
+								scope.fileValue.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText + '.<br>Taille max autoris&#233; pour l\'image : 5 mo !';
+								return $q.reject(reason);
+							});
 						});
-					});
 
+					}
 				}
 			});
 		}

@@ -106,8 +106,7 @@
 							<p ng-show="fileValue.notValidImage" class="help-block">La
 								photo doit etre au format jpg !</p>
 							<p ng-show="fileValue.serverError != ''" class="help-block" ng-bind-html="fileValue.serverError"></p>
-							<img ng-src="{{feedSelected.imageUrl}}">
-
+							<img ng-src="{{formatImageUrl(feedSelected);}}">
 						</div>
 					</div>
 

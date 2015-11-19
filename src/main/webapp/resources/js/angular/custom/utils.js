@@ -28,6 +28,10 @@ angular.module('cbdUtilsModule', [])
     			return new Date(from[2], from[1] - 1, from[0]);	
     		}
     		return date;
+    	},
+    	
+    	random : function(){
+    		return Math.random() * (1000000 - 1) + 1;
     	}
     };
 
