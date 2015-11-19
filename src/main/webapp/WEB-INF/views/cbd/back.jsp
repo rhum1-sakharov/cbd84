@@ -35,6 +35,11 @@
 	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.js"></script>
 </head>
 
+<!-- Angular UI TinyMCE Vendor JavaScript
+    ================================================== -->
+<script type="text/javascript" src="static/resources/js/tinymce-dist/tinymce.js"></script>
+<script type="text/javascript" src="static/resources/js/angular-ui-tinymce/tinymce.js"></script>
+
 <body role="document" class="bg-admin">
 
 	<!-- Fixed navbar -->

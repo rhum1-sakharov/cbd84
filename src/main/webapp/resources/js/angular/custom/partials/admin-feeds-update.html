@@ -46,14 +46,25 @@
 						<label for="content" class="col-sm-3 control-label">Contenu</label>
 						<div class="col-sm-9"
 							ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
-							<textarea id="content" ng-model="feedSelected.content"
-								class="form-control" rows="5" required></textarea>
+							<textarea class="form-control" ui-tinymce
+								ng-model="feedSelected.content"></textarea>
+							<!-- <textarea id="content" ng-model="feedSelected.content"
+								class="form-control" rows="5" required></textarea> -->
 							<p
 								ng-show="feedForm.content.$invalid && !feedForm.content.$pristine"
 								class="help-block">Veuillez saisir votre article</p>
 						</div>
 					</div>
-
+					<div class="form-group">
+						<label for="title" class="col-sm-3 control-label">Auteur</label>
+						<div class="col-sm-9"
+							ng-class="{'has-error':feedForm.author.$invalid && !feedForm.author.$pristine}">
+							<input id="author" ng-model="feedSelected.author" type="text"
+								name="author" size="60" required>
+							<p ng-show="feedForm.author.$invalid && !feedForm.author.$pristine"
+								class="help-block">Veuillez saisir un auteur</p>
+						</div>
+					</div>
 					<div class="form-group">
 						<span> <label class="col-sm-3 control-label">
 								Facebook Like</label><input class="col-sm-1" type="checkbox"
@@ -100,7 +111,8 @@
 							<p>
 								<button class="btn btn-danger btn-sm"
 									ng-show="feedSelected.imageUrl != null"
-									ng-click="eraseImage(feedSelected)" ng-disabled="buttonSubmit.disabled">
+									ng-click="eraseImage(feedSelected)"
+									ng-disabled="buttonSubmit.disabled">
 									<i class="glyphicon glyphicon-minus-sign"></i> Supprimer la
 									photo
 								</button>
@@ -113,7 +125,7 @@
 					<button type="submit" type="button" class="btn btn-success"
 						ng-disabled="feedForm.$invalid || buttonSubmit.disabled">Mettre
 						&#224; jour</button>
-					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
 				</div>
 
 			</form>

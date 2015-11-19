@@ -1,1 +1,1 @@
-angular.module("app-back", ['cbdBackModule','cbdAdminFeedsModule']);
+angular.module("app-back", ['cbdBackModule','cbdAdminFeedsModule','ui.tinymce']);
