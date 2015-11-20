@@ -39,7 +39,7 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" ><span>CBD Vaucluse</span></a>
+				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span>CBD Vaucluse</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">

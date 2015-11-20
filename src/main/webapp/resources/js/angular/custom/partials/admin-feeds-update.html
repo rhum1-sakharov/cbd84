@@ -47,7 +47,7 @@
 						<div class="col-sm-9"
 							ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
 							<textarea class="form-control" ui-tinymce
-								ng-model="feedSelected.content"></textarea>
+								ng-model="feedSelected.content" required></textarea>
 							<!-- <textarea id="content" ng-model="feedSelected.content"
 								class="form-control" rows="5" required></textarea> -->
 							<p
@@ -61,7 +61,8 @@
 							ng-class="{'has-error':feedForm.author.$invalid && !feedForm.author.$pristine}">
 							<input id="author" ng-model="feedSelected.author" type="text"
 								name="author" size="60" required>
-							<p ng-show="feedForm.author.$invalid && !feedForm.author.$pristine"
+							<p
+								ng-show="feedForm.author.$invalid && !feedForm.author.$pristine"
 								class="help-block">Veuillez saisir un auteur</p>
 						</div>
 					</div>
@@ -120,7 +121,8 @@
 						</div>
 					</div>
 				</div>
-
+				<p ng-show="submit.serverError != ''" class="help-block"
+					ng-bind-html="submit.serverError"></p>
 				<div class="modal-footer">
 					<button type="submit" type="button" class="btn btn-success"
 						ng-disabled="feedForm.$invalid || buttonSubmit.disabled">Mettre

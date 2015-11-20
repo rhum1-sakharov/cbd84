@@ -8,12 +8,12 @@
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 
-	<name>Getting Started with Spring on JBoss</name>
+	<name>Getting Started with Spring on Tomcat</name>
 
 	<properties>
 		<!-- Spring version -->
-		<version.jboss.bom>1.0.5.Final</version.jboss.bom>
-		<hibernate.version>4.3.7.Final</hibernate.version>
+		<version.jboss.bom>1.0.5.Final</version.jboss.bom>	
+		<spring.version>4.2.3.RELEASE</spring.version>
 		<!-- Third Party dependencies -->
 		<version.standard.taglibs>1.1.2</version.standard.taglibs>
 		<version.commons.logging>1.1.1</version.commons.logging>
@@ -27,7 +27,6 @@
 	<dependencyManagement>
 
 		<dependencies>
-
 
 
 			<!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any 
@@ -45,13 +44,9 @@
 				<version>${version.jboss.bom}</version> <type>pom</type> <scope>import</scope> 
 				</dependency> -->
 
-			<dependency>
-				<groupId>org.jboss.bom</groupId>
-				<artifactId>jboss-javaee-6.0-with-spring</artifactId>
-				<version>${version.jboss.bom}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
+			<!-- <dependency> <groupId>org.jboss.bom</groupId> <artifactId>jboss-javaee-6.0-with-spring</artifactId> 
+				<version>${version.jboss.bom}</version> <type>pom</type> <scope>import</scope> 
+				</dependency> -->
 
 			<dependency>
 				<groupId>taglibs</groupId>
@@ -74,7 +69,7 @@
 			<groupId>org.imgscalr</groupId>
 			<artifactId>imgscalr-lib</artifactId>
 			<version>4.2</version>
-			<type>jar</type>			
+			<type>jar</type>
 		</dependency>
 
 		<!-- LOGGING SYSTEM -->
@@ -106,108 +101,86 @@
 			<version>1.3.1</version>
 		</dependency>
 
-		<!-- JPA 2.1 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-jpamodelgen</artifactId>
-			<version>${hibernate.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<!-- Hibernate JPA dependency -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>${hibernate.version}</version>
-			<scope>compile</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<version>4.3.2.Final</version>
-		</dependency>
-
-
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.37</version>
 		</dependency>
-
-		<!-- Import the JPA API using the provided scope It is included in JBoss 
-			AS 7 / EAP 6 -->
-		<!-- <dependency> <groupId>org.hibernate.javax.persistence</groupId> <artifactId>hibernate-jpa-2.0-api</artifactId> 
-			<scope>provided</scope> </dependency> -->
-
-		<!-- JSR-303 (Bean Validation) Implementation -->
-		<!-- Provides portable constraints such as @Email -->
-		<!-- Hibernate Validator is shipped in JBoss AS 7 -->
-		<!-- <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-validator</artifactId> 
-			<scope>provided</scope> <exclusions> <exclusion> <groupId>org.slf4j</groupId> 
-			<artifactId>slf4j-api</artifactId> </exclusion> </exclusions> </dependency> 
-			<dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-entitymanager</artifactId> 
-			<scope>provided</scope> </dependency> Annotation processor that raising compilation 
-			errors whenever constraint annotations are incorrectly used. <dependency> 
-			<groupId>org.hibernate</groupId> <artifactId>hibernate-validator-annotation-processor</artifactId> 
-			<scope>provided</scope> </dependency> -->
-		<!-- Import Spring dependencies, these are either from community or versions 
-			certified in WFK2 -->
+		
+		<!-- SPRING -->
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
-			<scope>test</scope>
+			<version>${spring.version}</version>			
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-tx</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-web</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>1.9.1.RELEASE</version>
 		</dependency>
 
 		<!-- Other community dependencies -->
 		<dependency>
 			<groupId>aopalliance</groupId>
 			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
 		</dependency>
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -239,8 +212,21 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.3.165</version>
-			<scope>provided</scope>
+			<version>1.4.185</version>
+		</dependency>
+
+		<!-- DataSource (HikariCP) -->
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.2.5</version>
+		</dependency>
+
+		<!-- JPA Provider (Hibernate) -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.8.Final</version>
 		</dependency>
 
 		<!-- Add JSON dependency, specified in jboss-deployment-structure.xml -->
@@ -294,6 +280,18 @@
 
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>spring-releases</id>
+			<name>Spring Releases</name>
+			<url>https://repo.spring.io/libs-release</url>
+		</repository>
+		<repository>
+			<id>org.jboss.repository.releases</id>
+			<name>JBoss Maven Release Repository</name>
+			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+		</repository>
+	</repositories>
 	<profiles>
 		<profile>
 			<!-- When built in OpenShift the 'openshift' profile will be used when 

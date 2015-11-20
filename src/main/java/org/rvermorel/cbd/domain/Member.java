@@ -1,25 +1,14 @@
 package org.rvermorel.cbd.domain;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
-import org.codehaus.jackson.annotate.JsonIgnoreProperties;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "members", uniqueConstraints = @UniqueConstraint(columnNames = "email") )
@@ -32,18 +21,12 @@ public class Member implements Serializable {
 	@Column(name = "id_member", unique = true, nullable = false)
 	private Long id;
 
-	@NotNull
-	@NotEmpty	
+	
 	private String name;	
 
-	@NotNull
-	@NotEmpty
-	@Email
+
 	private String email;
 
-	@NotNull
-	@Size(min = 10, max = 12)
-	@Digits(fraction = 0, integer = 12)
 	@Column(name = "phone_number")
 	private String phoneNumber;
 

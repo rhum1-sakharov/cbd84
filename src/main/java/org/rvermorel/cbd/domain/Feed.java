@@ -9,9 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-
-import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 @Table(name = "feeds")
@@ -27,30 +24,36 @@ public class Feed implements Serializable {
 	@Column(name = "id_feed", unique = true, nullable = false)
 	private Long id;
 
-	@NotNull
-	@NotEmpty
+
 	private String title;
 
-	@NotNull
-	@NotEmpty
+	
 	@Column(length = 1024)
 	private String content;
 
+	@Column(name="creationDate", nullable=false)
 	private Date creationDate;
 
+	@Column(name="facebookLike")
 	private boolean facebookLike;
 
 	private boolean top;
 	
+	@Column(name="imageUrl")
 	private String imageUrl;
 	
+	
+	@Column(name="imageTitle")
 	private String imageTitle;
 
+	@Column(name="imagePosition")
 	private String imagePosition;
 	
+	
+	@Column(name="imageExtension")
 	private String imageExtension;
 
-	@NotNull
+	
 	private String author;
 
 	public Long getId() {

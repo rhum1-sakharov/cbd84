@@ -1,16 +1,8 @@
 package org.rvermorel.cbd.mvc;
 
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import javax.imageio.ImageIO;
-
-import org.apache.commons.fileupload.FileUploadBase.SizeLimitExceededException;
-import org.imgscalr.Scalr.Method;
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.images.IImageEnhancement;
@@ -100,11 +92,23 @@ public class FeedController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<String> update(@RequestBody final Feed feed) {
-		String responseMessage = "";
+		
 
 		feedDao.update(feed);
 
-		return new ResponseEntity<String>(responseMessage, null, HttpStatus.OK);
+		return new ResponseEntity<String>("feed updated", null, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/add", method = RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<Feed> add(@RequestBody final Feed feed) {
+	
+
+		feedDao.register(feed);		
+		feed.setImageUrl("feeds/"+feed.getId()+"/image/jpg");
+		feedDao.update(feed);
+
+		return new ResponseEntity<Feed>(feed, null, HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/delete/image/{id}", method = RequestMethod.GET)
