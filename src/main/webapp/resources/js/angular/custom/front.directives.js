@@ -1,27 +1,11 @@
-angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+angular.module('cbd.front.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
-.controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', 'cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter, cbdUtils) {
 
-	$scope.menu = {
-		id : 1
-	};
-
-	$scope.selectMenu = function(idMenu) {
-		$scope.menu.id = idMenu;
-		// cbdUtils.selectMenu(idMenu, $scope.menu.id)
-	};
-
-	$scope.isMenuSelected = function(idMenu) {
-		return (idMenu === $scope.menu.id);
-		// return cbdUtils.isMenuSelected(idMenu, $scope.menu.id);
-	};
-
-} ])
 
 .directive("calendar", function($timeout) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/calendar.html",
+		templateUrl : "resources/js/angular/custom/partials/front/calendar.html",
 		link : function(scope, element, attrs) {
 		}
 	};
@@ -30,7 +14,7 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 .directive("news", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/news.html",
+		templateUrl : "resources/js/angular/custom/partials/front/news.html",
 		link : function(scope, element, attrs) {
 
 			scope.feeds = [];
@@ -58,7 +42,7 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 .directive("partners", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/partners.html",
+		templateUrl : "resources/js/angular/custom/partials/front/partners.html",
 		link : function(scope, element, attrs) {
 
 			scope.partners = [];
@@ -76,12 +60,9 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 .directive("contacts", function($timeout) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/contacts.html",
+		templateUrl : "resources/js/angular/custom/partials/front/contacts.html",
 		link : function(scope, element, attrs) {
 		}
 	};
 })
-
-.run(function($http) {
-	// TODO call initControl method
-});
+;

@@ -142,7 +142,9 @@
 	<script type="text/javascript"
 		src="static/resources/js/angular/custom/utils.js"></script>
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/front.js"></script>
+		src="static/resources/js/angular/custom/front.controllers.js"></script>
+		<script type="text/javascript"
+		src="static/resources/js/angular/custom/front.directives.js"></script>
 
 </body>
 
