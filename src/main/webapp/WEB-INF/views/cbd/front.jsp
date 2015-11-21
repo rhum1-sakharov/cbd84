@@ -39,16 +39,23 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span>CBD Vaucluse</span></a>
+				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span><img
+						src="static/resources/images/logo-ffsb.png"></span><span><img
+						src="static/resources/images/logo-cbd84-35.png"></span><span>CBD
+						Vaucluse</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ng-class="{active:menu.id === 1}"><a href="#"
-						ng-click="selectMenu(1);">Accueil</a></li>
+						ng-click="selectMenu(1);">Actualit&#233;s</a></li>
 					<li ng-class="{active:menu.id === 2}"><a href="#"
 						ng-click="selectMenu(2);">Calendrier 2015/2016</a></li>
 					<li ng-class="{active:menu.id === 3}"><a href="#"
-						ng-click="selectMenu(3);">Contacts</a></li>
+						ng-click="selectMenu(3);">R&#233;sultats</a></li>
+					<li ng-class="{active:menu.id === 4}"><a href="#"
+						ng-click="selectMenu(4);">Asso sportives</a></li>
+					<li ng-class="{active:menu.id === 5}"><a href="#"
+						ng-click="selectMenu(5);">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -59,21 +66,13 @@
 
 	<div class="container">
 
-		<!-- <div class="row">
-			<div class="jumbotron">
-				<div class="container">
-					<h1>Hello, world!</h1>
-					<p>This is a template for a simple marketing or informational
-						website. It includes a large callout called a jumbotron and three
-						supporting pieces of content. Use it as a starting point to create
-						something more unique.</p>
-					<p>
-						<a class="btn btn-primary btn-lg" href="#" role="button">Learn
-							more &raquo;</a>
+		<!--  <div class="row">			
+				<div class="container">					
+					<span><img src="static/resources/images/logo-cbd84.png"></span>
+					<span><img src="static/resources/images/avignon-04.jpg"></span>
 					</p>
-				</div>
-			</div>
-		</div> -->
+				</div>			
+		</div>  -->
 
 		<!-- Example row of columns -->
 		<div class="row">
@@ -89,38 +88,19 @@
 				</div>
 
 			</div>
+		
 			<div class="col-md-4">
-				<div class="panel panel-default">
-					<div class="panel-heading">
-						<h3 class="panel-title">Partenaires</h3>
-					</div>
-					<div class="panel-body">
-						<div>
-							<a
-								href="http://www.ffsb.asso.fr/page.php?P=fo/public/menu/gestion_front/index&id=50"><div>Le
-									site de la FFSB</div> <img class="partners"
-								src="<c:url value="/static/resources/images/ffsb.jpg"/>"></a>
-						</div>
-						<div>
-							<a href="http://www.fiboules.org/"><div>Le site de la
-									FIB</div> <img class="partners"
-								src="<c:url value="/static/resources/images/fib.jpg"/>"></a>
-						</div>
-						<div>
-							<a href="http://cbdvar.blogspot.fr/"><div>Le CBD Var</div> <img
-								class="partners"
-								src="<c:url value="/static/resources/images/cbd-var.jpg"/>"></a>
-						</div>
-					</div>
-				</div>
+				<partners></partners>				
 			</div>
 		</div>
 
 		<hr>
 
 		<footer>
-			<span><img src="static/resources/images/logo.png"></span><span>&copy;
-				CBD Vaucluse - r&#233;alisation du site - Romain VERMOREL 2015</span>
+			
+			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
+				le CBD Vaucluse </span><span><img src="static/resources/images/logo-ffsb.png"></span><span><img
+				src="static/resources/images/logo-cbd84-35.png"></span>
 		</footer>
 	</div>
 	<!-- /container -->

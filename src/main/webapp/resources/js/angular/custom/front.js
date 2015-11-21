@@ -55,6 +55,24 @@ angular.module('cbdFrontModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbd
 	};
 })
 
+.directive("partners", function($timeout, $q, $http, $filter, cbdUtils) {
+	return {
+		restrict : 'E',
+		templateUrl : "resources/js/angular/custom/partials/partners.html",
+		link : function(scope, element, attrs) {
+
+			scope.partners = [];
+			var promiseStart = $q.when('start');
+			var promise1 = promiseStart.then(function(value) {
+				return $http.get('partners').then(function(response) {
+					scope.partners = response.data;
+					return response.data;
+				});
+			});			
+		}
+	};
+})
+
 .directive("contacts", function($timeout) {
 	return {
 		restrict : 'E',

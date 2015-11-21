@@ -6,15 +6,14 @@ import java.util.List;
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.images.IImageEnhancement;
+import org.rvermorel.cbd.jpa.FeedRepository;
 import org.rvermorel.cbd.repo.FeedDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,9 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-@Controller
+@RestController
 @RequestMapping(value = "/feeds")
 public class FeedController {
 
@@ -39,10 +39,13 @@ public class FeedController {
 	@Autowired
 	private FeedDao feedDao;
 
-	@RequestMapping(method = RequestMethod.GET, produces = { MediaType.APPLICATION_JSON_VALUE })
-	public @ResponseBody List<Feed> displaySortedFeeds() {
+	@Autowired
+	private FeedRepository feedRepo;
 
-		return feedDao.findAllOrderedByCreationDate();
+	@RequestMapping(method = RequestMethod.GET)
+	List<Feed>  displaySortedFeeds() {
+
+		return feedRepo.findAllOrderedByCreationDateAndTop();
 
 	}
 
@@ -54,7 +57,7 @@ public class FeedController {
 		HttpHeaders headers = new HttpHeaders();
 
 		try {
-			img = idatastore.getFeedContent(feed_id, feed_extension);
+			img = idatastore.getContent(feed_id, feed_extension, IDatastore.TYPE_FEEDS);
 			if (feed_extension.equals("jpg")) {
 				headers.set("Content-Type", "image/jpeg");
 			}
@@ -75,7 +78,7 @@ public class FeedController {
 				byte[] bytes = file.getBytes();
 
 				byte[] resized = iImageEnhancement.resizeImg(bytes, 256);
-				idatastore.writeFeedContent(resized, id, "jpg");
+				idatastore.writeContent(resized, id, "jpg", IDatastore.TYPE_FEEDS);
 				Feed feed = feedDao.findById(Long.valueOf(id));
 				feed.setImageUrl("feeds/" + id + "/image/jpg");
 				feedDao.update(feed);
@@ -92,20 +95,18 @@ public class FeedController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<String> update(@RequestBody final Feed feed) {
-		
 
 		feedDao.update(feed);
 
 		return new ResponseEntity<String>("feed updated", null, HttpStatus.OK);
 	}
-	
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@ResponseBody
 	public ResponseEntity<Feed> add(@RequestBody final Feed feed) {
-	
 
-		feedDao.register(feed);		
-		feed.setImageUrl("feeds/"+feed.getId()+"/image/jpg");
+		feedDao.register(feed);
+		feed.setImageUrl("feeds/" + feed.getId() + "/image/jpg");
 		feedDao.update(feed);
 
 		return new ResponseEntity<Feed>(feed, null, HttpStatus.OK);
@@ -119,7 +120,7 @@ public class FeedController {
 			Feed feed = feedDao.findById(Long.valueOf(id));
 			feed.setImageUrl(null);
 			feedDao.update(feed);
-			idatastore.deleteFeedContent(id, "jpg");
+			idatastore.deleteContent(id, "jpg", IDatastore.TYPE_FEEDS);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 			return new ResponseEntity<String>(e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR);

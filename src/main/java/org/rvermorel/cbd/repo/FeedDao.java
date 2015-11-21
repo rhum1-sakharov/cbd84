@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.rvermorel.cbd.domain.Feed;
 
+@Deprecated
 public interface FeedDao
 {
     public Feed findById(Long id);

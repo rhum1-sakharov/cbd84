@@ -21,7 +21,7 @@ import com.zaxxer.hikari.HikariDataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = {
-		"org.rvermorel.cbd.domain"
+		"org.rvermorel.cbd.jpa"
 })
 @PropertySource("classpath:config.properties")
 public class PersistenceContext {

@@ -5,10 +5,12 @@ import java.io.IOException;
 public interface IDatastore {
 	
 	public static final String TYPE_FEEDS = "feeds";
+	public static final String TYPE_PARTNERS = "partners";
 
-	public byte[] getFeedContent( String id, String extension) throws IOException;
-	public void deleteFeedContent( String id, String extension) throws IOException;
-	public void writeFeedContent(byte[] bytes,  String id, String extension) throws IOException ;
-	public String getFeedPath(  String id, String extension);
+	public byte[] getContent( String id, String extension, String type) throws IOException;
+	public void deleteContent( String id, String extension, String type) throws IOException;
+	public void writeContent(byte[] bytes,  String id, String extension, String type) throws IOException ;
+	
+	public String getPath(  String id, String extension, String type);
 
 }

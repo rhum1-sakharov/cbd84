@@ -15,31 +15,31 @@ public class DatastoreImpl implements IDatastore {
 	@Autowired
 	private CbdConfig cbdConfig;
 
-	public  String getFeedPath( String id, String extension) {
+	public  String getPath( String id, String extension, String type) {
 		String datastorePath = cbdConfig.getDatastorePath();
-		String rootPath = FilenameUtils.concat(datastorePath, IDatastore.TYPE_FEEDS);
+		String rootPath = FilenameUtils.concat(datastorePath, type);
 		return FilenameUtils.concat(rootPath, id + "." + extension);
 	}
 
 	@Override
-	public byte[] getFeedContent( String id, String extension) throws IOException {
+	public byte[] getContent( String id, String extension, String type) throws IOException {
 
-		String path = getFeedPath(id, extension);
+		String path = getPath(id, extension, type);
 		File file = new File(path);
 		return FileUtils.readFileToByteArray(file);
 	}
 
 	@Override
-	public void writeFeedContent(byte[] bytes,  String id, String extension) throws IOException {
-		String path = getFeedPath( id, extension);
+	public void writeContent(byte[] bytes,  String id, String extension, String type) throws IOException {
+		String path = getPath(id, extension, type);
 		File file = new File(path);
 		FileUtils.writeByteArrayToFile(file, bytes);
 
 	}
 
 	@Override
-	public void deleteFeedContent(String id, String extension) throws IOException {
-		String path = getFeedPath( id, extension);
+	public void deleteContent(String id, String extension, String type) throws IOException {
+		String path = getPath(id, extension, type);
 		File file = new File(path);
 		FileUtils.forceDelete(file);
 	}

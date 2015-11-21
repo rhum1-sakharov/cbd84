@@ -63,8 +63,8 @@ angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource',
 	return {
 		restrict : 'E',
 		templateUrl : "resources/js/angular/custom/partials/admin-feeds-update.html",
-		link : function(scope, element, attrs) {
-
+		link : function(scope, element, attrs) {			
+			
 			scope.buttonSubmit = {
 				disabled : false
 			};
@@ -77,9 +77,7 @@ angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource',
 
 				scope.buttonSubmit.disabled = true;
 				var promiseStart = $q.when('start');
-				var promise1 = promiseStart.then(function(value) {
-					
-					
+				var promise1 = promiseStart.then(function(value) {					
 
 					return $http.post('feeds/' + scope.mode, scope.feedSelected).then(function(response) {
 						scope.feedSelected = response.data;
