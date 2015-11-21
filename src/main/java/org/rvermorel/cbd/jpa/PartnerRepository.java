@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PartnerRepository extends BaseRepository<Partner, Long> {
 
-	@Query(value="SELECT * FROM partners p ORDER BY p.position asc", nativeQuery=true)
+	@Query(value="SELECT * FROM partners p ORDER BY p.position asc, p.title asc", nativeQuery=true)
 	public List<Partner> findAllOrderByPosition();
 	
 
