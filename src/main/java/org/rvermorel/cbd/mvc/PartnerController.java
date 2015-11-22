@@ -2,9 +2,7 @@ package org.rvermorel.cbd.mvc;
 
 import java.util.List;
 
-import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.domain.Partner;
-import org.rvermorel.cbd.images.IImageEnhancement;
 import org.rvermorel.cbd.jpa.PartnerRepositoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,8 +28,13 @@ public class PartnerController {
 	}
 	
 	@RequestMapping(value="/add",method = RequestMethod.POST)	
-	void  addPartner(@RequestBody final Partner partner) {
-		
+	Partner  addPartner(@RequestBody final Partner p) {
+		return partnerRepoService.addOrUpdatePartner(p);
+	}
+	
+	@RequestMapping(value="/update",method = RequestMethod.POST)	
+	Partner  updatePartner(@RequestBody final Partner p) {
+		return partnerRepoService.addOrUpdatePartner(p);
 	}
 	
 	@RequestMapping(value="/delete/{id}",method = RequestMethod.GET)	

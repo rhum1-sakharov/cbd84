@@ -4,6 +4,6 @@ import java.io.IOException;
 
 public interface IImageEnhancement {
 
-	public byte[] resizeImg(byte[] bytes, int width) throws IOException;
+	public byte[] resizeImg(byte[] bytes, int width, String imgExtension) throws IOException;
 	
 }

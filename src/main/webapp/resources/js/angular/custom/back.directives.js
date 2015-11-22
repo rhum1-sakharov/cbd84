@@ -1,9 +1,9 @@
-angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+angular.module('cbd.back.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
 .directive("adminFeeds", function($timeout, $q, $http, $filter, $sce,cbdUtils) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/admin-feeds.html",
+		templateUrl : "resources/js/angular/custom/partials/back/admin-feeds.html",
 		link : function(scope, element, attrs) {
 
 			scope.feeds = [];
@@ -62,7 +62,7 @@ angular.module('cbdAdminFeedsModule', [ 'ngAnimate', 'ngSanitize', 'ngResource',
 .directive("adminFeedsUpdate", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
-		templateUrl : "resources/js/angular/custom/partials/admin-feeds-update.html",
+		templateUrl : "resources/js/angular/custom/partials/back/admin-feeds-update.html",
 		link : function(scope, element, attrs) {			
 			
 			scope.buttonSubmit = {

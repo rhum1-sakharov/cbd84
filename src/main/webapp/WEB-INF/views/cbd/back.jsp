@@ -10,6 +10,8 @@
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css"
+	href="static/resources/js/angular-ui/vendor/ui-bootstrap-csp.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
 <link rel="stylesheet" type="text/css"
@@ -26,14 +28,19 @@
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
 </head>
+
+<!-- Angular UI  Vendor JavaScript
+    ================================================== -->
+
+<script type="text/javascript" src="static/resources/js/angular-ui/vendor/ui-bootstrap-tpls${minjs}.js"></script>
 
 <!-- Angular UI TinyMCE Vendor JavaScript
     ================================================== -->
@@ -78,12 +85,16 @@
 			<div ng-show="isMenuSelected(1)">
 				<admin-feeds></admin-feeds>
 			</div>
+			<div ng-show="isMenuSelected(2)">
+				<admin-partners></admin-partners>
+			</div>
 
 			<hr>
 
 			<footer>
-				<span><img src="static/resources/images/logo.png"></span><span>&copy;
-					CBD Vaucluse - r&#233;alisation du site - Romain VERMOREL 2015</span>
+				<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
+				le CBD Vaucluse </span><span><img src="static/resources/images/logo-ffsb.png"></span><span><img
+				src="static/resources/images/logo-cbd84-35.png"></span>
 			</footer>
 		</div>
 		<!-- /container -->
@@ -123,10 +134,15 @@
 			src="static/resources/js/angular/custom/app-back.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/utils.js"></script>
-			<script type="text/javascript"
-			src="static/resources/js/angular/custom/admin-feeds.js"></script>
+			
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back.js"></script>
+			src="static/resources/js/angular/custom/back.controllers.js"></script>
+				<script type="text/javascript"
+			src="static/resources/js/angular/custom/back.directives.js"></script>
+				<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>
+				<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/partners/back.partners.directives.js"></script>
 </body>
 
 </html>

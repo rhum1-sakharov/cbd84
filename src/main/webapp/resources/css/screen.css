@@ -23,6 +23,12 @@ img.partner-css {
 	height: 60px;
 }
 
+img.admin-partner-thumb{
+	width: 100px;
+	height: 30px;
+}
+
+
 img.calendar-sheets {
 	width: 100%;
 }
@@ -56,4 +62,12 @@ Original Bootstrap's CSS depends on empty href attributes to style cursors for s
 */
 .nav, .pagination, .carousel, .panel-title a {
 	cursor: pointer;
+}
+
+.ng-invalid.ng-dirty{
+	border-color : #FA787E;
+}
+
+.ng-valid.ng-dirty{
+	border-color : #78FA89;
 }

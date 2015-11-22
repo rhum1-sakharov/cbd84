@@ -77,7 +77,7 @@ public class FeedController {
 			try {
 				byte[] bytes = file.getBytes();
 
-				byte[] resized = iImageEnhancement.resizeImg(bytes, 256);
+				byte[] resized = iImageEnhancement.resizeImg(bytes, 256, "jpg");
 				idatastore.writeContent(resized, id, "jpg", IDatastore.TYPE_FEEDS);
 				Feed feed = feedDao.findById(Long.valueOf(id));
 				feed.setImageUrl("feeds/" + id + "/image/jpg");

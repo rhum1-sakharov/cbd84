@@ -17,13 +17,13 @@
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource.js"></script>
+	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
 </head>
 
 <body role="document">

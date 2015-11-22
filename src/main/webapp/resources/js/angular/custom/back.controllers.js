@@ -1,4 +1,4 @@
-angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+angular.module('cbd.back.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
 .controller('CbdBackCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', 'cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter, cbdUtils) {
 
@@ -7,7 +7,7 @@ angular.module('cbdBackModule', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdU
 	};
 	
 	$scope.menu = {
-		id : 1
+		id : 2
 	};
 
 	$scope.selectMenu = function(idMenu) {
