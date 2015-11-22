@@ -69,8 +69,10 @@
 						ng-click="selectMenu(1);">Actualit&#233;s</a></li>
 					<li ng-class="{active:menu.id === 2}"><a href="#"
 						ng-click="selectMenu(2);">Partenaires</a></li>
-					<li ng-class="{active:menu.id === 3}"><a href="#"
-						ng-click="selectMenu(3);">Contacts</a></li>
+						<li ng-class="{active:menu.id === 3}"><a href="#"
+						ng-click="selectMenu(3);">Asso Sportives</a></li>
+					<li ng-class="{active:menu.id === 4}"><a href="#"
+						ng-click="selectMenu(4);">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

@@ -11,51 +11,67 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.addPartnerImage = {};
+	$scope.addPartnerImage = {
+		error : 'pristine'
+		
+	};
+
+	$scope.$watch('addPartnerImage', function(newVal, oldVal) {
+		var mimetype = 'image/jpeg';
+	
+		if (newVal.type) {
+			
+			if (mimetype != newVal.type) {
+				newVal.error = 'L\'image doit etre au format jpeg';
+			} else {
+				newVal.error = '';
+			}
+		}
+	});
 
 	$scope.ok = function() {
 
-		$scope.loading = true;
-		var promiseStart = $q.when('start');
-		var promise1 = promiseStart.then(function(value) {
-
-			return $http.post('partners/add', $scope.partner).then(function(response) {
-				$scope.partner = response.data;
-				return response.data;
-			});
-		});
-
-		var promise2 = promise1.then(function(response) {
-
-			if($scope.addPartnerImage.type){
-			var fd = new FormData();
-			fd.append('file', $scope.addPartnerImage);
-			var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
-			return $http.post(url, fd, {
-				transformRequest : angular.identity,
-				headers : {
-					'Content-Type' : undefined
-				}
-			})
-			}else{
-				return response;
-			}
-
-		});
-
-		var promiseEnd = promise2.then(function(result) {
-			$scope.loading = false;
-			partners.push($scope.partner);
-			$uibModalInstance.close(partners);
-			$scope.serverError = '';
-
-			return result;
-		}, function(reason) {
-			$scope.loading = false;
-			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
+		if($scope.addPartnerImage.error === 'pristine'){
+			$scope.addPartnerImage.error = 'Une image doit etre selectionnee !';
 			
-			return $q.reject(reason);
-		});
+		}else if ($scope.addPartnerImage.error === ''  ) {
+			$scope.loading = true;
+			var promiseStart = $q.when('start');
+			var promise1 = promiseStart.then(function(value) {
+
+				return $http.post('partners/add', $scope.partner).then(function(response) {
+					$scope.partner = response.data;
+					return response.data;
+				});
+			});
+
+			var promise2 = promise1.then(function(response) {
+				var fd = new FormData();
+				fd.append('file', $scope.addPartnerImage);
+				var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
+				return $http.post(url, fd, {
+					transformRequest : angular.identity,
+					headers : {
+						'Content-Type' : undefined
+					}
+				})
+
+			});
+
+			var promiseEnd = promise2.then(function(result) {
+				$scope.loading = false;
+				partners.push($scope.partner);
+				$uibModalInstance.close(partners);
+				$scope.serverError = '';
+
+				return result;
+			}, function(reason) {
+				$scope.loading = false;
+				$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
+
+				return $q.reject(reason);
+			});
+		}
 
 	};
 
@@ -154,15 +170,15 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'partners/delete/'+$scope.partner.id+'/jpg';
+			var url = 'partners/delete/' + $scope.partner.id + '/jpg';
 			return $http.get(url).then(function(response) {
-				
+
 				return response.data;
 			});
-		});	
+		});
 
 		var promiseEnd = promise1.then(function(result) {
-			$scope.loading = false;			
+			$scope.loading = false;
 			$uibModalInstance.close(partner);
 			$scope.serverError = '';
 

@@ -32,8 +32,11 @@
 
 		<div class="form-group">
 			<label for="imageFile" class="col-sm-3 control-label">Image</label>
-			<div class="col-sm-9">
-				<input type="file" name="imageFile" file-model="addPartnerImage">
+			<div class="col-sm-9" ng-class="{'has-error':formPartner.imageFile.$invalid && !formPartner.imageFile.$pristine}">
+				<input type="file" name="imageFile" file-model="addPartnerImage" required>
+				<p
+					ng-show="addPartnerImage.error != '' && addPartnerImage.error!='pristine' "
+					class="help-block" ng-bind-html="addPartnerImage.error"></p>
 			</div>
 		</div>
 
