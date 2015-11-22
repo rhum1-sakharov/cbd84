@@ -40,10 +40,11 @@ public class PartnerRepositoryService {
 	public void deletePartner(String id, String imgExtension) {
 		try {
 			datastore.deleteContent(id, imgExtension, "partners");
-			partnerRepo.delete(Long.valueOf(id));
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 		}
+			partnerRepo.delete(Long.valueOf(id));
+		
 
 	}
 

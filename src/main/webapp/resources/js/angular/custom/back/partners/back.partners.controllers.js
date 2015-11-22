@@ -11,7 +11,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.addPartnerImage = '';
+	$scope.addPartnerImage = {};
 
 	$scope.ok = function() {
 
@@ -27,6 +27,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 		var promise2 = promise1.then(function(response) {
 
+			if($scope.addPartnerImage.type){
 			var fd = new FormData();
 			fd.append('file', $scope.addPartnerImage);
 			var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
@@ -36,6 +37,9 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 					'Content-Type' : undefined
 				}
 			})
+			}else{
+				return response;
+			}
 
 		});
 
@@ -49,7 +53,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			$uibModalInstance.close(partners);
+			
 			return $q.reject(reason);
 		});
 
