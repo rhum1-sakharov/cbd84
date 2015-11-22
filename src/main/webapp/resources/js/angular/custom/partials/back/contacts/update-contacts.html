@@ -1,0 +1,67 @@
+
+<div class="modal-header">
+	<h3 class="modal-title">Modifier un partenaire</h3>
+</div>
+<form novalidate name="formPartner" class="form-horizontal" role="form"
+	ng-submit="formPartner.$valid && ok()">
+	<div class="modal-body">
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Titre</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formPartner.title.$invalid && !formPartner.title.$pristine}">
+				<input id="title" ng-model="partner.title" type="text" name="title"
+					size="60" required>
+				<p
+					ng-show="formPartner.title.$invalid && !formPartner.title.$pristine"
+					class="help-block">Veuillez saisir un titre</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="urlLink" class="col-sm-3 control-label">Lien</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formPartner.urlLink.$invalid && !formPartner.urlLink.$pristine}">
+				<input id="urlLink" ng-model="partner.urlLink" type="url"
+					name="urlLink" size="60" required>
+				<p
+					ng-show="formPartner.urlLink.$invalid && !formPartner.urlLink.$pristine"
+					class="help-block">Veuillez saisir un lien au format
+					http://www.example.com</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="imageFile" class="col-sm-3 control-label">Image</label>
+			<div class="col-sm-9">
+				<input type="file" name="imageFile" file-model="updatePartnerImage">
+				<img class="admin-partner-thumb" ng-src="{{partner.imageUrl}}">
+				<p
+					ng-show="updatePartnerImage.error != ''"
+					class="help-block" ng-bind-html="updatePartnerImage.error"></p>					
+			</div>
+			
+		</div>
+
+		<div class="form-group">
+			<label for="position" class="col-sm-3 control-label">Position</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formPartner.position.$invalid && !formPartner.position.$pristine}">
+				<input id="position" ng-model="partner.position" type="number"
+					name="position" size="5" required>
+				<p
+					ng-show="formPartner.position.$invalid && !formPartner.position.$pristine"
+					class="help-block">Veuilez saisir un chiffre. Cela permet de
+					d&#233;finir l'ordre d'affichage dans la liste des partenaires</p>
+			</div>
+		</div>
+
+		<p
+			ng-show="serverError != ''"
+			class="help-block" ng-bind-html='serverError'></p>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-disabled='loading'>OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Fermer</button>
+	</div>
+</form>

@@ -1,0 +1,36 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des contacts <span><button
+					class="btn btn-success btn-sm"
+					 ng-click="openAddContact('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un membre du CBD
+				</button></span>			
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Fonction</th>
+				<th>Pr&#233;nom/Nom</th>
+				<th>Adresse Postale</th>
+				<th>T&#233;l&#233;phone Fixe</th>
+				<th>T&#233;l&#233;phone Mobile</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="contact in contacts">
+			<td ng-bind="contact.function"></td>
+			<td ng-bind="contact.fullname">
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdateContact('lg', contact)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteContact('lg', contact)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

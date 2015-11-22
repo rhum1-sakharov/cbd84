@@ -71,8 +71,12 @@
 						ng-click="selectMenu(2);">Partenaires</a></li>
 						<li ng-class="{active:menu.id === 3}"><a href="#"
 						ng-click="selectMenu(3);">Asso Sportives</a></li>
-					<li ng-class="{active:menu.id === 4}"><a href="#"
-						ng-click="selectMenu(4);">Contacts</a></li>
+						<li ng-class="{active:menu.id === 4}"><a href="#"
+						ng-click="selectMenu(4);">Calendrier</a></li>
+						<li ng-class="{active:menu.id === 5}"><a href="#"
+						ng-click="selectMenu(5);">R&#233;sultats</a></li>
+					<li ng-class="{active:menu.id === 6}"><a href="#"
+						ng-click="selectMenu(6);">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -89,6 +93,9 @@
 			</div>
 			<div ng-show="isMenuSelected(2)">
 				<admin-partners></admin-partners>
+			</div>
+			<div ng-show="isMenuSelected(6)">
+				<admin-contacts></admin-contacts>
 			</div>
 
 			<hr>
@@ -145,6 +152,10 @@
 			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>
 				<script type="text/javascript"
 			src="static/resources/js/angular/custom/back/partners/back.partners.directives.js"></script>
+			<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>
+				<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/contacts/back.contacts.directives.js"></script>
 </body>
 
 </html>

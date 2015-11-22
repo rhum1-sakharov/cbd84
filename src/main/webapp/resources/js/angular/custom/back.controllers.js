@@ -7,7 +7,7 @@ angular.module('cbd.back.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource'
 	};
 	
 	$scope.menu = {
-		id : 2
+		id : 6
 	};
 
 	$scope.selectMenu = function(idMenu) {
