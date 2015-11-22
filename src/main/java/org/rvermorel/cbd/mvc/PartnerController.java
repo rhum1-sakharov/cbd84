@@ -37,9 +37,9 @@ public class PartnerController {
 		return partnerRepoService.addOrUpdatePartner(p);
 	}
 	
-	@RequestMapping(value="/delete/{id}",method = RequestMethod.GET)	
-	void  deletePartner(@PathVariable String id) {
-		
+	@RequestMapping(value="/delete/{id}/{imgExtension}",method = RequestMethod.GET)	
+	void  deletePartner(@PathVariable String id,@PathVariable String imgExtension) {
+		partnerRepoService.deletePartner(id, imgExtension);
 	}
 
 

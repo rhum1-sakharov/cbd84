@@ -12,6 +12,10 @@
 
 
 	<context:component-scan base-package="org.rvermorel.cbd.jpa" />
+	
+	<context:component-scan base-package="org.rvermorel.cbd.datastore" />
+	
+	<context:component-scan base-package="org.rvermorel.cbd.config" />
 
 	<context:component-scan base-package="org.rvermorel.cbd.domain" />
 

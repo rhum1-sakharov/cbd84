@@ -1,4 +1,4 @@
-angular.module('cbd.back.partners.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule','ui.bootstrap'  ])
+angular.module('cbd.back.partners.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule', 'ui.bootstrap' ])
 
 .directive("adminPartners", function($log, $uibModal, $timeout, $q, $http, $filter, $sce, cbdUtils) {
 	return {
@@ -8,7 +8,7 @@ angular.module('cbd.back.partners.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 
 			scope.partners = [];
 			scope.partner = {};
-		
+
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 				return $http.get('partners').then(function(response) {
@@ -38,8 +38,8 @@ angular.module('cbd.back.partners.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 				}, function() {
 					$log.info('Modal dismissed at: ' + new Date());
 				});
-			};	
-			
+			};
+
 			scope.openUpdatePartner = function(size, selectedPartner) {
 				scope.partner = selectedPartner;
 				var modalInstance = $uibModal.open({
@@ -56,6 +56,30 @@ angular.module('cbd.back.partners.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 
 				modalInstance.result.then(function(selectedItem) {
 					scope.partner = selectedItem;
+				}, function() {
+					$log.info('Modal dismissed at: ' + new Date());
+				});
+			};
+
+			scope.openDeletePartner = function(size, selectedPartner) {
+				scope.partner = selectedPartner;
+				var modalInstance = $uibModal.open({
+					animation : scope.animationsEnabled,
+					templateUrl : 'resources/js/angular/custom/partials/back/partners/delete-partners.html',
+					controller : 'DeletePartnerModalInstanceCtrl',
+					size : size,
+					resolve : {
+						partner : function() {
+							return scope.partner;
+						}
+					}
+				});
+
+				modalInstance.result.then(function(selectedItem) {
+
+					var index = scope.partners.indexOf(selectedItem);
+					scope.partners.splice(index, 1);
+
 				}, function() {
 					$log.info('Modal dismissed at: ' + new Date());
 				});
