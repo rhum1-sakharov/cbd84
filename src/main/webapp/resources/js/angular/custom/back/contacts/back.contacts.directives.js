@@ -62,7 +62,7 @@ angular.module('cbd.back.contacts.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 			};
 
 			scope.openDeleteContact = function(size, selectedContact) {
-				scope.partner = selectedPartner;
+				scope.contact = selectedContact;
 				var modalInstance = $uibModal.open({
 					animation : scope.animationsEnabled,
 					templateUrl : 'resources/js/angular/custom/partials/back/contacts/delete-contacts.html',

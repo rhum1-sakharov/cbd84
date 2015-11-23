@@ -101,7 +101,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/contacts/jpg/256/' + $scope.partner.id;
+					var url = 'images/add/contacts/jpg/128/' + $scope.partner.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -157,17 +157,17 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 } ])
 
-.controller('DeleteContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partner', function($scope, $http, $q, $uibModalInstance, partner) {
+.controller('DeleteContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contact', function($scope, $http, $q, $uibModalInstance, contact) {
 
 	$scope.loading = false;
-	$scope.partner = partner;
+	$scope.contact = contact;
 	$scope.ok = function() {
 
 		$scope.loading = true;
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'contacts/delete/' + $scope.partner.id + '/jpg';
+			var url = 'contacts/delete/' + $scope.contact.id + '/jpg';
 			return $http.get(url).then(function(response) {
 
 				return response.data;
@@ -176,14 +176,14 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 		var promiseEnd = promise1.then(function(result) {
 			$scope.loading = false;
-			$uibModalInstance.close(partner);
+			$uibModalInstance.close(contact);
 			$scope.serverError = '';
 
 			return result;
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			$uibModalInstance.close(partner);
+			$uibModalInstance.close(contact);
 			return $q.reject(reason);
 		});
 
