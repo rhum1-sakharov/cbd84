@@ -39,7 +39,7 @@ public class PartnerRepositoryService {
 	@Transactional
 	public void deletePartner(String id, String imgExtension) {
 		try {
-			datastore.deleteContent(id, imgExtension, "partners");
+			datastore.deleteContent(id, imgExtension, IDatastore.TYPE_PARTNERS);
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 		}

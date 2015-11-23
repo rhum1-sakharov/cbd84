@@ -2,16 +2,16 @@ package org.rvermorel.cbd.repo;
 
 import java.util.List;
 
-import org.rvermorel.cbd.domain.Member;
+import org.rvermorel.cbd.domain.Contact;
 
 @Deprecated
 public interface MemberDao
 {
-    public Member findById(Long id);
+    public Contact findById(Long id);
 
-    public Member findByEmail(String email);
+    public Contact findByEmail(String email);
 
-    public List<Member> findAllOrderedByName();
+    public List<Contact> findAllOrderedByName();
 
-    public void register(Member member);
+    public void register(Contact member);
 }

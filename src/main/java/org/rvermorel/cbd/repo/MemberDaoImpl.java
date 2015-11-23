@@ -7,7 +7,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
-import org.rvermorel.cbd.domain.Member;
+import org.rvermorel.cbd.domain.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,16 +19,16 @@ public class MemberDaoImpl implements MemberDao
     @Autowired
     private EntityManager em;
 
-    public Member findById(Long id)
+    public Contact findById(Long id)
     {
-        return em.find(Member.class, id);
+        return em.find(Contact.class, id);
     }
 
-    public Member findByEmail(String email)
+    public Contact findByEmail(String email)
     {
         CriteriaBuilder builder = em.getCriteriaBuilder();
-        CriteriaQuery<Member> criteria = builder.createQuery(Member.class);
-        Root<Member> member = criteria.from(Member.class);
+        CriteriaQuery<Contact> criteria = builder.createQuery(Contact.class);
+        Root<Contact> member = criteria.from(Contact.class);
 
         /*
          * Swap criteria statements if you would like to try out type-safe criteria queries, a new
@@ -39,11 +39,11 @@ public class MemberDaoImpl implements MemberDao
         return em.createQuery(criteria).getSingleResult();
     }
 
-    public List<Member> findAllOrderedByName()
+    public List<Contact> findAllOrderedByName()
     {
         CriteriaBuilder cb = em.getCriteriaBuilder();
-        CriteriaQuery<Member> criteria = cb.createQuery(Member.class);
-        Root<Member> member = criteria.from(Member.class);
+        CriteriaQuery<Contact> criteria = cb.createQuery(Contact.class);
+        Root<Contact> member = criteria.from(Contact.class);
 
         /*
          * Swap criteria statements if you would like to try out type-safe criteria queries, a new
@@ -54,7 +54,7 @@ public class MemberDaoImpl implements MemberDao
         return em.createQuery(criteria).getResultList();
     }
 
-    public void register(Member member)
+    public void register(Contact member)
     {
         em.persist(member);
         return;

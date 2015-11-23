@@ -1,26 +1,23 @@
 angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap' ])
 
-.controller('AddPartnerModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partners', function($scope, $http, $q, $uibModalInstance, partners) {
+.controller('AddContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contacts', function($scope, $http, $q, $uibModalInstance, contacts) {
 
-	$scope.partner = {
-		title : '',
-		imageUrl : '',
-		position : 1,
-		urlLink : ''
+	$scope.contact = {
+		position : 1
 	};
 
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.addPartnerImage = {
+	$scope.addContactImage = {
 		error : 'pristine'
-		
+
 	};
 
-	$scope.$watch('addPartnerImage', function(newVal, oldVal) {
+	$scope.$watch('addContactImage', function(newVal, oldVal) {
 		var mimetype = 'image/jpeg';
-	
+
 		if (newVal.type) {
-			
+
 			if (mimetype != newVal.type) {
 				newVal.error = 'L\'image doit etre au format jpeg';
 			} else {
@@ -31,24 +28,24 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 	$scope.ok = function() {
 
-		if($scope.addPartnerImage.error === 'pristine'){
-			$scope.addPartnerImage.error = 'Une image doit etre selectionnee !';
-			
-		}else if ($scope.addPartnerImage.error === ''  ) {
+		if ($scope.addContactImage.error === 'pristine') {
+			$scope.addContactImage.error = 'Une image doit etre selectionnee !';
+
+		} else if ($scope.addContactImage.error === '') {
 			$scope.loading = true;
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 
-				return $http.post('partners/add', $scope.partner).then(function(response) {
-					$scope.partner = response.data;
+				return $http.post('contacts/add', $scope.contact).then(function(response) {
+					$scope.contact = response.data;
 					return response.data;
 				});
 			});
 
 			var promise2 = promise1.then(function(response) {
 				var fd = new FormData();
-				fd.append('file', $scope.addPartnerImage);
-				var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
+				fd.append('file', $scope.addContactImage);
+				var url = 'images/add/contacts/jpg/256/' + $scope.contact.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -60,8 +57,8 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 			var promiseEnd = promise2.then(function(result) {
 				$scope.loading = false;
-				partners.push($scope.partner);
-				$uibModalInstance.close(partners);
+				contacts.push($scope.contact);
+				$uibModalInstance.close(contacts);
 				$scope.serverError = '';
 
 				return result;
@@ -81,16 +78,16 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 } ])
 
-.controller('UpdatePartnerModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partner', function($scope, $http, $q, $uibModalInstance, partner) {
+.controller('UpdateContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contact', function($scope, $http, $q, $uibModalInstance, partner) {
 
-	$scope.partner = partner;
+	$scope.contact = contact;
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.updatePartnerImage = {
+	$scope.updateContactImage = {
 		error : ''
 	};
 
-	$scope.$watch('updatePartnerImage', function(newVal, oldVal) {
+	$scope.$watch('updateContactImage', function(newVal, oldVal) {
 		var mimetype = 'image/jpeg';
 
 		if (newVal.type) {
@@ -104,7 +101,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
+					var url = 'images/add/contacts/jpg/256/' + $scope.partner.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -134,7 +131,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('partners/update', $scope.partner).then(function(response) {
+			return $http.post('contacts/update', $scope.partner).then(function(response) {
 				$scope.partner = response.data;
 				return response.data;
 			});
@@ -160,7 +157,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 } ])
 
-.controller('DeletePartnerModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partner', function($scope, $http, $q, $uibModalInstance, partner) {
+.controller('DeleteContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partner', function($scope, $http, $q, $uibModalInstance, partner) {
 
 	$scope.loading = false;
 	$scope.partner = partner;
@@ -170,7 +167,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'partners/delete/' + $scope.partner.id + '/jpg';
+			var url = 'contacts/delete/' + $scope.partner.id + '/jpg';
 			return $http.get(url).then(function(response) {
 
 				return response.data;

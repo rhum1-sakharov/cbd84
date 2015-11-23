@@ -18,12 +18,21 @@
 				<th>T&#233;l&#233;phone Fixe</th>
 				<th>T&#233;l&#233;phone Mobile</th>
 				<th>Email</th>
+				<th>Photo</th>
+				<th>Ordre</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 
 		<tr ng-repeat="contact in contacts">
-			<td ng-bind="contact.function"></td>
-			<td ng-bind="contact.fullname">
+			<td ng-bind-html="contact.function"></td>
+			<td><span ng-bind-html="contact.firstname"></span> <span ng-bind-html="contact.lastname"></span></td>
+			<td><span ng-bind-html="contact.address"></span> <br> <span ng-bind-html="contact.postalCode"></span> <br> <span ng-bind-html="contact.city"></span></td>
+			<td ng-bind-html="contact.phone"></td>
+			<td ng-bind-html="contact.mobile"></td>
+			<td ng-bind-html="contact.email"></td>
+			<td><img class="admin-contact-thumb" ng-src="{{contact.photoUrl}}"></td>
+			<td ng-bind-html="contact.position"></td>
 			<td><span><button class="btn btn-success btn-sm"
 						ng-click="openUpdateContact('lg', contact)">
 						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier

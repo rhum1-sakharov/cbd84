@@ -23,9 +23,20 @@ img.partner-css {
 	height: 60px;
 }
 
+img.contact-portrait {
+	float :right;
+}
+
+
 img.admin-partner-thumb{
 	width: 100px;
 	height: 30px;
+}
+
+
+img.admin-contact-thumb{
+	width: 70px;
+	height: 70px;
 }
 
 

@@ -6,13 +6,13 @@ angular.module('cbd.back.contacts.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 		templateUrl : "resources/js/angular/custom/partials/back/contacts/admin-contacts.html",
 		link : function(scope, element, attrs) {
 
-			scope.partners = [];
-			scope.partner = {};
+			scope.contacts = [];
+			scope.contact = {};
 
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
-				return $http.get('partners').then(function(response) {
-					scope.partners = response.data;
+				return $http.get('contacts').then(function(response) {
+					scope.contacts = response.data;
 					return response.data;
 				});
 			});
@@ -27,41 +27,41 @@ angular.module('cbd.back.contacts.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 					controller : 'AddContactModalInstanceCtrl',
 					size : size,
 					resolve : {
-						partners : function() {
-							return scope.partners;
+						contacts : function() {
+							return scope.contacts;
 						}
 					}
 				});
 
-				modalInstance.result.then(function(partners) {
-					scope.partners = partners;
+				modalInstance.result.then(function(contacts) {
+					scope.contacts = contacts;
 				}, function() {
 					$log.info('Modal dismissed at: ' + new Date());
 				});
 			};
 
-			scope.openUpdateContact = function(size, selectedPartner) {
-				scope.partner = selectedPartner;
+			scope.openUpdateContact = function(size, selectedContact) {
+				scope.contact = selectedContact;
 				var modalInstance = $uibModal.open({
 					animation : scope.animationsEnabled,
 					templateUrl : 'resources/js/angular/custom/partials/back/contacts/update-contacts.html',
 					controller : 'UpdateContactModalInstanceCtrl',
 					size : size,
 					resolve : {
-						partner : function() {
-							return scope.partner;
+						contact : function() {
+							return scope.contact;
 						}
 					}
 				});
 
 				modalInstance.result.then(function(selectedItem) {
-					scope.partner = selectedItem;
+					scope.contact = selectedItem;
 				}, function() {
 					$log.info('Modal dismissed at: ' + new Date());
 				});
 			};
 
-			scope.openDeleteContact = function(size, selectedPartner) {
+			scope.openDeleteContact = function(size, selectedContact) {
 				scope.partner = selectedPartner;
 				var modalInstance = $uibModal.open({
 					animation : scope.animationsEnabled,
@@ -69,16 +69,16 @@ angular.module('cbd.back.contacts.directives', [ 'ngAnimate', 'ngSanitize', 'ngR
 					controller : 'DeleteContactModalInstanceCtrl',
 					size : size,
 					resolve : {
-						partner : function() {
-							return scope.partner;
+						contact : function() {
+							return scope.contact;
 						}
 					}
 				});
 
 				modalInstance.result.then(function(selectedItem) {
 
-					var index = scope.partners.indexOf(selectedItem);
-					scope.partners.splice(index, 1);
+					var index = scope.contacts.indexOf(selectedItem);
+					scope.contacts.splice(index, 1);
 
 				}, function() {
 					$log.info('Modal dismissed at: ' + new Date());

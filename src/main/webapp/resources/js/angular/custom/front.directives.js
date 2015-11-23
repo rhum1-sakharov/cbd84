@@ -57,11 +57,20 @@ angular.module('cbd.front.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource'
 	};
 })
 
-.directive("contacts", function($timeout) {
+.directive("contacts", function($timeout, $q, $http, $filter, cbdUtils) {
 	return {
 		restrict : 'E',
 		templateUrl : "resources/js/angular/custom/partials/front/contacts.html",
 		link : function(scope, element, attrs) {
+			
+			scope.contacts = [];
+			var promiseStart = $q.when('start');
+			var promise1 = promiseStart.then(function(value) {
+				return $http.get('contacts').then(function(response) {
+					scope.contacts = response.data;
+					return response.data;
+				});
+			});	
 		}
 	};
 })

@@ -4,7 +4,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
-import org.rvermorel.cbd.domain.Member;
+import org.rvermorel.cbd.domain.Contact;
 import org.rvermorel.cbd.repo.MemberDao;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -27,7 +27,7 @@ public class MemberDaoTest
     @Test
     public void testFindById()
     {
-        Member member = memberDao.findById(0l);
+        Contact member = memberDao.findById(0l);
 
         Assert.assertEquals("John Smith", member.getName());
         Assert.assertEquals("john.smith@mailinator.com", member.getEmail());
@@ -38,7 +38,7 @@ public class MemberDaoTest
     @Test
     public void testFindByEmail()
     {
-        Member member = memberDao.findByEmail("john.smith@mailinator.com");
+        Contact member = memberDao.findByEmail("john.smith@mailinator.com");
 
         Assert.assertEquals("John Smith", member.getName());
         Assert.assertEquals("john.smith@mailinator.com", member.getEmail());
@@ -49,7 +49,7 @@ public class MemberDaoTest
     @Test
     public void testRegister()
     {
-        Member member = new Member();
+        Contact member = new Contact();
         member.setEmail("jane.doe@mailinator.com");
         member.setName("Jane Doe");
         member.setPhoneNumber("2125552121");
@@ -59,7 +59,7 @@ public class MemberDaoTest
         Assert.assertNotNull(id);
         
         Assert.assertEquals(2, memberDao.findAllOrderedByName().size());
-        Member newMember = memberDao.findById(id);
+        Contact newMember = memberDao.findById(id);
 
         Assert.assertEquals("Jane Doe", newMember.getName());
         Assert.assertEquals("jane.doe@mailinator.com", newMember.getEmail());
@@ -70,15 +70,15 @@ public class MemberDaoTest
     @Test
     public void testFindAllOrderedByName()
     {
-        Member member = new Member();
+        Contact member = new Contact();
         member.setEmail("jane.doe@mailinator.com");
         member.setName("Jane Doe");
         member.setPhoneNumber("2125552121");
         memberDao.register(member);
 
-        List<Member> members = memberDao.findAllOrderedByName();
+        List<Contact> members = memberDao.findAllOrderedByName();
         Assert.assertEquals(2, members.size());
-        Member newMember = members.get(0);
+        Contact newMember = members.get(0);
 
         Assert.assertEquals("Jane Doe", newMember.getName());
         Assert.assertEquals("jane.doe@mailinator.com", newMember.getEmail());
