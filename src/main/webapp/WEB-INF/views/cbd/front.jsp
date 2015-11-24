@@ -83,6 +83,9 @@
 				<div ng-show="isMenuSelected(2)">
 					<calendar></calendar>
 				</div>
+				<div ng-show="isMenuSelected(4)">
+					<assos></assos>
+				</div>
 				<div ng-show="isMenuSelected(5)">
 					<contacts></contacts>
 				</div>

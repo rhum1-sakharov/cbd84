@@ -23,11 +23,12 @@ img.partner-css {
 	height: 60px;
 }
 
-img.contact-portrait {
+img.contact-portrait, img.asso-portrait {
 	float :right;
 	width: 128px;
 	height: 128px;
 }
+
 
 
 img.admin-partner-thumb{

@@ -29,6 +29,10 @@ public class ContactRepositoryService {
 	public List<Contact> findPersonMembersOrderByPosition() {
 		return contactRepo.findPersonMembersOrderByPosition();
 	}
+	
+	public List<Contact> findAssoMembersOrderByPosition() {
+		return contactRepo.findAssoMembersOrderByPosition();
+	}
 
 	public Contact addOrUpdateContact(Contact c, String type) {
 

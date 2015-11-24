@@ -94,6 +94,9 @@
 			<div ng-show="isMenuSelected(2)">
 				<admin-partners></admin-partners>
 			</div>
+			<div ng-show="isMenuSelected(3)">
+				<admin-assos></admin-assos>
+			</div>
 			<div ng-show="isMenuSelected(6)">
 				<admin-contacts></admin-contacts>
 			</div>
@@ -156,6 +159,10 @@
 			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>
 				<script type="text/javascript"
 			src="static/resources/js/angular/custom/back/contacts/back.contacts.directives.js"></script>
+			<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>
+				<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/assos/back.assos.directives.js"></script>
 </body>
 
 </html>

@@ -59,6 +59,12 @@ public class Contact implements Serializable {
 	@Column(name = "type")
 	private String type;
 	
+	@Column(name = "assoCodeLabel")
+	private String assoCodeLabel;
+	
+	@Column(name = "assoName")
+	private String assoName;
+	
 	@Column(name = "position")
 	private int position;
 
@@ -164,6 +170,22 @@ public class Contact implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getAssoCodeLabel() {
+		return assoCodeLabel;
+	}
+
+	public void setAssoCodeLabel(String assoCodeLabel) {
+		this.assoCodeLabel = assoCodeLabel;
+	}
+
+	public String getAssoName() {
+		return assoName;
+	}
+
+	public void setAssoName(String assoName) {
+		this.assoName = assoName;
 	}
 	
 }

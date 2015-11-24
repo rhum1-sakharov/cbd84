@@ -74,4 +74,22 @@ angular.module('cbd.front.directives', [ 'ngAnimate', 'ngSanitize', 'ngResource'
 		}
 	};
 })
+
+.directive("assos", function($timeout, $q, $http, $filter, cbdUtils) {
+	return {
+		restrict : 'E',
+		templateUrl : "resources/js/angular/custom/partials/front/assos.html",
+		link : function(scope, element, attrs) {
+			
+			scope.assos = [];
+			var promiseStart = $q.when('start');
+			var promise1 = promiseStart.then(function(value) {
+				return $http.get('assos').then(function(response) {
+					scope.assos = response.data;
+					return response.data;
+				});
+			});	
+		}
+	};
+})
 ;
