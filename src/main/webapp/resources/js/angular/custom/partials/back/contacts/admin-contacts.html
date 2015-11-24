@@ -24,7 +24,7 @@
 			</tr>
 		</thead>
 
-		<tr ng-repeat="contact in contacts">
+		<tr ng-repeat="contact in contacts | orderBy:'+position'">
 			<td ng-bind-html="contact.function"></td>
 			<td><span ng-bind-html="contact.firstname"></span> <span ng-bind-html="contact.lastname"></span></td>
 			<td><span ng-bind-html="contact.address"></span> <br> <span ng-bind-html="contact.postalCode"></span> <br> <span ng-bind-html="contact.city"></span></td>

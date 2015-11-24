@@ -56,6 +56,9 @@ public class Contact implements Serializable {
 	@Column(name = "photoUrl")
 	private String photoUrl;
 	
+	@Column(name = "type")
+	private String type;
+	
 	@Column(name = "position")
 	private int position;
 
@@ -153,6 +156,14 @@ public class Contact implements Serializable {
 
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 	
 }

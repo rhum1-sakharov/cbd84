@@ -24,17 +24,17 @@ public class ContactController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	List<Contact>  displaySortedContacts() {
-		return contactRepoService.findAllOrderByPosition();
+		return contactRepoService.findPersonMembersOrderByPosition();
 	}
 	
 	@RequestMapping(value="/add",method = RequestMethod.POST)	
 	Contact  addContact(@RequestBody final Contact c) {
-		return contactRepoService.addOrUpdateContact(c);
+		return contactRepoService.addOrUpdateContact(c, ContactRepositoryService.CONTACT_TYPE_PERSON);
 	}
 	
 	@RequestMapping(value="/update",method = RequestMethod.POST)	
 	Contact  updatePartner(@RequestBody final Contact c) {
-		return contactRepoService.addOrUpdateContact(c);
+		return contactRepoService.addOrUpdateContact(c,ContactRepositoryService.CONTACT_TYPE_PERSON);
 	}
 	
 	@RequestMapping(value="/delete/{id}/{imgExtension}",method = RequestMethod.GET)	

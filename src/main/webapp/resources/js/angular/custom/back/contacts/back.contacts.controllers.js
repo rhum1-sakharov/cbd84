@@ -78,7 +78,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 } ])
 
-.controller('UpdateContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contact', function($scope, $http, $q, $uibModalInstance, partner) {
+.controller('UpdateContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contact', function($scope, $http, $q, $uibModalInstance, contact) {
 
 	$scope.contact = contact;
 	$scope.loading = false;
@@ -101,7 +101,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/contacts/jpg/128/' + $scope.partner.id;
+					var url = 'images/add/contacts/jpg/128/' + $scope.contact.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -112,7 +112,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 				var promiseEnd = promise1.then(function(result) {
 					var random = new Date().getTime();
-					$scope.partner.imageUrl = $scope.partner.imageUrl + "?cb=" + random;
+					$scope.contact.photoUrl = $scope.contact.photoUrl + "?cb=" + random;
 					$scope.loading = false;
 					newVal.error = '';
 					return result;
@@ -131,21 +131,21 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('contacts/update', $scope.partner).then(function(response) {
-				$scope.partner = response.data;
+			return $http.post('contacts/update', $scope.contact).then(function(response) {
+				$scope.contact = response.data;
 				return response.data;
 			});
 		});
 		var promiseEnd = promise1.then(function(result) {
 			$scope.loading = false;
-			$uibModalInstance.close($scope.partner);
+			$uibModalInstance.close($scope.contact);
 			$scope.serverError = '';
 
 			return result;
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			$uibModalInstance.close($scope.partner);
+			$uibModalInstance.close($scope.contact);
 			return $q.reject(reason);
 		});
 

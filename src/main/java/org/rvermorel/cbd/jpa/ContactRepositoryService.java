@@ -7,7 +7,6 @@ import javax.transaction.Transactional;
 
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Contact;
-import org.rvermorel.cbd.domain.Partner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,19 +17,23 @@ public class ContactRepositoryService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(ContactRepositoryService.class);
 
+	public static final String CONTACT_TYPE_PERSON = "person";
+	public static final String CONTACT_TYPE_ASSO = "asso";
+	
 	@Autowired
 	private ContactRepository contactRepo;
 
 	@Autowired
 	private IDatastore datastore;
 
-	public List<Contact> findAllOrderByPosition() {
-		return contactRepo.findAllOrderByPosition();
+	public List<Contact> findPersonMembersOrderByPosition() {
+		return contactRepo.findPersonMembersOrderByPosition();
 	}
 
-	public Contact addOrUpdateContact(Contact c) {
+	public Contact addOrUpdateContact(Contact c, String type) {
 
 		Contact contact = contactRepo.save(c);
+		contact.setType(type);
 		contact.setPhotoUrl("images/get/contacts/jpg/" + c.getId());
 		return contactRepo.save(c);
 
