@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-<html ng-app="app-front" ng-controller="FrontCtrl">
+<html ng-app="app-front">
 
 <head>
 <title>CBD Vaucluse</title>
@@ -24,6 +24,11 @@
 	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
 	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
+
+<!-- Angular UI Vendor JavaScript
+    ================================================== -->
+<script type="text/javascript"
+	src="static/resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
 </head>
 
 <body role="document">
@@ -46,16 +51,11 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li ng-class="{active:menu.id === 1}"><a href="#"
-						ng-click="selectMenu(1);">Actualit&#233;s</a></li>
-					<li ng-class="{active:menu.id === 2}"><a href="#"
-						ng-click="selectMenu(2);">Calendrier 2015/2016</a></li>
-					<li ng-class="{active:menu.id === 3}"><a href="#"
-						ng-click="selectMenu(3);">R&#233;sultats</a></li>
-					<li ng-class="{active:menu.id === 4}"><a href="#"
-						ng-click="selectMenu(4);">Asso sportives</a></li>
-					<li ng-class="{active:menu.id === 5}"><a href="#"
-						ng-click="selectMenu(5);">Contacts</a></li>
+					<li><a ui-sref="actus">Actualit&#233;s</a></li>
+					<li><a ui-sref="calendar">Calendrier 2015/2016</a></li>
+					<li><a ui-sref="results">R&#233;sultats</a></li>
+					<li><a ui-sref="assos">Asso sportives</a></li>
+					<li><a ui-sref="contacts">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -65,6 +65,7 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
 	<div class="container">
+
 
 		<!--  <div class="row">			
 				<div class="container">					
@@ -76,35 +77,25 @@
 
 		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-8">
-				<div ng-show="isMenuSelected(1)">
-					<news></news>
-				</div>
-				<div ng-show="isMenuSelected(2)">
-					<calendar></calendar>
-				</div>
-				<div ng-show="isMenuSelected(4)">
-					<assos></assos>
-				</div>
-				<div ng-show="isMenuSelected(5)">
-					<contacts></contacts>
-				</div>
-
+			<div class="col-md-8 ui-view-container">
+				<div ui-view="main"></div>
 			</div>
-		
+
 			<div class="col-md-4">
-				<partners></partners>				
+				<div ui-view="partners"></div>
 			</div>
-		</div>
+		</div>		
+	
 
-		<hr>
+		<!-- <hr>
 
 		<footer>
-			
+
 			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
-				le CBD Vaucluse </span><span><img src="static/resources/images/logo-ffsb.png"></span><span><img
+				le CBD Vaucluse </span><span><img
+				src="static/resources/images/logo-ffsb.png"></span><span><img
 				src="static/resources/images/logo-cbd84-35.png"></span>
-		</footer>
+		</footer> -->
 	</div>
 	<!-- /container -->
 
@@ -144,10 +135,9 @@
 		src="static/resources/js/angular/custom/app-front.js"></script>
 	<script type="text/javascript"
 		src="static/resources/js/angular/custom/utils.js"></script>
+
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/front.controllers.js"></script>
-		<script type="text/javascript"
-		src="static/resources/js/angular/custom/front.directives.js"></script>
+		src="static/resources/js/angular/custom/front.config.js"></script>
 
 </body>
 

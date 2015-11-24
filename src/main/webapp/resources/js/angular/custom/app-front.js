@@ -1,1 +1,1 @@
-angular.module('app-front', ['cbd.front.controllers', 'cbd.front.directives']);
+angular.module('app-front', [   'cbd.front.config']);
