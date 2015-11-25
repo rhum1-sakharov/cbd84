@@ -10,6 +10,8 @@
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css"
+	href="static/resources/css/ng-animation.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/css/screen.css" />
 
@@ -78,7 +80,7 @@
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-8">
-				<div ui-view="main"></div>
+				<div ui-view="main" ></div>
 			</div>
 
 			<div class="col-md-4">

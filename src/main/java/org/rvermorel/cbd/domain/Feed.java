@@ -33,7 +33,7 @@ public class Feed implements Serializable {
 	@Column(length = 1024)
 	private String content;
 
-	@Column(name="creationDate", nullable=false)
+	@Column(name="creationDate")
 	private Date creationDate;
 
 	@Column(name="facebookLike")

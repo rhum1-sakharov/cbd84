@@ -3,7 +3,9 @@ package org.rvermorel.cbd.mvc;
 import java.util.List;
 
 import org.rvermorel.cbd.domain.Contact;
+import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.jpa.ContactRepositoryService;
+import org.rvermorel.cbd.jpa.FeedRepositoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,26 +22,26 @@ public class FeedController {
 	private static final Logger LOG = LoggerFactory.getLogger(FeedController.class);
 
 	@Autowired
-	private ContactRepositoryService contactRepoService;
+	private FeedRepositoryService feedRepoService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	List<Contact>  displaySortedContacts() {
-		return contactRepoService.findPersonMembersOrderByPosition();
+	List<Feed>  displaySortedFeeds() {
+		return feedRepoService.findAllActusOrderedByCreationDateAndTop();
 	}
 	
 	@RequestMapping(value="/add",method = RequestMethod.POST)	
-	Contact  addContact(@RequestBody final Contact c) {
-		return contactRepoService.addOrUpdateContact(c, ContactRepositoryService.CONTACT_TYPE_PERSON);
+	Feed  addFeed(@RequestBody final Feed f) {
+		return feedRepoService.addOrUpdateFeed(f, FeedRepositoryService.FEED_TYPE_ACTUS);
 	}
 	
 	@RequestMapping(value="/update",method = RequestMethod.POST)	
-	Contact  updatePartner(@RequestBody final Contact c) {
-		return contactRepoService.addOrUpdateContact(c,ContactRepositoryService.CONTACT_TYPE_PERSON);
+	Feed  updateFeed(@RequestBody final Feed f) {
+		return feedRepoService.addOrUpdateFeed(f, FeedRepositoryService.FEED_TYPE_ACTUS);
 	}
 	
 	@RequestMapping(value="/delete/{id}/{imgExtension}",method = RequestMethod.GET)	
-	void  deleteContact(@PathVariable String id,@PathVariable String imgExtension) {
-		contactRepoService.deleteContact(id, imgExtension);
+	void  deleteFeed(@PathVariable String id,@PathVariable String imgExtension) {
+		feedRepoService.deleteFeed(id, imgExtension);
 	}
 
 }

@@ -1,10 +1,10 @@
-<div ng-repeat="feed in feeds">
-	<div class="panel panel-default">
+<div ng-repeat="feed in feeds" >
+	<div class="panel panel-default" >
 		<div class="panel-heading">
 			<h3 class="panel-title" ng-bind-html="feed.title"></h3>
 		</div>
 		<div class="panel-body">
-			<div ng-switch="feed.imagePosition">
+			<div ng-switch="feed.imagePosition"  >
 				<div ng-switch-when="left">
 					<span><img class="feeds-image-left img-thumbnail"
 						ng-src="{{feed.imageUrl}}" title="{{feed.imageTitle}}"></span><span

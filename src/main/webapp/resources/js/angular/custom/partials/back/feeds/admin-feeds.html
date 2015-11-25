@@ -1,0 +1,37 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des actualit&#233;s <span><button
+					class="btn btn-success btn-sm"
+					 ng-click="openAddFeed('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i>  ajouter une actu
+				</button></span>
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Actualit&#233;</th>
+				<th>Auteur</th>
+				<th>Date de cr&#233;ation</th>
+				<th>Photo</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="feed in feeds">
+			<td ng-bind-html="feed.title"></td>
+			<td ng-bind-html="feed.author"></td>
+			<td ng-bind-html="formatDate(feed.creationDate)"></td>
+			<td><img class="admin-contact-thumb img-thumbnail" ng-src="{{feed.imageUrl}}"></td>
+			<td>
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdateFeed('lg', feed)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteFeed('lg', feed)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

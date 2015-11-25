@@ -10,22 +10,10 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 		url : "/actus",
 		views : {
 			"main" : {
-				templateUrl : "resources/js/angular/custom/partials/back/admin-feeds.html",
-				controller : function($scope, $q, $http, cbdUtils) {
+				templateUrl : "resources/js/angular/custom/partials/back/feeds/admin-feeds.html",
+				controller : function($scope, $q, $http, cbdUtils,$uibModal) {
 					$scope.feeds = [];
-					$scope.feedSelected = {};
-					$scope.creationDate = "";
-					$scope.random = '1';
-					$scope.mode = "";
-					$scope.formatImageUrl = function(feed) {
-						// console.log(feed.imageUrl);
-						// feedSelected.imageUrl?random
-						if (feed.imageUrl) {
-							return feed.imageUrl + '?' + $scope.random;
-						}
-
-						return '';
-					};
+					$scope.feed = {};
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
@@ -35,31 +23,73 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 						});
 					});
 
-					$scope.addFeed = function() {
-						$scope.mode = 'add';
-						$scope.feedSelected = {};
-						$scope.feeds.push(scope.feedSelected);
+					$scope.animationsEnabled = true;
+
+					$scope.openAddFeed = function(size) {
+
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/feeds/add-feeds.html',
+							controller : 'AddFeedModalInstanceCtrl',
+							size : size,
+							resolve : {
+								feeds : function() {
+									return $scope.feeds;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(feeds) {
+							$scope.feeds = feeds;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
 					};
 
-					$scope.editFeed = function(feed) {
-						$scope.mode = 'update';
-						$scope.feedSelected = feed;
-						$scope.creationDate = cbdUtils.formatTs2Date($scope.feedSelected.creationDate);
-						$scope.fileValue = {
-							notValidImage : false,
-							type : 'image/jpeg',
-							serverError : ''
-						};
-						console.log($scope.fileValue);
+					$scope.openUpdateFeed = function(size, selectedFeed) {
+						$scope.feed = selectedFeed;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/feeds/update-feeds.html',
+							controller : 'UpdateFeedModalInstanceCtrl',
+							size : size,
+							resolve : {
+								feed : function() {
+									return $scope.feed;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+							$scope.feed = selectedItem;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
 					};
 
-					$scope.formatDate = function(ts) {
-						return cbdUtils.formatTs2Date(ts);
-					};
+					$scope.openDeleteFeed = function(size, selectedFeed) {
+						$scope.feed = selectedFeed;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/feeds/delete-feeds.html',
+							controller : 'DeleteFeedModalInstanceCtrl',
+							size : size,
+							resolve : {
+								feed : function() {
+									return $scope.feed;
+								}
+							}
+						});
 
-					$scope.$watch('creationDate', function(newVal, oldVal) {
-						$scope.feedSelected.creationDate = cbdUtils.formatDate2Ts(newVal);
-					});
+						modalInstance.result.then(function(selectedItem) {
+
+							var index = $scope.feeds.indexOf(selectedItem);
+							$scope.feeds.splice(index, 1);
+
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
 
 				}
 			}

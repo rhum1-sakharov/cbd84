@@ -145,6 +145,8 @@
 			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>		
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>		
+			<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/feeds/back.feeds.controllers.js"></script>	
 </body>
 
 </html>
