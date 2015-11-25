@@ -41,6 +41,8 @@ public class AssoController {
 	void  deleteContact(@PathVariable String id,@PathVariable String imgExtension) {
 		contactRepoService.deleteContact(id, imgExtension);
 	}
+	
+	
 
 
 }

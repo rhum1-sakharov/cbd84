@@ -77,7 +77,7 @@
 
 		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-8 ui-view-container">
+			<div class="col-md-8">
 				<div ui-view="main"></div>
 			</div>
 
@@ -87,7 +87,7 @@
 		</div>		
 	
 
-		<!-- <hr>
+		<hr>
 
 		<footer>
 
@@ -95,7 +95,7 @@
 				le CBD Vaucluse </span><span><img
 				src="static/resources/images/logo-ffsb.png"></span><span><img
 				src="static/resources/images/logo-cbd84-35.png"></span>
-		</footer> -->
+		</footer> 
 	</div>
 	<!-- /container -->
 
