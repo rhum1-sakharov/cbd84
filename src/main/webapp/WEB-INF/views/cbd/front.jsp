@@ -51,11 +51,11 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a ui-sref="actus">Actualit&#233;s</a></li>
-					<li><a ui-sref="calendar">Calendrier 2015/2016</a></li>
-					<li><a ui-sref="results">R&#233;sultats</a></li>
-					<li><a ui-sref="assos">Asso sportives</a></li>
-					<li><a ui-sref="contacts">Contacts</a></li>
+					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
+					<li ui-sref-active="active"><a ui-sref="calendar">Calendrier 2015/2016</a></li>
+					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
+					<li ui-sref-active="active"><a ui-sref="assos">Asso sportives</a></li>
+					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->

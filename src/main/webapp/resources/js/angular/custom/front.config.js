@@ -11,7 +11,7 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 		views : {
 			"main" : {
 				templateUrl : "resources/js/angular/custom/partials/front/news.html",
-				controller : function($scope, $q, $http) {
+				controller : function($scope, $q, $http, cbdUtils) {
 					$scope.feeds = [];
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
@@ -20,6 +20,11 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 							return response.data;
 						});
 					});
+					
+					$scope.formatInfoFeed = function(author, ts) {
+
+						return author + ", le " + cbdUtils.formatTs2Date(ts);
+					};
 				}
 			},
 			"partners" : {

@@ -10,7 +10,7 @@
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
-	<link rel="stylesheet" type="text/css"
+<link rel="stylesheet" type="text/css"
 	href="static/resources/js/angular-ui/vendor/ui-bootstrap-csp.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
@@ -40,12 +40,17 @@
 <!-- Angular UI  Vendor JavaScript
     ================================================== -->
 
-<script type="text/javascript" src="static/resources/js/angular-ui/vendor/ui-bootstrap-tpls${minjs}.js"></script>
+<script type="text/javascript"
+	src="static/resources/js/angular-ui/vendor/ui-bootstrap-tpls${minjs}.js"></script>
+<script type="text/javascript"
+	src="static/resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
 <!-- Angular UI TinyMCE Vendor JavaScript
     ================================================== -->
-<script type="text/javascript" src="static/resources/js/tinymce-dist/tinymce.js"></script>
-<script type="text/javascript" src="static/resources/js/angular-ui-tinymce/tinymce.js"></script>
+<script type="text/javascript"
+	src="static/resources/js/tinymce-dist/tinymce.js"></script>
+<script type="text/javascript"
+	src="static/resources/js/angular-ui-tinymce/tinymce.js"></script>
 
 <body role="document" class="bg-admin">
 
@@ -65,18 +70,14 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li ng-class="{active:menu.id === 1}"><a href="#"
-						ng-click="selectMenu(1);">Actualit&#233;s</a></li>
-					<li ng-class="{active:menu.id === 2}"><a href="#"
-						ng-click="selectMenu(2);">Partenaires</a></li>
-						<li ng-class="{active:menu.id === 3}"><a href="#"
-						ng-click="selectMenu(3);">Asso Sportives</a></li>
-						<li ng-class="{active:menu.id === 4}"><a href="#"
-						ng-click="selectMenu(4);">Calendrier</a></li>
-						<li ng-class="{active:menu.id === 5}"><a href="#"
-						ng-click="selectMenu(5);">R&#233;sultats</a></li>
-					<li ng-class="{active:menu.id === 6}"><a href="#"
-						ng-click="selectMenu(6);">Contacts</a></li>
+					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
+					 <li ui-sref-active="active"><a ui-sref="calendar">Calendrier
+							2015/2016</a></li>
+					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
+					<li ui-sref-active="active"><a ui-sref="assos">Asso
+							sportives</a></li>
+					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
+					<li ui-sref-active="active"><a ui-sref="partners">Partenaires</a></li> 
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -88,25 +89,13 @@
 	<div class="container">
 
 		<div class="row">
-			<div ng-show="isMenuSelected(1)">
-				<admin-feeds></admin-feeds>
-			</div>
-			<div ng-show="isMenuSelected(2)">
-				<admin-partners></admin-partners>
-			</div>
-			<div ng-show="isMenuSelected(3)">
-				<admin-assos></admin-assos>
-			</div>
-			<div ng-show="isMenuSelected(6)">
-				<admin-contacts></admin-contacts>
-			</div>
-
+			<div ui-view="main"></div>
 			<hr>
-
 			<footer>
-				<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
-				le CBD Vaucluse </span><span><img src="static/resources/images/logo-ffsb.png"></span><span><img
-				src="static/resources/images/logo-cbd84-35.png"></span>
+				<span>&copy; r&#233;alisation du site : Romain VERMOREL -
+					pour le CBD Vaucluse </span><span><img
+					src="static/resources/images/logo-ffsb.png"></span><span><img
+					src="static/resources/images/logo-cbd84-35.png"></span>
 			</footer>
 		</div>
 		<!-- /container -->
@@ -146,23 +135,16 @@
 			src="static/resources/js/angular/custom/app-back.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/utils.js"></script>
-			
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back.controllers.js"></script>
-				<script type="text/javascript"
-			src="static/resources/js/angular/custom/back.directives.js"></script>
-				<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>
-				<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/partners/back.partners.directives.js"></script>
-			<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>
-				<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/contacts/back.contacts.directives.js"></script>
-			<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>
-				<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/assos/back.assos.directives.js"></script>
+			src="static/resources/js/angular/custom/back.controllers.js"></script>		
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back.config.js"></script>
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>		
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>		
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>		
 </body>
 
 </html>
