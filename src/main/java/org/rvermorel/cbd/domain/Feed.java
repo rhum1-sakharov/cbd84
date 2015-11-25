@@ -24,9 +24,11 @@ public class Feed implements Serializable {
 	@Column(name = "id_feed", unique = true, nullable = false)
 	private Long id;
 
-
+	@Column(name="title")
 	private String title;
 
+	@Column(name = "type")
+	private String type;
 	
 	@Column(length = 1024)
 	private String content;
@@ -145,6 +147,14 @@ public class Feed implements Serializable {
 
 	public void setImageExtension(String imageExtension) {
 		this.imageExtension = imageExtension;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 }

@@ -45,7 +45,7 @@ public class FeedController {
 	@RequestMapping(method = RequestMethod.GET)
 	List<Feed>  displaySortedFeeds() {
 
-		return feedRepo.findAllOrderedByCreationDateAndTop();
+		return feedRepo.findAllActusOrderedByCreationDateAndTop();
 
 	}
 
