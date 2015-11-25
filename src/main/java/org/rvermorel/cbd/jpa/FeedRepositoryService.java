@@ -38,7 +38,7 @@ public class FeedRepositoryService {
 
 		Feed feed = feedRepo.save(f);
 		feed.setType(type);
-		feed.setImageUrl("images/get/contacts/jpg/" + f.getId());
+		feed.setImageUrl("images/get/feeds/jpg/" + f.getId());
 		return feedRepo.save(f);
 
 	}

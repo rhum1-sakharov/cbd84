@@ -11,7 +11,7 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 		views : {
 			"main" : {
 				templateUrl : "resources/js/angular/custom/partials/back/feeds/admin-feeds.html",
-				controller : function($scope, $q, $http, cbdUtils,$uibModal) {
+				controller : function($scope, $q, $http, cbdUtils,$uibModal,$log) {
 					$scope.feeds = [];
 					$scope.feed = {};
 

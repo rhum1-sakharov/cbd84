@@ -101,7 +101,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/contacts/jpg/128/' + $scope.feed.id;
+					var url = 'images/add/feeds/jpg/256/' + $scope.feed.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {

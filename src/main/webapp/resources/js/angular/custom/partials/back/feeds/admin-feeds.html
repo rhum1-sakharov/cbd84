@@ -22,9 +22,8 @@
 		<tr ng-repeat="feed in feeds">
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
-			<td ng-bind-html="formatDate(feed.creationDate)"></td>
-			<td><img class="admin-contact-thumb img-thumbnail" ng-src="{{feed.imageUrl}}"></td>
-			<td>
+			<td ng-bind-html="feed.creationDate"></td>
+			<td ><img ng-show="feed.imageUrl" class="admin-contact-thumb img-thumbnail" ng-src="{{feed.imageUrl}}"></td>			
 			<td><span><button class="btn btn-success btn-sm"
 						ng-click="openUpdateFeed('lg', feed)">
 						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier

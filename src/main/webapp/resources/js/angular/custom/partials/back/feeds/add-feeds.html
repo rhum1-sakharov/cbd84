@@ -10,7 +10,7 @@
 			<label for="title" class="col-sm-3 control-label">Titre</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.title.$invalid && !feedForm.title.$pristine}">
-				<input id="title" ng-model="feedSelected.title" type="text"
+				<input id="title" ng-model="feed.title" type="text"
 					name="title" size="60" required>
 				<p ng-show="feedForm.title.$invalid && !feedForm.title.$pristine"
 					class="help-block">Veuillez saisir un titre</p>
@@ -21,7 +21,7 @@
 				de cr&#233;ation</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.creationDate.$invalid && !feedForm.creationDate.$pristine}">
-				<!-- <date-input ng-model="feedSelected.creationDate"></date-input> -->
+				<!-- <date-input ng-model="feed.creationDate"></date-input> -->
 				<input id="creationDate" ng-model="creationDate" type="text"
 					date-picker name="creationDate" size="60" required
 					french-date-validator>
@@ -37,8 +37,8 @@
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
 				<textarea class="form-control" ui-tinymce
-					ng-model="feedSelected.content" required></textarea>
-				<!-- <textarea id="content" ng-model="feedSelected.content"
+					ng-model="feed.content" required></textarea>
+				<!-- <textarea id="content" ng-model="feed.content"
 								class="form-control" rows="5" required></textarea> -->
 				<p
 					ng-show="feedForm.content.$invalid && !feedForm.content.$pristine"
@@ -49,7 +49,7 @@
 			<label for="title" class="col-sm-3 control-label">Auteur</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.author.$invalid && !feedForm.author.$pristine}">
-				<input id="author" ng-model="feedSelected.author" type="text"
+				<input id="author" ng-model="feed.author" type="text"
 					name="author" size="60" required>
 				<p ng-show="feedForm.author.$invalid && !feedForm.author.$pristine"
 					class="help-block">Veuillez saisir un auteur</p>
@@ -58,10 +58,10 @@
 		<div class="form-group">
 			<span> <label class="col-sm-3 control-label"> Facebook
 					Like</label><input class="col-sm-1" type="checkbox"
-				ng-model="feedSelected.facebookLike">
+				ng-model="feed.facebookLike">
 			</span> <span> <label class="col-sm-3 control-label"> Top
 					position</label><input class="col-sm-1" type="checkbox"
-				ng-model="feedSelected.top">
+				ng-model="feed.top">
 			</span>
 		</div>
 
@@ -69,12 +69,12 @@
 			<span> <label class="col-sm-3 control-label"
 				style="display: inline;">Image &#224; gauche </label><input
 				class="col-sm-1" type="radio" name="optionsRadios"
-				id="optionsRadios1" ng-model="feedSelected.imagePosition"
+				id="optionsRadios1" ng-model="feed.imagePosition"
 				value="left">
 			</span> <span> <label class="col-sm-3 control-label">Image
 					&#224; droite </label><input class="col-sm-1" type="radio"
 				name="optionsRadios" id="optionsRadios2"
-				ng-model="feedSelected.imagePosition" value="right">
+				ng-model="feed.imagePosition" value="right">
 			</span>
 
 		</div>
@@ -82,7 +82,7 @@
 			<label for="imageTitle" class="col-sm-3 control-label">Titre
 				de la photo</label>
 			<div class="col-sm-9">
-				<input id="imageTitle" ng-model="feedSelected.imageTitle"
+				<input id="imageTitle" ng-model="feed.imageTitle"
 					type="text" name="imageTitle" size="60">
 			</div>
 		</div>
@@ -96,12 +96,12 @@
 								photo doit etre au format jpg !</p>
 							<p ng-show="fileValue.serverError != ''" class="help-block"
 								ng-bind-html="fileValue.serverError"></p>
-							<img ng-show="feedSelected.imageUrl != null"
-								ng-src="{{formatImageUrl(feedSelected)}}">
+							<img ng-show="feed.imageUrl != null"
+								ng-src="{{formatImageUrl(feed)}}">
 							<p>
 								<button class="btn btn-danger btn-sm"
-									ng-show="feedSelected.imageUrl != null"
-									ng-click="eraseImage(feedSelected)"
+									ng-show="feed.imageUrl != null"
+									ng-click="eraseImage(feed)"
 									ng-disabled="buttonSubmit.disabled">
 									<i class="glyphicon glyphicon-minus-sign"></i> Supprimer la
 									photo
