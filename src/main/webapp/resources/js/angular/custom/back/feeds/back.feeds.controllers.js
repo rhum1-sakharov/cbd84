@@ -3,10 +3,11 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 .controller('AddFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feeds) {
 
 	$scope.feed = {
-		position : 1
+		position : 1,
+		imagePosition : 'left'
 	};
 
-	/** ****************************** */
+	/** ****************************** DatePicker AngularUI*/
 	$scope.today = function() {
 		$scope.dt = new Date();
 	};
@@ -57,6 +58,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 			if ($scope.addFeedImage.error === '') {
 				var fd = new FormData();
 				fd.append('file', $scope.addFeedImage);
+				
 				var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
@@ -72,7 +74,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 			$scope.loading = false;
 			
 			//Refresh parent view with image
-			if ($scope.addFeedImage.error === '') {
+			if ($scope.addFeedImage.error === '') {				
 				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
 			}
 

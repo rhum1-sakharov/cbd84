@@ -24,8 +24,7 @@
 					<input type="text" class="form-control"
 						uib-datepicker-popup="dd/MM/yyyy" ng-model="dt"
 						is-open="status.opened" min-date="minDate" max-date="maxDate"
-						datepicker-options="dateOptions"
-						ng-required="true"
+						datepicker-options="dateOptions" ng-required="true"
 						close-text="Close" /> <span class="input-group-btn">
 						<button type="button" class="btn btn-default"
 							ng-click="open($event)">
@@ -75,7 +74,18 @@
 					class="help-block">Veuillez saisir un auteur</p>
 			</div>
 		</div>
+
+
 		<div class="form-group">
+			<label class="col-sm-3 control-label"></label>
+			<div class="btn-group control-label col-sm-6">
+				<label class="btn btn-primary" ng-model="feed.facebookLike"
+					uib-btn-checkbox>Facebook Like</label> <label
+					class="btn btn-primary" ng-model="feed.top" uib-btn-checkbox>Top</label>
+			</div>
+		</div>
+
+		<!-- <div class="form-group">
 			<span> <label class="col-sm-3 control-label"> Facebook
 					Like</label><input class="col-sm-1" type="checkbox"
 				ng-model="feed.facebookLike">
@@ -83,8 +93,9 @@
 					position</label><input class="col-sm-1" type="checkbox" ng-model="feed.top">
 			</span>
 		</div>
+ -->
 
-		<div class="form-group">
+		<!-- <div class="form-group">
 			<span> <label class="col-sm-3 control-label"
 				style="display: inline;">Image &#224; gauche </label><input
 				class="col-sm-1" type="radio" name="optionsRadios"
@@ -95,7 +106,7 @@
 				ng-model="feed.imagePosition" value="right">
 			</span>
 
-		</div>
+		</div> -->
 		<div class="form-group">
 			<label for="imageTitle" class="col-sm-3 control-label">Titre
 				de la photo</label>
@@ -139,6 +150,19 @@
 					class="help-block" ng-bind-html="addFeedImage.error"></p>
 			</div>
 		</div>
+
+		<div class="form-group" ng-show="addFeedImage.error === ''">
+			<label class="col-sm-3 control-label">Positionnement de
+				l'image</label>
+			<div class="btn-group control-label col-sm-6">
+				<label class="btn btn-primary" ng-model="feed.imagePosition"
+					uib-btn-radio="'left'" uncheckable btn-checkbox-true>Image
+					&#224; gauche</label> <label class="btn btn-primary"
+					ng-model="feed.imagePosition" uib-btn-radio="'right'" uncheckable
+					btn-checkbox-true>Image &#224; droite</label>
+			</div>
+		</div>
+
 
 		<p ng-show="serverError != ''" class="help-block"
 			ng-bind-html='serverError'></p>
