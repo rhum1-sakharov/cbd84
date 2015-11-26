@@ -3,13 +3,13 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 .controller('AddFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feeds) {
 
 	$scope.feed = {
-		position : 1,
-		imagePosition : 'left'
+		position : 1
+
 	};
 
-	/** ****************************** DatePicker AngularUI*/
+	/** ****************************** DatePicker AngularUI */
 	$scope.today = function() {
-		$scope.dt = new Date();
+		$scope.feed.creationDate = new Date();
 	};
 
 	$scope.status = {
@@ -27,6 +27,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	$scope.addFeedImage = {
 		error : 'pristine'
 	};
+	$scope.feed.imagePosition = 'pristine';
 
 	$scope.$watch('addFeedImage', function(newVal, oldVal) {
 		var mimetype = 'image/jpeg';
@@ -37,6 +38,9 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 				newVal.error = 'L\'image doit etre au format jpeg';
 			} else {
 				newVal.error = '';
+				if ($scope.feed.imagePosition === 'pristine') {
+					$scope.feed.imagePosition = 'left';
+				}
 			}
 		}
 	});
@@ -46,8 +50,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		$scope.loading = true;
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
-			console.log($scope.dt);
-			$scope.feed.creationDate = $scope.dt;
+
 			return $http.post('feeds/add', $scope.feed).then(function(response) {
 				$scope.feed = response.data;
 				return response.data;
@@ -58,7 +61,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 			if ($scope.addFeedImage.error === '') {
 				var fd = new FormData();
 				fd.append('file', $scope.addFeedImage);
-				
+
 				var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
@@ -72,9 +75,9 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 		var promiseEnd = promise2.then(function(result) {
 			$scope.loading = false;
-			
-			//Refresh parent view with image
-			if ($scope.addFeedImage.error === '') {				
+
+			// Refresh parent view with image
+			if ($scope.addFeedImage.error === '') {
 				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
 			}
 
