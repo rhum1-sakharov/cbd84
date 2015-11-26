@@ -14,6 +14,11 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 				controller : function($scope, $q, $http, cbdUtils,$uibModal,$log) {
 					$scope.feeds = [];
 					$scope.feed = {};
+					
+					$scope.formatTs2Date = function( ts){
+						return cbdUtils.formatTs2Date(ts);
+					};
+					
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
