@@ -6,7 +6,9 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.rvermorel.cbd.datastore.IDatastore;
+import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.domain.Partner;
+import org.rvermorel.cbd.images.IImageEnhancement;
 import org.rvermorel.cbd.mvc.ImageController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +25,9 @@ public class PartnerRepositoryService {
 
 	@Autowired
 	private IDatastore datastore;
+	
+	@Autowired
+	private IImageEnhancement ie;
 
 	public List<Partner> findAllOrderByPosition() {
 		return partnerRepo.findAllOrderByPosition();
@@ -34,6 +39,21 @@ public class PartnerRepositoryService {
 		partner.setImageUrl("images/get/partners/jpg/" + p.getId());
 		return partnerRepo.saveAndFlush(partner);
 
+	}
+	
+	public void addPartnerImage(String id, String imgExtension, String type, byte[] bytes, int size) {
+
+		try {
+			Long idLong = Long.valueOf(id);
+			byte[] resized = ie.resizeImg(bytes, size, imgExtension);
+			datastore.writeContent(resized, id, imgExtension, type);
+			Partner partner = partnerRepo.getOne(idLong);
+			partner.setImageUrl("images/get/partners/jpg/" + id);
+			partnerRepo.save(partner);
+			
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+		}
 	}
 
 	@Transactional

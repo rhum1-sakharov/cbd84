@@ -7,6 +7,8 @@ import javax.transaction.Transactional;
 
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Contact;
+import org.rvermorel.cbd.domain.Feed;
+import org.rvermorel.cbd.images.IImageEnhancement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,9 @@ public class ContactRepositoryService {
 
 	@Autowired
 	private IDatastore datastore;
+	
+	@Autowired
+	private IImageEnhancement ie;
 
 	public List<Contact> findPersonMembersOrderByPosition() {
 		return contactRepo.findPersonMembersOrderByPosition();
@@ -40,7 +45,21 @@ public class ContactRepositoryService {
 		contact.setType(type);
 		contact.setPhotoUrl("images/get/contacts/jpg/" + c.getId());
 		return contactRepo.save(c);
+	}
+	
+	public void addContactImage(String id, String imgExtension, String type, byte[] bytes, int size) {
 
+		try {
+			Long idLong = Long.valueOf(id);
+			byte[] resized = ie.resizeImg(bytes, size, imgExtension);
+			datastore.writeContent(resized, id, imgExtension, type);
+			Contact c = contactRepo.getOne(idLong);
+			c.setPhotoUrl("images/get/contacts/jpg/" + id);
+			contactRepo.save(c);
+			
+		} catch (IOException e) {
+			LOG.error(e.getMessage(), e);
+		}
 	}
 
 	@Transactional

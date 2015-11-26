@@ -48,7 +48,8 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 			var promise2 = promise1.then(function(response) {
 				var fd = new FormData();
 				fd.append('file', $scope.addPartnerImage);
-				var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
+				
+				var url = 'partners/add/image/jpg/256/' + $scope.partner.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -104,7 +105,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/partners/jpg/256/' + $scope.partner.id;
+					var url = 'partners/add/image/jpg/256/' + $scope.partner.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -143,7 +144,6 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 			$scope.loading = false;
 			$uibModalInstance.close($scope.partner);
 			$scope.serverError = '';
-
 			return result;
 		}, function(reason) {
 			$scope.loading = false;

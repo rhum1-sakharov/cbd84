@@ -1,18 +1,30 @@
-angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap'])
+angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
-.controller('AddFeedModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function($scope, $http, $q, $uibModalInstance, feeds) {
+.controller('AddFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feeds) {
 
 	$scope.feed = {
 		position : 1
 	};
 
-	
-	
+	/** ****************************** */
+	$scope.today = function() {
+		$scope.dt = new Date();
+	};
+
+	$scope.status = {
+		opened : false
+	};
+	$scope.today();
+
+	$scope.open = function($event) {
+		$scope.status.opened = true;
+	};
+	/** ****************************** */
+
 	$scope.loading = false;
 	$scope.serverError = '';
 	$scope.addFeedImage = {
 		error : 'pristine'
-
 	};
 
 	$scope.$watch('addFeedImage', function(newVal, oldVal) {
@@ -30,47 +42,51 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 	$scope.ok = function() {
 
-		if ($scope.addFeedImage.error === 'pristine') {
-			$scope.addFeedImage.error = 'Une image doit etre selectionnee !';
-
-		} else if ($scope.addFeedImage.error === '') {
-			$scope.loading = true;
-			var promiseStart = $q.when('start');
-			var promise1 = promiseStart.then(function(value) {
-
-				return $http.post('feeds/add', $scope.feed).then(function(response) {
-					$scope.feed = response.data;
-					return response.data;
-				});
+		$scope.loading = true;
+		var promiseStart = $q.when('start');
+		var promise1 = promiseStart.then(function(value) {
+			console.log($scope.dt);
+			$scope.feed.creationDate = $scope.dt;
+			return $http.post('feeds/add', $scope.feed).then(function(response) {
+				$scope.feed = response.data;
+				return response.data;
 			});
+		});
 
-			var promise2 = promise1.then(function(response) {
+		var promise2 = promise1.then(function(response) {
+			if ($scope.addFeedImage.error === '') {
 				var fd = new FormData();
 				fd.append('file', $scope.addFeedImage);
-				var url = 'images/add/feeds/jpg/256/' + $scope.feed.id;
+				var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
 						'Content-Type' : undefined
 					}
 				})
+			} else
+				return response;
+		});
 
-			});
+		var promiseEnd = promise2.then(function(result) {
+			$scope.loading = false;
+			
+			//Refresh parent view with image
+			if ($scope.addFeedImage.error === '') {
+				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
+			}
 
-			var promiseEnd = promise2.then(function(result) {
-				$scope.loading = false;
-				feeds.push($scope.feed);
-				$uibModalInstance.close(feeds);
-				$scope.serverError = '';
+			feeds.push($scope.feed);
+			$uibModalInstance.close(feeds);
+			$scope.serverError = '';
 
-				return result;
-			}, function(reason) {
-				$scope.loading = false;
-				$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
+			return result;
+		}, function(reason) {
+			$scope.loading = false;
+			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText + ', ' + reason.data;
 
-				return $q.reject(reason);
-			});
-		}
+			return $q.reject(reason);
+		});
 
 	};
 
@@ -103,7 +119,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'images/add/feeds/jpg/256/' + $scope.feed.id;
+					var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -147,7 +163,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			//$uibModalInstance.close($scope.feed);
+			// $uibModalInstance.close($scope.feed);
 			return $q.reject(reason);
 		});
 
@@ -184,7 +200,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			//$uibModalInstance.close(feed);
+			// $uibModalInstance.close(feed);
 			return $q.reject(reason);
 		});
 

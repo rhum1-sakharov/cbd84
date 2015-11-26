@@ -19,7 +19,7 @@
 			</tr>
 		</thead>
 
-		<tr ng-repeat="feed in feeds">
+		<tr ng-repeat="feed in feeds | orderBy:['-top','-creationDate']" >
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
 			<td ng-bind-html="formatTs2Date(feed.creationDate)"></td>
