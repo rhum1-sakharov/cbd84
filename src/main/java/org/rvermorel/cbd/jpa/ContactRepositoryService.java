@@ -53,7 +53,7 @@ public class ContactRepositoryService {
 			Long idLong = Long.valueOf(id);
 			byte[] resized = ie.resizeImg(bytes, size, imgExtension);
 			datastore.writeContent(resized, id, imgExtension, type);
-			Contact c = contactRepo.getOne(idLong);
+			Contact c = contactRepo.findOne(idLong);			
 			c.setPhotoUrl("images/get/contacts/jpg/" + id);
 			contactRepo.save(c);
 			

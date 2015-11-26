@@ -6,10 +6,8 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.rvermorel.cbd.datastore.IDatastore;
-import org.rvermorel.cbd.domain.Feed;
 import org.rvermorel.cbd.domain.Partner;
 import org.rvermorel.cbd.images.IImageEnhancement;
-import org.rvermorel.cbd.mvc.ImageController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,8 +45,8 @@ public class PartnerRepositoryService {
 			Long idLong = Long.valueOf(id);
 			byte[] resized = ie.resizeImg(bytes, size, imgExtension);
 			datastore.writeContent(resized, id, imgExtension, type);
-			Partner partner = partnerRepo.getOne(idLong);
-			partner.setImageUrl("images/get/partners/jpg/" + id);
+			Partner partner = partnerRepo.findOne(idLong);
+			partner.setImageUrl("images/get/partners/jpg/" + id);			
 			partnerRepo.save(partner);
 			
 		} catch (IOException e) {
