@@ -29,6 +29,18 @@ angular.module('cbdUtilsModule', []).factory('cbdUtils', [ '$log', '$location', 
 
 		random : function() {
 			return Math.random() * (1000000 - 1) + 1;
+		},
+		
+		refreshImgSrc : function(imgSrcUrl){
+			return  imgSrcUrl + "?cb=" + Math.random() * (1000000 - 1) + 1;
+		},
+		
+		removeObjectById : function(arr, idObj){
+			for(var i in arr){				
+				 if( arr[i].id === idObj){
+					arr.splice(i,1);
+				 }
+			}
 		}
 	};
 

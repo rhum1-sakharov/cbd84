@@ -47,12 +47,12 @@ img.calendar-sheets {
 	width: 100%;
 }
 
-img.feeds-image-left {
+img.feeds-image-left, img.results-image-left{
 	float: left;
 	margin: 4px;
 }
 
-img.feeds-image-right {
+img.feeds-image-right, img.results-image-right {
 	float: right;
 	margin: 4px;
 }

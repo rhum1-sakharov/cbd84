@@ -34,7 +34,6 @@ public class DatastoreImpl implements IDatastore {
 		String path = getPath(id, extension, type);
 		File file = new File(path);
 		FileUtils.writeByteArrayToFile(file, bytes);
-
 	}
 
 	@Override

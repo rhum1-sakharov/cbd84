@@ -111,8 +111,94 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 	}).state('results', {
 		url : "/results",
 		views : {
-			"main" : {
-				template : ""
+			"main" :{
+				templateUrl : "resources/js/angular/custom/partials/back/results/admin-results.html",
+				controller : function($scope, $q, $http, cbdUtils,$uibModal,$log) {
+					$scope.results = [];
+					$scope.result = {};
+					
+					$scope.formatTs2Date = function( ts){
+						return cbdUtils.formatTs2Date(ts);
+					};
+					
+
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('results').then(function(response) {
+							$scope.results = response.data;
+							return response.data;
+						});
+					});
+
+					$scope.animationsEnabled = true;
+
+					$scope.openAddResult = function(size) {
+
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/results/add-results.html',
+							controller : 'AddResultModalInstanceCtrl',
+							size : size,
+							resolve : {
+								results : function() {
+									return $scope.results;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(results) {
+							$scope.results = results;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
+					$scope.openUpdateResult = function(size, selectedResult) {
+						$scope.result = selectedResult;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/results/update-results.html',
+							controller : 'UpdateResultModalInstanceCtrl',
+							size : size,
+							resolve : {
+								result : function() {
+									return $scope.result;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+							$scope.result = selectedItem;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
+					$scope.openDeleteResult = function(size, selectedResult) {
+						$scope.result = selectedResult;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/results/delete-results.html',
+							controller : 'DeleteResultModalInstanceCtrl',
+							size : size,
+							resolve : {
+								result : function() {
+									return $scope.result;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+
+							var index = $scope.results.indexOf(selectedItem);							
+							$scope.results.splice(index, 1);
+
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
+				}
 			}
 		}
 

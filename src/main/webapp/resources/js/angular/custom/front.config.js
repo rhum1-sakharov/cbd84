@@ -67,7 +67,22 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 		url : "/results",
 		views : {
 			"main" : {
-				templateUrl : "resources/js/angular/custom/partials/front/results.html"
+				templateUrl : "resources/js/angular/custom/partials/front/results.html",
+				controller : function($scope, $q, $http, cbdUtils) {
+					$scope.results = [];
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('results').then(function(response) {
+							$scope.results = response.data;
+							return response.data;
+						});
+					});
+					
+					$scope.formatInfoFeed = function(author, ts) {
+
+						return author + ", le " + cbdUtils.formatTs2Date(ts);
+					};
+				}
 			},
 			"partners" : {
 				templateUrl : "resources/js/angular/custom/partials/front/partners.html",

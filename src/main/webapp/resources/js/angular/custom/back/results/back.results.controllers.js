@@ -1,21 +1,22 @@
-angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
-.controller('AddFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feeds) {
+.controller('AddResultModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'results', function(cbdUtils, $scope, $http, $q, $uibModalInstance, results) {
 
-	$scope.feed = {
+	$scope.result = {
 		position : 1
 
 	};
 
 	/** ****************************** DatePicker AngularUI */
 	$scope.today = function() {
-		$scope.feed.creationDate = new Date();
+		$scope.result.creationDate = new Date();
 	};
+	$scope.today();
 
 	$scope.status = {
 		opened : false
 	};
-	$scope.today();
+
 
 	$scope.open = function($event) {
 		$scope.status.opened = true;
@@ -24,12 +25,12 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.addFeedImage = {
+	$scope.addResultImage = {
 		error : 'pristine'
 	};
-	$scope.feed.imagePosition = 'left';
+	$scope.result.imagePosition = 'left';
 
-	$scope.$watch('addFeedImage', function(newVal, oldVal) {
+	$scope.$watch('addResultImage', function(newVal, oldVal) {
 		var mimetype = 'image/jpeg';
 
 		if (newVal.type) {
@@ -49,18 +50,18 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add/', $scope.feed).then(function(response) {
-				$scope.feed = response.data;
+			return $http.post('results/add/', $scope.result).then(function(response) {
+				$scope.result = response.data;
 				return response.data;
 			});
 		});
 
 		var promise2 = promise1.then(function(response) {
-			if ($scope.addFeedImage.error === '') {
+			if ($scope.addResultImage.error === '') {
 				var fd = new FormData();
-				fd.append('file', $scope.addFeedImage);
+				fd.append('file', $scope.addResultImage);
 
-				var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
+				var url = 'results/add/image/jpg/256/' + $scope.result.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -75,13 +76,13 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 			$scope.loading = false;
 
 			// Refresh parent view with image
-			if ($scope.addFeedImage.error === '') {
-				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
-				$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
+			if ($scope.addResultImage.error === '') {
+				$scope.result.imageUrl = 'images/get/feeds/jpg/' + $scope.result.id;
+				$scope.result.imageUrl = cbdUtils.refreshImgSrc($scope.result.imageUrl);
 			}
 
-			feeds.push($scope.feed);
-			$uibModalInstance.close(feeds);
+			results.push($scope.result);
+			$uibModalInstance.close(results);
 			$scope.serverError = '';
 
 			return result;
@@ -100,18 +101,18 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 } ])
 
-.controller('UpdateFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feed', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feed) {
+.controller('UpdateResultModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'result', function(cbdUtils, $scope, $http, $q, $uibModalInstance, result) {
 
-	$scope.feed = feed;
+	$scope.result = result;
 	$scope.loading = false;
 	$scope.serverError = '';	
-	$scope.updateFeedImage = {
+	$scope.updateResultImage = {
 		error : 'pristine'
 	};
 
 	/** ****************************** DatePicker AngularUI */
 	$scope.today = function() {
-		$scope.feed.creationDate = new Date();
+		$scope.result.creationDate = new Date();
 	};
 
 	$scope.status = {
@@ -125,7 +126,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	/** ****************************** */
 
 	// UPDATE IMAGE OF FEED
-	$scope.$watch('updateFeedImage', function(newVal, oldVal) {
+	$scope.$watch('updateResultImage', function(newVal, oldVal) {
 		var mimetype = 'image/jpeg';
 
 		if (newVal.type) {
@@ -135,15 +136,15 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 			} else {
 				newVal.error = '';
-				if ($scope.feed.imagePosition === null) {
-					$scope.feed.imagePosition = 'left';
+				if ($scope.result.imagePosition === null) {
+					$scope.result.imagePosition = 'left';
 				}
 				var promiseStart = $q.when('start');
 				var promise1 = promiseStart.then(function(response) {
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'feeds/add/image/jpg/256/' + $scope.feed.id;
+					var url = 'results/add/image/jpg/256/' + $scope.result.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -154,9 +155,9 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 				var promiseEnd = promise1.then(function(result) {
 					// Refresh parent view with image
-					if ($scope.updateFeedImage.error === '') {
-						$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
-						$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
+					if ($scope.updateResultImage.error === '') {
+						$scope.result.imageUrl = 'images/get/feeds/jpg/' + $scope.result.id;
+						$scope.result.imageUrl = cbdUtils.refreshImgSrc($scope.result.imageUrl);
 					}
 					$scope.loading = false;
 					$scope.serverError = '';
@@ -175,13 +176,11 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	$scope.eraseImage = function() {
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(response) {
-			return $http.get('feeds/delete/image/jpg/' + $scope.feed.id);
+			return $http.get('results/delete/image/jpg/' + $scope.result.id);
 		});
 
 		var promiseEnd = promise1.then(function(result) {
-			$scope.feed.imageUrl = null;
-			$scope.updateFeedImage.name= null;
-			$scope.feed.imagePosition = null;
+			$scope.result.imageUrl = null;
 			$scope.loading = false;
 			$scope.serverError = '';
 			return result;
@@ -199,21 +198,21 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add/', $scope.feed).then(function(response) {
-				$scope.feed = response.data;
+			return $http.post('results/add/', $scope.result).then(function(response) {
+				$scope.result = response.data;
 				return response.data;
 			});
 		});
 		var promiseEnd = promise1.then(function(result) {
 			$scope.loading = false;
-			$uibModalInstance.close($scope.feed);
+			$uibModalInstance.close($scope.result);
 			$scope.serverError = '';
 
 			return result;
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			// $uibModalInstance.close($scope.feed);
+			// $uibModalInstance.close($scope.result);
 			return $q.reject(reason);
 		});
 
@@ -221,38 +220,38 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 	// DISMISS MODAL
 	$scope.cancel = function() {
-		// $uibModalInstance.close($scope.feed);
+		// $uibModalInstance.close($scope.result);
 		$uibModalInstance.dismiss('cancel');
 	};
 
 } ])
 
-.controller('DeleteFeedModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'feed', function($scope, $http, $q, $uibModalInstance, feed) {
+.controller('DeleteResultModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'result', function($scope, $http, $q, $uibModalInstance, result) {
 
 	$scope.loading = false;
-	$scope.feed = feed;
+	$scope.result = result;
 	$scope.ok = function() {
 
 		$scope.loading = true;
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'feeds/delete/' + $scope.feed.id + '/jpg';
+			var url = 'results/delete/' + $scope.result.id + '/jpg';
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});
 		});
 
-		var promiseEnd = promise1.then(function(result) {
+		var promiseEnd = promise1.then(function(response) {
 			$scope.loading = false;
-			$uibModalInstance.close(feed);
+			$uibModalInstance.close(result);
 			$scope.serverError = '';
 
-			return result;
+			return response;
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			// $uibModalInstance.close(feed);
+			// $uibModalInstance.close(result);
 			return $q.reject(reason);
 		});
 

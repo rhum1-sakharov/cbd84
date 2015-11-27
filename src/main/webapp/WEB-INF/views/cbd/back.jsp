@@ -71,13 +71,13 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
-					 <li ui-sref-active="active"><a ui-sref="calendar">Calendrier
+					<li ui-sref-active="active"><a ui-sref="calendar">Calendrier
 							2015/2016</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
 					<li ui-sref-active="active"><a ui-sref="assos">Asso
 							sportives</a></li>
 					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
-					<li ui-sref-active="active"><a ui-sref="partners">Partenaires</a></li> 
+					<li ui-sref-active="active"><a ui-sref="partners">Partenaires</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
@@ -136,17 +136,19 @@
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/utils.js"></script>
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back.controllers.js"></script>		
+			src="static/resources/js/angular/custom/back.controllers.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/back.config.js"></script>
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>		
+			src="static/resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>		
+			src="static/resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>
 		<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>		
-			<script type="text/javascript"
-			src="static/resources/js/angular/custom/back/feeds/back.feeds.controllers.js"></script>	
+			src="static/resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/feeds/back.feeds.controllers.js"></script>
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/results/back.results.controllers.js"></script>
 </body>
 
 </html>

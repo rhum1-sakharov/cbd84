@@ -18,24 +18,24 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 @RestController
-@RequestMapping(value = "/feeds")
-public class FeedController {
+@RequestMapping(value = "/results")
+public class ResultController {
 
-	private static final Logger LOG = LoggerFactory.getLogger(FeedController.class);
+	private static final Logger LOG = LoggerFactory.getLogger(ResultController.class);
 
 	@Autowired
 	private FeedRepositoryService feedRepoService;
 
 	@RequestMapping(method = RequestMethod.GET)
-	List<Feed> displaySortedFeedsActu() {
-		return feedRepoService.findAllActusOrderedByCreationDateAndTop();
+	List<Feed> displaySortedFeedsResult() {
+		return feedRepoService.findAllResultsOrderedByCreationDateAndTop();
 	}
 
 	
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	Feed addFeedActu(@RequestBody final Feed f) {
-		return feedRepoService.addOrUpdateFeed(f, FeedRepositoryService.FEED_TYPE_ACTUS);
+	Feed addFeedResults(@RequestBody final Feed f) {
+		return feedRepoService.addOrUpdateFeed(f, FeedRepositoryService.FEED_TYPE_RESULTS);
 	}
 
 	// /add/image/jpg/256/27
@@ -61,7 +61,7 @@ public class FeedController {
 	
 
 	@RequestMapping(value = "/delete/{id}/{imgExtension}", method = RequestMethod.GET)
-	void deleteFeedActu(@PathVariable String id, @PathVariable String imgExtension) {
+	void deleteFeedResult(@PathVariable String id, @PathVariable String imgExtension) {
 		feedRepoService.deleteFeed(id, imgExtension);
 	}
 
