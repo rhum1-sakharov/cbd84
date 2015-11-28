@@ -42,11 +42,22 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 			}
 		},
 
-	}).state('calendar', {
-		url : "/calendar",
+	}).state('calendars', {
+		url : "/calendars",
 		views : {
 			"main" : {
-				templateUrl : "resources/js/angular/custom/partials/front/calendar.html"
+				templateUrl : "resources/js/angular/custom/partials/front/calendars.html",
+				controller : function($scope, $q, $http, cbdUtils) {
+					$scope.calendars = [];
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('calendars').then(function(response) {
+							$scope.calendars = response.data;
+							return response.data;
+						});
+					});			
+					
+				}
 			},
 			"partners" : {
 				templateUrl : "resources/js/angular/custom/partials/front/partners.html",

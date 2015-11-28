@@ -11,14 +11,13 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 		views : {
 			"main" : {
 				templateUrl : "resources/js/angular/custom/partials/back/feeds/admin-feeds.html",
-				controller : function($scope, $q, $http, cbdUtils,$uibModal,$log) {
+				controller : function($scope, $q, $http, cbdUtils, $uibModal, $log) {
 					$scope.feeds = [];
 					$scope.feed = {};
-					
-					$scope.formatTs2Date = function( ts){
+
+					$scope.formatTs2Date = function(ts) {
 						return cbdUtils.formatTs2Date(ts);
 					};
-					
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
@@ -100,27 +99,90 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 			}
 		},
 
-	}).state('calendar', {
-		url : "/calendar",
+	}).state('calendars', {
+		url : "/calendars",
 		views : {
 			"main" : {
-				template : ""
+
+				templateUrl : "resources/js/angular/custom/partials/back/calendars/admin-calendars.html",
+				controller : function($scope, $q, $http, cbdUtils, $uibModal, $log) {
+					$scope.calendars = [];
+					$scope.calendar = {};
+
+					$scope.formatTs2Date = function(ts) {
+						return cbdUtils.formatTs2Date(ts);
+					};
+
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('calendars').then(function(response) {
+							$scope.calendars = response.data;
+							return response.data;
+						});
+					});
+
+					$scope.animationsEnabled = true;
+
+					$scope.openAddCalendar = function(size) {
+
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/calendars/add-calendars.html',
+							controller : 'AddCalendarModalInstanceCtrl',
+							size : size,
+							resolve : {
+								calendars : function() {
+									return $scope.calendars;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(calendars) {
+							$scope.calendars = calendars;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
+					$scope.openDeleteCalendar = function(size, selectedCalendar) {
+						$scope.calendar = selectedCalendar;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/js/angular/custom/partials/back/calendars/delete-calendars.html',
+							controller : 'DeleteCalendarModalInstanceCtrl',
+							size : size,
+							resolve : {
+								calendar : function() {
+									return $scope.calendar;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+
+							var index = $scope.calendars.indexOf(selectedItem);
+							$scope.calendars.splice(index, 1);
+
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+				}
 			}
 		}
 
 	}).state('results', {
 		url : "/results",
 		views : {
-			"main" :{
+			"main" : {
 				templateUrl : "resources/js/angular/custom/partials/back/results/admin-results.html",
-				controller : function($scope, $q, $http, cbdUtils,$uibModal,$log) {
+				controller : function($scope, $q, $http, cbdUtils, $uibModal, $log) {
 					$scope.results = [];
 					$scope.result = {};
-					
-					$scope.formatTs2Date = function( ts){
+
+					$scope.formatTs2Date = function(ts) {
 						return cbdUtils.formatTs2Date(ts);
 					};
-					
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
@@ -190,7 +252,7 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 
 						modalInstance.result.then(function(selectedItem) {
 
-							var index = $scope.results.indexOf(selectedItem);							
+							var index = $scope.results.indexOf(selectedItem);
 							$scope.results.splice(index, 1);
 
 						}, function() {

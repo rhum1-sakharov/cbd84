@@ -1,0 +1,72 @@
+
+<div class="modal-header">
+	<h3 class="modal-title">Ajouter un calendrier</h3>
+</div>
+<form novalidate name="formCalendar" class="form-horizontal" role="form"
+	ng-submit="formCalendar.$valid && ok()">
+	<div class="modal-body">
+
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Titre</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':calendarForm.title.$invalid && !calendarForm.title.$pristine}">
+				<input id="title" ng-model="calendar.title" type="text" name="title"
+					size="60" required>
+				<p ng-show="calendarForm.title.$invalid && !calendarForm.title.$pristine"
+					class="help-block">Veuillez saisir un titre</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Date de
+				cr&#233;ation</label>
+			<div class="col-sm-3">
+				<p class="input-group">
+					<input type="text" class="form-control"
+						uib-datepicker-popup="dd/MM/yyyy" ng-model="calendar.creationDate"
+						is-open="status.opened" min-date="minDate" max-date="maxDate"
+						datepicker-options="dateOptions" ng-required="true"
+						close-text="Close" /> <span class="input-group-btn">
+						<button type="button" class="btn btn-default"
+							ng-click="open($event)">
+							<i class="glyphicon glyphicon-calendar"></i>
+						</button>
+					</span>
+				</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="pdfFile" class="col-sm-3 control-label">Fichier PDF</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formCalendar.pdfFile.$invalid && !formCalendar.pdfFile.$pristine}">
+				<input type="file" name="pdfFile" file-model="addCalendarPDF"
+					required>
+				<p
+					ng-show="addCalendarPDF.error != '' && addCalendarPDF.error!='pristine' "
+					class="help-block" ng-bind-html="addCalendarPDF.error"></p>
+			</div>
+		</div>
+		
+		<div class="form-group">
+			<label for="excelFile" class="col-sm-3 control-label">Fichier Excel</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formCalendar.excelFile.$invalid && !formCalendar.excelFile.$pristine}">
+				<input type="file" name="excelFile" file-model="addCalendarExcel"
+					required>
+				<p
+					ng-show="addCalendarExcel.error != '' && addCalendarExcel.error!='pristine' "
+					class="help-block" ng-bind-html="addCalendarExcel.error"></p>
+			</div>
+		</div>
+
+	
+
+		<p ng-show="serverError != ''" class="help-block"
+			ng-bind-html='serverError'></p>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-disabled='loading'>OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Fermer</button>
+	</div>
+</form>

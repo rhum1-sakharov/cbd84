@@ -7,6 +7,7 @@ public interface IDatastore {
 	public static final String TYPE_FEEDS = "feeds";
 	public static final String TYPE_PARTNERS = "partners";
 	public static final String TYPE_CONTACTS = "contacts";
+	public static final String TYPE_CALENDARS = "calendars";
 
 	public byte[] getContent( String id, String extension, String type) throws IOException;
 	public void deleteContent( String id, String extension, String type) throws IOException;

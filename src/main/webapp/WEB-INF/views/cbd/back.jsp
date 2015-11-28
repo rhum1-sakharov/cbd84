@@ -71,8 +71,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
-					<li ui-sref-active="active"><a ui-sref="calendar">Calendrier
-							2015/2016</a></li>
+					<li ui-sref-active="active"><a ui-sref="calendars">Calendriers</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
 					<li ui-sref-active="active"><a ui-sref="assos">Asso
 							sportives</a></li>
@@ -100,20 +99,7 @@
 		</div>
 		<!-- /container -->
 
-		<!-- Facebook SDK JavaScript
-    ================================================== -->
-		<div id="fb-root"></div>
-		<script>
-			(function(d, s, id) {
-				var js, fjs = d.getElementsByTagName(s)[0];
-				if (d.getElementById(id))
-					return;
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
-				fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));
-		</script>
+	
 
 
 		<!-- Bootstrap core JavaScript
@@ -149,6 +135,8 @@
 			src="static/resources/js/angular/custom/back/feeds/back.feeds.controllers.js"></script>
 		<script type="text/javascript"
 			src="static/resources/js/angular/custom/back/results/back.results.controllers.js"></script>
+		<script type="text/javascript"
+			src="static/resources/js/angular/custom/back/calendars/back.calendars.controllers.js"></script>
 </body>
 
 </html>
