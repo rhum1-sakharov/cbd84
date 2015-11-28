@@ -34,7 +34,7 @@
 			<label for="imageFile" class="col-sm-3 control-label">Image</label>
 			<div class="col-sm-9">
 				<input type="file" name="imageFile" file-model="updatePartnerImage">
-				<img class="admin-partner-thumb" ng-src="{{partner.imageUrl}}">
+				<img class="admin-partner-thumb img-thumbnail" ng-src="{{partner.imageUrl}}">
 				<p
 					ng-show="updatePartnerImage.error != ''"
 					class="help-block" ng-bind-html="updatePartnerImage.error"></p>					

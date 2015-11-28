@@ -23,7 +23,7 @@
 		<tr ng-repeat="partner in partners | orderBy:'+position'">
 			<td ng-bind="partner.title"></td>
 			<td ng-bind="partner.urlLink"></td>
-			<td><img class="admin-partner-thumb"
+			<td><img class="admin-partner-thumb img-thumbnail"
 				ng-src="{{partner.imageUrl}}"></td>
 			<td ng-bind="partner.position"></td>
 			<td><span><button class="btn btn-success btn-sm"
