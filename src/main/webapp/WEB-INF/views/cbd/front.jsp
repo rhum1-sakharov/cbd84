@@ -10,7 +10,7 @@
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
-	<link rel="stylesheet" type="text/css"
+<link rel="stylesheet" type="text/css"
 	href="static/resources/css/ng-animation.css" />
 <link rel="stylesheet" type="text/css"
 	href="static/resources/css/screen.css" />
@@ -56,7 +56,8 @@
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
 					<li ui-sref-active="active"><a ui-sref="calendars">Calendriers</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
-					<li ui-sref-active="active"><a ui-sref="assos">Asso sportives</a></li>
+					<li ui-sref-active="active"><a ui-sref="assos">Asso
+							sportives</a></li>
 					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
 				</ul>
 			</div>
@@ -80,24 +81,22 @@
 		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-8">
-				<div ui-view="main" ></div>
+				<div ui-view="main"></div>
 			</div>
 
 			<div class="col-md-4">
 				<div ui-view="partners"></div>
 			</div>
-		</div>		
-	
-
+		</div>
+		
+		<div class="row">
 		<hr>
-
-		<footer>
-
 			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
 				le CBD Vaucluse </span><span><img
 				src="static/resources/images/logo-ffsb.png"></span><span><img
 				src="static/resources/images/logo-cbd84-35.png"></span>
-		</footer> 
+		</div>
+	
 	</div>
 	<!-- /container -->
 
