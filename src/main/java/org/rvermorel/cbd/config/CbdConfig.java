@@ -7,7 +7,6 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.stereotype.Service;
 
-
 @Service
 @Configuration
 @PropertySource("classpath:config.properties")
@@ -27,7 +26,5 @@ public class CbdConfig {
 	}
 
 	
-
-
 
 }

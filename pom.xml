@@ -174,6 +174,16 @@
 			<artifactId>spring-data-jpa</artifactId>
 			<version>1.9.1.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.0.3.RELEASE</version>
+		</dependency>
 
 		<!-- Other community dependencies -->
 		<dependency>
@@ -188,6 +198,11 @@
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>		
 		</dependency>
 
 		<!-- Needed for running tests (you may also use TestNG) -->
@@ -272,7 +287,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.12</version>
 			</plugin>
-			 <plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>2.6</version>
@@ -287,15 +302,15 @@
 					<webResources>
 						<resource>
 							<filtering>true</filtering>
-						<!-- 	this is relative to the pom.xml directory -->
+							<!-- this is relative to the pom.xml directory -->
 							<directory>src/main/webapp</directory>
 							<includes>
-								<include>WEB-INF/views/cbd/*.jsp</include>							
+								<include>WEB-INF/views/cbd/*.jsp</include>
 							</includes>
-						</resource>						
+						</resource>
 					</webResources>
 				</configuration>
-			</plugin> 
+			</plugin>
 
 			<!-- <plugin> <artifactId>maven-antrun-plugin</artifactId> <version>1.7</version> 
 				<executions> <execution> <id>generate-ddl-create</id> <phase>process-classes</phase> 
