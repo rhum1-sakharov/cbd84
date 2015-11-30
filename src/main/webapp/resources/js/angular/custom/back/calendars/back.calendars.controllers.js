@@ -65,7 +65,7 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('calendars/add/', $scope.calendar).then(function(response) {
+			return $http.post('calendars/add', $scope.calendar).then(function(response) {
 				$scope.calendar = response.data;
 				return response.data;
 			});

@@ -50,7 +50,7 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('results/add/', $scope.result).then(function(response) {
+			return $http.post('results/add', $scope.result).then(function(response) {
 				$scope.result = response.data;
 				return response.data;
 			});
@@ -198,7 +198,7 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('results/add/', $scope.result).then(function(response) {
+			return $http.post('results/add', $scope.result).then(function(response) {
 				$scope.result = response.data;
 				return response.data;
 			});

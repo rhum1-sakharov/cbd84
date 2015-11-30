@@ -37,7 +37,7 @@ public class CalendarController {
 		return calendarRepoService.addOrUpdateCalendar(c);
 	}
 	
-	@RequestMapping(value = "/add/file/{imgExtension}/{id}", method = { RequestMethod.POST })
+	@RequestMapping(value = "/add/file/{imgExtension}/{id}", method =  RequestMethod.POST )
 	public ResponseEntity<String> addFile(@RequestParam("file") MultipartFile file, @PathVariable String imgExtension,
 			@PathVariable String id) {
 		String responseMessage = "";

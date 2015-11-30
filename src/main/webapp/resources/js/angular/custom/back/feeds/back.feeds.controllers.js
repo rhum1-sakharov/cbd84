@@ -49,7 +49,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add/', $scope.feed).then(function(response) {
+			return $http.post('feeds/add', $scope.feed).then(function(response) {
 				$scope.feed = response.data;
 				return response.data;
 			});
@@ -199,7 +199,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add/', $scope.feed).then(function(response) {
+			return $http.post('feeds/add', $scope.feed).then(function(response) {
 				$scope.feed = response.data;
 				return response.data;
 			});
