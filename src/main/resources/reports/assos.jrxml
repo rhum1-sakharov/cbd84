@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2015-12-01T14:02:07 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05105ae6-681c-4cea-b3af-cd70f1054813">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="Assos" class="org.rvermorel.cbd.domain.Contact" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="79" uuid="c2aba958-6bf5-4668-ae97-de1a0c74ff1b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font fontName="Arial" size="26"/>
+				</textElement>
+				<text><![CDATA[<style isBold="true"><font size="18">CBD 84 - VAUCLUSE</font></style><br/><font size="12">Liste des associations sportives</font>]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="150" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="0" width="555" height="30" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{Assos}.getAssoCodeLabel() +" "+ $P{Assos}.getAssoName()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="30" width="555" height="30" uuid="53f0c0b7-233c-4039-bff2-ddf6139e211f"/>
+				<textFieldExpression><![CDATA["Président : "+$P{Assos}.getFirstname()+" "+$P{Assos}.getLastname()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="30" uuid="87ffc097-f22e-4561-9572-707889877889"/>
+				<textFieldExpression><![CDATA[$P{Assos}.getAddress()+" "+$P{Assos}.getPostalCode()+" "+$P{Assos}.getCity()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="90" width="555" height="30" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559"/>
+				<textFieldExpression><![CDATA["Tél : "+$P{Assos}.getPhone()]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="0" y="120" width="555" height="30" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e"/>
+				<textFieldExpression><![CDATA["Email : "+$P{Assos}.getEmail()]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

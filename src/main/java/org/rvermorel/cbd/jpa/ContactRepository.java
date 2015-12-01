@@ -12,5 +12,7 @@ public interface ContactRepository extends BaseRepository<Contact, Long> {
 	
 	@Query(value="SELECT * FROM contacts c WHERE c.type='asso' ORDER BY c.position asc, c.assoName asc", nativeQuery=true)
 	public List<Contact> findAssoMembersOrderByPosition();	
+	
+	
 
 }

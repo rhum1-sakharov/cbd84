@@ -65,6 +65,12 @@ public class Contact implements Serializable {
 	@Column(name = "assoName")
 	private String assoName;
 	
+	@Column(name = "correspondance")
+	private String correspondance;
+	
+	@Column(name = "boulodrome")
+	private String boulodrome;
+	
 	@Column(name = "position")
 	private int position;
 
@@ -186,6 +192,22 @@ public class Contact implements Serializable {
 
 	public void setAssoName(String assoName) {
 		this.assoName = assoName;
+	}
+
+	public String getCorrespondance() {
+		return correspondance;
+	}
+
+	public void setCorrespondance(String correspondance) {
+		this.correspondance = correspondance;
+	}
+
+	public String getBoulodrome() {
+		return boulodrome;
+	}
+
+	public void setBoulodrome(String boulodrome) {
+		this.boulodrome = boulodrome;
 	}
 	
 }
