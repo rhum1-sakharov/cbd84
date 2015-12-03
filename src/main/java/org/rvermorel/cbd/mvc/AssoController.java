@@ -1,13 +1,12 @@
 package org.rvermorel.cbd.mvc;
 
 import java.io.IOException;
-import java.io.OutputStream;
-import java.nio.charset.Charset;
 import java.util.List;
 
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Contact;
 import org.rvermorel.cbd.jpa.ContactRepositoryService;
+import org.rvermorel.cbd.reports.IReportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.csvreader.CsvWriter;
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @RestController
 @RequestMapping(value = "/assos")
@@ -34,6 +34,9 @@ public class AssoController {
 	public static final MediaType MEDIA_TYPE_PDF = new MediaType("application", "pdf");
 
 	@Autowired
+private IReportService reportService;
+	
+	@Autowired
 	private ContactRepositoryService contactRepoService;
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -41,15 +44,16 @@ public class AssoController {
 		return contactRepoService.findAssoMembersOrderByPosition();
 	}
 
-//	@RequestMapping(value = "/get/plaquette", method = RequestMethod.GET)
-//	ResponseEntity<byte[]> getPlaquettePDF() {
-//
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setContentType(MEDIA_TYPE_PDF);
-//		headers.set("Content-Disposition", "attachment; filename=associations-sportives-84.pdf");		
-//	
-//		return new ResponseEntity<byte[]>(null, headers, HttpStatus.OK);		//	
-//	}
+	@RequestMapping(value = "/get/plaquettePDF", method = RequestMethod.GET)
+	ResponseEntity<byte[]> getPlaquettePDF() {
+		JRDataSource ds = new JRBeanCollectionDataSource(contactRepoService.findAssoMembersOrderByPosition());
+		byte[] bytes = reportService.createPDFA1(getClass().getResourceAsStream("/reports/assos.jasper"), ds);
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MEDIA_TYPE_PDF);
+		headers.set("Content-Disposition", "attachment; filename=associations-sportives-84.pdf");
+
+		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK); //
+	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	Contact addContact(@RequestBody final Contact c) {

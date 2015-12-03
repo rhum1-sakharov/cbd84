@@ -10,6 +10,7 @@
 	<context:component-scan base-package="org.rvermorel.cbd.jpa" />
 	<context:component-scan base-package="org.rvermorel.cbd.datastore" />
 	<context:component-scan base-package="org.rvermorel.cbd.images" />
+	<context:component-scan base-package="org.rvermorel.cbd.reports" />
 
 
 	<mvc:annotation-driven>
