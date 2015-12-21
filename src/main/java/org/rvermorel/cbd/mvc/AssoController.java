@@ -44,7 +44,7 @@ private IReportService reportService;
 		return contactRepoService.findAssoMembersOrderByPosition();
 	}
 
-	@RequestMapping(value = "/get/plaquettePDF", method = RequestMethod.GET)
+	@RequestMapping(value = "/get/pdf", method = RequestMethod.GET)
 	ResponseEntity<byte[]> getPlaquettePDF() {
 		JRDataSource ds = new JRBeanCollectionDataSource(contactRepoService.findAssoMembersOrderByPosition());
 		byte[] bytes = reportService.createPDFA1(getClass().getResourceAsStream("/reports/assos.jasper"), ds);

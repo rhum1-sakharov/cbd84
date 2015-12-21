@@ -2,8 +2,8 @@
 	<div class="panel-heading">
 		<h3 class="panel-title">Associations Sport Boule en Vaucluse</h3>
 	</div>
-	<table class="table">	
-		<tr ng-repeat="asso in assos" >
+	<table class="table">
+		<tr ng-repeat="asso in assos">
 			<td>
 				<p>
 					<b><span ng-bind-html="asso.assoCodeLabel"></span> : <span
@@ -33,6 +33,12 @@
 					<a href="mailto:{{asso.email}}"><i
 						class="glyphicon glyphicon-envelope"></i> <span
 						ng-bind-html="asso.email"></span></a>
+				</p>
+				<p ng-show="asso.correspondance">
+					Correspondance <span ng-bind-html="asso.correspondance"></span>
+				</p>
+				<p ng-show="asso.boulodrome">
+					<span ng-bind-html="asso.asso.boulodrome"></span>
 				</p>
 			</td>
 			<td><img class="asso-portrait img-thumbnail"

@@ -18,33 +18,12 @@
 		<jasperreport.version>6.1.0</jasperreport.version>
 		<version.standard.taglibs>1.1.2</version.standard.taglibs>
 		<version.commons.logging>1.1.1</version.commons.logging>
-		<logback.version>1.1.3</logback.version>
+		<logback.version>1.1.3</logback.version>		
 	</properties>
 
 	<dependencyManagement>
 
 		<dependencies>
-
-
-			<!-- Define the version of JBoss' Java EE 6 APIs we want to import. Any 
-				dependencies from org.jboss.spec will have their version defined by this 
-				BOM -->
-			<!-- JBoss distributes a complete set of Java EE 6 APIs including a Bill 
-				of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
-				of artifacts. We use this here so that we always get the correct versions 
-				of artifacts. Here we use the jboss-javaee-web-6.0 stack (you can read this 
-				as the JBoss stack of the Java EE Web Profile 6 APIs), and we use version 
-				3.0.0.Final which is the latest release of the stack. You can actually use 
-				this stack with any version of JBoss AS that implements Java EE 6, not just 
-				JBoss AS 7! -->
-			<!-- <dependency> <groupId>org.jboss.bom</groupId> <artifactId>jboss-javaee-6.0-with-hibernate</artifactId> 
-				<version>${version.jboss.bom}</version> <type>pom</type> <scope>import</scope> 
-				</dependency> -->
-
-			<!-- <dependency> <groupId>org.jboss.bom</groupId> <artifactId>jboss-javaee-6.0-with-spring</artifactId> 
-				<version>${version.jboss.bom}</version> <type>pom</type> <scope>import</scope> 
-				</dependency> -->
-
 			<dependency>
 				<groupId>taglibs</groupId>
 				<artifactId>standard</artifactId>
@@ -59,37 +38,44 @@
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-annotations</artifactId>
-				<version>${jackson.version}</version>			
+				<version>${jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
-				<version>${jackson.version}</version>			
+				<version>${jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
-				<artifactId>jackson-databind</artifactId>	
-				<version>${jackson.version}</version>			
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.datatype</groupId>
-				<artifactId>jackson-datatype-jsr310</artifactId>	
-				<version>${jackson.version}</version>			
+				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>${jackson.version}</version>
 			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
-	<dependencies>
-
-		<!-- IMAGE ENHANCEMENT -->
+			<dependency>
+				<groupId>org.santos.signware</groupId>
+				<artifactId>custom-fonts</artifactId>
+				<version>1.0</version>
+			</dependency>			
+			<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.javacsv</groupId>
+			<artifactId>javacsv</artifactId>
+			<version>2.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.imgscalr</groupId>
 			<artifactId>imgscalr-lib</artifactId>
-			<version>4.2</version>
-			<type>jar</type>
+			<version>4.2</version>			
 		</dependency>
-
-		<!-- LOGGING SYSTEM -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -105,8 +91,6 @@
 			<artifactId>logback-core</artifactId>
 			<version>${logback.version}</version>
 		</dependency>
-
-		<!-- COMMONS -->
 		<dependency>
 			<groupId>commons-io</groupId>
 			<artifactId>commons-io</artifactId>
@@ -123,10 +107,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.37</version>
 		</dependency>
-
-		<!-- SPRING -->
-
-		<dependency>
+			<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
 			<version>${spring.version}</version>
@@ -202,12 +183,156 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>4.0.3.RELEASE</version>
 		</dependency>
+<dependency>
+			<groupId>aopalliance</groupId>
+			<artifactId>aopalliance</artifactId>
+			<version>1.0</version>
+		</dependency>
+<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+			<version>${jasperreport.version}</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>cglib</groupId>
+			<artifactId>cglib-nodep</artifactId>
+			<version>2.2</version>
+			<scope>test</scope>
+		</dependency>	
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.185</version>
+		</dependency>	
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP</artifactId>
+			<version>2.2.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.3.8.Final</version>
+		</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+	
+		<!-- IMAGE ENHANCEMENT -->
+		<dependency>
+			<groupId>org.imgscalr</groupId>
+			<artifactId>imgscalr-lib</artifactId>					
+		</dependency>
+
+		<!-- LOGGING SYSTEM -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-core</artifactId>			
+		</dependency>
+
+		<!-- COMMONS -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>			
+		</dependency>
+
+		<!-- SPRING -->
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-expression</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>			
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>			
+		</dependency>
 
 		<!-- Other community dependencies -->
 		<dependency>
 			<groupId>aopalliance</groupId>
-			<artifactId>aopalliance</artifactId>
-			<version>1.0</version>
+			<artifactId>aopalliance</artifactId>			
 		</dependency>
 		<dependency>
 			<groupId>taglibs</groupId>
@@ -219,88 +344,76 @@
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
+			<artifactId>javax.servlet-api</artifactId>			
 		</dependency>
 		<dependency>
 			<groupId>net.sourceforge.javacsv</groupId>
-			<artifactId>javacsv</artifactId>
-			<version>2.0</version>
+			<artifactId>javacsv</artifactId>			
 		</dependency>
 
 		<!-- Reports dependencies -->
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>${jasperreport.version}</version>
-		</dependency>
+			<artifactId>jasperreports</artifactId>		
+		</dependency>	
 		<dependency>
 			<groupId>joda-time</groupId>
-			<artifactId>joda-time</artifactId>
-			<version>2.1</version>
+			<artifactId>joda-time</artifactId>			
 		</dependency>
-
+		<dependency>
+			<groupId>org.santos.signware</groupId>
+			<artifactId>custom-fonts</artifactId>
+		</dependency>
 
 		<!-- Needed for running tests (you may also use TestNG) -->
 		<dependency>
 			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.8.2</version>
-			<scope>test</scope>
+			<artifactId>junit</artifactId>			
 		</dependency>
-
 
 		<!-- Add cglib for the MemberDaoTest -->
 		<dependency>
 			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<version>2.2</version>
-			<scope>test</scope>
+			<artifactId>cglib-nodep</artifactId>		
 		</dependency>
 
 		<!-- Add H2 dependency for embedded testing database -->
 		<dependency>
 			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.185</version>
+			<artifactId>h2</artifactId>			
 		</dependency>
 
 		<!-- DataSource (HikariCP) -->
 		<dependency>
 			<groupId>com.zaxxer</groupId>
-			<artifactId>HikariCP</artifactId>
-			<version>2.2.5</version>
+			<artifactId>HikariCP</artifactId>		
 		</dependency>
 
 		<!-- JPA Provider (Hibernate) -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>4.3.8.Final</version>
+			<artifactId>hibernate-entitymanager</artifactId>			
 		</dependency>
 
 		<!-- Add JSON dependency -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-core</artifactId>
-			<version>2.6.3</version>
+			<artifactId>jackson-core</artifactId>			
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.6.3</version>
+			<artifactId>jackson-databind</artifactId>			
 		</dependency>
 		<dependency>
 			<groupId>com.fasterxml.jackson.datatype</groupId>
-			<artifactId>jackson-datatype-jsr310</artifactId>
-			<version>${jackson.version}</version>
+			<artifactId>jackson-datatype-jsr310</artifactId>			
 		</dependency>
 
 
 	</dependencies>
 
 	<build>
-		<finalName>ROOT</finalName>
+		<finalName>${war.name}</finalName>
 		<plugins>
 			<!-- Force Java 6 -->
 			<plugin>
@@ -363,6 +476,7 @@
 			<id>prod</id>
 			<properties>
 				<minjs>.min</minjs>
+				<war.name>ROOT.war</war.name>
 			</properties>
 		</profile>
 		<profile>
@@ -372,6 +486,7 @@
 			</activation>
 			<properties>
 				<minjs></minjs>
+				<war.name>cbd.war</war.name>
 			</properties>
 		</profile>
 	</profiles>

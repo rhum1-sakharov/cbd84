@@ -14,6 +14,8 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
+import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import net.sf.jasperreports.export.type.PdfaConformanceEnum;
 
 @Service
 public class ReportServiceImpl implements IReportService {
@@ -27,9 +29,19 @@ public class ReportServiceImpl implements IReportService {
 		try {
 			JasperPrint jp = JasperFillManager.fillReport(inJasper, null, dataSource);
 		
+			jp.setProperty("net.sf.jasperreports.export.pdf.exclude.key.TransparentImage", null);
+			jp.setProperty("net.sf.jasperreports.export.pdfa.icc.profile.path", "AdobeRGB1998.icc");
+
 			JRPdfExporter exporter = new JRPdfExporter();
 			exporter.setExporterInput(new SimpleExporterInput(jp));
 			exporter.setExporterOutput(new SimpleOutputStreamExporterOutput(baos));
+			SimplePdfExporterConfiguration configuration = new SimplePdfExporterConfiguration();
+			// Include structure tags for PDF/A-1a compliance; unnecessary for
+			// // PDF/A-1b
+			configuration.setTagged(true);
+			configuration.setPdfaConformance(PdfaConformanceEnum.PDFA_1A);
+			exporter.setConfiguration(configuration);
+			exporter.exportReport();
 		
 			exporter.exportReport();
 
