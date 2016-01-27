@@ -1,0 +1,28 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des calendriers <span><button
+					class="btn btn-success btn-sm" ng-click="openAddCalendar('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un calendrier
+				</button></span>
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Date de cr&#233;ation</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="calendar in calendars | orderBy:['-creationDate']">
+			<td ng-bind-html="calendar.title"></td>
+			<td ng-bind-html="formatTs2Date(calendar.creationDate)"></td>
+			<td><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteCalendar('lg', calendar)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

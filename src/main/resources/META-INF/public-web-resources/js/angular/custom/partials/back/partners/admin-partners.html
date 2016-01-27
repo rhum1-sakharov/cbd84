@@ -1,0 +1,38 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des partenaires <span><button
+					class="btn btn-success btn-sm"
+					 ng-click="openAddPartner('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un partenaire
+				</button></span>			
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Titre</th>
+				<th>Lien</th>
+				<th>Image</th>
+				<th>Ordre</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="partner in partners | orderBy:'+position'">
+			<td ng-bind="partner.title"></td>
+			<td ng-bind="partner.urlLink"></td>
+			<td><img class="admin-partner-thumb img-thumbnail"
+				ng-src="{{partner.imageUrl}}"></td>
+			<td ng-bind="partner.position"></td>
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdatePartner('lg', partner)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeletePartner('lg', partner)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

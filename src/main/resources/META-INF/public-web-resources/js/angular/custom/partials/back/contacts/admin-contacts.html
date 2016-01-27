@@ -1,0 +1,45 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des contacts <span><button
+					class="btn btn-success btn-sm"
+					 ng-click="openAddContact('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un membre du CBD
+				</button></span>			
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Fonction</th>
+				<th>Pr&#233;nom/Nom</th>
+				<th>Adresse Postale</th>
+				<th>T&#233;l&#233;phone Fixe</th>
+				<th>T&#233;l&#233;phone Mobile</th>
+				<th>Email</th>
+				<th>Photo</th>
+				<th>Ordre</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="contact in contacts | orderBy:'+position'">
+			<td ng-bind-html="contact.function"></td>
+			<td><span ng-bind-html="contact.firstname"></span> <span ng-bind-html="contact.lastname"></span></td>
+			<td><span ng-bind-html="contact.address"></span> <br> <span ng-bind-html="contact.postalCode"></span> <br> <span ng-bind-html="contact.city"></span></td>
+			<td ng-bind-html="contact.phone"></td>
+			<td ng-bind-html="contact.mobile"></td>
+			<td ng-bind-html="contact.email"></td>
+			<td><img class="admin-contact-thumb img-thumbnail" ng-src="{{contact.photoUrl}}"></td>
+			<td ng-bind-html="contact.position"></td>
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdateContact('lg', contact)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteContact('lg', contact)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

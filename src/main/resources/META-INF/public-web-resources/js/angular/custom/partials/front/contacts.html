@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Membres du CBD Vaucluse</h3>
+	</div>
+	<table class="table">	
+		<tr ng-repeat="contact in contacts">
+			<td>
+				<p>
+					<b><span ng-bind-html="contact.function"></span> : <span ng-bind-html="contact.firstname"></span> <span ng-bind-html="contact.lastname"></span></b>
+				</p>
+				<p >
+				<span ng-bind-html="contact.address"></span> 
+				</p>
+				<p>
+				 <span ng-bind-html="contact.postalCode"></span> <span ng-bind-html="contact.city"></span>
+				</p>
+				<p ng-show="contact.phone">
+					<i class="glyphicon glyphicon-earphone"></i> <span ng-bind-html="contact.phone"></span>
+				</p>
+				<p ng-show="contact.mobile">
+					<i class="glyphicon glyphicon-phone"></i> <span ng-bind-html="contact.mobile"></span> 					
+				</p>
+				<p>
+				<a href="mailto:{{contact.email}}"><i
+						class="glyphicon glyphicon-envelope"></i> <span ng-bind-html="contact.email"></span></a>
+				</p>
+			</td>
+			<td>
+			<img class="contact-portrait img-thumbnail" ng-src="{{contact.photoUrl}}">
+			</td>
+		</tr>
+		
+	</table>
+</div>

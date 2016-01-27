@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Associations Sport Boule en Vaucluse</h3>
+	</div>
+	<table class="table">
+		<tr ng-repeat="asso in assos">
+			<td>
+				<p>
+					<b><span ng-bind-html="asso.assoCodeLabel"></span> : <span
+						ng-bind-html="asso.assoName"></span></b>
+				</p>
+				<p>
+					<span ng-bind-html="asso.function"></span> : <span
+						ng-bind-html="asso.firstname"></span> <span
+						ng-bind-html="asso.lastname"></span>
+				</p>
+				<p>
+					<span ng-bind-html="asso.address"></span>
+				</p>
+				<p>
+					<span ng-bind-html="asso.postalCode"></span> <span
+						ng-bind-html="asso.city"></span>
+				</p>
+				<p ng-show="asso.phone">
+					<i class="glyphicon glyphicon-earphone"></i> <span
+						ng-bind-html="asso.phone"></span>
+				</p>
+				<p ng-show="asso.mobile">
+					<i class="glyphicon glyphicon-phone"></i> <span
+						ng-bind-html="asso.mobile"></span>
+				</p>
+				<p ng-show="asso.email">
+					<a href="mailto:{{asso.email}}"><i
+						class="glyphicon glyphicon-envelope"></i> <span
+						ng-bind-html="asso.email"></span></a>
+				</p>
+				<p ng-show="asso.correspondance">
+					Correspondance <span ng-bind-html="asso.correspondance"></span>
+				</p>
+				<p ng-show="asso.boulodrome">
+					<span ng-bind-html="asso.asso.boulodrome"></span>
+				</p>
+			</td>
+			<td><img class="asso-portrait img-thumbnail"
+				ng-src="{{asso.photoUrl}}"></td>
+		</tr>
+
+	</table>
+</div>

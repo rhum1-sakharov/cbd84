@@ -1,0 +1,15 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Partenaires</h3>
+	</div>
+	<div class="panel-body">
+		<div ng-repeat="partner in partners">
+			<a href="{{partner.urlLink}}"><div>
+					<span ng-bind-html="partner.title"></span>
+				</div> <img class="partner-css img-thumbnail" ng-src="{{partner.imageUrl}}"></a>
+				
+		</div>		
+	</div>
+</div>
+

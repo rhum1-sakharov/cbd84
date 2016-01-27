@@ -7,30 +7,30 @@
 <title>CBD Vaucluse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css"
-	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="static/resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="static/resources/css/ng-animation.css" />
+	href="resources/css/ng-animation.css" />
 <link rel="stylesheet" type="text/css"
-	href="static/resources/css/screen.css" />
+	href="resources/css/screen.css" />
 
 
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
+	src="resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
+	src="resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
+	src="resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
-	src="static/resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
+	src="resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
 
 <!-- Angular UI Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="static/resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
+	src="resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
 </head>
 
 <body role="document">
@@ -47,8 +47,8 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span><img
-						src="static/resources/images/logo-ffsb.png"></span><span><img
-						src="static/resources/images/logo-cbd84-35.png"></span><span>CBD
+						src="resources/images/logo-ffsb.png"></span><span><img
+						src="resources/images/logo-cbd84-35.png"></span><span>CBD
 						Vaucluse</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
@@ -72,8 +72,8 @@
 
 		<!--  <div class="row">			
 				<div class="container">					
-					<span><img src="static/resources/images/logo-cbd84.png"></span>
-					<span><img src="static/resources/images/avignon-04.jpg"></span>
+					<span><img src="resources/images/logo-cbd84.png"></span>
+					<span><img src="resources/images/avignon-04.jpg"></span>
 					</p>
 				</div>			
 		</div>  -->
@@ -93,52 +93,39 @@
 		<hr>
 			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
 				le CBD Vaucluse </span><span><img
-				src="static/resources/images/logo-ffsb.png"></span><span><img
-				src="static/resources/images/logo-cbd84-35.png"></span>
+				src="resources/images/logo-ffsb.png"></span><span><img
+				src="resources/images/logo-cbd84-35.png"></span>
 		</div>
 	
 	</div>
 	<!-- /container -->
 
-	<!-- Facebook SDK JavaScript
-    ================================================== -->
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id))
-				return;
-			js = d.createElement(s);
-			js.id = id;
-			js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
+	
 
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script
-		src="static/resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+		src="resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 	<script
-		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		src="resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script
-		src="static/resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+		src="resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 
 	<!-- Angular Custom JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/app-front.js"></script>
+		src="resources/js/angular/custom/app-front.js"></script>
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/utils.js"></script>
+		src="resources/js/angular/custom/utils.js"></script>
 
 	<script type="text/javascript"
-		src="static/resources/js/angular/custom/front.config.js"></script>
+		src="resources/js/angular/custom/front.config.js"></script>
 
 </body>
 
