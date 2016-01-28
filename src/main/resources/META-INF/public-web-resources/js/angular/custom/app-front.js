@@ -1,1 +1,0 @@
-angular.module('app-front', [   'cbd.front.config']);

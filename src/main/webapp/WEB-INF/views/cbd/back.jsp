@@ -7,49 +7,49 @@
 <title>Administration CBD Vaucluse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css"
-	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/angular-ui/vendor/ui-bootstrap-csp.css" />
+	href="resources/js/vendor/angular-ui/ui-bootstrap-csp.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
+	href="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/css/screen.css" />
 
 <!-- JQuery Vendor JavaScript
     ================================================== -->
 <script
-	src="resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+	src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 <script
-	src="resources/js/jquery/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	src="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 
 
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
 </head>
 
 <!-- Angular UI  Vendor JavaScript
     ================================================== -->
 
 <script type="text/javascript"
-	src="resources/js/angular-ui/vendor/ui-bootstrap-tpls${minjs}.js"></script>
+	src="resources/js/vendor/angular-ui/ui-bootstrap-tpls${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
+	src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
 <!-- Angular UI TinyMCE Vendor JavaScript
     ================================================== -->
 
 <script type="text/javascript"
-	src="resources/js/angular-ui-tinymce/tinymce.js"></script>
+	src="resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
 
 <body role="document" class="bg-admin">
 
@@ -106,36 +106,36 @@
 		<!-- Placed at the end of the document so the pages load faster -->
 
 		<script
-			src="resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+			src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 		<script
-			src="resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+			src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 
 		<!-- Angular Custom JavaScript
     ================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
 
 		<script type="text/javascript"
-			src="resources/js/angular/custom/app-back.js"></script>
+			src="resources/js/custom/back/app-back.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/utils.js"></script>
+			src="resources/js/custom/utils.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back.controllers.js"></script>
+			src="resources/js/custom/back/back.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back.config.js"></script>
+			src="resources/js/custom/back/back.config.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/partners/back.partners.controllers.js"></script>
+			src="resources/js/custom/back/partners/back.partners.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/contacts/back.contacts.controllers.js"></script>
+			src="resources/js/custom/back/contacts/back.contacts.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/assos/back.assos.controllers.js"></script>
+			src="resources/js/custom/back/assos/back.assos.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/feeds/back.feeds.controllers.js"></script>
+			src="resources/js/custom/back/feeds/back.feeds.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/results/back.results.controllers.js"></script>
+			src="resources/js/custom/back/results/back.results.controllers.js"></script>
 		<script type="text/javascript"
-			src="resources/js/angular/custom/back/calendars/back.calendars.controllers.js"></script>
+			src="resources/js/custom/back/calendars/back.calendars.controllers.js"></script>
 </body>
 
 </html>

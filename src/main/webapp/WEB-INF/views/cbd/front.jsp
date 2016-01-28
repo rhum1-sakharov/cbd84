@@ -7,9 +7,9 @@
 <title>CBD Vaucluse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css"
-	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/bootstrap/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/css/ng-animation.css" />
 <link rel="stylesheet" type="text/css"
@@ -19,18 +19,18 @@
 <!-- Angular Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/angular/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
+	src="resources/js/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
 
 <!-- Angular UI Vendor JavaScript
     ================================================== -->
 <script type="text/javascript"
-	src="resources/js/angular-ui-router/angular-ui-router${minjs}.js"></script>
+	src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 </head>
 
 <body role="document">
@@ -107,25 +107,25 @@
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<script
-		src="resources/js/jquery/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+		src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
 	<script
-		src="resources/bootstrap/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	<script
-		src="resources/bootstrap/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+		src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 
 	<!-- Angular Custom JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<script type="text/javascript"
-		src="resources/js/angular/custom/app-front.js"></script>
+		src="resources/js/custom/front/app-front.js"></script>
 	<script type="text/javascript"
-		src="resources/js/angular/custom/utils.js"></script>
+		src="resources/js/custom/utils.js"></script>
 
 	<script type="text/javascript"
-		src="resources/js/angular/custom/front.config.js"></script>
+		src="resources/js/custom/front/front.config.js"></script>
 
 </body>
 
