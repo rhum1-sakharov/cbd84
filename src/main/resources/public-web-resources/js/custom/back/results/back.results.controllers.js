@@ -8,11 +8,6 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 	};
 
 	/** ****************************** DatePicker AngularUI */
-	$scope.today = function() {
-		$scope.result.creationDate = new Date();
-	};
-	$scope.today();
-
 	$scope.status = {
 		opened : false
 	};
@@ -110,15 +105,11 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 		error : 'pristine'
 	};
 
-	/** ****************************** DatePicker AngularUI */
-	$scope.today = function() {
-		$scope.result.creationDate = new Date();
-	};
-
+	/** ****************************** DatePicker AngularUI */	
 	$scope.status = {
 		opened : false
 	};
-	$scope.today();
+	
 
 	$scope.open = function($event) {
 		$scope.status.opened = true;

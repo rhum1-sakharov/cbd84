@@ -8,14 +8,10 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	};
 
 	/** ****************************** DatePicker AngularUI */
-	$scope.today = function() {
-		$scope.feed.creationDate = new Date();
-	};
-
 	$scope.status = {
 		opened : false
 	};
-	$scope.today();
+
 
 	$scope.open = function($event) {
 		$scope.status.opened = true;
@@ -110,14 +106,11 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	};
 
 	/** ****************************** DatePicker AngularUI */
-	$scope.today = function() {
-		$scope.feed.creationDate = new Date();
-	};
 
 	$scope.status = {
 		opened : false
 	};
-	$scope.today();
+
 
 	$scope.open = function($event) {
 		$scope.status.opened = true;

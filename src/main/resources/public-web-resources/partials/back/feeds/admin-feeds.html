@@ -22,7 +22,7 @@
 		<tr ng-repeat="feed in feeds | orderBy:['-top','-creationDate']" >
 			<td ng-bind-html="feed.title"></td>
 			<td ng-bind-html="feed.author"></td>
-			<td ng-bind-html="formatTs2Date({{feed.creationDate}})"></td>
+			<td ng-bind-html="formatTs2Date(feed.creationDate)"></td>
 			<td ><img ng-show="feed.imageUrl" class="admin-contact-thumb img-thumbnail" ng-src="{{feed.imageUrl}}"></td>			
 			<td><span><button class="btn btn-success btn-sm"
 						ng-click="openUpdateFeed('lg', feed)">

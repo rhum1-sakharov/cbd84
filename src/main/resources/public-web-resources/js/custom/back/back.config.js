@@ -65,8 +65,7 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 						});
 
 						modalInstance.result.then(function(selectedItem) {
-							$scope.feed = selectedItem;
-							$log.info($scope.feed.creationDate);
+							$scope.feed = selectedItem;							
 						}, function() {
 							$log.info('Modal dismissed at: ' + new Date());
 						});
