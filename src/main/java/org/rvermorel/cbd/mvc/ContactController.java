@@ -5,10 +5,13 @@ import java.util.List;
 
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Contact;
+import org.rvermorel.cbd.domain.Partner;
 import org.rvermorel.cbd.jpa.ContactRepositoryService;
+import org.rvermorel.cbd.reports.IReportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
 @RestController
 @RequestMapping(value = "/contacts")
 public class ContactController {
@@ -27,7 +32,20 @@ public class ContactController {
 
 	@Autowired
 	private ContactRepositoryService contactRepoService;
+	
+	@Autowired
+	private IReportService reportService;
 
+	@RequestMapping(value = "/report", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> getPDFReportList() {
+		List<Contact> contacts = contactRepoService.findAssoMembersOrderByPosition();
+		JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(contacts);
+		byte[] bytes = reportService.createPDFA1(getClass().getResourceAsStream("/reports/assos.jasper"), ds);
+		HttpHeaders headers = new HttpHeaders();
+		headers.set("Content-Type", "application/pdf");
+		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
+	}
+	
 	@RequestMapping(method = RequestMethod.GET)
 	List<Contact>  displaySortedContacts() {
 		return contactRepoService.findPersonMembersOrderByPosition();

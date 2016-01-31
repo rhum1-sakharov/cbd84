@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2015-12-21T09:03:38 -->
+<!-- 2016-01-31T19:15:32 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05105ae6-681c-4cea-b3af-cd70f1054813">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapterAsso"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
 	<style name="Style1" isDefault="true" fontName="HelveticaFamily"/>
 	<style name="Sans_Normal" fontName="DejaVu Sans" fontSize="8" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -143,35 +143,45 @@
 	<detail>
 		<band height="150" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="0" width="555" height="30" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520"/>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
+					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="HelveticaFamily" isBold="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{assoCodeLabel} +" "+ $F{assoName}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="30" width="555" height="30" uuid="53f0c0b7-233c-4039-bff2-ddf6139e211f"/>
+				<reportElement positionType="Float" x="0" y="30" width="555" height="30" isRemoveLineWhenBlank="true" uuid="53f0c0b7-233c-4039-bff2-ddf6139e211f">
+					<printWhenExpression><![CDATA[!($F{firstname}.equals(""))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="HelveticaFamily"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Président : "+$F{firstname}+" "+$F{lastname}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="60" width="555" height="30" uuid="87ffc097-f22e-4561-9572-707889877889"/>
+				<reportElement positionType="Float" x="0" y="60" width="555" height="30" isRemoveLineWhenBlank="true" uuid="87ffc097-f22e-4561-9572-707889877889">
+					<printWhenExpression><![CDATA[!($F{address}.equals(""))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="HelveticaFamily"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{address}+" "+$F{postalCode}+" "+$F{city}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="90" width="555" height="30" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559"/>
+				<reportElement positionType="Float" x="0" y="90" width="555" height="30" isRemoveLineWhenBlank="true" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559">
+					<printWhenExpression><![CDATA[!($F{phone}.equals(""))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="HelveticaFamily"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Tél : "+$F{phone}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="120" width="555" height="30" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e"/>
+				<reportElement positionType="Float" x="0" y="120" width="555" height="30" isRemoveLineWhenBlank="true" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e">
+					<printWhenExpression><![CDATA[!($F{email}.equals(""))]]></printWhenExpression>
+				</reportElement>
 				<textElement>
 					<font fontName="HelveticaFamily"/>
 				</textElement>

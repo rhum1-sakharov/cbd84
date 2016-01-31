@@ -23,7 +23,7 @@ public class PartnerRepositoryService {
 
 	@Autowired
 	private IDatastore datastore;
-	
+
 	@Autowired
 	private IImageEnhancement ie;
 
@@ -38,7 +38,7 @@ public class PartnerRepositoryService {
 		return partnerRepo.saveAndFlush(partner);
 
 	}
-	
+
 	public void addPartnerImage(String id, String imgExtension, String type, byte[] bytes, int size) {
 
 		try {
@@ -46,9 +46,9 @@ public class PartnerRepositoryService {
 			byte[] resized = ie.resizeImg(bytes, size, imgExtension);
 			datastore.writeContent(resized, id, imgExtension, type);
 			Partner partner = partnerRepo.findOne(idLong);
-			partner.setImageUrl("images/get/partners/jpg/" + id);			
+			partner.setImageUrl("images/get/partners/jpg/" + id);
 			partnerRepo.save(partner);
-			
+
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 		}
@@ -61,8 +61,7 @@ public class PartnerRepositoryService {
 		} catch (IOException e) {
 			LOG.error(e.getMessage(), e);
 		}
-			partnerRepo.delete(Long.valueOf(id));
-		
+		partnerRepo.delete(Long.valueOf(id));
 
 	}
 
