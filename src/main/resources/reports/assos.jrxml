@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-02-07T21:00:32 -->
+<!-- 2016-02-07T21:28:21 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05105ae6-681c-4cea-b3af-cd70f1054813">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -130,7 +130,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="102" splitType="Stretch">
+		<band height="104" splitType="Stretch">
 			<staticText>
 				<reportElement x="180" y="0" width="374" height="79" uuid="c2aba958-6bf5-4668-ae97-de1a0c74ff1b"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle" markup="styled">
@@ -145,10 +145,13 @@
 				</reportElement>
 				<imageExpression><![CDATA["./public-web-resources/images/logo-cbd84.jpg"]]></imageExpression>
 			</image>
+			<line>
+				<reportElement x="1" y="90" width="554" height="1" uuid="91760550-205b-44e9-9a97-a507b5a8bd2d"/>
+			</line>
 		</band>
 	</title>
 	<detail>
-		<band height="237" splitType="Stretch">
+		<band height="255" splitType="Stretch">
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="21" y="0" width="534" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
 					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
@@ -165,7 +168,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Président : "+$F{firstname}+" "+$F{lastname}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Président : "+$F{firstname}+" "+$F{lastname}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="40" y="60" width="515" height="30" isRemoveLineWhenBlank="true" uuid="87ffc097-f22e-4561-9572-707889877889">
@@ -174,7 +177,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{address}+" "+$F{postalCode}+" "+$F{city}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Adresse : "+ $F{address}+" "+$F{postalCode}+" "+$F{city}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="40" y="150" width="515" height="30" isRemoveLineWhenBlank="true" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559">
@@ -183,7 +186,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Tél : "+ $F{phone}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="40" y="180" width="515" height="30" isRemoveLineWhenBlank="true" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e">
@@ -192,7 +195,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Email : "+$F{email}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="40" y="90" width="515" height="30" isRemoveLineWhenBlank="true" uuid="ac0c2caf-0d71-40cb-8d12-33de28cb50ab">
@@ -201,7 +204,7 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Correspondance : "+$F{correspondance}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Correspondance : "+$F{correspondance}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
 				<reportElement positionType="Float" x="40" y="120" width="515" height="30" isRemoveLineWhenBlank="true" uuid="1620e150-922c-4c40-92f4-8fc05045672b">
@@ -210,10 +213,10 @@
 				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Boulodrome : "+$F{boulodrome}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[" Boulodrome : "+$F{boulodrome}]]></textFieldExpression>
 			</textField>
 			<image>
-				<reportElement positionType="Float" x="21" y="160" width="16" height="16" uuid="1ca0ea79-9bb7-4036-b98a-813032d08eea">
+				<reportElement positionType="Float" x="30" y="162" width="8" height="8" uuid="1ca0ea79-9bb7-4036-b98a-813032d08eea">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[!($F{phone}.equals(""))]]></printWhenExpression>
@@ -221,7 +224,7 @@
 				<imageExpression><![CDATA["./public-web-resources/images/Phone.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement positionType="Float" x="21" y="187" width="16" height="16" uuid="93de15f5-7496-47f6-a017-afde2f6373c2">
+				<reportElement positionType="Float" x="30" y="191" width="8" height="8" uuid="93de15f5-7496-47f6-a017-afde2f6373c2">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[!($F{email}.equals(""))]]></printWhenExpression>
@@ -229,7 +232,7 @@
 				<imageExpression><![CDATA["./public-web-resources/images/Mail.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement positionType="Float" x="21" y="67" width="16" height="16" uuid="07308dfa-a139-47a1-824b-8c83c2c3dea3">
+				<reportElement positionType="Float" x="30" y="71" width="8" height="8" uuid="07308dfa-a139-47a1-824b-8c83c2c3dea3">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[!($F{address}.equals(""))]]></printWhenExpression>
@@ -245,13 +248,16 @@
 				<imageExpression><![CDATA["./public-web-resources/images/Flag-red.jpg"]]></imageExpression>
 			</image>
 			<image>
-				<reportElement positionType="Float" x="21" y="37" width="16" height="16" uuid="8e40b763-1d46-447e-b0bf-abb467e3b7b2">
+				<reportElement positionType="Float" x="30" y="42" width="8" height="8" uuid="8e40b763-1d46-447e-b0bf-abb467e3b7b2">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[!($F{firstname}.equals(""))]]></printWhenExpression>
 				</reportElement>
 				<imageExpression><![CDATA["./public-web-resources/images/president_icon.jpg"]]></imageExpression>
 			</image>
+			<line>
+				<reportElement x="1" y="234" width="554" height="1" uuid="3ceb1515-490c-49a8-b788-e54f371fc94e"/>
+			</line>
 		</band>
 	</detail>
 </jasperReport>
