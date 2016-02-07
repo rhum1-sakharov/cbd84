@@ -39,9 +39,11 @@ public class ReportServiceImpl implements IReportService {
 			SimplePdfExporterConfiguration configuration = new SimplePdfExporterConfiguration();
 			// Include structure tags for PDF/A-1a compliance; unnecessary for
 			// // PDF/A-1b
+
 			configuration.setTagged(true);
 			configuration.setPdfaConformance(PdfaConformanceEnum.PDFA_1A);
 			configuration.setPdfVersion(PdfVersionEnum.VERSION_1_4);			
+
 			exporter.setConfiguration(configuration);
 			exporter.exportReport();
 		
