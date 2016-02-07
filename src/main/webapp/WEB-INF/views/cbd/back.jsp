@@ -1,11 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<!DOCTYPE html>
 <html ng-app="app-back" ng-controller="CbdBackCtrl">
 
 <head>
 <title>Administration CBD Vaucluse</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
 	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
@@ -14,43 +15,7 @@
 	href="resources/js/vendor/angular-ui/ui-bootstrap-csp.css" />
 <link rel="stylesheet" type="text/css"
 	href="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="resources/css/screen.css" />
-
-<!-- JQuery Vendor JavaScript
-    ================================================== -->
-<script
-	src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
-<script
-	src="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
-
-
-<!-- Angular Vendor JavaScript
-    ================================================== -->
-<script type="text/javascript"
-	src="resources/js/vendor/angular-1.4.7/angular${minjs}.js"></script>
-<script type="text/javascript"
-	src="resources/js/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
-<script type="text/javascript"
-	src="resources/js/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
-<script type="text/javascript"
-	src="resources/js/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
-</head>
-
-<!-- Angular UI  Vendor JavaScript
-    ================================================== -->
-
-<script type="text/javascript"
-	src="resources/js/vendor/angular-ui/ui-bootstrap-tpls${minjs}.js"></script>
-<script type="text/javascript"
-	src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
-
-<!-- Angular UI TinyMCE Vendor JavaScript
-    ================================================== -->
-
-<script type="text/javascript"
-	src="resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
-
+<link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
 <body role="document" class="bg-admin">
 
 	<!-- Fixed navbar -->
@@ -98,19 +63,38 @@
 		</div>
 		<!-- /container -->
 
-	
 
-
-		<!-- Bootstrap core JavaScript
+		<!-- JQuery Vendor JavaScript
     ================================================== -->
-		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+		<script src="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 
-		<script
-			src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
-		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-		<script
-			src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+		<!-- Angular Vendor JavaScript
+    ================================================== -->
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-1.4.7/angular${minjs}.js"></script>
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-1.4.7/angular-sanitize${minjs}.js"></script>
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-1.4.7/angular-resource${minjs}.js"></script>
+		</head>
+
+		<!-- Angular UI  Vendor JavaScript
+    ================================================== -->
+
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-ui/ui-bootstrap-tpls${minjs}.js"></script>
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
+
+		<!-- Angular UI TinyMCE Vendor JavaScript
+    ================================================== -->
+
+		<script type="text/javascript"
+			src="resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
 
 		<!-- Angular Custom JavaScript
     ================================================== -->
@@ -118,8 +102,7 @@
 
 		<script type="text/javascript"
 			src="resources/js/custom/back/app-back.js"></script>
-		<script type="text/javascript"
-			src="resources/js/custom/utils.js"></script>
+		<script type="text/javascript" src="resources/js/custom/utils.js"></script>
 		<script type="text/javascript"
 			src="resources/js/custom/back/back.controllers.js"></script>
 		<script type="text/javascript"
@@ -136,6 +119,18 @@
 			src="resources/js/custom/back/results/back.results.controllers.js"></script>
 		<script type="text/javascript"
 			src="resources/js/custom/back/calendars/back.calendars.controllers.js"></script>
+
+
+		<!-- Bootstrap core JavaScript
+    ================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+
+		<script
+			src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+
+		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+		<script
+			src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>

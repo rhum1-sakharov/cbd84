@@ -15,6 +15,7 @@ import net.sf.jasperreports.engine.export.JRPdfExporter;
 import net.sf.jasperreports.export.SimpleExporterInput;
 import net.sf.jasperreports.export.SimpleOutputStreamExporterOutput;
 import net.sf.jasperreports.export.SimplePdfExporterConfiguration;
+import net.sf.jasperreports.export.type.PdfVersionEnum;
 import net.sf.jasperreports.export.type.PdfaConformanceEnum;
 
 @Service
@@ -40,6 +41,7 @@ public class ReportServiceImpl implements IReportService {
 			// // PDF/A-1b
 			configuration.setTagged(true);
 			configuration.setPdfaConformance(PdfaConformanceEnum.PDFA_1A);
+			configuration.setPdfVersion(PdfVersionEnum.VERSION_1_4);			
 			exporter.setConfiguration(configuration);
 			exporter.exportReport();
 		

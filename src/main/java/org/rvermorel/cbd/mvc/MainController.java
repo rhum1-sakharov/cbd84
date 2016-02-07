@@ -18,6 +18,18 @@ public class MainController {
         return "front";
     }
 	
+	@RequestMapping(value="/googlea5c11d40c1d19167.html", method=RequestMethod.GET)
+    public String googleTracking(Model model)
+    {
+        return "googlea5c11d40c1d19167";
+    }
+	
+	@RequestMapping(value="/sitemap.xml", method=RequestMethod.GET)
+    public String sitemap(Model model)
+    {
+        return "sitemap";
+    }
+	
 	@RequestMapping(value="/back",method=RequestMethod.GET)
     public String back(Model model)
     {
