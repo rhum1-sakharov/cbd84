@@ -3,7 +3,9 @@ angular.module('cbd.back.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource'
 .controller('CbdBackCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', 'cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter, cbdUtils) {
 
 	$scope.tinymceOptions= {
-			trusted : true
+			trusted : true,
+			 inline: false,
+			plugins : 'advlist autolink link image lists charmap print preview'
 	};
 	
 	$scope.menu = {

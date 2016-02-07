@@ -63,6 +63,10 @@
 		</div>
 		<!-- /container -->
 
+	<!-- TinyMCE Vendor JavaScript
+    ================================================== -->
+	<script type="text/javascript"
+			src="resources/js/vendor/tinymce-dist/tinymce.js"></script>
 
 		<!-- JQuery Vendor JavaScript
     ================================================== -->
@@ -92,11 +96,10 @@
 
 		<!-- Angular UI TinyMCE Vendor JavaScript
     ================================================== -->
-
+	
 		<script type="text/javascript"
 			src="resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
-		<script type="text/javascript"
-			src="resources/js/vendor/tinymce-dist/tinymce.js"></script>
+
 
 		<!-- Angular Custom JavaScript
     ================================================== -->
