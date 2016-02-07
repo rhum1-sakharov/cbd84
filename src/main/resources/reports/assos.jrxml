@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-01-31T19:15:32 -->
+<!-- 2016-02-07T12:07:43 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05105ae6-681c-4cea-b3af-cd70f1054813">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -130,63 +130,129 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="102" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="555" height="79" uuid="c2aba958-6bf5-4668-ae97-de1a0c74ff1b"/>
+				<reportElement x="1" y="0" width="554" height="79" uuid="c2aba958-6bf5-4668-ae97-de1a0c74ff1b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
 					<font fontName="HelveticaFamily" size="26"/>
 				</textElement>
 				<text><![CDATA[<style isBold="true"><font size="18">CBD 84 - VAUCLUSE</font></style><br/><font size="12">Liste des associations sportives</font>]]></text>
 			</staticText>
+			<image>
+				<reportElement positionType="Float" x="140" y="20" width="40" height="49" uuid="6c744ceb-2f43-4e16-a27f-0794379a8652">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{email}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/logo-cbd84.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<detail>
-		<band height="150" splitType="Stretch">
+		<band height="237" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="0" width="555" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
+				<reportElement positionType="Float" x="21" y="0" width="534" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
 					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily" isBold="true"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{assoCodeLabel} +" "+ $F{assoName}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{assoCodeLabel} +" : "+ $F{assoName}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="30" width="555" height="30" isRemoveLineWhenBlank="true" uuid="53f0c0b7-233c-4039-bff2-ddf6139e211f">
+				<reportElement positionType="Float" x="40" y="30" width="515" height="30" isRemoveLineWhenBlank="true" uuid="53f0c0b7-233c-4039-bff2-ddf6139e211f">
 					<printWhenExpression><![CDATA[!($F{firstname}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Président : "+$F{firstname}+" "+$F{lastname}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="60" width="555" height="30" isRemoveLineWhenBlank="true" uuid="87ffc097-f22e-4561-9572-707889877889">
+				<reportElement positionType="Float" x="40" y="60" width="515" height="30" isRemoveLineWhenBlank="true" uuid="87ffc097-f22e-4561-9572-707889877889">
 					<printWhenExpression><![CDATA[!($F{address}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{address}+" "+$F{postalCode}+" "+$F{city}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="90" width="555" height="30" isRemoveLineWhenBlank="true" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559">
+				<reportElement positionType="Float" x="40" y="150" width="515" height="30" isRemoveLineWhenBlank="true" uuid="ccea09a7-eb5d-4884-bec6-e88bbf885559">
 					<printWhenExpression><![CDATA[!($F{phone}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Tél : "+$F{phone}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{phone}]]></textFieldExpression>
 			</textField>
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="0" y="120" width="555" height="30" isRemoveLineWhenBlank="true" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e">
+				<reportElement positionType="Float" x="40" y="180" width="515" height="30" isRemoveLineWhenBlank="true" uuid="844153d2-456e-4f73-bad7-afd4f4e0f65e">
 					<printWhenExpression><![CDATA[!($F{email}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<textElement>
+				<textElement verticalAlignment="Middle">
 					<font fontName="HelveticaFamily"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Email : "+$F{email}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
 			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="40" y="90" width="515" height="30" isRemoveLineWhenBlank="true" uuid="ac0c2caf-0d71-40cb-8d12-33de28cb50ab">
+					<printWhenExpression><![CDATA[!($F{correspondance}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HelveticaFamily"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Correspondance : "+$F{correspondance}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement positionType="Float" x="40" y="120" width="515" height="30" isRemoveLineWhenBlank="true" uuid="1620e150-922c-4c40-92f4-8fc05045672b">
+					<printWhenExpression><![CDATA[!($F{boulodrome}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="HelveticaFamily"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Boulodrome : "+$F{boulodrome}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement positionType="Float" x="21" y="160" width="16" height="16" uuid="1ca0ea79-9bb7-4036-b98a-813032d08eea">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{phone}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/Phone.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" x="21" y="187" width="16" height="16" uuid="93de15f5-7496-47f6-a017-afde2f6373c2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{email}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/Mail.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" x="21" y="67" width="16" height="16" uuid="07308dfa-a139-47a1-824b-8c83c2c3dea3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{address}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/Home.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" x="1" y="7" width="16" height="16" uuid="43f9c39b-9454-442f-970f-2e7ea4ea10f6">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/Flag-red.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement positionType="Float" x="21" y="37" width="16" height="16" uuid="8e40b763-1d46-447e-b0bf-abb467e3b7b2">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<printWhenExpression><![CDATA[!($F{firstname}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA["./public-web-resources/images/president_icon.jpg"]]></imageExpression>
+			</image>
 		</band>
 	</detail>
 </jasperReport>
