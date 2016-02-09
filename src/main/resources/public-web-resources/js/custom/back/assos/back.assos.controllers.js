@@ -45,7 +45,7 @@ angular.module('cbd.back.assos.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 			var promise2 = promise1.then(function(response) {
 				var fd = new FormData();
 				fd.append('file', $scope.addAssoImage);
-				var url = 'assos/add/image/jpg/128/' + $scope.asso.id;
+				var url = 'assos/add/image/jpg/512/' + $scope.asso.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -101,7 +101,7 @@ angular.module('cbd.back.assos.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 					var fd = new FormData();
 					fd.append('file', newVal);					
-					var url = 'assos/add/image/jpg/128/' + $scope.asso.id;
+					var url = 'assos/add/image/jpg/512/' + $scope.asso.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {

@@ -44,16 +44,7 @@ private IReportService reportService;
 		return contactRepoService.findAssoMembersOrderByPosition();
 	}
 
-	@RequestMapping(value = "/get/pdf", method = RequestMethod.GET)
-	ResponseEntity<byte[]> getPlaquettePDF() {
-		JRDataSource ds = new JRBeanCollectionDataSource(contactRepoService.findAssoMembersOrderByPosition());
-		byte[] bytes = reportService.createPDFA1(getClass().getResourceAsStream("/reports/assos.jasper"), ds);
-		HttpHeaders headers = new HttpHeaders();
-		headers.setContentType(MEDIA_TYPE_PDF);
-		headers.set("Content-Disposition", "attachment; filename=associations-sportives-84.pdf");
 
-		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK); //
-	}
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	Contact addContact(@RequestBody final Contact c) {

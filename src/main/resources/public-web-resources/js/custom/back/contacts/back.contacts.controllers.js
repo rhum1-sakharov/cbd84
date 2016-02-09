@@ -46,7 +46,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 				var fd = new FormData();
 				fd.append('file', $scope.addContactImage);
 				
-				var url = 'contacts/add/image/jpg/128/' + $scope.contact.id;
+				var url = 'contacts/add/image/jpg/512/' + $scope.contact.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -102,7 +102,7 @@ angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'contacts/add/image/jpg/128/' + $scope.contact.id;
+					var url = 'contacts/add/image/jpg/512/' + $scope.contact.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {

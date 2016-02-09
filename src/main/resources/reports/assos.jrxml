@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
-<!-- 2016-02-07T21:31:15 -->
+<!-- 2016-02-09T23:06:56 -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="assos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05105ae6-681c-4cea-b3af-cd70f1054813">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<style name="Sans_Bold" fontName="DejaVu Sans" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
@@ -69,6 +69,7 @@
 			<rightPen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
+	<parameter name="urlAssoImage" class="java.lang.String" isForPrompting="false"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -153,7 +154,7 @@
 	<detail>
 		<band height="255" splitType="Stretch">
 			<textField isBlankWhenNull="true">
-				<reportElement positionType="Float" x="21" y="0" width="534" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
+				<reportElement positionType="Float" x="30" y="-1" width="494" height="30" isRemoveLineWhenBlank="true" uuid="d1b234a0-70ee-46c4-ba19-15e81bfcd520">
 					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
 				</reportElement>
 				<textElement verticalAlignment="Middle">
@@ -239,13 +240,13 @@
 				</reportElement>
 				<imageExpression><![CDATA["./public-web-resources/images/Home.jpg"]]></imageExpression>
 			</image>
-			<image isUsingCache="true">
-				<reportElement positionType="Float" x="1" y="7" width="16" height="16" uuid="43f9c39b-9454-442f-970f-2e7ea4ea10f6">
+			<image isUsingCache="true" isLazy="true">
+				<reportElement positionType="Float" x="0" y="-1" width="29" height="43" uuid="43f9c39b-9454-442f-970f-2e7ea4ea10f6">
 					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
 					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
 					<printWhenExpression><![CDATA[!($F{assoName}.equals(""))]]></printWhenExpression>
 				</reportElement>
-				<imageExpression><![CDATA["./public-web-resources/images/Flag-red.jpg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{urlAssoImage}+"/"+$F{id}]]></imageExpression>
 			</image>
 			<image>
 				<reportElement positionType="Float" x="30" y="42" width="8" height="8" uuid="8e40b763-1d46-447e-b0bf-abb467e3b7b2">

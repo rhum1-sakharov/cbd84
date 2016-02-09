@@ -26,7 +26,7 @@ img.partner-css {
 img.contact-portrait, img.asso-portrait {
 	float :right;
 	width: 128px;
-	height: 128px;
+	
 }
 
 
@@ -37,9 +37,9 @@ img.admin-partner-thumb{
 }
 
 
-img.admin-contact-thumb{
+img.admin-contact-thumb, img.admin-asso-thumb{
 	width: 70px;
-	height: 70px;
+	
 }
 
 
@@ -50,11 +50,13 @@ img.calendar-sheets {
 img.feeds-image-left, img.results-image-left{
 	float: left;
 	margin: 4px;
+	width:256px;
 }
 
 img.feeds-image-right, img.results-image-right {
 	float: right;
 	margin: 4px;
+	width:256px;
 }
 
 div.feed-infos {

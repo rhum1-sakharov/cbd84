@@ -40,7 +40,7 @@ public class ReportTest {
 		List<Contact> contacts = contactRepoService.findAssoMembersOrderByPosition();
 		JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(contacts);
 		InputStream in = new FileInputStream(new File(ASSOS));
-		byte[] bytes = reportService.createPDFA1(in, ds);
+		byte[] bytes = reportService.createPDFA1(in, null,ds);
 		File tmpPdf = new File("/tmp/partners.pdf");
 		IOUtils.write(bytes, new FileOutputStream(tmpPdf));
 

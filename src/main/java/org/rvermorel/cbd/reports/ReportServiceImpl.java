@@ -2,6 +2,7 @@ package org.rvermorel.cbd.reports;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
+import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,11 +25,11 @@ public class ReportServiceImpl implements IReportService {
 	private static final Logger LOG = LoggerFactory.getLogger(ReportServiceImpl.class);
 	
 	@Override
-	public byte[] createPDFA1(InputStream inJasper, JRDataSource dataSource) {
+	public byte[] createPDFA1(InputStream inJasper,Map<String,Object> params, JRDataSource dataSource) {
 		long start = System.currentTimeMillis();
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
-			JasperPrint jp = JasperFillManager.fillReport(inJasper, null, dataSource);
+			JasperPrint jp = JasperFillManager.fillReport(inJasper, params, dataSource);
 		
 			jp.setProperty("net.sf.jasperreports.export.pdf.exclude.key.TransparentImage", null);
 			jp.setProperty("net.sf.jasperreports.export.pdfa.icc.profile.path", "AdobeRGB1998.icc");

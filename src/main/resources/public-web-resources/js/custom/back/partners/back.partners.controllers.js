@@ -49,7 +49,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 				var fd = new FormData();
 				fd.append('file', $scope.addPartnerImage);
 				
-				var url = 'partners/add/image/jpg/256/' + $scope.partner.id;
+				var url = 'partners/add/image/jpg/512/' + $scope.partner.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -105,7 +105,7 @@ angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ng
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'partners/add/image/jpg/256/' + $scope.partner.id;
+					var url = 'partners/add/image/jpg/512/' + $scope.partner.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {

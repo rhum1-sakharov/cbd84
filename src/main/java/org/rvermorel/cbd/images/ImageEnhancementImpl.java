@@ -1,7 +1,5 @@
 package org.rvermorel.cbd.images;
 
-import static org.imgscalr.Scalr.OP_ANTIALIAS;
-import static org.imgscalr.Scalr.OP_BRIGHTER;
 import static org.imgscalr.Scalr.resize;
 
 import java.awt.image.BufferedImage;
@@ -25,7 +23,7 @@ public class ImageEnhancementImpl implements IImageEnhancement {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 
 		BufferedImage bi = ImageIO.read(bais);
-		BufferedImage newImg = resize(bi, Method.ULTRA_QUALITY, width, OP_ANTIALIAS, OP_BRIGHTER);
+		BufferedImage newImg = resize(bi, Method.ULTRA_QUALITY, width);
 
 		ImageIO.write(newImg, imgExtension, baos);
 		
