@@ -4,8 +4,11 @@
 <html ng-app="app-front">
 
 <head>
-<title>Comit&#233; Bouliste D&#233;partemental du Vaucluse ( CBD 84 ), site des actualit&#233;s, calendriers, r&#233;sultats et assos sportives du sport boule en vaucluse</title>
-<meta name="description" content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;s, Calendriers, R&#233;sultats, Assos Sportives, Contacts " />
+<title>Comit&#233; Bouliste D&#233;partemental du Vaucluse ( CBD
+	84 ), site des actualit&#233;s, calendriers, r&#233;sultats et assos
+	sportives du sport boule en vaucluse</title>
+<meta name="description"
+	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;s, Calendriers, R&#233;sultats, Assos Sportives, Contacts " />
 <meta name="robots" content="index, follow" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -34,10 +37,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span><img
-						src="resources/images/logo-ffsb.png"></span><span><img
-						src="resources/images/logo-cbd84-35.png"></span><span>CBD
-						Vaucluse</span></a>
+				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span class="welcome-message"><img
+				src="resources/images/logo-boule.png"></span><span>CBD
+						84</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -56,8 +58,7 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
 	<div class="container">
-
-
+		
 		<!--  <div class="row">			
 				<div class="container">					
 					<span><img src="resources/images/logo-cbd84.png"></span>
@@ -77,13 +78,13 @@
 			</div>
 		</div>
 
-		<div class="row">
+		<!-- 	<div class="row">
 			<hr>
 			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
 				le CBD Vaucluse </span><span><img
 				src="resources/images/logo-ffsb.png"></span><span><img
 				src="resources/images/logo-cbd84-35.png"></span>
-		</div>
+		</div> -->
 
 	</div>
 	<!-- /container -->

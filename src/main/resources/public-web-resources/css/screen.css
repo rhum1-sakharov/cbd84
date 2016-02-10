@@ -4,6 +4,11 @@ body {
 	background-image: url("../images/bg.png");
 }
 
+span.welcome-message{
+	font-size: 40px;
+	font-weight: bold;
+}
+
 .theme-dropdown .dropdown-menu {
 	position: static;
 	display: block;
