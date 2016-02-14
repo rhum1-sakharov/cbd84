@@ -8,6 +8,14 @@
 
 <url>
   <loc>http://88.167.230.158/</loc>
-  <changefreq>weekly</changefreq>
+  <changefreq>weekly</changefreq>  
+</url>
+<url>
+  <loc>http://cbd84.fr/</loc>
+  <changefreq>weekly</changefreq>   
+</url>
+<url>
+  <loc>http://www.cbd84.fr/</loc>
+  <changefreq>weekly</changefreq> 
 </url>
 </urlset>

@@ -1,4 +1,4 @@
-angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule', 'ui.router' ])
+angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule', 'ui.router', 'ui.bootstrap', 'cbdUtilsModule' ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 	//
@@ -51,7 +51,9 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 					};
 
 					$scope.openUpdateFeed = function(size, selectedFeed) {
-						$scope.feed = selectedFeed;
+						$scope.feed = selectedFeed;						
+						$scope.feed.dayDate = cbdUtils.formatTs2Date($scope.feed.creationDate);
+					
 						var modalInstance = $uibModal.open({
 							animation : $scope.animationsEnabled,
 							templateUrl : 'resources/partials/back/feeds/update-feeds.html',
@@ -171,6 +173,97 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 			}
 		}
 
+	}).state('events', {
+		url : "/events",
+		views : {
+			"main" : {
+
+				templateUrl : "resources/partials/back/events/admin-events.html",
+				controller : function($scope, $q, $http, cbdUtils, $uibModal, $log, uibDateParser, cbdUtils) {
+					$scope.events = [];
+					$scope.event = {};			
+
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('events').then(function(response) {
+							$scope.events = response.data;
+							return response.data;
+						});
+					});
+
+					$scope.animationsEnabled = true;
+
+					$scope.openAddEvent = function(size) {
+
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/partials/back/events/add-events.html',
+							controller : 'AddEventModalInstanceCtrl',
+							size : size,
+							resolve : {
+								events : function() {
+									return $scope.events;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(events) {
+							$scope.events = events;
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
+					$scope.openUpdateEvent = function(size, selectedEvent) {
+						$scope.event = selectedEvent;
+						$scope.event.date = cbdUtils.formatTs2Date($scope.event.creationDate);
+						$scope.event.hour = cbdUtils.formatTs2HHmm($scope.event.creationDate);
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/partials/back/events/update-events.html',
+							controller : 'UpdateEventModalInstanceCtrl',
+							size : size,
+							resolve : {
+								event : function() {
+									return $scope.event;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+							$scope.event = selectedItem;							
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+					
+					$scope.openDeleteEvent = function(size, selectedEvent) {
+						$scope.event = selectedEvent;
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/partials/back/events/delete-events.html',
+							controller : 'DeleteEventModalInstanceCtrl',
+							size : size,
+							resolve : {
+								event : function() {
+									return $scope.event;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+
+							var index = $scope.events.indexOf(selectedItem);
+							$scope.events.splice(index, 1);
+
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+				}
+			}
+		}
+
 	}).state('results', {
 		url : "/results",
 		views : {
@@ -217,6 +310,7 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 
 					$scope.openUpdateResult = function(size, selectedResult) {
 						$scope.result = selectedResult;
+						$scope.result.dayDate = cbdUtils.formatTs2Date($scope.result.creationDate);
 						var modalInstance = $uibModal.open({
 							animation : $scope.animationsEnabled,
 							templateUrl : 'resources/partials/back/results/update-results.html',

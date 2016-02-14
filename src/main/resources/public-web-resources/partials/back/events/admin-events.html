@@ -1,0 +1,47 @@
+
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion des &#233;v&#233;nements <span><button
+					class="btn btn-success btn-sm"
+					 ng-click="openAddEvent('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un &#233;v&#233;nement
+				</button></span>			
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Club</th>
+				<th>Nombre</th>
+				<th>Type</th>
+				<th>Cat&#233;gorie</th>
+				<th>Division</th>
+				<th>Mode</th>
+				<th>Nature</th>
+				<th>Lieu</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="event in events | orderBy:'+creationDate'">
+			<td ng-bind="event.creationDate | date:'dd/MM/yyyy HH:mm' "></td>
+			<td ng-bind="event.club"></td>
+			<td ng-bind="event.number"></td>
+			<td ng-bind="event.type"></td>
+			<td ng-bind="event.category"></td>
+			<td ng-bind="event.division"></td>
+			<td ng-bind="event.mode"></td>
+			<td ng-bind="event.nature"></td>
+			<td ng-bind="event.place"></td>				
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdateEvent('lg', event)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button></span><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteEvent('lg', event)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>

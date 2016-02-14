@@ -186,6 +186,7 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 	$scope.ok = function() {
 
 		$scope.loading = true;
+		$scope.result.creationDate = cbdUtils.formatDate2Ts($scope.result.dayDate);
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 

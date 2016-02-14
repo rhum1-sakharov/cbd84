@@ -69,11 +69,11 @@
 
 		<!-- Example row of columns -->
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-9">
 				<div ui-view="main"></div>
 			</div>
 
-			<div class="col-md-4">
+			<div class="col-md-3">
 				<div ui-view="partners"></div>
 			</div>
 		</div>

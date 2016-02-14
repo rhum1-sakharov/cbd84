@@ -1,0 +1,139 @@
+
+<div class="modal-header">
+	<h3 class="modal-title">Ajouter un &#233;v&#233;nement</h3>
+</div>
+
+<form novalidate name="formEvent" class="form-horizontal" role="form"
+	ng-submit="formEvent.$valid && ok()">
+	<div class="modal-body">
+
+	<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Date</label>
+			<div class="col-sm-3">
+				<p class="input-group">
+					<input type="text" class="form-control"
+						uib-datepicker-popup="dd/MM/yyyy" ng-model="event.creationDate"
+						is-open="status.opened" min-date="minDate" max-date="maxDate"
+						datepicker-options="dateOptions" ng-required="true"
+						close-text="Close" /> <span class="input-group-btn">
+						<button type="button" class="btn btn-default"
+							ng-click="open($event)">
+							<i class="glyphicon glyphicon-calendar"></i>
+						</button>
+					</span>
+				</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="club" class="col-sm-3 control-label">Heure</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.hour.$invalid && !formEvent.hour.$pristine}">
+				<input id="club" ng-model="event.hour" type="time" name="hour"
+					size="60" required>
+				<p ng-show="formEvent.hour.$invalid && !formEvent.hour.$pristine"
+					class="help-block">Veuillez saisir une heure au format HH:mm!</p>					
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="club" class="col-sm-3 control-label">Club</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.club.$invalid && !formEvent.club.$pristine}">
+				<input id="club" ng-model="event.club" type="text" name="club"
+					size="60" required>
+				<p ng-show="formEvent.club.$invalid && !formEvent.club.$pristine"
+					class="help-block">Veuillez saisir un club</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="number" class="col-sm-3 control-label">Nombre</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.number.$invalid && !formEvent.number.$pristine}">
+				<input id="number" ng-model="event.number" type="number"
+					name="number" size="60">
+				<p
+					ng-show="formEvent.number.$invalid && !formEvent.number.$pristine"
+					class="help-block">Veuillez saisir un nombre</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="type" class="col-sm-3 control-label">Type</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.type.$invalid && !formEvent.type.$pristine}">
+				<input id="type" ng-model="event.type" type="text" name="type"
+					size="60">
+				<p ng-show="formEvent.type.$invalid && !formEvent.type.$pristine"
+					class="help-block">Veuillez saisir un type</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="category" class="col-sm-3 control-label">Cat&#233;gorie</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.category.$invalid && !formEvent.category.$pristine}">
+				<input id="category" ng-model="event.category" category="text"
+					name="category" size="60">
+				<p
+					ng-show="formEvent.category.$invalid && !formEvent.category.$pristine"
+					class="help-block">Veuillez saisir une cat&#233;gorie</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="division" class="col-sm-3 control-label">Division</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.division.$invalid && !formEvent.division.$pristine}">
+				<input id="division" ng-model="event.division" division="text"
+					name="division" size="60">
+				<p
+					ng-show="formEvent.division.$invalid && !formEvent.division.$pristine"
+					class="help-block">Veuillez saisir une division</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="nature" class="col-sm-3 control-label">Nature</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.nature.$invalid && !formEvent.nature.$pristine}">
+				<input id="nature" ng-model="event.nature" nature="text"
+					name="nature" size="60">
+				<p
+					ng-show="formEvent.nature.$invalid && !formEvent.nature.$pristine"
+					class="help-block">Veuillez saisir une nature</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="mode" class="col-sm-3 control-label">Mode</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.mode.$invalid && !formEvent.mode.$pristine}">
+				<input id="mode" ng-model="event.mode" mode="text" name="mode"
+					size="60">
+				<p ng-show="formEvent.mode.$invalid && !formEvent.mode.$pristine"
+					class="help-block">Veuillez saisir un mode</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="lieu" class="col-sm-3 control-label">Lieu</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formEvent.place.$invalid && !formEvent.place.$pristine}">
+				<input id="lieu" ng-model="event.place" lieu="text" name="lieu"
+					size="60">
+				<p ng-show="formEvent.place.$invalid && !formEvent.place.$pristine"
+					class="help-block">Veuillez saisir un lieu</p>
+			</div>
+		</div>
+
+
+		<p ng-show="serverError != ''" class="help-block"
+			ng-bind-html='serverError'></p>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-disabled='loading'>OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Fermer</button>
+	</div>
+</form>

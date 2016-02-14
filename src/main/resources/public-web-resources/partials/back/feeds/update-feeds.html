@@ -16,31 +16,24 @@
 					class="help-block">Veuillez saisir un titre</p>
 			</div>
 		</div>
+
 		<div class="form-group">
 			<label for="title" class="col-sm-3 control-label">Date de
 				cr&#233;ation</label>
 			<div class="col-sm-3">
 				<p class="input-group">
-					<input type="text" class="form-control"
-						uib-datepicker-popup="dd/MM/yyyy" ng-model="feed.creationDate"
-						is-open="status.opened" min-date="minDate" max-date="maxDate"
-						datepicker-options="dateOptions" ng-required="true"
-						close-text="Close" /> <span class="input-group-btn">
-						<button type="button" class="btn btn-default"
-							ng-click="open($event)">
-							<i class="glyphicon glyphicon-calendar"></i>
-						</button>
-					</span>
+					<input type="text" ng-model="feed.dayDate" date-pickering />
 				</p>
 			</div>
 		</div>
+
 
 		<div class="form-group">
 			<label for="content" class="col-sm-3 control-label">Contenu</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
-				<textarea class="form-control" ui-tinymce="tinymceOptions" ng-model="feed.content"
-					required></textarea>
+				<textarea class="form-control" ui-tinymce="tinymceOptions"
+					ng-model="feed.content" required></textarea>
 				<!-- <textarea id="content" ng-model="feed.content"
 								class="form-control" rows="5" required></textarea> -->
 				<p
@@ -106,11 +99,12 @@
 			<label for="imageFile" class="col-sm-3 control-label">Photo</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formFeed.imageFile.$invalid && !formFeed.imageFile.$pristine}">
-				<input type="file" name="imageFile" file-model="updateFeedImage"
-					>
+				<input type="file" name="imageFile" file-model="updateFeedImage">
 				<p ng-show="feed.imageUrl">
-					<img ng-src="{{feed.imageUrl}}" class="admin-contact-thumb img-thumbnail">
-					<button type="button" class="btn btn-danger btn-sm" ng-click="eraseImage()">
+					<img ng-src="{{feed.imageUrl}}"
+						class="admin-contact-thumb img-thumbnail">
+					<button type="button" class="btn btn-danger btn-sm"
+						ng-click="eraseImage()">
 						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer la photo
 					</button>
 				</p>

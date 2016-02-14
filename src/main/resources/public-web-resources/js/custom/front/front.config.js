@@ -49,13 +49,21 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 				templateUrl : "resources/partials/front/calendars.html",
 				controller : function($scope, $q, $http, cbdUtils) {
 					$scope.calendars = [];
+					
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
 						return $http.get('calendars').then(function(response) {
 							$scope.calendars = response.data;
 							return response.data;
 						});
-					});			
+					});	
+					$scope.events = [];
+					var promise2 = promise1.then(function(response) {
+						return $http.get('events').then(function(response) {
+							$scope.events = response.data;
+							return response.data;
+						});
+					});
 					
 				}
 			},

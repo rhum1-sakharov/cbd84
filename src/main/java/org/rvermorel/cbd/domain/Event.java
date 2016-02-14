@@ -31,8 +31,8 @@ public class Event implements Serializable {
 	private String club;
 	
 	@Column(name = "number")
-	private String number;
-	
+	private Integer number;	
+
 	@Column(name = "type")
 	private String type;
 
@@ -75,13 +75,6 @@ public class Event implements Serializable {
 		this.club = club;
 	}
 
-	public String getNumber() {
-		return number;
-	}
-
-	public void setNumber(String number) {
-		this.number = number;
-	}
 
 	public String getType() {
 		return type;
@@ -129,6 +122,14 @@ public class Event implements Serializable {
 
 	public void setPlace(String place) {
 		this.place = place;
+	}
+
+	public Integer getNumber() {
+		return number;
+	}
+	
+	public void setNumber(Integer number) {
+		this.number = number;
 	}
 	
 }

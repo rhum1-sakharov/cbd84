@@ -18,7 +18,7 @@ public class EventRepositoryService {
 		return eventRepo.findEventsOrderByCreationDate();
 	}
 
-	public Event addOrUpdateCalendar(Event e) {		
+	public Event addOrUpdateEvent(Event e) {		
 	
 		return eventRepo.save(e);
 	}

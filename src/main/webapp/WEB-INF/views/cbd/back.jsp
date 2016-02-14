@@ -36,6 +36,7 @@
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
 					<li ui-sref-active="active"><a ui-sref="calendars">Calendriers</a></li>
+					<li ui-sref-active="active"><a ui-sref="events">Evenements</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
 					<li ui-sref-active="active"><a ui-sref="assos">Asso
 							sportives</a></li>
@@ -125,6 +126,8 @@
 	src="resources/js/custom/back/results/back.results.controllers.js"></script>
 <script type="text/javascript"
 	src="resources/js/custom/back/calendars/back.calendars.controllers.js"></script>
+	<script type="text/javascript"
+	src="resources/js/custom/back/events/back.events.controllers.js"></script>
 
 
 <!-- Bootstrap core JavaScript

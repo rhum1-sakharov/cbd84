@@ -188,7 +188,9 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 	// SUBMIT UPDATED FEED
 	$scope.ok = function() {
 
-		$scope.loading = true;
+		$scope.loading = true;		
+		$scope.feed.creationDate = cbdUtils.formatDate2Ts($scope.feed.dayDate);
+		
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
