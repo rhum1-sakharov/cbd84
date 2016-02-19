@@ -64,6 +64,26 @@ img.feeds-image-right, img.results-image-right {
 	width:256px;
 }
 
+img.feeds-image-64, img.results-image-64{	
+	width:64px;
+}
+
+img.feeds-image-128, img.results-image-128{	
+	width:128px;
+}
+
+img.feeds-image-256, img.results-image-256{	
+	width:256px;
+}
+
+img.feeds-image-512, img.results-image-512{	
+	width:512px;
+}
+
+img.feeds-image-800, img.results-image-800{	
+	width:800px;
+}
+
 div.feed-infos {
 	font-size: 12px;
 	text-align: right;
@@ -92,9 +112,6 @@ Original Bootstrap's CSS depends on empty href attributes to style cursors for s
 .ng-valid.ng-dirty{
 	border-color : #78FA89;
 }
-
-
-
 
 .view-animate-container {
   position:relative;

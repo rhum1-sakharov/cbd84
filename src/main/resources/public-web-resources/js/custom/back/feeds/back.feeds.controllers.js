@@ -56,7 +56,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 				var fd = new FormData();
 				fd.append('file', $scope.addFeedImage);
 
-				var url = 'feeds/add/image/jpg/512/' + $scope.feed.id;
+				var url = 'feeds/add/image/jpg/'+$scope.feed.imageWidth+'/' + $scope.feed.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -136,7 +136,7 @@ angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngRes
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'feeds/add/image/jpg/512/' + $scope.feed.id;
+					var url = 'feeds/add/image/jpg/'+$scope.feed.imageWidth+'/' + $scope.feed.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {

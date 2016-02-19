@@ -7,7 +7,7 @@
 	<div class="modal-body">
 
 		<div class="form-group">
-			<label for="title" class="col-sm-3 control-label">Titre</label>
+			<label for="title" class="col-sm-3 control-label">Titre *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':resultForm.title.$invalid && !resultForm.title.$pristine}">
 				<input id="title" ng-model="result.title" type="text" name="title"
@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="form-group">
-			<label for="content" class="col-sm-3 control-label">Contenu</label>
+			<label for="content" class="col-sm-3 control-label">Contenu *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':resultForm.content.$invalid && !resultForm.content.$pristine}">
 				<textarea class="form-control" ui-tinymce ng-model="result.content"
@@ -39,7 +39,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="title" class="col-sm-3 control-label">Auteur</label>
+			<label for="title" class="col-sm-3 control-label">Auteur *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':resultForm.author.$invalid && !resultForm.author.$pristine}">
 				<input id="author" ng-model="result.author" type="text" name="author"
@@ -69,6 +69,23 @@
 			</div>
 		</div>
 	
+	<div class="form-group">
+			<label for="imageWidth" class="col-sm-3 control-label">Largeur
+				de la photo en px *</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formResult.imageWidth.$invalid && !formResult.imageWidth.$pristine}">
+				 <select name="imageWidth" ng-model="result.imageWidth" required="true">
+					<option value="64">64</option>
+					<option value="128">128</option>
+					<option value="256">256</option>
+					<option value="512">512</option>
+					<option value="800">800</option>
+				</select>
+				<p
+					ng-show="formResult.imageWidth.$invalid && !formResult.imageWidth.$pristine"
+					class="help-block">Veuillez saisir une largeur</p>
+			</div>
+		</div>
 
 		<div class="form-group">
 			<label for="imageFile" class="col-sm-3 control-label">Photo</label>

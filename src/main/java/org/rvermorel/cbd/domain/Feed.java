@@ -51,6 +51,9 @@ public class Feed implements Serializable {
 	@Column(name="imagePosition")
 	private String imagePosition;
 	
+	@Column(name="imageWidth")
+	private String imageWidth;
+	
 	
 	@Column(name="imageExtension")
 	private String imageExtension;
@@ -155,6 +158,14 @@ public class Feed implements Serializable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public String getImageWidth() {
+		return imageWidth;
+	}
+
+	public void setImageWidth(String imageWidth) {
+		this.imageWidth = imageWidth;
 	}
 
 }

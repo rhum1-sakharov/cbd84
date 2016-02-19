@@ -4,9 +4,7 @@
 <html ng-app="app-front">
 
 <head>
-<title>Comit&#233; Bouliste D&#233;partemental du Vaucluse ( CBD
-	84 ), site des actualit&#233;s, calendriers, r&#233;sultats et assos
-	sportives du sport boule en vaucluse</title>
+<title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du Vaucluse - www.cbd84.fr</title>
 <meta name="description"
 	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;s, Calendriers, R&#233;sultats, Assos Sportives, Contacts " />
 <meta name="robots" content="index, follow" />

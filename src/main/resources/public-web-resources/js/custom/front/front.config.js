@@ -97,7 +97,7 @@ angular.module('cbd.front.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'c
 						});
 					});
 					
-					$scope.formatInfoFeed = function(author, ts) {
+					$scope.formatInfoResult = function(author, ts) {
 
 						return author + ", le " + cbdUtils.formatTs2Date(ts);
 					};

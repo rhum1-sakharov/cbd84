@@ -7,7 +7,7 @@
 	<div class="modal-body">
 
 		<div class="form-group">
-			<label for="title" class="col-sm-3 control-label">Titre</label>
+			<label for="title" class="col-sm-3 control-label">Titre *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.title.$invalid && !feedForm.title.$pristine}">
 				<input id="title" ng-model="feed.title" type="text" name="title"
@@ -29,7 +29,7 @@
 
 
 		<div class="form-group">
-			<label for="content" class="col-sm-3 control-label">Contenu</label>
+			<label for="content" class="col-sm-3 control-label">Contenu *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.content.$invalid && !feedForm.content.$pristine}">
 				<textarea class="form-control" ui-tinymce="tinymceOptions"
@@ -42,7 +42,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="title" class="col-sm-3 control-label">Auteur</label>
+			<label for="title" class="col-sm-3 control-label">Auteur *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.author.$invalid && !feedForm.author.$pristine}">
 				<input id="author" ng-model="feed.author" type="text" name="author"
@@ -71,6 +71,24 @@
 					name="imageTitle" size="60">
 			</div>
 		</div>
+		<div class="form-group">
+			<label for="imageWidth" class="col-sm-3 control-label">Largeur
+				de la photo en px *</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':feedForm.imageWidth.$invalid && !feedForm.imageWidth.$pristine}">
+				 <select name="imageWidth" ng-model="feed.imageWidth" required="true">
+					<option value="64">64</option>
+					<option value="128">128</option>
+					<option value="256">256</option>
+					<option value="512">512</option>
+					<option value="800">800</option>
+				</select>
+				<p
+					ng-show="feedForm.imageWidth.$invalid && !feedForm.imageWidth.$pristine"
+					class="help-block">Veuillez saisir une largeur</p>
+			</div>
+		</div>
+
 		<!-- 		<div class="form-group">
 						<label for="imageFile" class="col-sm-3 control-label">Photo</label>
 						<div class="col-sm-9"
