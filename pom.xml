@@ -456,7 +456,7 @@
 
 		</plugins>
 	</build>
-	<!-- <repositories>
+	<repositories>
 		<repository>
 			<id>spring-releases</id>
 			<name>Spring Releases</name>
@@ -473,7 +473,7 @@
 			<url>http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts</url>
 		</repository>
 
-	</repositories> -->
+	</repositories>
 	<profiles>
 
 		<profile>
