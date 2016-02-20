@@ -111,5 +111,6 @@ add the datasource to the standalone.xml with the module name com.mysql, add the
                 </drivers>
             </datasources>
 
-
+Start Tomcat on ubuntu server :
+sudo initctl start tomcat
 
