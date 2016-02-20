@@ -9,14 +9,14 @@
 				ng-src="{{result.imageUrl}}" title="{{result.imageTitle}}"></span><span
 				ng-bind-html="result.content"></span>
 		</div>
-	</div>
-</div>
-<div class="panel-footer">
-	<div class="row">
-		<div class="col-md-7">
-			<span class="fb-like" ng-if="result.facebookLike"></span>
+		<div class="panel-footer">
+			<div class="row">
+				<div class="col-md-7">
+					<span class="fb-like" ng-if="result.facebookLike"></span>
+				</div>
+				<div class="col-md-5 result-infos"
+					ng-bind-html="formatInfoResult(result.author, result.creationDate)"></div>
+			</div>
 		</div>
-		<div class="col-md-5 result-infos"
-			ng-bind-html="formatInfoResult(result.author, result.creationDate)"></div>
 	</div>
 </div>
