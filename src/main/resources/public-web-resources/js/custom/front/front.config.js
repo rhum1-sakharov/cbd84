@@ -87,7 +87,7 @@ angular.module(
 						},{
 							field : 'type',
 							displayName: "Type",
-							minWidth:60
+							minWidth:100
 						},{
 							field : 'category',
 							displayName: "Categorie",
@@ -132,7 +132,7 @@ angular.module(
 						},{
 							field : 'nature',
 							displayName: "Nature",
-							minWidth:80
+							minWidth:150
 						},{
 							field : 'place',
 							displayName: "Lieu",
