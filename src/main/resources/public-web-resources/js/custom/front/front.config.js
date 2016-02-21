@@ -87,7 +87,7 @@ angular.module(
 						},{
 							field : 'type',
 							displayName: "Type",
-							minWidth:100
+							minWidth:150
 						},{
 							field : 'category',
 							displayName: "Categorie",
