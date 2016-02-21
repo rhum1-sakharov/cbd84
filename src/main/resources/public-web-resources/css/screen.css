@@ -10,6 +10,7 @@ span.welcome-message{
 	font-weight: bold;
 }
 
+
 tr.calendar-PROPAGANDE,tr.calendar-INVITATION,tr.calendar-LOISIRS{
 	background-color: #7AE59E;
 	color : white;
@@ -20,6 +21,7 @@ tr.calendar-PROMOTION{
 }
 
 tr.calendar-OFFICIEL{
+
 	background-color: #FFDA87;
 	color : white;
 }
