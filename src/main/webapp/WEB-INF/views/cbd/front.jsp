@@ -4,7 +4,8 @@
 <html ng-app="app-front">
 
 <head>
-<title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du Vaucluse - www.cbd84.fr</title>
+<title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du
+	Vaucluse - www.cbd84.fr</title>
 <meta name="description"
 	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;s, Calendriers, R&#233;sultats, Assos Sportives, Contacts " />
 <meta name="robots" content="index, follow" />
@@ -17,7 +18,10 @@
 	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <!--  <link rel="stylesheet" type="text/css"
 	href="resources/css/ng-animation.css" />-->
+<script type="text/javascript"
+		src="resources/js/vendor/angular-ui-grid/ui-grid.min.css"></script>
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
+
 
 
 </head>
@@ -35,9 +39,9 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span class="welcome-message"><img
-				src="resources/images/logo-boule.png"></span><span>CBD
-						84</span></a>
+				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span
+					class="welcome-message"><img
+						src="resources/images/logo-boule.png"></span><span>CBD 84</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -56,7 +60,7 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
 	<div class="container">
-		
+
 		<!--  <div class="row">			
 				<div class="container">					
 					<span><img src="resources/images/logo-cbd84.png"></span>
@@ -104,6 +108,8 @@
     ================================================== -->
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
+	<script type="text/javascript"
+		src="resources/js/vendor/angular-ui-grid/ui-grid.min.js"></script>
 
 	<!-- Angular Custom JavaScript
     ================================================== -->

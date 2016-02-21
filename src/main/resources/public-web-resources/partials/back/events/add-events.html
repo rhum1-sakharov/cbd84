@@ -68,13 +68,21 @@
 					class="help-block">Veuillez saisir un type</p>
 			</div>
 		</div>
-
+		
 		<div class="form-group">
 			<label for="category" class="col-sm-3 control-label">Cat&#233;gorie</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formEvent.category.$invalid && !formEvent.category.$pristine}">
-				<input id="category" ng-model="event.category" category="text"
-					name="category" size="60">
+				<select name="category" ng-model="event.category" required="true">
+					<option value="OFFICIEL">OFFICIEL</option>
+					<option value="NATIONAL">NATIONAL</option>
+					<option value="PROPAGANDE">PROPAGANDE</option>
+					<option value="PROMOTION">PROMOTION</option>
+					<option value="FEMININES">FEMININES</option>
+					<option value="LOISIRS">LOISIRS</option>
+					<option value="INVITATION">INVITATION</option>
+					<option value="TIR">TIR</option>
+				</select>
 				<p
 					ng-show="formEvent.category.$invalid && !formEvent.category.$pristine"
 					class="help-block">Veuillez saisir une cat&#233;gorie</p>

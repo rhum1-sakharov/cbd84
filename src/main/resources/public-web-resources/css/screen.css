@@ -10,6 +10,47 @@ span.welcome-message{
 	font-weight: bold;
 }
 
+tr.calendar-PROPAGANDE{
+	background-color: #E8B1ED;
+	color : white;
+}
+tr.calendar-PROMOTION{
+	background-color: #A05A89;
+	color : white;
+}
+
+tr.calendar-OFFICIEL{
+	background-color: #05A8AA;
+	color : white;
+}
+tr.calendar-NATIONAL{
+	background-color: #B8D5B8;
+	color : white;
+}
+tr.calendar-FEMININES{
+	background-color: #D7B49E;
+	color : white;
+}
+tr.calendar-LOISIRS{
+	background-color: #DC602E;
+	color : white;
+}
+tr.calendar-INVITATION{
+	background-color: #BC412B;
+	color : white;
+}
+
+tr.calendar-TIR{
+	background-color: #F55536;
+	color : white;
+}
+
+div.events-grid{
+	    width: 500px;
+    height: 250px;
+}
+
+
 .theme-dropdown .dropdown-menu {
 	position: static;
 	display: block;
@@ -95,9 +136,7 @@ img.admin-feed-thumb {
 	
 }
 
-body.bg-admin {
-	background-image: url("../images/bg-admin.png");
-}
+
 
 /*
 Original Bootstrap's CSS depends on empty href attributes to style cursors for several components (pagination, tabs etc.). But in AngularJS adding empty href attributes to link tags will cause unwanted route changes. This is why we need to remove empty href attributes from directive templates and as a result styling is not applied correctly. The remedy is simple, just add the following styling to your application: 
