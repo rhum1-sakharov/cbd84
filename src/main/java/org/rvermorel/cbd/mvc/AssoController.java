@@ -10,7 +10,6 @@ import org.rvermorel.cbd.reports.IReportService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +21,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import net.sf.jasperreports.engine.JRDataSource;
-import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-
 @RestController
 @RequestMapping(value = "/assos")
 public class AssoController {
@@ -34,8 +30,8 @@ public class AssoController {
 	public static final MediaType MEDIA_TYPE_PDF = new MediaType("application", "pdf");
 
 	@Autowired
-private IReportService reportService;
-	
+	private IReportService reportService;
+
 	@Autowired
 	private ContactRepositoryService contactRepoService;
 
@@ -43,8 +39,6 @@ private IReportService reportService;
 	List<Contact> displaySortedContacts() {
 		return contactRepoService.findAssoMembersOrderByPosition();
 	}
-
-
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	Contact addContact(@RequestBody final Contact c) {
