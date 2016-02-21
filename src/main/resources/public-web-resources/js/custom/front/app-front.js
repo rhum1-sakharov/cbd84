@@ -1,1 +1,1 @@
-angular.module('app-front', [   'cbd.front.config', 'ui.grid']);
+angular.module('app-front', [   'cbd.front.config']);

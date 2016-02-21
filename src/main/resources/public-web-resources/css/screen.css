@@ -2,49 +2,63 @@ body {
 	padding-top: 70px;
 	padding-bottom: 30px;
 	background-image: url("../images/bg.jpg");
-	background-size:cover;
+	background-size: cover;
 }
 
-span.welcome-message{
+span.welcome-message {
 	font-size: 40px;
 	font-weight: bold;
 }
 
-
-tr.calendar-PROPAGANDE,tr.calendar-INVITATION,tr.calendar-LOISIRS{
-	/* background-color: #7AE59E; 
-	color : white;*/
-}
-tr.calendar-PROMOTION{
-/* 	background-color: #FF9A87;
-	color : white; */
+.calendar-INVITATION {
+	background-color: #FFD1AA !important;
+	color: white;
 }
 
-tr.calendar-OFFICIEL{
-
-	background-color: #FFDA87;
-	color : white;
-}
-tr.calendar-NATIONAL{
-	background-color: #8398E0;
-	color : white;
-}
-tr.calendar-FEMININES{
-	background-color: #FF8491;
-	color : white;
+.calendar-VETERANS {
+	background-color: #116611 !important;
+	color: white;
 }
 
-
-tr.calendar-TIR{
-	/* background-color: #F55536;
-	color : white; */
+.calendar-LOISIRS {
+	background-color: #D49A6A !important;
+	color: white;
 }
 
-div.events-grid{
-	    width: 500px;
-    height: 250px;
+.calendar-PROPAGANDE {
+	background-color: #7AE59E !important;
+	color: white;
 }
 
+.calendar-PROMOTION {
+	background-color: #FF9A87 !important;
+	color: white;
+}
+
+.calendar-OFFICIEL {
+	background-color: #FFDA87 !important;
+	color: white;
+}
+
+.calendar-NATIONAL {
+	background-color: #8398E0 !important;
+	color: white;
+}
+
+.calendar-FEMININES {
+	background-color: #FF8491 !important;
+	color: white;
+}
+
+.calendar-TIR {
+	background-color: #F55536 !important;
+	color: white;
+}
+
+.grid-events{
+	width: 100%;
+	height: 500px;
+}
 
 .theme-dropdown .dropdown-menu {
 	position: static;
@@ -66,59 +80,53 @@ img.partner-css {
 }
 
 img.contact-portrait, img.asso-portrait {
-	float :right;
+	float: right;
 	width: 128px;
-	
 }
 
-
-
-img.admin-partner-thumb{
+img.admin-partner-thumb {
 	width: 100px;
 	height: 30px;
 }
 
-
-img.admin-contact-thumb, img.admin-asso-thumb{
+img.admin-contact-thumb, img.admin-asso-thumb {
 	width: 70px;
-	
 }
-
 
 img.calendar-sheets {
 	width: 100%;
 }
 
-img.feeds-image-left, img.results-image-left{
+img.feeds-image-left, img.results-image-left {
 	float: left;
 	margin: 4px;
-	width:256px;
+	width: 256px;
 }
 
 img.feeds-image-right, img.results-image-right {
 	float: right;
 	margin: 4px;
-	width:256px;
+	width: 256px;
 }
 
-img.feeds-image-64, img.results-image-64{	
-	width:64px;
+img.feeds-image-64, img.results-image-64 {
+	width: 64px;
 }
 
-img.feeds-image-128, img.results-image-128{	
-	width:128px;
+img.feeds-image-128, img.results-image-128 {
+	width: 128px;
 }
 
-img.feeds-image-256, img.results-image-256{	
-	width:256px;
+img.feeds-image-256, img.results-image-256 {
+	width: 256px;
 }
 
-img.feeds-image-512, img.results-image-512{	
-	width:512px;
+img.feeds-image-512, img.results-image-512 {
+	width: 512px;
 }
 
-img.feeds-image-800, img.results-image-800{	
-	width:800px;
+img.feeds-image-800, img.results-image-800 {
+	width: 800px;
 }
 
 div.feed-infos, div.result-infos {
@@ -127,11 +135,8 @@ div.feed-infos, div.result-infos {
 }
 
 img.admin-feed-thumb {
-	width : 64px;
-	
+	width: 64px;
 }
-
-
 
 /*
 Original Bootstrap's CSS depends on empty href attributes to style cursors for several components (pagination, tabs etc.). But in AngularJS adding empty href attributes to link tags will cause unwanted route changes. This is why we need to remove empty href attributes from directive templates and as a result styling is not applied correctly. The remedy is simple, just add the following styling to your application: 
@@ -140,136 +145,133 @@ Original Bootstrap's CSS depends on empty href attributes to style cursors for s
 	cursor: pointer;
 }
 
-.ng-invalid.ng-dirty{
-	border-color : #FA787E;
+.ng-invalid.ng-dirty {
+	border-color: #FA787E;
 }
 
-.ng-valid.ng-dirty{
-	border-color : #78FA89;
+.ng-valid.ng-dirty {
+	border-color: #78FA89;
 }
 
 .view-animate-container {
-  position:relative;
-  height:500px!important; 
-  
- /*  border:1px solid black; */
-  /* height:500px; */
-   overflow:hidden;  
+	position: relative;
+	height: 500px !important;
+	/*  border:1px solid black; */
+	/* height:500px; */
+	overflow: hidden;
 }
 
 .view-animate {
-  /* padding:10px; */
+	/* padding:10px; */
+	
 }
 
 .view-animate.ng-enter, .view-animate.ng-leave {
-  /* transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s; */
-    transition:all cubic-bezier(0.600, 0.460, 0.900, 0.940) 2s;  
-
-  display:block;
-  width:100%;
- /*  border-left:1px solid black; */
-
-  position:absolute;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-/*   padding:10px; */
+	/* transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s; */
+	transition: all cubic-bezier(0.600, 0.460, 0.900, 0.940) 2s;
+	display: block;
+	width: 100%;
+	/*  border-left:1px solid black; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/*   padding:10px; */
 }
 
 .view-animate.ng-enter {
-  left:100%;
-}
-.view-animate.ng-enter.ng-enter-active {
-  left:0;
-}
-.view-animate.ng-leave.ng-leave-active {
-  left:-100%;
+	left: 100%;
 }
 
+.view-animate.ng-enter.ng-enter-active {
+	left: 0;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+	left: -100%;
+}
 
 /* ------------------------------------------- */
 /* Slide Left 
 /* ------------------------------------------- */
 /* line 217, ../sass/ng-animation.scss */
 .slide-left {
-  -webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* easeOutQuad */
-  -webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  -o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  /* easeOutQuad */
+	-webkit-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-moz-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-ms-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-o-transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: all 0 cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	/* easeOutQuad */
+	-webkit-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-moz-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-ms-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	-o-transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	/* easeOutQuad */
 }
 /* line 219, ../sass/ng-animation.scss */
 .slide-left.ng-enter {
-  transform: translateX(-60px);
-  -ms-transform: translateX(-60px);
-  -webkit-transform: translateX(-60px);
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
-  opacity: 0;
+	transform: translateX(-60px);
+	-ms-transform: translateX(-60px);
+	-webkit-transform: translateX(-60px);
+	transition-duration: 250ms;
+	-webkit-transition-duration: 250ms;
+	opacity: 0;
 }
 /* line 225, ../sass/ng-animation.scss */
 .slide-left.ng-enter-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  opacity: 1;
+	transform: translateX(0);
+	-ms-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	opacity: 1;
 }
 /* line 230, ../sass/ng-animation.scss */
 .slide-left.ng-leave {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
-  opacity: 1;
+	transform: translateX(0);
+	-ms-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	transition-duration: 250ms;
+	-webkit-transition-duration: 250ms;
+	opacity: 1;
 }
 /* line 236, ../sass/ng-animation.scss */
 .slide-left.ng-leave-active {
-  transform: translateX(-60px);
-  -ms-transform: translateX(-60px);
-  -webkit-transform: translateX(-60px);
-  opacity: 0;
+	transform: translateX(-60px);
+	-ms-transform: translateX(-60px);
+	-webkit-transform: translateX(-60px);
+	opacity: 0;
 }
 /* line 242, ../sass/ng-animation.scss */
 .slide-left.ng-hide-add {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
-  opacity: 1;
+	transform: translateX(0);
+	-ms-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	transition-duration: 250ms;
+	-webkit-transition-duration: 250ms;
+	opacity: 1;
 }
 /* line 247, ../sass/ng-animation.scss */
 .slide-left.ng-hide-add.ng-hide-add-active {
-  transform: translateX(-60px);
-  -ms-transform: translateX(-60px);
-  -webkit-transform: translateX(-60px);
-  opacity: 0;
+	transform: translateX(-60px);
+	-ms-transform: translateX(-60px);
+	-webkit-transform: translateX(-60px);
+	opacity: 0;
 }
 /* line 253, ../sass/ng-animation.scss */
 .slide-left.ng-hide-remove {
-  transform: translateX(-60px);
-  -ms-transform: translateX(-60px);
-  -webkit-transform: translateX(-60px);
-  transition-duration: 250ms;
-  -webkit-transition-duration: 250ms;
-  display: block !important;
-  opacity: 0;
+	transform: translateX(-60px);
+	-ms-transform: translateX(-60px);
+	-webkit-transform: translateX(-60px);
+	transition-duration: 250ms;
+	-webkit-transition-duration: 250ms;
+	display: block !important;
+	opacity: 0;
 }
 /* line 259, ../sass/ng-animation.scss */
 .slide-left.ng-hide-remove.ng-hide-remove-active {
-  transform: translateX(0);
-  -ms-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  opacity: 1;
+	transform: translateX(0);
+	-ms-transform: translateX(0);
+	-webkit-transform: translateX(0);
+	opacity: 1;
 }
-
-

@@ -18,12 +18,12 @@
 	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <!--  <link rel="stylesheet" type="text/css"
 	href="resources/css/ng-animation.css" />-->
-<script type="text/javascript"
-		src="resources/js/vendor/angular-ui-grid/ui-grid.min.css"></script>
+
 <link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
 
-
-
+<link rel="stylesheet"
+	href="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.css"
+	type="text/css">
 </head>
 
 <body role="document">
@@ -108,8 +108,8 @@
     ================================================== -->
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
-	<script type="text/javascript"
-		src="resources/js/vendor/angular-ui-grid/ui-grid.min.js"></script>
+
+	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
 
 	<!-- Angular Custom JavaScript
     ================================================== -->
