@@ -11,7 +11,7 @@
 			<label for="title" class="col-sm-3 control-label">Date</label>
 			<div class="col-sm-3">
 				<p class="input-group">
-					<input type="text" ng-model="event.date" date-pickering />					
+					<input type="text" ng-model="event.date" date-pickering />
 				</p>
 			</div>
 		</div>
@@ -20,10 +20,9 @@
 			<div class="col-sm-9"
 				ng-class="{'has-error':formEvent.hour.$invalid && !formEvent.hour.$pristine}">
 				<input id="club" ng-model="event.hour" type="text" name="hour"
-					size="60" date-timing required>			
-					<p ng-show="formEvent.hour.$invalid && !formEvent.hour.$pristine"
-					class="help-block">Veuillez saisir une heure au format
-						HH:mm!</p>
+					size="60" date-timing required>
+				<p ng-show="formEvent.hour.$invalid && !formEvent.hour.$pristine"
+					class="help-block">Veuillez saisir une heure au format HH:mm!</p>
 			</div>
 		</div>
 
@@ -65,8 +64,16 @@
 			<label for="category" class="col-sm-3 control-label">Cat&#233;gorie</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formEvent.category.$invalid && !formEvent.category.$pristine}">
-				<input id="category" ng-model="event.category" category="text"
-					name="category" size="60">
+				<select name="category" ng-model="event.category" required="true">
+					<option value="OFFICIEL">OFFICIEL</option>
+					<option value="NATIONAL">NATIONAL</option>
+					<option value="PROPAGANDE">PROPAGANDE</option>
+					<option value="PROMOTION">PROMOTION</option>
+					<option value="FEMININES">FEMININES</option>
+					<option value="LOISIRS">LOISIRS</option>
+					<option value="INVITATION">INVITATION</option>
+					<option value="TIR">TIR</option>
+				</select>
 				<p
 					ng-show="formEvent.category.$invalid && !formEvent.category.$pristine"
 					class="help-block">Veuillez saisir une cat&#233;gorie</p>

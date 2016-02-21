@@ -24,7 +24,8 @@
 			type="text" ng-model="searchText"></h3>
 		
 	</div>
-	<div class="panel-body">
+	
+		<div class="panel-body">
 		<table class="table">
 			<thead>
 				<tr>
@@ -39,7 +40,7 @@
 					<th>Lieu</th>
 				</tr>
 			</thead>
-			<tr
+			<tr class="calendar-{{event.category}}"
 				ng-repeat="event in events | orderBy:'+creationDate' | filter:searchText">
 				<td>{{event.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
 				<td ng-bind="event.club"></td>
