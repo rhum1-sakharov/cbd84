@@ -29,8 +29,7 @@ public class AssoController {
 
 	public static final MediaType MEDIA_TYPE_PDF = new MediaType("application", "pdf");
 
-	@Autowired
-	private IReportService reportService;
+	
 
 	@Autowired
 	private ContactRepositoryService contactRepoService;

@@ -1,5 +1,8 @@
 package org.rvermorel.cbd.mvc;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -7,6 +10,8 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.io.FilenameUtils;
+import org.rvermorel.cbd.config.CbdConfig;
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.Contact;
 import org.rvermorel.cbd.jpa.ContactRepositoryService;
@@ -39,23 +44,33 @@ public class ContactController {
 	@Autowired
 	private IReportService reportService;
 
+	@Autowired
+	private CbdConfig cbdConfig;
+
 	@RequestMapping(value = "/report", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> getPDFReportList(HttpServletRequest request) {
-		List<Contact> contacts = contactRepoService.findAssoMembersOrderByPosition();
-		JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(contacts);
-		Map<String, Object> params = new HashMap<String, Object>();
-
-		int port = request.getServerPort();
-		String rootUrl = "";
-		rootUrl = String.format("%s://%s%s/", request.getScheme(), request.getServerName(),
-				port == 80 ? "" : ":" + port);
-		rootUrl += "images/get/contacts/jpg/";
-		LOG.debug(rootUrl);
-		params.put("urlAssoImage", rootUrl);
-		byte[] bytes = reportService.createPDFA1(getClass().getResourceAsStream("/reports/assos.jasper"), params, ds);
+		byte[] bytes = null;
 		HttpHeaders headers = new HttpHeaders();
-		headers.set("Content-Type", "application/pdf");
-		headers.set("Content-Disposition", "attachment; filename=associations-sportives-84.pdf");
+		try {
+			List<Contact> contacts = contactRepoService.findAssoMembersOrderByPosition();
+			JRBeanCollectionDataSource ds = new JRBeanCollectionDataSource(contacts);
+			Map<String, Object> params = new HashMap<String, Object>();
+
+			int port = request.getServerPort();
+			String rootUrl = "";
+			rootUrl = String.format("%s://%s%s/", request.getScheme(), request.getServerName(),
+					port == 80 ? "" : ":" + port);
+			rootUrl += "images/get/contacts/jpg/";
+			LOG.debug(rootUrl);
+			params.put("urlAssoImage", rootUrl);
+			FileInputStream fis = new FileInputStream(new File(FilenameUtils.concat(cbdConfig.getReportsPath(), "assos.jasper")));
+			bytes = reportService.createPDFA1(fis, params, ds);			
+			headers.set("Content-Type", "application/pdf");
+			headers.set("Content-Disposition", "attachment; filename=associations-sportives-84.pdf");
+		} catch (FileNotFoundException e) {
+			LOG.error(e.getMessage());
+			LOG.debug("stacktrace : ", e);
+		}
 		return new ResponseEntity<byte[]>(bytes, headers, HttpStatus.OK);
 	}
 

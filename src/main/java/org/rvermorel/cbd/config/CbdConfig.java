@@ -14,6 +14,9 @@ public class CbdConfig {
 
 	@Value("${datastore.path}")
 	private String datastorePath;
+	
+	@Value("${reports.path}")
+	private String reportsPath;
 
 	// To resolve ${} in @Value
 	@Bean
@@ -25,6 +28,8 @@ public class CbdConfig {
 		return datastorePath;
 	}
 
-	
+	public String getReportsPath() {
+		return reportsPath;
+	}
 
 }
