@@ -79,7 +79,7 @@
 	<!-- Angular Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/js/vendor/angular-1.4.7/angular${minjs}.js"></script>
+		src="resources/js/vendor/angular-1.4.7/angular_fr-fr${minjs}.js"></script>
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-1.4.7/angular-animate${minjs}.js"></script>
 	<script type="text/javascript"
