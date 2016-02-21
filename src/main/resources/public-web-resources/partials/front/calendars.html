@@ -41,7 +41,7 @@
 			</thead>
 			<tr
 				ng-repeat="event in events | orderBy:'+creationDate' | filter:searchText">
-				<td ng-bind="event.creationDate | date:'EEEE dd MMM yyyy HH:mm' "></td>
+				<td>{{event.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
 				<td ng-bind="event.club"></td>
 				<td ng-bind="event.number"></td>
 				<td ng-bind="event.type"></td>
