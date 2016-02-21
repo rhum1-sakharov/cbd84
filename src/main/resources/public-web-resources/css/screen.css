@@ -85,7 +85,7 @@ img.feeds-image-800, img.results-image-800{
 	width:800px;
 }
 
-div.feed-infos {
+div.feed-infos, div.result-infos {
 	font-size: 12px;
 	text-align: right;
 }
