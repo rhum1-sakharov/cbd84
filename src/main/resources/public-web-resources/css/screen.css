@@ -12,12 +12,12 @@ span.welcome-message{
 
 
 tr.calendar-PROPAGANDE,tr.calendar-INVITATION,tr.calendar-LOISIRS{
-	background-color: #7AE59E;
-	color : white;
+	/* background-color: #7AE59E; 
+	color : white;*/
 }
 tr.calendar-PROMOTION{
-	background-color: #FF9A87;
-	color : white;
+/* 	background-color: #FF9A87;
+	color : white; */
 }
 
 tr.calendar-OFFICIEL{
@@ -36,8 +36,8 @@ tr.calendar-FEMININES{
 
 
 tr.calendar-TIR{
-	background-color: #F55536;
-	color : white;
+	/* background-color: #F55536;
+	color : white; */
 }
 
 div.events-grid{
