@@ -127,7 +127,7 @@ angular.module(
 						},{
 							field : 'type',
 							displayName: "Type",
-							minWidth:50, 
+							minWidth:60, 
 							filter: {						         
 						          type: uiGridConstants.filter.SELECT,
 						          selectOptions: [ { value: 'S', label: 'S' }, { value: 'D', label: 'D' }, { value: 'T', label: 'T'}, { value: 'Q', label: 'Q' } ]
