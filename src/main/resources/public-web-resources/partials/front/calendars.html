@@ -21,14 +21,21 @@
 <div class="panel panel-default">
 	<div class="panel-heading">
 		<h3 class="panel-title">
-			Les rencontres <!-- <i class="glyphicon glyphicon-search"></i> <input
+			Les rencontres
+			<!-- <i class="glyphicon glyphicon-search"></i> <input
 				type="text" ng-model="searchText"> -->
 		</h3>
 
 	</div>
 	<div class="panel-body">
+		<label>S&#233;lectionner </label><select
+			ng-model="export_row_type"</select>
+		<option value='all'>toutes les rencontres</option>
+		<option value='visible'>les rencontres visibles</option>
+		</select>
+		<label> pour les exporter au </label>  <button ng-click="export()">format pdf</button>
 		<div id="grid-events" ui-grid="gridEventOptions" class="grid-events"
-			ui-grid-resize-columns ui-grid-pagination></div>		
+			ui-grid-resize-columns ui-grid-pagination ui-grid-exporter></div>
 	</div>
 </div>
 

@@ -110,6 +110,13 @@
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
 	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+	
+	<!-- PdfMake Vendor JavaScript
+    ================================================== -->
+	<script type="text/javascript"
+		src="resources/js/vendor/pdfmake/pdfmake.js"></script>
+
+	<script src="resources/js/vendor/pdfmake/vfs_fonts.js"></script>
 
 	<!-- Angular Custom JavaScript
     ================================================== -->

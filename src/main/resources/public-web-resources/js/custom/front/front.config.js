@@ -1,7 +1,7 @@
 angular.module(
 		'cbd.front.config',
 		[ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule',
-				'ui.router', 'ui.grid','ui.grid.resizeColumns', 'ui.grid.pagination' ])
+				'ui.router', 'ui.grid','ui.grid.resizeColumns', 'ui.grid.pagination','ui.grid.exporter' ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 	//
@@ -50,7 +50,7 @@ angular.module(
 		views : {
 			"main" : {
 				templateUrl : "resources/partials/front/calendars.html",
-				controller : function($scope, $q, $http, cbdUtils, uiGridConstants, i18nService) {
+				controller : function($scope, $q, $http, cbdUtils, uiGridConstants, i18nService, $filter) {
 					$scope.calendars = [];
 
 					var promiseStart = $q.when('start');
@@ -62,11 +62,25 @@ angular.module(
 					});
 					$scope.events = [];
 					
-					  i18nService.setCurrentLang('fr');
+					i18nService.setCurrentLang('fr');
 					$scope.gridEventOptions = {
+						    onRegisterApi: function(gridApi){ 
+						        $scope.gridApi = gridApi;
+						      },
 							enableFiltering : true,
 						    paginationPageSizes: [25, 50, 100],
 						    paginationPageSize: 25,
+						    exporterPdfTableStyle: {margin: [30, 30, 30, 30]},
+						    exporterPdfOrientation: 'landscape',
+						    exporterPdfPageSize: 'LETTER',
+						    exporterPdfMaxGridWidth: 600,
+						    exporterFieldCallback: function( grid, row, col, input ) {
+						        if( col.name === 'creationDate' ){
+						        	return $filter('date')(new Date(input), "EEE dd MMM yyyy HH'h'mm");					        	
+						        } else {
+						          return input;
+						        }
+						      },
 						columnDefs : [ {
 							field : 'creationDate',
 							sort : {
@@ -151,6 +165,12 @@ angular.module(
 							 minWidth: 150
 						} ]
 					};
+					
+					$scope.export_row_type ='all';
+					$scope.export = function(){					
+					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
+					 };
+					
 					var promise2 = promise1.then(function(response) {
 						return $http.get('events').then(function(response) {
 							$scope.events = response.data;
