@@ -47,18 +47,24 @@
 					ng-show="formEvent.number.$invalid && !formEvent.number.$pristine"
 					class="help-block">Veuillez saisir un nombre</p>
 			</div>
-		</div>
-
+		</div>		
+		
 		<div class="form-group">
 			<label for="type" class="col-sm-3 control-label">Type</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formEvent.type.$invalid && !formEvent.type.$pristine}">
-				<input id="type" ng-model="event.type" type="text" name="type"
-					size="60">
-				<p ng-show="formEvent.type.$invalid && !formEvent.type.$pristine"
-					class="help-block">Veuillez saisir un type</p>
+				<select name="category" ng-model="type.category" required="true">
+					<option value="S">S</option>
+					<option value="D">D</option>
+					<option value="T">T</option>
+					<option value="Q">Q</option>					
+				</select>
+				<p
+					ng-show="formEvent.type.$invalid && !formEvent.type.$pristine"
+					class="help-block">Veuillez saisir un typz</p>
 			</div>
 		</div>
+		
 
 		<div class="form-group">
 			<label for="category" class="col-sm-3 control-label">Cat&#233;gorie</label>

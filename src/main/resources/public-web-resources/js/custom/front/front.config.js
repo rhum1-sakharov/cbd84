@@ -117,11 +117,11 @@ angular.module(
 						},{
 							field : 'number',
 							displayName: "Nb",
-							maxWidth:50
+							maxWidth:70
 						},{
 							field : 'type',
 							displayName: "Type",
-							minWidth:150
+							minWidth:80
 						},{
 							field : 'division',
 							displayName: "Division",
