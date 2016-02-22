@@ -109,8 +109,9 @@
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
-	<script async src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
-	
+	<script async
+		src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
 	<script async type="text/javascript"
@@ -134,10 +135,12 @@
 	<!-- Angular Custom JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	
-	<script type="text/javascript" src="resources/js/custom/front/app-front.js"></script>
-	<script type="text/javascript" src="resources/js/custom/front/front.config.js"></script>
-	<script type="text/javascript" src="resources/js/custom/front/front.controllers.js"></script>
+
+	<script type="text/javascript"
+		src="resources/js/custom/front/app-front.js"></script>
+	<script type="text/javascript" src="resources/js/custom/utils.js"></script>
+	<script type="text/javascript"
+		src="resources/js/custom/front/front.config.js"></script>
 
 </body>
 
