@@ -64,7 +64,7 @@ angular.module(
 					
 					  i18nService.setCurrentLang('fr');
 					$scope.gridEventOptions = {
-							
+							enableFiltering : true,
 						    paginationPageSizes: [25, 50, 100],
 						    paginationPageSize: 25,
 						columnDefs : [ {
@@ -74,12 +74,17 @@ angular.module(
 								priority : 1
 							},
 							cellFilter: "date:\"EEE dd MMM yyyy HH'h'mm\"",
+							filterCellFiltered:true,
 							displayName: "Date",
 							width:180
 						},{
 							field : 'category',
 							displayName: "Categorie",
 							width:120,
+							filter: {						         
+						          type: uiGridConstants.filter.SELECT,
+						          selectOptions: [ { value: 'PROPAGANDE', label: 'PROPAGANDE' }, { value: 'TIR', label: 'TIR' }, { value: 'LOISIRS', label: 'LOISIRS'}, { value: 'OFFICIEL', label: 'OFFICIEL' }, { value: 'NATIONAL', label: 'NATIONAL' } , { value: 'FEMININES', label: 'FEMININES' } , { value: 'PROMOTION', label: 'PROMOTION' } , { value: 'INVITATION', label: 'INVITATION' } , { value: 'VETERANS', label: 'VETERANS' } ]
+						        },
 					        cellClass: function(grid, row, col, rowRenderIndex, colRenderIndex) {
 					            if (grid.getCellValue(row,col) === 'PROPAGANDE') {
 					              return 'calendar-PROPAGANDE';
@@ -113,15 +118,20 @@ angular.module(
 						{
 							field : 'club',
 							displayName: "Club",
-							 minWidth: 130
+							 minWidth: 100
 						},{
 							field : 'number',
 							displayName: "Nb",
-							maxWidth:70
+							maxWidth:70,
+							enableFiltering: false
 						},{
 							field : 'type',
 							displayName: "Type",
-							minWidth:80
+							minWidth:50, 
+							filter: {						         
+						          type: uiGridConstants.filter.SELECT,
+						          selectOptions: [ { value: 'S', label: 'S' }, { value: 'D', label: 'D' }, { value: 'T', label: 'T'}, { value: 'Q', label: 'Q' } ]
+						        }
 						},{
 							field : 'division',
 							displayName: "Division",
@@ -134,6 +144,7 @@ angular.module(
 							field : 'nature',
 							displayName: "Nature",
 							minWidth:150
+							
 						},{
 							field : 'place',
 							displayName: "Lieu",
