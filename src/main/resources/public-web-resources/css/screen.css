@@ -4,14 +4,15 @@ html {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/bg.jpg', sizingMethod='scale');
+-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/bg.jpg', sizingMethod='scale')";
 }
 
 body {
 	padding-top: 70px;
 	padding-bottom: 30px;	
+	background-color: transparent;
 }
-
-
 
 span.welcome-message {
 	font-size: 40px;
