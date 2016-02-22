@@ -167,7 +167,7 @@ angular.module(
 					};
 					
 					$scope.export_row_type ='all';
-					$scope.export = function(){					
+					$scope.exportPDF = function(){					
 					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
 					 };
 					

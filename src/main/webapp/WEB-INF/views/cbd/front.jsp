@@ -109,25 +109,15 @@
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
-	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+	<script async src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
 	
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
-	<script type="text/javascript"
+	<script async type="text/javascript"
 		src="resources/js/vendor/pdfmake/pdfmake${minjs}.js"></script>
 
-	<script src="resources/js/vendor/pdfmake/vfs_fonts.js"></script>
+	<script async src="resources/js/vendor/pdfmake/vfs_fonts.js"></script>
 
-	<!-- Angular Custom JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-
-	<script type="text/javascript"
-		src="resources/js/custom/front/app-front.js"></script>
-	<script type="text/javascript" src="resources/js/custom/utils.js"></script>
-
-	<script type="text/javascript"
-		src="resources/js/custom/front/front.config.js"></script>
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
@@ -141,6 +131,13 @@
 		src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 
 
+	<!-- Angular Custom JavaScript
+    ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	
+	<script type="text/javascript" src="resources/js/custom/front/app-front.js"></script>
+	<script type="text/javascript" src="resources/js/custom/front/front.config.js"></script>
+	<script type="text/javascript" src="resources/js/custom/front/front.controller.js"></script>
 
 </body>
 
