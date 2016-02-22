@@ -113,7 +113,7 @@ angular.module(
 						{
 							field : 'club',
 							displayName: "Club",
-							 minWidth: 150
+							 minWidth: 130
 						},{
 							field : 'number',
 							displayName: "Nb",

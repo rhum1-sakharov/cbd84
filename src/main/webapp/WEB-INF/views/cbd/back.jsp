@@ -54,8 +54,8 @@
 
 		<div class="row">
 			<div ui-view="main"></div>
-			<hr>
-			<!-- <footer>
+			
+			<!-- <hr><footer>
 				<span>&copy; r&#233;alisation du site : Romain VERMOREL -
 					pour le CBD Vaucluse </span><span><img
 					src="resources/images/logo-ffsb.png"></span><span><img
