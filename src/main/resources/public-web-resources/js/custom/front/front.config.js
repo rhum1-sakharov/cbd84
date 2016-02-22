@@ -77,18 +77,6 @@ angular.module(
 							displayName: "Date",
 							width:180
 						},{
-							field : 'club',
-							displayName: "Club",
-							 minWidth: 150
-						},{
-							field : 'number',
-							displayName: "Nb",
-							maxWidth:50
-						},{
-							field : 'type',
-							displayName: "Type",
-							minWidth:150
-						},{
 							field : 'category',
 							displayName: "Categorie",
 							width:120,
@@ -121,6 +109,19 @@ angular.module(
 						              return 'calendar-VETERANS';
 						            }  
 					        }
+						},
+						{
+							field : 'club',
+							displayName: "Club",
+							 minWidth: 150
+						},{
+							field : 'number',
+							displayName: "Nb",
+							maxWidth:50
+						},{
+							field : 'type',
+							displayName: "Type",
+							minWidth:150
 						},{
 							field : 'division',
 							displayName: "Division",
