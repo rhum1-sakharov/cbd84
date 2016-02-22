@@ -114,7 +114,7 @@
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/js/vendor/pdfmake/pdfmake.js"></script>
+		src="resources/js/vendor/pdfmake/pdfmake${minjs}.js"></script>
 
 	<script src="resources/js/vendor/pdfmake/vfs_fonts.js"></script>
 
