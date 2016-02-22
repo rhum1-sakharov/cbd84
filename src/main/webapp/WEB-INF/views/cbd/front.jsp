@@ -137,7 +137,7 @@
 	
 	<script type="text/javascript" src="resources/js/custom/front/app-front.js"></script>
 	<script type="text/javascript" src="resources/js/custom/front/front.config.js"></script>
-	<script type="text/javascript" src="resources/js/custom/front/front.controller.js"></script>
+	<script type="text/javascript" src="resources/js/custom/front/front.controllers.js"></script>
 
 </body>
 
