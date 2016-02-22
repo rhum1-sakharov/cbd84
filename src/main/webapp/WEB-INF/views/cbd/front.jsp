@@ -109,7 +109,7 @@
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
-	<script async
+	<script 
 		src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
 
 	<!-- PdfMake Vendor JavaScript
