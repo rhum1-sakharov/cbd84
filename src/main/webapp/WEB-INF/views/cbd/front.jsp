@@ -4,8 +4,7 @@
 <html ng-app="app-front">
 
 <head>
-<title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du
-	Vaucluse - www.cbd84.fr</title>
+<title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du Vaucluse - www.cbd84.fr</title>
 <meta name="description"
 	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;s, Calendriers, R&#233;sultats, Assos Sportives, Contacts " />
 <meta name="robots" content="index, follow" />
@@ -46,7 +45,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
-					<li ui-sref-active="active"><a ui-sref="calendars">Calendriers</a></li>
+					<li ui-sref-active="active"><a ui-sref="calendars">Rencontres</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
 					<li ui-sref-active="active"><a ui-sref="assos">Asso
 							sportives</a></li>
@@ -60,16 +59,6 @@
 	<!-- Main jumbotron for a primary marketing message or call to action -->
 
 	<div class="container">
-
-		<!--  <div class="row">			
-				<div class="container">					
-					<span><img src="resources/images/logo-cbd84.png"></span>
-					<span><img src="resources/images/avignon-04.jpg"></span>
-					</p>
-				</div>			
-		</div>  -->
-
-		<!-- Example row of columns -->
 		<div class="row">
 			<div class="col-md-9">
 				<div ui-view="main"></div>
@@ -79,15 +68,6 @@
 				<div ui-view="partners"></div>
 			</div>
 		</div>
-
-		<!-- 	<div class="row">
-			<hr>
-			<span>&copy; r&#233;alisation du site : Romain VERMOREL - pour
-				le CBD Vaucluse </span><span><img
-				src="resources/images/logo-ffsb.png"></span><span><img
-				src="resources/images/logo-cbd84-35.png"></span>
-		</div> -->
-
 	</div>
 	<!-- /container -->
 
@@ -109,8 +89,7 @@
 	<script type="text/javascript"
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
-	<script 
-		src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
 
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
