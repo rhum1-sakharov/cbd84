@@ -3,6 +3,8 @@ package org.rvermorel.cbd.mvc;
 import java.io.IOException;
 
 import org.rvermorel.cbd.datastore.IDatastore;
+import org.rvermorel.cbd.domain.CbdFiles;
+import org.rvermorel.cbd.jpa.CbdFileRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,8 @@ public class ImageController {
 	@Autowired
 	private IDatastore idatastore;
 
+	@Autowired
+	private CbdFileRepository cbdFilesRepo;
 
 	@RequestMapping(value = "/get/{type}/{imgExtension}/{id}", method = { RequestMethod.GET })
 	public ResponseEntity<byte[]> getImage(@PathVariable String id, @PathVariable String imgExtension,
@@ -30,17 +34,22 @@ public class ImageController {
 		// http://localhost:8080/cbd/images/feeds/jpg/3
 		byte[] img = null;
 		HttpHeaders headers = new HttpHeaders();
-
+		String filename = type;
+		if (type.equals(IDatastore.TYPE_CBDFILES)) {
+			CbdFiles c = cbdFilesRepo.findOne(Long.valueOf(id));
+			filename = c.getLabel();
+		}
 		try {
 			img = idatastore.getContent(id, imgExtension, type);
 			if (imgExtension.equals("jpg")) {
 				headers.set("Content-Type", "image/jpeg");
-			}else if (imgExtension.equals("pdf")) {
+			} else if (imgExtension.equals("pdf")) {
 				headers.set("Content-Type", "application/pdf");
-				headers.set("Content-Disposition", String.format("attachment; filename=%s.pdf",type));
-			}if (imgExtension.equals("xls")) {
+				headers.set("Content-Disposition", String.format("attachment; \"filename=%s.pdf\"", filename));
+			}
+			else if (imgExtension.equals("xls")) {
 				headers.set("Content-Type", "application/vnd.ms-excel");
-				headers.set("Content-Disposition", String.format("attachment; filename=%s.xls",type));	
+				headers.set("Content-Disposition", String.format("attachment; filename=\"%s.xls\"", filename));
 			}
 
 		} catch (IOException e) {
