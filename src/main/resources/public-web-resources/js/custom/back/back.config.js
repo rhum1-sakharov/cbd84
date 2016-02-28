@@ -101,15 +101,15 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 			}
 		},
 
-	}).state('calendars', {
-		url : "/calendars",
+	}).state('cbdfiles', {
+		url : "/cbdfiles",
 		views : {
 			"main" : {
 
-				templateUrl : "resources/partials/back/calendars/admin-calendars.html",
+				templateUrl : "resources/partials/back/cbdfiles/admin-cbdfiles.html",
 				controller : function($scope, $q, $http, cbdUtils, $uibModal, $log) {
-					$scope.calendars = [];
-					$scope.calendar = {};
+					$scope.cbdfiles = [];
+					$scope.cbdfile = {};
 
 					$scope.formatTs2Date = function(ts) {
 						return cbdUtils.formatTs2Date(ts);
@@ -117,53 +117,53 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
-						return $http.get('calendars').then(function(response) {
-							$scope.calendars = response.data;
+						return $http.get('cbdfiles').then(function(response) {
+							$scope.cbdfiles = response.data;
 							return response.data;
 						});
 					});
 
 					$scope.animationsEnabled = true;
 
-					$scope.openAddCalendar = function(size) {
+					$scope.openAddCbdFile = function(size) {
 
 						var modalInstance = $uibModal.open({
 							animation : $scope.animationsEnabled,
-							templateUrl : 'resources/partials/back/calendars/add-calendars.html',
-							controller : 'AddCalendarModalInstanceCtrl',
+							templateUrl : 'resources/partials/back/cbdfiles/add-cbdfiles.html',
+							controller : 'AddCbdFileModalInstanceCtrl',
 							size : size,
 							resolve : {
-								calendars : function() {
-									return $scope.calendars;
+								cbdfiles : function() {
+									return $scope.cbdfiles;
 								}
 							}
 						});
 
-						modalInstance.result.then(function(calendars) {
-							$scope.calendars = calendars;
+						modalInstance.result.then(function(cbdfiles) {
+							$scope.cbdfiles = cbdfiles;
 						}, function() {
 							$log.info('Modal dismissed at: ' + new Date());
 						});
 					};
 
-					$scope.openDeleteCalendar = function(size, selectedCalendar) {
-						$scope.calendar = selectedCalendar;
+					$scope.openDeleteCbdFile = function(size, selectedCbdFile) {
+						$scope.cbdfile = selectedCbdFile;
 						var modalInstance = $uibModal.open({
 							animation : $scope.animationsEnabled,
-							templateUrl : 'resources/partials/back/calendars/delete-calendars.html',
-							controller : 'DeleteCalendarModalInstanceCtrl',
+							templateUrl : 'resources/partials/back/cbdfiles/delete-cbdfiles.html',
+							controller : 'DeleteCbdFileModalInstanceCtrl',
 							size : size,
 							resolve : {
-								calendar : function() {
-									return $scope.calendar;
+								cbdfile : function() {
+									return $scope.cbdfile;
 								}
 							}
 						});
 
 						modalInstance.result.then(function(selectedItem) {
 
-							var index = $scope.calendars.indexOf(selectedItem);
-							$scope.calendars.splice(index, 1);
+							var index = $scope.cbdfiles.indexOf(selectedItem);
+							$scope.cbdfiles.splice(index, 1);
 
 						}, function() {
 							$log.info('Modal dismissed at: ' + new Date());

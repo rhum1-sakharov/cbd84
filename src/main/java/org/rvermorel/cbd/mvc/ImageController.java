@@ -50,25 +50,4 @@ public class ImageController {
 		return new ResponseEntity<byte[]>(img, headers, HttpStatus.OK);
 	}
 
-//	@RequestMapping(value = "/add/{type}/{imgExtension}/{size}/{id}", method = { RequestMethod.POST })
-//	public ResponseEntity<String> addImage(@RequestParam("file") MultipartFile file, @PathVariable String imgExtension,
-//			@PathVariable String id, @PathVariable String type, @PathVariable int size) {
-//		String responseMessage = "";
-//		if (!file.isEmpty()) {
-//			try {
-//
-//				byte[] resized = iImageEnhancement.resizeImg(file.getBytes(), size, imgExtension);
-//				idatastore.writeContent(resized, id, imgExtension, type);
-//
-//			} catch (IOException e) {
-//				LOG.error(e.getMessage(), e);
-//				return new ResponseEntity<String>(e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR);
-//			}
-//		}
-//
-//		return new ResponseEntity<String>(responseMessage, null, HttpStatus.OK);
-//	}
-
-	
-
 }

@@ -1,15 +1,15 @@
-angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.cbdfiles.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
-.controller('AddCalendarModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'calendars', function(cbdUtils, $scope, $http, $q, $uibModalInstance, calendars) {
+.controller('AddCbdFileModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'cbdfiles', function(cbdUtils, $scope, $http, $q, $uibModalInstance, cbdfiles) {
 
-	$scope.calendar = {
+	$scope.cbdfile = {
 		position : 1
 
 	};
 
 	/** ****************************** DatePicker AngularUI */
 	$scope.today = function() {
-		$scope.calendar.creationDate = new Date();
+		$scope.cbdfile.creationDate = new Date();
 	};
 
 	$scope.status = {
@@ -24,14 +24,14 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 
 	$scope.loading = false;
 	$scope.serverError = '';
-	$scope.addCalendarPDF = {
+	$scope.addCbdFilePDF = {
 		error : 'pristine'
 	};
-	$scope.addCalendarExcel = {
+	$scope.addCbdFileExcel = {
 		error : 'pristine'
 	};
 
-	$scope.$watch('addCalendarPDF', function(newVal, oldVal) {
+	$scope.$watch('addCbdFilePDF', function(newVal, oldVal) {
 		var mimetype = 'application/pdf';
 
 		if (newVal.type) {
@@ -45,7 +45,7 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 		}
 	});
 	
-	$scope.$watch('addCalendarExcel', function(newVal, oldVal) {
+	$scope.$watch('addCbdFileExcel', function(newVal, oldVal) {
 		var mimetype = 'application/vnd.ms-excel';
 
 		if (newVal.type) {
@@ -65,19 +65,19 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('calendars/add', $scope.calendar).then(function(response) {
-				$scope.calendar = response.data;
+			return $http.post('cbdfiles/add', $scope.cbdfile).then(function(response) {
+				$scope.cbdfile = response.data;
 				return response.data;
 			});
 		});
 
 		var promise2 = promise1.then(function(response) {
-			if ($scope.addCalendarPDF.error === '') {
+			if ($scope.addCbdFilePDF.error === '') {
 				var fd = new FormData();
-				fd.append('file', $scope.addCalendarPDF);
+				fd.append('file', $scope.addCbdFilePDF);
 
 				//"/add/file/{imgExtension}/{id}"
-				var url = 'calendars/add/file/pdf/' + $scope.calendar.id;
+				var url = 'cbdfiles/add/file/pdf/' + $scope.cbdfile.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -89,12 +89,12 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 		});
 		
 		var promise3 = promise2.then(function(response) {
-			if ($scope.addCalendarExcel.error === '') {
+			if ($scope.addCbdFileExcel.error === '') {
 				var fd = new FormData();
-				fd.append('file', $scope.addCalendarExcel);
+				fd.append('file', $scope.addCbdFileExcel);
 
 				//"/add/file/{imgExtension}/{id}"
-				var url = 'calendars/add/file/xls/' + $scope.calendar.id;
+				var url = 'cbdfiles/add/file/xls/' + $scope.cbdfile.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -107,8 +107,8 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 
 		var promiseEnd = promise3.then(function(result) {
 			$scope.loading = false;
-			calendars.push($scope.calendar);
-			$uibModalInstance.close(calendars);
+			cbdfiles.push($scope.cbdfile);
+			$uibModalInstance.close(cbdfiles);
 			$scope.serverError = '';
 
 			return result;
@@ -127,17 +127,17 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 
 } ])
 
-.controller('DeleteCalendarModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'calendar', function($scope, $http, $q, $uibModalInstance, calendar) {
+.controller('DeleteCbdFileModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'cbdfile', function($scope, $http, $q, $uibModalInstance, cbdfile) {
 
 	$scope.loading = false;
-	$scope.calendar = calendar;
+	$scope.cbdfile = cbdfile;
 	$scope.ok = function() {
 
 		$scope.loading = true;
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'calendars/delete/' + $scope.calendar.id ;
+			var url = 'cbdfiles/delete/' + $scope.cbdfile.id ;
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});
@@ -145,14 +145,14 @@ angular.module('cbd.back.calendars.controllers', [ 'ngAnimate', 'ngSanitize', 'n
 
 		var promiseEnd = promise1.then(function(result) {
 			$scope.loading = false;
-			$uibModalInstance.close(calendar);
+			$uibModalInstance.close(cbdfile);
 			$scope.serverError = '';
 
 			return result;
 		}, function(reason) {
 			$scope.loading = false;
 			$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText;
-			// $uibModalInstance.close(calendar);
+			// $uibModalInstance.close(cbdfile);
 			return $q.reject(reason);
 		});
 

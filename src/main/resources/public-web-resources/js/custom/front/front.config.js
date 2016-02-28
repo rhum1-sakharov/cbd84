@@ -45,21 +45,15 @@ angular.module(
 			}
 		},
 
-	}).state('calendars', {
-		url : "/calendars",
+	}).state('events', {
+		url : "/events",
 		views : {
 			"main" : {
-				templateUrl : "resources/partials/front/calendars.html",
+				templateUrl : "resources/partials/front/events.html",
 				controller : function($scope, $q, $http, cbdUtils, uiGridConstants, i18nService, $filter) {
-					$scope.calendars = [];
-
+					
 					var promiseStart = $q.when('start');
-					var promise1 = promiseStart.then(function(value) {
-						return $http.get('calendars').then(function(response) {
-							$scope.calendars = response.data;
-							return response.data;
-						});
-					});
+					
 					$scope.events = [];
 					
 					i18nService.setCurrentLang('fr');
@@ -171,7 +165,7 @@ angular.module(
 					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
 					 };
 					
-					var promise2 = promise1.then(function(response) {
+					var promise1 = promiseStart.then(function(response) {
 						return $http.get('events').then(function(response) {
 							$scope.events = response.data;
 							$scope.gridEventOptions.data = response.data;
@@ -246,6 +240,39 @@ angular.module(
 							return response.data;
 						});
 					});
+				}
+			},
+			"partners" : {
+				templateUrl : "resources/partials/front/partners.html",
+				controller : function($scope, $q, $http) {
+					$scope.partners = [];
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('partners').then(function(response) {
+							$scope.partners = response.data;
+							return response.data;
+						});
+					});
+				}
+			}
+		}
+
+	}).state('cbdfiles', {
+		url : "/cbdfiles",
+		views : {
+			"main" : {
+				templateUrl : "resources/partials/front/cbdfiles.html",
+				controller : function($scope, $q, $http, cbdUtils) {
+					$scope.cbdfiles = [];
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('cbdfiles').then(function(response) {
+							$scope.cbdfiles = response.data;
+							return response.data;
+						});
+					});
+
+					
 				}
 			},
 			"partners" : {

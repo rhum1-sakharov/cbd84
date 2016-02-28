@@ -45,10 +45,10 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
-					<li ui-sref-active="active"><a ui-sref="calendars">Rencontres</a></li>
+					<li ui-sref-active="active"><a ui-sref="events">Rencontres</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
-					<li ui-sref-active="active"><a ui-sref="assos">Asso
-							sportives</a></li>
+					<li ui-sref-active="active"><a ui-sref="assos">Asso sportives</a></li>
+					<li ui-sref-active="active"><a ui-sref="cbdfiles">Documentation</a></li>
 					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>
 				</ul>
 			</div>

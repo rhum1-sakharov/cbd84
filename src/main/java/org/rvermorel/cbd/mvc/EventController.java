@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(value = "/events")
 public class EventController {
-
 	
 	@Autowired
 	private EventRepositoryService eventRepoService;

@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Gestion de la documentation <span><button
+					class="btn btn-success btn-sm" ng-click="openAddCbdFile('lg')">
+					<i class="glyphicon glyphicon-plus-sign"></i> ajouter un document
+				</button></span>
+		</h3>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Libell&#233;</th>
+				<th>Date de cr&#233;ation</th>
+				<th>Ordre</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+
+		<tr ng-repeat="cbdfile in cbdfiles | orderBy:['+position','-creationDate']">
+			<td ng-bind-html="cbdfile.label"></td>
+		<td>{{cbdfile.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
+			<td ng-bind-html="cbdfile.position"></td>
+			<td><span><button class="btn btn-danger btn-sm"
+						ng-click="openDeleteCbdFile('lg', cbdfile)">
+						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
+					</button></span></td>
+		</tr>
+	</table>
+</div>
