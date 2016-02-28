@@ -45,7 +45,6 @@ public class ImageController {
 				headers.set("Content-Type", "image/jpeg");
 			} else if (imgExtension.equals("pdf")) {
 				headers.set("Content-Type", "application/pdf");
-
 				headers.set("Content-Disposition", String.format("attachment; filename=\"%s.pdf\"", filename));
 			}
 			else if (imgExtension.equals("xls")) {
