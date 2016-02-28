@@ -1,10 +1,19 @@
-<div ng-repeat="result in results">
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Rechercher un r&#233;sultat <i class="glyphicon glyphicon-search"></i>
+			<input type="text" ng-model="searchTextResult">
+		</h3>
+	</div>
+</div>
+
+<div ng-repeat="result in results | filter:searchTextResult">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title" ng-bind-html="result.title"></h3>
 		</div>
 		<div class="panel-body">
-			<span ng-show="result.imageUrl"><img 
+			<span ng-show="result.imageUrl"><img
 				class="results-image-{{result.imagePosition}} results-image-{{result.imageWidth}} img-thumbnail"
 				ng-src="{{result.imageUrl}}" title="{{result.imageTitle}}"></span><span
 				ng-bind-html="result.content"></span>

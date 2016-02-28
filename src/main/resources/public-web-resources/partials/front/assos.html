@@ -16,12 +16,12 @@
 
 	<div class="panel-heading">
 		<h3 class="panel-title">Liste des Associations <i class="glyphicon glyphicon-search"></i> <input
-			type="text" ng-model="searchText"></h3>
+			type="text" ng-model="searchTextAsso"></h3>
 	</div>
 	<div class="panel-body">
 		<div>
 			<table class="table">
-				<tr ng-repeat="asso in assos | filter:searchText">
+				<tr ng-repeat="asso in assos | filter:searchTextAsso">
 					<td>
 						<p>
 							<b><span ng-bind-html="asso.assoCodeLabel"></span> : <span

@@ -1,4 +1,13 @@
-<div ng-repeat="feed in feeds" >
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Rechercher une actualit&#233; <i class="glyphicon glyphicon-search"></i>
+			<input type="text" ng-model="searchTextNews">
+		</h3>
+	</div>
+</div>
+
+<div ng-repeat="feed in feeds | filter:searchTextNews" >
 	<div class="panel panel-default" >
 		<div class="panel-heading">
 			<h3 class="panel-title" ng-bind-html="feed.title"></h3>
