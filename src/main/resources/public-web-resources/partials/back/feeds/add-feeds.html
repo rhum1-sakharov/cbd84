@@ -99,7 +99,7 @@
 				de la photo en px *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':feedForm.imageWidth.$invalid && !feedForm.imageWidth.$pristine}">
-				<select name="imageWidth" ng-model="feed.imageWidth" required="true">
+				<select name="imageWidth" ng-model="feed.imageWidth" >
 					<option value="64">64</option>
 					<option value="128">128</option>
 					<option value="256">256</option>
@@ -148,7 +148,7 @@
 			</div>
 		</div>
 
-		<div class="form-group" ng-show="addFeedImage.error === ''">
+		<div class="form-group" >
 			<label class="col-sm-3 control-label">Positionnement de
 				l'image</label>
 			<div class="btn-group control-label col-sm-6">

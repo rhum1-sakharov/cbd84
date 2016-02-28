@@ -74,8 +74,8 @@
 				de la photo en px *</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formResult.imageWidth.$invalid && !formResult.imageWidth.$pristine}">
-				 <select name="imageWidth" ng-model="result.imageWidth" required="true">
-					<option value="64">64</option>
+				 <select name="imageWidth" ng-model="result.imageWidth" >
+					<option value="64" >64</option>
 					<option value="128">128</option>
 					<option value="256">256</option>
 					<option value="512">512</option>
@@ -105,7 +105,7 @@
 			</div>
 		</div>
 
-		<div class="form-group" ng-show="result.imageUrl">
+		<div class="form-group" >
 			<label class="col-sm-3 control-label">Positionnement de
 				l'image</label>
 			<div class="btn-group control-label col-sm-6">

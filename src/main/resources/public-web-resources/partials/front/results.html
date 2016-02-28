@@ -4,7 +4,7 @@
 			<h3 class="panel-title" ng-bind-html="result.title"></h3>
 		</div>
 		<div class="panel-body">
-			<span><img ng-show="result.imageUrl"
+			<span ng-show="result.imageUrl"><img 
 				class="results-image-{{result.imagePosition}} results-image-{{result.imageWidth}} img-thumbnail"
 				ng-src="{{result.imageUrl}}" title="{{result.imageTitle}}"></span><span
 				ng-bind-html="result.content"></span>
