@@ -71,6 +71,9 @@ public class Contact implements Serializable {
 	@Column(name = "boulodrome")
 	private String boulodrome;
 	
+	@Column(name = "history")
+	private String history;
+	
 	@Column(name = "position")
 	private int position;
 
@@ -208,6 +211,14 @@ public class Contact implements Serializable {
 
 	public void setBoulodrome(String boulodrome) {
 		this.boulodrome = boulodrome;
+	}
+
+	public String getHistory() {
+		return history;
+	}
+
+	public void setHistory(String history) {
+		this.history = history;
 	}
 	
 }

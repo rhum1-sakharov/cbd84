@@ -120,7 +120,7 @@
 			<div class="col-sm-9"
 				ng-class="{'has-error':formAsso.email.$invalid && !formAsso.email.$pristine}">
 				<input id="email" ng-model="asso.email" type="email" name="email"
-					size="60" >
+					size="60">
 				<p ng-show="formAsso.email.$invalid && !formAsso.email.$pristine"
 					class="help-block">Veuillez saisir un email</p>
 			</div>
@@ -129,9 +129,10 @@
 			<label for="correspondance" class="col-sm-3 control-label">Correspondance</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formAsso.correspondance.$invalid && !formAsso.correspondance.$pristine}">
-				<input id="city" ng-model="asso.correspondance" type="text" name="correspondance"
-					size="60" >
-				<p ng-show="formAsso.correspondance.$invalid && !formAsso.correspondance.$pristine"
+				<input id="city" ng-model="asso.correspondance" type="text"
+					name="correspondance" size="60">
+				<p
+					ng-show="formAsso.correspondance.$invalid && !formAsso.correspondance.$pristine"
 					class="help-block">Veuillez saisir une correspondance</p>
 			</div>
 		</div>
@@ -139,12 +140,24 @@
 			<label for="boulodrome" class="col-sm-3 control-label">Boulodrome</label>
 			<div class="col-sm-9"
 				ng-class="{'has-error':formAsso.boulodrome.$invalid && !formAsso.boulodrome.$pristine}">
-				<input id="boulodrome" ng-model="asso.boulodrome" type="text" name="boulodrome"
-					size="60" >
-				<p ng-show="formAsso.boulodrome.$invalid && !formAsso.boulodrome.$pristine"
+				<input id="boulodrome" ng-model="asso.boulodrome" type="text"
+					name="boulodrome" size="60">
+				<p
+					ng-show="formAsso.boulodrome.$invalid && !formAsso.boulodrome.$pristine"
 					class="help-block">Veuillez saisir un boulodrome</p>
 			</div>
 		</div>
+		<div class="form-group">
+			<label for="content" class="col-sm-3 control-label">Historique *</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formAsso.history.$invalid && !formAsso.history.$pristine}">
+				<textarea class="form-control" ui-tinymce ng-model="asso.history"></textarea>				
+				<p
+					ng-show="assoForm.history.$invalid && !assoForm.history.$pristine"
+					class="help-block">Veuillez saisir un historique</p>
+			</div>
+		</div>
+
 		<div class="form-group">
 			<label for="position" class="col-sm-3 control-label">Position</label>
 			<div class="col-sm-9"

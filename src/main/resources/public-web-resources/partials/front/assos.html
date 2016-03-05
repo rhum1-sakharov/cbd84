@@ -15,8 +15,10 @@
 <div class="panel panel-default">
 
 	<div class="panel-heading">
-		<h3 class="panel-title">Liste des Associations <i class="glyphicon glyphicon-search"></i> <input
-			type="text" ng-model="searchTextAsso"></h3>
+		<h3 class="panel-title">
+			Liste des Associations <i class="glyphicon glyphicon-search"></i> <input
+				type="text" ng-model="searchTextAsso">
+		</h3>
 	</div>
 	<div class="panel-body">
 		<div>
@@ -57,6 +59,10 @@
 							<a href="mailto:{{asso.email}}"><i
 								class="glyphicon glyphicon-envelope"></i> <span
 								ng-bind-html="asso.email"></span></a>
+						</p>
+						<button ng-show="asso.history" ng-click="showhistory=!showhistory" ng-init="showhistory=false"><div ng-show="showhistory===false">Afficher l'Histoire</div><div ng-show="showhistory===true">Cacher l'Histoire</div></button>
+						<p ng-show="showhistory">
+							<span ng-bind-html="asso.history"></span>
 						</p>
 					</td>
 					<td><img class="asso-portrait img-thumbnail"
