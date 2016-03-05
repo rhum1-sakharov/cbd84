@@ -12,6 +12,7 @@
 			<tr>
 				<th>Libell&#233;</th>
 				<th>Date de cr&#233;ation</th>
+				<th>Section</th>
 				<th>Ordre</th>
 				<th>Actions</th>
 			</tr>
@@ -19,7 +20,9 @@
 
 		<tr ng-repeat="cbdfile in cbdfiles | orderBy:['+position','-creationDate']">
 			<td ng-bind-html="cbdfile.label"></td>
+			
 		<td>{{cbdfile.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
+		<td ng-bind-html="cbdfile.section"></td>
 			<td ng-bind-html="cbdfile.position"></td>
 			<td><span><button class="btn btn-danger btn-sm"
 						ng-click="openDeleteCbdFile('lg', cbdfile)">

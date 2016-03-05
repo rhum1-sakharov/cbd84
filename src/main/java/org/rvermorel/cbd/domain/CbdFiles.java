@@ -31,6 +31,9 @@ public class CbdFiles implements Serializable {
 	@Column(name = "label")
 	private String label;
 	
+	@Column(name = "section")
+	private String section;
+	
 	@Column(name="creationDate")
 	private Date creationDate;
 	
@@ -79,6 +82,12 @@ public class CbdFiles implements Serializable {
 		this.url = url;
 	}
 
-	
+	public String getSection() {
+		return section;
+	}
+
+	public void setSection(String section) {
+		this.section = section;
+	}	
 	
 }

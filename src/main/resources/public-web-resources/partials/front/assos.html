@@ -60,7 +60,7 @@
 								class="glyphicon glyphicon-envelope"></i> <span
 								ng-bind-html="asso.email"></span></a>
 						</p>
-						<button ng-show="asso.history" ng-click="showhistory=!showhistory" ng-init="showhistory=false"><div ng-show="showhistory===false">Afficher l'Histoire</div><div ng-show="showhistory===true">Cacher l'Histoire</div></button>
+						<button ng-show="asso.history" ng-click="showhistory=!showhistory" ng-init="showhistory=false" class="btn btn-primary"><div ng-show="showhistory===false">Afficher l'Histoire</div><div ng-show="showhistory===true">Cacher l'Histoire</div></button>
 						<p ng-show="showhistory">
 							<span ng-bind-html="asso.history"></span>
 						</p>
