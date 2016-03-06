@@ -37,6 +37,20 @@
 				</p>
 			</div>
 		</div>
+		
+		<div class="form-group">
+			<label for="position" class="col-sm-3 control-label">Position</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formCbdFile.position.$invalid && !formCbdFile.position.$pristine}">
+				<input id="position" ng-model="cbdfile.position" type="number"
+					name="position" size="1" required>
+				<p
+					ng-show="formCbdFile.position.$invalid && !formCbdFile.position.$pristine"
+					class="help-block">Veuilez saisir un chiffre. Cela permet de
+					d&#233;finir l'ordre d'affichage</p>
+			</div>
+		</div>
+		
 
 		<div class="form-group">
 			<label for="pdfFile" class="col-sm-3 control-label">Fichier
@@ -44,12 +58,25 @@
 			<div class="col-sm-9"
 				ng-class="{'has-error':formCbdFile.pdfFile.$invalid && !formCbdFile.pdfFile.$pristine}">
 				<input type="file" name="pdfFile" file-model="addCbdFilePDF"
-					required>
+					>
 				<p
 					ng-show="addCbdFilePDF.error != '' && addCbdFilePDF.error!='pristine' "
 					class="help-block" ng-bind-html="addCbdFilePDF.error"></p>
 			</div>
 		</div>
+		
+		<div class="form-group">
+			<label for="excelFile" class="col-sm-3 control-label">Fichier Excel</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formCbdFile.excelFile.$invalid && !formCbdFile.excelFile.$pristine}">
+				<input type="file" name="excelFile" file-model="addCbdFileExcel"
+					>
+				<p
+					ng-show="addCbdFileExcel.error != '' && addCbdFileExcel.error!='pristine' "
+					class="help-block" ng-bind-html="addCbdFileExcel.error"></p>
+			</div>
+		</div>
+		
 
 		<p ng-show="serverError != ''" class="help-block"
 			ng-bind-html='serverError'></p>

@@ -50,7 +50,6 @@ public class ImageController {
 			else if (imgExtension.equals("xls")) {
 				headers.set("Content-Type", "application/vnd.ms-excel");
 				headers.set("Content-Disposition", String.format("attachment; filename=\"%s.xls\"", filename));
-
 			}
 
 		} catch (IOException e) {

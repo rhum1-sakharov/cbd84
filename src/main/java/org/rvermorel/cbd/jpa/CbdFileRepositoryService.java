@@ -39,8 +39,9 @@ public class CbdFileRepositoryService {
 
 		try {
 			Long idLong = Long.valueOf(id);			
-			CbdFiles c = cbdFilesRepo.findOne(idLong);
-			c.setUrl("images/get/cbdfiles/pdf/" + id);
+			CbdFiles c = cbdFilesRepo.findOne(idLong);	
+			
+			c.setUrl("images/get/cbdfiles/"+imgExtension+"/" + id);
 			datastore.writeContent(bytes, id, imgExtension, IDatastore.TYPE_CBDFILES);	
 			cbdFilesRepo.save(c);
 
