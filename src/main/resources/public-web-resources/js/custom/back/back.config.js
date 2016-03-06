@@ -111,9 +111,7 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 					$scope.cbdfiles = [];
 					$scope.cbdfile = {};
 
-					$scope.formatTs2Date = function(ts) {
-						return cbdUtils.formatTs2Date(ts);
-					};
+					
 
 					var promiseStart = $q.when('start');
 					var promise1 = promiseStart.then(function(value) {
@@ -145,6 +143,30 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 							$log.info('Modal dismissed at: ' + new Date());
 						});
 					};
+					
+					$scope.openUpdateCbdFile = function(size, selectedCbdFile) {
+						$scope.cbdfile = selectedCbdFile;						
+						$scope.cbdfile.dayDate = cbdUtils.formatTs2Date($scope.cbdfile.creationDate);
+					
+						var modalInstance = $uibModal.open({
+							animation : $scope.animationsEnabled,
+							templateUrl : 'resources/partials/back/cbdfiles/update-cbdfiles.html',
+							controller : 'UpdateCbdFileModalInstanceCtrl',
+							size : size,
+							resolve : {
+								cbdfile : function() {
+									return $scope.cbdfile;
+								}
+							}
+						});
+
+						modalInstance.result.then(function(selectedItem) {
+							$scope.cbdfile = selectedItem;							
+						}, function() {
+							$log.info('Modal dismissed at: ' + new Date());
+						});
+					};
+
 
 					$scope.openDeleteCbdFile = function(size, selectedCbdFile) {
 						$scope.cbdfile = selectedCbdFile;

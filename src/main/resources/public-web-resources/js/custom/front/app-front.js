@@ -1,1 +1,1 @@
-angular.module('app-front', [   'cbd.front.config']);
+angular.module('app-front', [   'cbd.front.config','angular.filter']);

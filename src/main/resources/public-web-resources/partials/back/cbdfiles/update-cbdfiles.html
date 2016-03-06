@@ -1,0 +1,62 @@
+
+<div class="modal-header">
+	<h3 class="modal-title">Modifier un document</h3>
+</div>
+<form novalidate name="formCbdFile" class="form-horizontal" role="form"
+	ng-submit="formCbdFile.$valid && ok()">
+	<div class="modal-body">
+
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Libell&#233;</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':cbdfileForm.label.$invalid && !cbdfileForm.label.$pristine}">
+				<input id="title" ng-model="cbdfile.label" type="text" name="title"
+					size="60" required>
+				<p
+					ng-show="cbdfileForm.label.$invalid && !cbdfileForm.label.$pristine"
+					class="help-block">Veuillez saisir un libell&#233;</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Section</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':cbdfileForm.section.$invalid && !cbdfileForm.section.$pristine}">
+				<input id="title" ng-model="cbdfile.section" type="text" name="section"
+					size="60" required>
+				<p
+					ng-show="cbdfileForm.section.$invalid && !cbdfileForm.section.$pristine"
+					class="help-block">Veuillez saisir une section</p>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="title" class="col-sm-3 control-label">Date de
+				cr&#233;ation</label>
+			<div class="col-sm-3">
+				<p class="input-group">
+					<input type="text" ng-model="cbdfile.dayDate" date-pickering />
+				</p>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="pdfFile" class="col-sm-3 control-label">Fichier
+				PDF</label>
+			<div class="col-sm-9"
+				ng-class="{'has-error':formCbdFile.pdfFile.$invalid && !formCbdFile.pdfFile.$pristine}">
+				<input type="file" name="pdfFile" file-model="addCbdFilePDF"
+					required>
+				<p
+					ng-show="addCbdFilePDF.error != '' && addCbdFilePDF.error!='pristine' "
+					class="help-block" ng-bind-html="addCbdFilePDF.error"></p>
+			</div>
+		</div>
+
+		<p ng-show="serverError != ''" class="help-block"
+			ng-bind-html='serverError'></p>
+
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="submit" ng-disabled='loading'>OK</button>
+		<button class="btn btn-warning" type="button" ng-click="cancel()">Fermer</button>
+	</div>
+</form>

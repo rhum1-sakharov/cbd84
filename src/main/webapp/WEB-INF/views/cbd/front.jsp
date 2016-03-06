@@ -90,6 +90,8 @@
 		src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
 	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+	
+	<script src="resources/js/vendor/angular-filter/angular-filter${minjs}.js"></script>
 
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->

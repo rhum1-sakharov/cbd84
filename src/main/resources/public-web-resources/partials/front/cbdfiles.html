@@ -1,20 +1,15 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">
-			Rechercher un document <i class="glyphicon glyphicon-search"></i> <input
-				type="text" ng-model="searchTextDocument">
-		</h3>
-	</div>
-</div>
-
-<div class="panel panel-default">
-	<div class="panel-heading">
-		<h3 class="panel-title">Documents</h3>
-	</div>
-	<div ng-repeat="cbdfile in cbdfiles | filter:searchTextDocument">
+<div ng-repeat="(key, value) in cbdfiles |  groupBy:'section'  ">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<h3 class="panel-title">{{key}}</h3>
+		</div>
 		<div class="panel-body">
-			<i class="glyphicon glyphicon-download"></i> <a href="{{cbdfile.url}}" ng-bind-html="cbdfile.label"></a>		
+			<div ng-repeat="file in value">
+				<i class="glyphicon glyphicon-download"></i> <a href="{{file.url}}"
+					ng-bind-html="file.label"></a>
+			</div>
 		</div>
 	</div>
 </div>
+
 

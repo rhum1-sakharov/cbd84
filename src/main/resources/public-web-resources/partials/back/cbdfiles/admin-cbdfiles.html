@@ -18,16 +18,20 @@
 			</tr>
 		</thead>
 
-		<tr ng-repeat="cbdfile in cbdfiles | orderBy:['+position','-creationDate']">
+		<tr
+			ng-repeat="cbdfile in cbdfiles | orderBy:['+position','-creationDate']">
 			<td ng-bind-html="cbdfile.label"></td>
-			
-		<td>{{cbdfile.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
-		<td ng-bind-html="cbdfile.section"></td>
+			<td>{{cbdfile.creationDate | date:"EEEE dd MMM yyyy HH'h'mm"}}</td>
+			<td ng-bind-html="cbdfile.section"></td>
 			<td ng-bind-html="cbdfile.position"></td>
-			<td><span><button class="btn btn-danger btn-sm"
+			<td><span><button class="btn btn-success btn-sm"
+						ng-click="openUpdateCbdFile('lg', cbdfile)">
+						<i class="glyphicon glyphicon-circle-arrow-up"></i> Modifier
+					</button>
+					<button class="btn btn-danger btn-sm"
 						ng-click="openDeleteCbdFile('lg', cbdfile)">
 						<i class="glyphicon glyphicon-minus-sign"></i> Supprimer
-					</button></span></td>
+					</button></span></td>		
 		</tr>
 	</table>
 </div>
