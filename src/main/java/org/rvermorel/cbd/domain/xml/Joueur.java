@@ -1,9 +1,4 @@
-//
-// Ce fichier a été généré par l'implémentation de référence JavaTM Architecture for XML Binding (JAXB), v2.2.8-b130911.1802 
-// Voir <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Toute modification apportée à ce fichier sera perdue lors de la recompilation du schéma source. 
-// Généré le : 2016.03.06 à 10:47:16 AM CET 
-//
+
 
 
 package org.rvermorel.cbd.domain.xml;
@@ -22,7 +17,7 @@ import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 /**
  * <p>Classe Java pour anonymous complex type.
  * 
- * <p>Le fragment de schéma suivant indique le contenu attendu figurant dans cette classe.
+ * <p>Le fragment de schï¿½ma suivant indique le contenu attendu figurant dans cette classe.
  * 
  * <pre>
  * &lt;complexType>
@@ -95,7 +90,7 @@ public class Joueur {
     protected BigInteger pointPromotionActuel;
 
     /**
-     * Obtient la valeur de la propriété civilite.
+     * Obtient la valeur de la propriï¿½tï¿½ civilite.
      * 
      * @return
      *     possible object is
@@ -106,20 +101,13 @@ public class Joueur {
         return civilite;
     }
 
-    /**
-     * Définit la valeur de la propriété civilite.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+   
     public void setCivilite(String value) {
         this.civilite = value;
     }
 
     /**
-     * Obtient la valeur de la propriété nom.
+     * Obtient la valeur de la propriï¿½tï¿½ nom.
      * 
      * @return
      *     possible object is
@@ -130,20 +118,13 @@ public class Joueur {
         return nom;
     }
 
-    /**
-     * Définit la valeur de la propriété nom.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+   
     public void setNom(String value) {
         this.nom = value;
     }
 
     /**
-     * Obtient la valeur de la propriété prenom.
+     * Obtient la valeur de la propriï¿½tï¿½ prenom.
      * 
      * @return
      *     possible object is
@@ -154,20 +135,13 @@ public class Joueur {
         return prenom;
     }
 
-    /**
-     * Définit la valeur de la propriété prenom.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+   
     public void setPrenom(String value) {
         this.prenom = value;
     }
 
     /**
-     * Obtient la valeur de la propriété instance.
+     * Obtient la valeur de la propriï¿½tï¿½ instance.
      * 
      * @return
      *     possible object is
@@ -178,20 +152,13 @@ public class Joueur {
         return instance;
     }
 
-    /**
-     * Définit la valeur de la propriété instance.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+    
     public void setInstance(String value) {
         this.instance = value;
     }
 
     /**
-     * Obtient la valeur de la propriété licence.
+     * Obtient la valeur de la propriï¿½tï¿½ licence.
      * 
      * @return
      *     possible object is
@@ -202,20 +169,13 @@ public class Joueur {
         return licence;
     }
 
-    /**
-     * Définit la valeur de la propriété licence.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+  
     public void setLicence(BigInteger value) {
         this.licence = value;
     }
 
     /**
-     * Obtient la valeur de la propriété typeLicence.
+     * Obtient la valeur de la propriï¿½tï¿½ typeLicence.
      * 
      * @return
      *     possible object is
@@ -226,20 +186,13 @@ public class Joueur {
         return typeLicence;
     }
 
-    /**
-     * Définit la valeur de la propriété typeLicence.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
-     */
+ 
     public void setTypeLicence(String value) {
         this.typeLicence = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointCumul.
+     * Obtient la valeur de la propriï¿½tï¿½ pointCumul.
      * 
      * @return
      *     possible object is
@@ -250,20 +203,13 @@ public class Joueur {
         return pointCumul;
     }
 
-    /**
-     * Définit la valeur de la propriété pointCumul.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+    
     public void setPointCumul(BigInteger value) {
         this.pointCumul = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointOfficiel.
+     * Obtient la valeur de la propriï¿½tï¿½ pointOfficiel.
      * 
      * @return
      *     possible object is
@@ -274,20 +220,13 @@ public class Joueur {
         return pointOfficiel;
     }
 
-    /**
-     * Définit la valeur de la propriété pointOfficiel.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+  
     public void setPointOfficiel(BigInteger value) {
         this.pointOfficiel = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointPromotion.
+     * Obtient la valeur de la propriï¿½tï¿½ pointPromotion.
      * 
      * @return
      *     possible object is
@@ -298,20 +237,13 @@ public class Joueur {
         return pointPromotion;
     }
 
-    /**
-     * Définit la valeur de la propriété pointPromotion.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+ 
     public void setPointPromotion(BigInteger value) {
         this.pointPromotion = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointCumulActuel.
+     * Obtient la valeur de la propriï¿½tï¿½ pointCumulActuel.
      * 
      * @return
      *     possible object is
@@ -322,20 +254,13 @@ public class Joueur {
         return pointCumulActuel;
     }
 
-    /**
-     * Définit la valeur de la propriété pointCumulActuel.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+  
     public void setPointCumulActuel(BigInteger value) {
         this.pointCumulActuel = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointOfficielActuel.
+     * Obtient la valeur de la propriï¿½tï¿½ pointOfficielActuel.
      * 
      * @return
      *     possible object is
@@ -346,20 +271,13 @@ public class Joueur {
         return pointOfficielActuel;
     }
 
-    /**
-     * Définit la valeur de la propriété pointOfficielActuel.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+    
     public void setPointOfficielActuel(BigInteger value) {
         this.pointOfficielActuel = value;
     }
 
     /**
-     * Obtient la valeur de la propriété pointPromotionActuel.
+     * Obtient la valeur de la propriï¿½tï¿½ pointPromotionActuel.
      * 
      * @return
      *     possible object is
@@ -370,14 +288,7 @@ public class Joueur {
         return pointPromotionActuel;
     }
 
-    /**
-     * Définit la valeur de la propriété pointPromotionActuel.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
-     */
+    
     public void setPointPromotionActuel(BigInteger value) {
         this.pointPromotionActuel = value;
     }
