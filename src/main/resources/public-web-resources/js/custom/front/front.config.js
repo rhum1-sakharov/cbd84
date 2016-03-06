@@ -190,6 +190,121 @@ angular.module(
 			}
 		}
 
+	}).state('rankings', {
+		url : "/rankings",
+		views : {
+			"main" : {
+				templateUrl : "resources/partials/front/rankings.html",
+				controller : function($scope, $q, $http, cbdUtils, uiGridConstants, i18nService, $filter) {
+					
+					var promiseStart = $q.when('start');
+					
+					$scope.rankings = [];
+					
+					i18nService.setCurrentLang('fr');
+					$scope.gridRankingOptions = {
+						    onRegisterApi: function(gridApi){ 
+						        $scope.gridApi = gridApi;
+						      },
+							enableFiltering : true,
+						    paginationPageSizes: [25, 50, 100],
+						    paginationPageSize: 25,	 
+						    exporterPdfTableStyle: {margin: [30, 30, 30, 30]},
+						    exporterPdfOrientation: 'landscape',
+						    exporterPdfPageSize: 'LETTER',
+						    exporterPdfMaxGridWidth: 600,						   					   
+						columnDefs : [ {
+							field : 'nom',
+							displayName: "Nom",
+							width:120
+						},
+						{
+							field : 'prenom',
+							displayName: "Prenom",
+							 minWidth: 120
+						},
+						{
+							field : 'instance',
+							displayName: "Club",
+							 minWidth: 180
+						},
+						{
+							field : 'pointOfficiel',
+							displayName: "Points Officiels",
+							 minWidth: 150,
+							 type : 'number',
+							 sort : {
+									direction : uiGridConstants.DESC,
+									priority : 1
+								}
+						},
+						{
+							field : 'pointCumul',
+							displayName: "Points cumul",
+							 minWidth: 150,
+							 type : 'number'
+						},
+						{
+							field : 'pointPromotion',
+							displayName: "Points promo",
+							 minWidth: 100,
+							 type : 'number'
+						},
+						{
+							field : 'pointCumulActuel',
+							displayName: "Points cumul actuel",
+							 minWidth: 100,
+							 type : 'number'
+						},
+						{
+							field : 'pointOfficielActuel',
+							displayName: "Points officiel actuel",
+							 minWidth: 100,
+							 type : 'number'
+						},
+						{
+							field : 'pointPromotionActuel',
+							displayName: "Points promo actuel",
+							 minWidth: 100,
+							 type : 'number'
+						},
+						{
+							field : 'typeLicence',
+							displayName: "Licence",
+							 minWidth: 180
+						} ]
+					};				
+				
+					$scope.export_row_type ='all';
+					$scope.exportPDF = function(){					
+					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
+					 };
+					
+					var promise1 = promiseStart.then(function(response) {
+						return $http.get('rankings').then(function(response) {
+							$scope.rankings = response.data;
+							$scope.gridRankingOptions.data = response.data;
+							return response.data;
+						});
+					});
+
+				}
+			},
+			"partners" : {
+				templateUrl : "resources/partials/front/partners.html",
+				controller : function($scope, $q, $http) {
+					$scope.partners = [];
+					var promiseStart = $q.when('start');
+					var promise1 = promiseStart.then(function(value) {
+						return $http.get('partners').then(function(response) {
+							$scope.partners = response.data;
+							return response.data;
+						});
+					});
+				}
+			}
+		}
+
 	}).state('results', {
 		url : "/results",
 		views : {

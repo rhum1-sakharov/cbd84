@@ -47,6 +47,7 @@
 					<li ui-sref-active="active"><a ui-sref="actus">Actualit&#233;s</a></li>
 					<li ui-sref-active="active"><a ui-sref="events">Calendrier</a></li>
 					<li ui-sref-active="active"><a ui-sref="results">R&#233;sultats</a></li>
+					<li ui-sref-active="active"><a ui-sref="rankings">Classements</a></li>
 					<li ui-sref-active="active"><a ui-sref="assos">Asso sportives</a></li>
 					<li ui-sref-active="active"><a ui-sref="cbdfiles">Documentation</a></li>
 					<li ui-sref-active="active"><a ui-sref="contacts">Contacts</a></li>

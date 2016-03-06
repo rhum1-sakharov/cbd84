@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">
+			Les classements			
+		</h3>
+
+	</div>
+	<div class="panel-body">
+	<label>S&#233;lectionner </label><select
+			ng-model="export_row_type"</select>
+		<option value='all'>tous les classements</option>
+		<option value='visible'>les classements visibles</option>
+		</select>
+		<label> pour les exporter au </label>  <button ng-click="exportPDF()">format pdf</button>		
+		<div id="grid-rankings" ui-grid="gridRankingOptions" class="grid-rankings"
+			ui-grid-resize-columns ui-grid-pagination ui-grid-exporter></div>
+	</div>
+</div>
+
