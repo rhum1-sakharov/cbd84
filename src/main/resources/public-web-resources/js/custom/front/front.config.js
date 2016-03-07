@@ -78,7 +78,7 @@ angular.module(
 						columnDefs : [ {
 							field : 'creationDate',
 							sort : {
-								direction : uiGridConstants.DESC,
+								direction : uiGridConstants.ASC,
 								priority : 1
 							},
 							cellFilter: "date:\"EEE dd MMM yyyy HH'h'mm\"",
