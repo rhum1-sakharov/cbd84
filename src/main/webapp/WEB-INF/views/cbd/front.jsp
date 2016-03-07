@@ -6,7 +6,7 @@
 <head>
 <title>CBD 84 | Comit&#233; Bouliste D&#233;partemental du Vaucluse - www.cbd84.fr</title>
 <meta name="description"
-	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;, Calendrier, R&#233;sultat, Classement, Asso Sportive, Contact" />
+	content="La vie associative de la boule lyonnaise en vaucluse. Retrouvez toutes les informations sur les comp&#233;titions et les clubs du sport boule du 84 ... Actualit&#233;, Calendrier, R&#233;sultat, Classement, Asso Sportive, Documentation, Contact" />
 <meta name="robots" content="index, follow" />
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
