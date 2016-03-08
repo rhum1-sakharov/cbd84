@@ -197,9 +197,9 @@ angular.module(
 				templateUrl : "resources/partials/front/rankings.html",
 				controller : function($scope, $q, $http, cbdUtils, uiGridConstants, i18nService, $filter) {
 					
-					var promiseStart = $q.when('start');
-					
+					var promiseStart = $q.when('start');			
 					$scope.rankings = [];
+					$scope.totalPoints = 0;
 					
 					i18nService.setCurrentLang('fr');
 					$scope.gridRankingOptions = {
@@ -220,70 +220,76 @@ angular.module(
 						},
 						{
 							field : 'prenom',
-							displayName: "Prenom",
+							displayName: "Pr\u00e9nom",
 							 minWidth: 120
 						},
+						{
+							field : 'licence',
+							displayName: "N\u00b0 licence",
+							 minWidth: 90
+						},		
 						{
 							field : 'instance',
 							displayName: "Club",
 							 minWidth: 180
-						},
+						},				
 						{
-							field : 'pointOfficiel',
-							displayName: "Points Officiels",
-							 minWidth: 150,
-							 type : 'number',
+							field : 'pointCumul',
+							displayName: "Points",
+							 minWidth: 80,
+							 type : 'number', 
 							 sort : {
 									direction : uiGridConstants.DESC,
 									priority : 1
 								}
 						},
 						{
-							field : 'pointCumul',
-							displayName: "Points cumul",
-							 minWidth: 150,
-							 type : 'number'
-						},
-						{
-							field : 'pointPromotion',
-							displayName: "Points promo",
-							 minWidth: 100,
-							 type : 'number'
-						},
-						{
-							field : 'pointCumulActuel',
-							displayName: "Points cumul actuel",
-							 minWidth: 100,
-							 type : 'number'
-						},
-						{
-							field : 'pointOfficielActuel',
-							displayName: "Points officiel actuel",
-							 minWidth: 100,
-							 type : 'number'
-						},
-						{
-							field : 'pointPromotionActuel',
-							displayName: "Points promo actuel",
-							 minWidth: 100,
-							 type : 'number'
-						},
-						{
 							field : 'typeLicence',
 							displayName: "Licence",
-							 minWidth: 180
-						} ]
+							minWidth: 80,
+							cellFilter : 'typeLicenceFilter'
+						},
+								//{
+//							field : 'ranking',
+//							displayName : 'Ranking',
+//							cellTemplate : ' <span stars="{{row.entity.pointCumul}}" twenty-five="{{grid.appScope.percentiles.twentyFive}}" seventy-five="{{grid.appScope.percentiles.seventyFive}}" median="{{grid.appScope.percentiles.median}}"></span>'
+//						} 
+								]
 					};				
 				
 					$scope.export_row_type ='all';
 					$scope.exportPDF = function(){					
 					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
 					 };
+					 
+//					 $scope.arrPointCumul = [];
+//					 $scope.percentiles = {
+//							 median : 0,
+//							 seventyFive : 0,
+//							 twentyFive : 0
+//					 };
 					
 					var promise1 = promiseStart.then(function(response) {
 						return $http.get('rankings').then(function(response) {
-							$scope.rankings = response.data;
-							$scope.gridRankingOptions.data = response.data;
+							$scope.rankings = response.data;						
+							
+							
+//							for(var i in $scope.rankings){
+//								var rank = $scope.rankings[i];
+//								$scope.totalPoints += rank.pointCumul;
+//								 $scope.arrPointCumul[i] = rank.pointCumul;
+//							}
+//							
+//							 $scope.arrPointCumul.sort(function(a,b){
+//								 return a -b;
+//							 });						
+//							 
+//							 $scope.percentiles.median= $scope.arrPointCumul[parseInt($scope.rankings.length * 0.5 )];
+//							 $scope.percentiles.twentyFive = $scope.arrPointCumul[parseInt($scope.rankings.length * 0.25)];
+//							 $scope.percentiles.seventyFive = $scope.arrPointCumul[parseInt($scope.rankings.length * 0.75)];		
+							 
+							 $scope.gridRankingOptions.data = response.data;
+														
 							return response.data;
 						});
 					});
@@ -437,5 +443,63 @@ angular.module(
 		}
 
 	});
+}).filter('typeLicenceFilter',function(){
+	
+	return function(value){
+		var val = value.toUpperCase();
+		if(val=== 'Licence comp\u00e9tition adulte'.toUpperCase()){
+			return 'COMPETITION';
+		}else if(val === 'Licence comp\u00e9tition jeune'.toUpperCase()){
+			return 'COMPETITION JEUNE';
+		}else if(val === 'Licence loisir jeune'.toUpperCase()){
+			return 'LOISIR JEUNE';
+		}else if(val === 'Licence loisir adulte'.toUpperCase()){
+			return 'LOISIR';
+		}else if(val === 'Licence promotion adulte'.toUpperCase()){
+			return 'PROMO';
+		}else if(val === 'Licence promotion jeune'.toUpperCase()){
+			return 'PROMO JEUNE';
+		}
+		return value;
+	};	
+	
 });
-;
+//	.directive('stars', function() {
+//
+//    return function(scope, element, attr) {
+//
+//        var nb, max;
+//
+//        function draw() {
+//            var html = '';
+//            for (var i = 0 ; i < nb ; i++) {
+//                html += '<img src="resources/images/star.png"/>';
+//            }           
+//            element.html(html);
+//        }       
+//
+//        scope.$watch(attr.stars, function (value) {
+//        	
+//        	var val = parseInt(attr.stars);
+//        	console.log(val);
+//        	var median = parseInt(attr.median);
+//        	var t = parseInt(attr.twentyFive);
+//        	var s =parseInt(attr.seventyFive);
+//          	console.log(s);
+//            if( val > s ){
+//            	nb = 4;
+//            }else if( val >median ){
+//            	nb = 3;
+//            }else if( val > t ){
+//            	nb = 2;
+//            }            	else{
+//            		nb = 1;
+//            	}
+//            console.log(nb);
+//            draw();
+//        });
+//
+//    };
+//
+//});
+
