@@ -505,7 +505,6 @@ angular.module(
             }
             element.html(html);
         }       
-
         scope.$watch(attr.stars, function (value) {
         	console.log(value);
         	nb = value;
