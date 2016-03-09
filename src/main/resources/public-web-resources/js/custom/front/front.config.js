@@ -479,29 +479,26 @@ angular
 																					}
 
 																					$scope.percentiles = {
-																						median : 0,
-																						seventyFive : 0,
-																						twentyFive : 0
+
+																					one : $scope.rankings.length * 0.01,
+																					two : $scope.rankings.length * 0.02,
+																					three : $scope.rankings.length * 0.03,
+																					four : $scope.rankings.length * 0.04,
+																					thirty : $scope.rankings.length * 0.3
 																					};
-
-																					$scope.percentiles.topOnePercent = $scope.rankings.length * 0.01;
-																					$scope.percentiles.median = $scope.rankings.length * 0.5;
-																					$scope.percentiles.twentyFive = $scope.rankings.length * 0.25;
-																					$scope.percentiles.seventyFive = $scope.rankings.length * 0.75;
-
 																					for ( var i in $scope.rankings) {
 
-																						if ($scope.rankings[i].pointOfficielActuel) {
+																						if ($scope.rankings[i].pointOfficielActuel > 0 ) {
 																							$scope.rankings[i].stars = 1;
 																							if ($scope.rankings[i].position === 1) {
 																								$scope.rankings[i].stars = 6;
-																							} else if ($scope.rankings[i].position < $scope.percentiles.topOnePercent) {
+																							} else if ($scope.rankings[i].position < $scope.percentiles.one) {
 																								$scope.rankings[i].stars = 5;
-																							} else if ($scope.rankings[i].position < $scope.percentiles.twentyFive) {
+																							} else if ($scope.rankings[i].position < $scope.percentiles.two) {
 																								$scope.rankings[i].stars = 4;
-																							} else if ($scope.rankings[i].position < $scope.percentiles.median) {
+																							} else if ($scope.rankings[i].position < $scope.percentiles.three) {
 																								$scope.rankings[i].stars = 3;
-																							} else if ($scope.rankings[i].position < $scope.percentiles.seventyFive) {
+																							} else if ($scope.rankings[i].position < $scope.percentiles.thirty) {
 																								$scope.rankings[i].stars = 2;
 																							}
 																						} else {
