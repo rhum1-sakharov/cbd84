@@ -407,7 +407,7 @@ angular
 																},
 																{
 																	field : 'pointOfficielActuel',
-																	displayName : "Points",
+																	displayName : "Pts",
 																	minWidth : 80,
 																	type : 'number',
 																	sort : {
@@ -417,8 +417,8 @@ angular
 																},
 																{
 																	field : 'pointCumulActuel',
-																	displayName : "PC",
-																	minWidth : 80,
+																	displayName : "Pts Cumul",
+																	minWidth : 100,
 																	type : 'number'																	
 																},
 																{
