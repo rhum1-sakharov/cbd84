@@ -416,6 +416,12 @@ angular
 																	}
 																},
 																{
+																	field : 'pointCumulActuel',
+																	displayName : "PC",
+																	minWidth : 80,
+																	type : 'number'																	
+																},
+																{
 																	field : 'typeLicence',
 																	displayName : "Licence",
 																	minWidth : 80,
