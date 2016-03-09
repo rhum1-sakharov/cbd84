@@ -214,12 +214,13 @@ angular.module(
 						    exporterPdfPageSize: 'LETTER',
 						    exporterPdfMaxGridWidth: 600,						   					   
 						columnDefs : [
-{
-	field : 'position',
-	displayName: "N\u00b0",
-	width:40
-},
-						              {
+						{
+							field : 'position',
+							displayName: "N\u00b0",
+							width:120,
+							cellTemplate: '<div class="ui-grid-cell-contents"><span ng-model="row.entity.stars" stars="row.entity.stars"></span> {{ row.entity.position }}</div>',
+							type: 'number'
+						},{
 							field : 'nom',
 							displayName: "Nom",
 							width:120
@@ -266,21 +267,15 @@ angular.module(
 					$scope.export_row_type ='all';
 					$scope.exportPDF = function(){					
 					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
-					 };
-					 
-					 $scope.arrPointCumul = [];
-//					 $scope.percentiles = {
-//							 median : 0,
-//							 seventyFive : 0,
-//							 twentyFive : 0
-//					 };
+					 };				
+					
 					
 					var promise1 = promiseStart.then(function(response) {
 						return $http.get('rankings').then(function(response) {
 							$scope.rankings = response.data;	
 							
 							for(var i in $scope.rankings){
-								var rank = $scope.rankings[i];													
+								var rank = $scope.rankings[i];									
 							}
 							
 							 $scope.rankings.sort(function(a,b){
@@ -288,23 +283,35 @@ angular.module(
 							 });
 							 var cnt = 1;
 							 for(var i in $scope.rankings){
-								 $scope.rankings[i].position = cnt;
+								 $scope.rankings[i].position = cnt;								
 								 cnt++;
+							 }						
+									
+							 $scope.percentiles = {
+									 median : 0,
+									 seventyFive : 0,
+									 twentyFive : 0
+							 };
+						 
+							 $scope.percentiles.topOnePercent= $scope.rankings.length * 0.01;
+							 $scope.percentiles.median= $scope.rankings.length * 0.5;
+							 $scope.percentiles.twentyFive = $scope.rankings.length * 0.25;
+							 $scope.percentiles.seventyFive = $scope.rankings.length * 0.75;		
+							 
+							 for(var i in $scope.rankings){
+								 $scope.rankings[i].stars = 1;
+								
+								if($scope.rankings[i].position < $scope.percentiles.topOnePercent){
+									 $scope.rankings[i].stars = 5;
+								 }
+								 else if($scope.rankings[i].position < $scope.percentiles.twentyFive){
+									 $scope.rankings[i].stars = 4;
+								 }else  if($scope.rankings[i].position < $scope.percentiles.median){
+									 $scope.rankings[i].stars = 3;
+								 } else if($scope.rankings[i].position < $scope.percentiles.seventyFive){
+									 $scope.rankings[i].stars = 2;
+								 }									
 							 }
-							
-//							for(var i in $scope.rankings){
-//								var rank = $scope.rankings[i];
-//								$scope.totalPoints += rank.pointCumul;
-//								 $scope.arrPointCumul[i] = rank.pointCumul;
-//							}
-//							
-//							 $scope.arrPointCumul.sort(function(a,b){
-//								 return a -b;
-//							 });						
-//							 
-//							 $scope.percentiles.median= $scope.arrPointCumul[parseInt($scope.rankings.length * 0.5 )];
-//							 $scope.percentiles.twentyFive = $scope.arrPointCumul[parseInt($scope.rankings.length * 0.25)];
-//							 $scope.percentiles.seventyFive = $scope.arrPointCumul[parseInt($scope.rankings.length * 0.75)];		
 							 
 							 $scope.gridRankingOptions.data = response.data;
 														
@@ -481,43 +488,31 @@ angular.module(
 		return value;
 	};	
 	
+}).directive('stars', function() {
+
+    return function(scope, element, attr) {
+
+        var nb;
+        var max = 5;
+
+        function draw() {
+            var html = '';
+            for (var i = 0 ; i < nb ; i++) {
+                html += '<img src="resources/images/star.png"/>';
+            }           
+            for ( ; max && i < max ; i++) {
+                html += '<img src="resources/images/empty-star.png"/>';
+            }
+            element.html(html);
+        }       
+
+        scope.$watch(attr.stars, function (value) {
+        	console.log(value);
+        	nb = value;
+            draw();
+        });
+
+    };
+
 });
-//	.directive('stars', function() {
-//
-//    return function(scope, element, attr) {
-//
-//        var nb, max;
-//
-//        function draw() {
-//            var html = '';
-//            for (var i = 0 ; i < nb ; i++) {
-//                html += '<img src="resources/images/star.png"/>';
-//            }           
-//            element.html(html);
-//        }       
-//
-//        scope.$watch(attr.stars, function (value) {
-//        	
-//        	var val = parseInt(attr.stars);
-//        	console.log(val);
-//        	var median = parseInt(attr.median);
-//        	var t = parseInt(attr.twentyFive);
-//        	var s =parseInt(attr.seventyFive);
-//          	console.log(s);
-//            if( val > s ){
-//            	nb = 4;
-//            }else if( val >median ){
-//            	nb = 3;
-//            }else if( val > t ){
-//            	nb = 2;
-//            }            	else{
-//            		nb = 1;
-//            	}
-//            console.log(nb);
-//            draw();
-//        });
-//
-//    };
-//
-//});
 
