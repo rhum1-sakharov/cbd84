@@ -406,7 +406,7 @@ angular
 																	minWidth : 180
 																},
 																{
-																	field : 'pointCumulActuel',
+																	field : 'pointOfficielActuel',
 																	displayName : "Points",
 																	minWidth : 80,
 																	type : 'number',
@@ -462,18 +462,19 @@ angular
 																							.sort(function(
 																									a,
 																									b) {
-																								return b.pointCumulActuel
-																										- a.pointCumulActuel;
+																								return b.pointOfficielActuel
+																										- a.pointOfficielActuel;
 																							});
-																					var cnt = 1;
-																					$scope.rankings[0].position = cnt;										
+																					
+																					$scope.rankings[0].position = 1;										
 																					for ( var i = 1; i < $scope.rankings.length;i++) {															
 																						
-																						if($scope.rankings[i].pointCumulActuel != $scope.rankings[i-1].pointCumulActuel )
+																						if($scope.rankings[i].pointOfficielActuel != $scope.rankings[i-1].pointOfficielActuel )
 																						{
-																							cnt++;
-																						}
-																						$scope.rankings[i].position = cnt;
+																							$scope.rankings[i].position = i+1;
+																						}else{
+																							$scope.rankings[i].position = $scope.rankings[i-1].position;
+																						}																						
 																						
 																					}
 
@@ -490,7 +491,7 @@ angular
 
 																					for ( var i in $scope.rankings) {
 
-																						if ($scope.rankings[i].pointCumulActuel) {
+																						if ($scope.rankings[i].pointOfficielActuel) {
 																							$scope.rankings[i].stars = 1;
 																							if ($scope.rankings[i].position === 1) {
 																								$scope.rankings[i].stars = 6;
