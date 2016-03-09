@@ -380,7 +380,7 @@ angular
 														columnDefs : [
 																{
 																	field : 'position',
-																	displayName : "N\u00b0",
+																	displayName : "Rang",
 																	width : 160,
 																	cellTemplate : '<div class="ui-grid-cell-contents"><span ng-model="row.entity.stars" stars="row.entity.stars"></span> {{ row.entity.position }}</div>',
 																	type : 'number'
