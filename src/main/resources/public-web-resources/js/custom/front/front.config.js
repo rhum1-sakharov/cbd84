@@ -213,7 +213,13 @@ angular.module(
 						    exporterPdfOrientation: 'landscape',
 						    exporterPdfPageSize: 'LETTER',
 						    exporterPdfMaxGridWidth: 600,						   					   
-						columnDefs : [ {
+						columnDefs : [
+{
+	field : 'position',
+	displayName: "N\u00b0",
+	width:40
+},
+						              {
 							field : 'nom',
 							displayName: "Nom",
 							width:120
@@ -262,7 +268,7 @@ angular.module(
 					     $scope.gridApi.exporter.pdfExport( $scope.export_row_type, 'visible' );						  
 					 };
 					 
-//					 $scope.arrPointCumul = [];
+					 $scope.arrPointCumul = [];
 //					 $scope.percentiles = {
 //							 median : 0,
 //							 seventyFive : 0,
@@ -271,8 +277,20 @@ angular.module(
 					
 					var promise1 = promiseStart.then(function(response) {
 						return $http.get('rankings').then(function(response) {
-							$scope.rankings = response.data;						
+							$scope.rankings = response.data;	
 							
+							for(var i in $scope.rankings){
+								var rank = $scope.rankings[i];													
+							}
+							
+							 $scope.rankings.sort(function(a,b){
+								 return b.pointCumulActuel - a.pointCumulActuel ;
+							 });
+							 var cnt = 1;
+							 for(var i in $scope.rankings){
+								 $scope.rankings[i].position = cnt;
+								 cnt++;
+							 }
 							
 //							for(var i in $scope.rankings){
 //								var rank = $scope.rankings[i];
