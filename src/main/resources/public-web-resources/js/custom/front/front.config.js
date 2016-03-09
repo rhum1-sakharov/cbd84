@@ -498,7 +498,7 @@ angular.module(
         function draw() {
             var html = '';
             for (var i = 0 ; i < nb ; i++) {
-                html += '<img src="resources/images/star.png"/>';
+                html += '<img src="resources/images/star-full.png"/>';
             }           
             for ( ; max && i < max ; i++) {
                 html += '<img src="resources/images/empty-star.png"/>';
