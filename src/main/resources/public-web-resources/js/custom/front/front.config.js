@@ -466,9 +466,15 @@ angular
 																										- a.pointCumulActuel;
 																							});
 																					var cnt = 1;
-																					for ( var i in $scope.rankings) {
+																					$scope.rankings[0].position = cnt;										
+																					for ( var i = 1; i < $scope.rankings.length;i++) {															
+																						
+																						if($scope.rankings[i].pointCumulActuel != $scope.rankings[i-1].pointCumulActuel )
+																						{
+																							cnt++;
+																						}
 																						$scope.rankings[i].position = cnt;
-																						cnt++;
+																						
 																					}
 
 																					$scope.percentiles = {
