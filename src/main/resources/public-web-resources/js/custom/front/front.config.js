@@ -293,6 +293,7 @@ angular.module(
 									 twentyFive : 0
 							 };
 						 
+							 $scope.percentiles.topOneOnePercent= $scope.rankings.length * 0.005;
 							 $scope.percentiles.topOnePercent= $scope.rankings.length * 0.01;
 							 $scope.percentiles.median= $scope.rankings.length * 0.5;
 							 $scope.percentiles.twentyFive = $scope.rankings.length * 0.25;
@@ -301,7 +302,9 @@ angular.module(
 							 for(var i in $scope.rankings){
 								 $scope.rankings[i].stars = 1;
 								
-								if($scope.rankings[i].position < $scope.percentiles.topOnePercent){
+								if($scope.rankings[i].position < $scope.percentiles.topOneOnePercent){
+									 $scope.rankings[i].stars = 6;
+								 } else if($scope.rankings[i].position < $scope.percentiles.topOnePercent){
 									 $scope.rankings[i].stars = 5;
 								 }
 								 else if($scope.rankings[i].position < $scope.percentiles.twentyFive){
@@ -493,7 +496,7 @@ angular.module(
     return function(scope, element, attr) {
 
         var nb;
-        var max = 5;
+        var max = 6;
 
         function draw() {
             var html = '';
