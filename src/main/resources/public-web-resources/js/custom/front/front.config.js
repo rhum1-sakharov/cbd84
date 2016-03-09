@@ -234,7 +234,7 @@ angular.module(
 							 minWidth: 180
 						},				
 						{
-							field : 'pointCumul',
+							field : 'pointCumulActuel',
 							displayName: "Points",
 							 minWidth: 80,
 							 type : 'number', 
