@@ -483,8 +483,8 @@ angular
 																					one : $scope.rankings.length * 0.01,
 																					two : $scope.rankings.length * 0.02,
 																					three : $scope.rankings.length * 0.03,
-																					four : $scope.rankings.length * 0.04,
-																					thirty : $scope.rankings.length * 0.3
+																					thirty : $scope.rankings.length * 0.3,
+																					fifty : $scope.rankings.length * 0.5
 																					};
 																					for ( var i in $scope.rankings) {
 
@@ -496,9 +496,9 @@ angular
 																								$scope.rankings[i].stars = 5;
 																							} else if ($scope.rankings[i].position < $scope.percentiles.two) {
 																								$scope.rankings[i].stars = 4;
-																							} else if ($scope.rankings[i].position < $scope.percentiles.three) {
-																								$scope.rankings[i].stars = 3;
 																							} else if ($scope.rankings[i].position < $scope.percentiles.thirty) {
+																								$scope.rankings[i].stars = 3;
+																							} else if ($scope.rankings[i].position < $scope.percentiles.fifty) {
 																								$scope.rankings[i].stars = 2;
 																							}
 																						} else {
