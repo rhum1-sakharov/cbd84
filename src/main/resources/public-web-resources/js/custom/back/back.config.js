@@ -468,6 +468,64 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 			}
 		}
 
+	}).state('rankings', {
+		url : "/rankings",
+		views : {
+			"main" : {
+				templateUrl : "resources/partials/back/rankings/admin-rankings.html",
+				controller : function($scope, $log, $uibModal, $timeout, $q, $http, $filter, $sce, cbdUtils) {
+										
+					$scope.$watch('addRankingXml', function(newVal, oldVal) {
+						var mimetype = 'text/xml';
+
+						if (newVal.type) {
+
+							if (mimetype != newVal.type) {
+								newVal.error = 'Le fichier doit etre au format XML';
+							} else {
+								newVal.error = '';
+							}
+						}
+					});
+					
+					$scope.ok = function() {
+
+						$scope.loading = true;
+						var promiseStart = $q.when('start');
+						var promise1 = promiseStart.then(function(value) {
+
+							if ($scope.addRankingXml.error === '') {
+								var fd = new FormData();
+								fd.append('file', $scope.addRankingXml);
+								
+								var url = 'rankings/add/xml';
+								return $http.post(url, fd, {
+									transformRequest : angular.identity,
+									headers : {
+										'Content-Type' : undefined
+									}
+								})
+							} else
+								return response;
+						});						
+						
+						var promiseEnd = promise1.then(function(result) {
+							$scope.loading = false;						
+							$scope.serverError = '';
+							$scope.serverMessage = 'Les classements sont d&#233;sormais &#224; jour.';
+
+							return result;
+						}, function(reason) {
+							$scope.loading = false;
+							$scope.serverError = 'HTTP ERROR : ' + reason.status + ', ' + reason.statusText + ', ' + reason.data;
+
+							return $q.reject(reason);
+						});
+
+				};
+			}
+		}}
+
 	}).state('contacts', {
 		url : "/contacts",
 		views : {
@@ -649,4 +707,4 @@ angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cb
 
 	});
 });
-;
+
