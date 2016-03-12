@@ -57,7 +57,7 @@ public class RankingController {
 			datastore.writeContent(file.getBytes(), "ranking", "xml", IDatastore.TYPE_RANKING);
 			String str = FileUtils.readFileToString(new File(datastore.getPath("ranking", "xml", IDatastore.TYPE_RANKING)));
 			str =  str.replace("<!DOCTYPE resultat PUBLIC \"Bouly\" \"http://www.ffsb.asso.fr/public/xml-dtd/export_joueur.dtd\">", "");
-			datastore.writeContent(str.getBytes(), "ranking", "xml", IDatastore.TYPE_RANKING);
+			datastore.writeContent(str.getBytes("ISO-8859-1"), "ranking", "xml", IDatastore.TYPE_RANKING);
 		} catch (IOException e) {
 			return new ResponseEntity<String>(e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
