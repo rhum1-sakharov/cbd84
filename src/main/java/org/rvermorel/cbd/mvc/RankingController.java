@@ -30,39 +30,39 @@ public class RankingController {
 
 	@Autowired
 	private IDatastore datastore;
-	
+
 	@RequestMapping(method = RequestMethod.GET)
-	List<Joueur> displaySortedPartners() throws IOException  {		
-		
-		ByteArrayInputStream bais = new ByteArrayInputStream(datastore.getContent("ranking", "xml", IDatastore.TYPE_RANKING));	
-		Resultat res= XmlUtils.unmarshall(Resultat.class, bais);	
-		
+	List<Joueur> displaySortedPartners() throws IOException {
+
+		ByteArrayInputStream bais = new ByteArrayInputStream(
+				datastore.getContent("ranking", "xml", IDatastore.TYPE_RANKING));
+		Resultat res = XmlUtils.unmarshall(Resultat.class, bais);
+
 		return res.getJoueur();
 	}
-	
-	@RequestMapping(value="/date",method = RequestMethod.GET)
-	String getDate() throws IOException  {		
-		
-		File f = new File(datastore.getPath( "ranking", "xml", IDatastore.TYPE_RANKING));
-		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");	
-		
-		return  sdf.format(f.lastModified());
+
+	@RequestMapping(value = "/date", method = RequestMethod.GET)
+	String getDate() throws IOException {
+
+		File f = new File(datastore.getPath("ranking", "xml", IDatastore.TYPE_RANKING));
+		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
+		return sdf.format(f.lastModified());
 	}
-	
-	@RequestMapping(value = "/add/xml", method =  RequestMethod.POST )
-	public ResponseEntity<String> addXml(@RequestParam("file") MultipartFile file
-		) {
+
+	@RequestMapping(value = "/add/xml", method = RequestMethod.POST)
+	public ResponseEntity<String> addXml(@RequestParam("file") MultipartFile file) {
 		String responseMessage = "";
 		try {
-			datastore.writeContent(file.getBytes(), "ranking", "xml", IDatastore.TYPE_RANKING);			
+			datastore.writeContent(file.getBytes(), "ranking", "xml", IDatastore.TYPE_RANKING);
+			String str = FileUtils.readFileToString(new File(datastore.getPath("ranking", "xml", IDatastore.TYPE_RANKING)));
+			str =  str.replace("<!DOCTYPE resultat PUBLIC \"Bouly\" \"http://www.ffsb.asso.fr/public/xml-dtd/export_joueur.dtd\">", "");
+			datastore.writeContent(str.getBytes(), "ranking", "xml", IDatastore.TYPE_RANKING);
 		} catch (IOException e) {
 			return new ResponseEntity<String>(e.getMessage(), null, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
 		return new ResponseEntity<String>(responseMessage, null, HttpStatus.OK);
 	}
-
-	
-	
 
 }
