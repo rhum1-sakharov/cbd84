@@ -6,6 +6,16 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 		position : 1
 
 	};
+	
+	$scope.tinymceOptions = {
+		    onChange: function(e) {
+		      // put logic here for keypress and cut/paste changes
+		    },
+		    inline: false,
+		    plugins : 'advlist autolink link image lists charmap print preview',
+		    skin: 'lightgray',
+		    theme : 'modern'
+		  };
 
 	/** ****************************** DatePicker AngularUI */
 	$scope.status = {
@@ -104,6 +114,16 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 	$scope.updateResultImage = {
 		error : 'pristine'
 	};
+	
+	$scope.tinymceOptions = {
+		    onChange: function(e) {
+		      // put logic here for keypress and cut/paste changes
+		    },
+		    inline: false,
+		    plugins : 'advlist autolink link image lists charmap print preview',
+		    skin: 'lightgray',
+		    theme : 'modern'
+		  };
 
 	/** ****************************** DatePicker AngularUI */	
 	$scope.status = {
