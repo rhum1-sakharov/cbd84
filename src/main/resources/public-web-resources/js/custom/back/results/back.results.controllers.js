@@ -56,7 +56,7 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 				var fd = new FormData();
 				fd.append('file', $scope.addResultImage);
 
-				var url = 'results/add/image/jpg/'+$scope.result.imageWidth+'/' + $scope.result.id;
+				var url = 'results/add/image/jpg/800/' + $scope.result.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -135,7 +135,7 @@ angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngR
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'results/add/image/jpg/'+$scope.result.imageWidth+'/' + $scope.result.id;
+					var url = 'results/add/image/jpg/800/' + $scope.result.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
