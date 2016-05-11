@@ -65,29 +65,29 @@ public class Joueur {
     @XmlElement(required = true)
     @XmlJavaTypeAdapter(CollapsedStringAdapter.class)
     @XmlSchemaType(name = "NCName")
-    protected String civilite;
+    protected String civilite="";
     @XmlElement(required = true)
-    protected String nom;
+    protected String nom="";
     @XmlElement(required = true)
     protected String prenom;
     @XmlElement(required = true)
-    protected String instance;
+    protected String instance="";
     @XmlElement(required = true)
-    protected BigInteger licence;
+    protected BigInteger licence= BigInteger.ZERO;;
     @XmlElement(required = true)
-    protected String typeLicence;
+    protected String typeLicence ="";
     @XmlElement(required = true)
-    protected BigInteger pointCumul;
+    protected BigInteger pointCumul= BigInteger.ZERO;;
     @XmlElement(required = true)
-    protected BigInteger pointOfficiel;
+    protected BigInteger pointOfficiel = BigInteger.ZERO;
     @XmlElement(required = true)
-    protected BigInteger pointPromotion;
+    protected BigInteger pointPromotion= BigInteger.ZERO;
     @XmlElement(required = true)
-    protected BigInteger pointCumulActuel;
+    protected BigInteger pointCumulActuel= BigInteger.ZERO;
     @XmlElement(required = true)
-    protected BigInteger pointOfficielActuel;
+    protected BigInteger pointOfficielActuel= BigInteger.ZERO;
     @XmlElement(required = true)
-    protected BigInteger pointPromotionActuel;
+    protected BigInteger pointPromotionActuel= BigInteger.ZERO;
 
     /**
      * Obtient la valeur de la propri�t� civilite.

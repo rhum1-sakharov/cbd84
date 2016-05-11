@@ -96,7 +96,7 @@ public class XmlUtils {
 			XMLInputFactory inputFactory = XMLInputFactory.newInstance();
 			XMLStreamReader eventReader = inputFactory.createXMLStreamReader(in);
 			Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-			unmarshaller.setEventHandler(new javax.xml.bind.helpers.DefaultValidationEventHandler());
+			//unmarshaller.setEventHandler(new javax.xml.bind.helpers.DefaultValidationEventHandler());
 			JAXBElement<T> root = unmarshaller.unmarshal(eventReader, c);
 
 			return root.getValue();
