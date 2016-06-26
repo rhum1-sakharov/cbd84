@@ -43,6 +43,7 @@ public class ImageController {
 			img = idatastore.getContent(id, imgExtension, type);
 			if (imgExtension.equals("jpg")) {
 				headers.set("Content-Type", "image/jpeg");
+				headers.set("Accept-Range", "bytes");
 			} else if (imgExtension.equals("pdf")) {
 				headers.set("Content-Type", "application/pdf");
 				headers.set("Content-Disposition", String.format("attachment; filename=\"%s.pdf\"", filename));
