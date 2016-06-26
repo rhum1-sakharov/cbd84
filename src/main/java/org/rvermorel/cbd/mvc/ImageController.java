@@ -34,6 +34,15 @@ public class ImageController {
 		// http://localhost:8080/cbd/images/feeds/jpg/3
 		byte[] img = null;
 		HttpHeaders headers = new HttpHeaders();
+		//disable keepalive for guardian prerequisite
+		headers.set("Connection", "close");
+		headers.set("Cache-Control", "no-cache");
+		headers.set("Proxy-Connection", "close");
+		headers.set("Pragma", "no-cache");
+		headers.set("If-Modified-Since","Mon, 26 Jul 1997 05:00:00 GMT");
+		//add IE edge header for IE 11 native compatibility
+		headers.set("X-UA-Compatible", "IE=edge");
+
 		String filename = type;
 		if (type.equals(IDatastore.TYPE_CBDFILES)) {
 			CbdFiles c = cbdFilesRepo.findOne(Long.valueOf(id));
@@ -43,7 +52,11 @@ public class ImageController {
 			img = idatastore.getContent(id, imgExtension, type);
 			if (imgExtension.equals("jpg")) {
 				headers.set("Content-Type", "image/jpeg");
-				headers.set("Accept-Range", "bytes");
+				headers.set("Accept-Ranges", "bytes");
+				headers.set("Content-Length", String.valueOf(img.length));
+
+
+
 			} else if (imgExtension.equals("pdf")) {
 				headers.set("Content-Type", "application/pdf");
 				headers.set("Content-Disposition", String.format("attachment; filename=\"%s.pdf\"", filename));
