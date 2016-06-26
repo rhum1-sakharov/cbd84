@@ -1,6 +1,7 @@
 package org.rvermorel.cbd.mvc;
 
 import java.io.IOException;
+import java.util.Date;
 
 import org.rvermorel.cbd.datastore.IDatastore;
 import org.rvermorel.cbd.domain.CbdFiles;
@@ -39,6 +40,8 @@ public class ImageController {
 		//headers.set("Cache-Control", "no-cache");
 		headers.set("Proxy-Connection", "close");
 		//headers.set("Pragma", "no-cache");
+		long expiry = new Date().getTime() + 1000;
+		headers.set("Expires", String.valueOf(expiry));
 		headers.set("If-Modified-Since","Mon, 26 Jul 1997 05:00:00 GMT");
 		//add IE edge header for IE 11 native compatibility
 		headers.set("X-UA-Compatible", "IE=edge");
