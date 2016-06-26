@@ -36,7 +36,7 @@ public class ImageController {
 		HttpHeaders headers = new HttpHeaders();
 		//disable keepalive for guardian prerequisite
 		headers.set("Connection", "close");
-		headers.set("Cache-Control", "no-cache");
+		//headers.set("Cache-Control", "no-cache");
 		headers.set("Proxy-Connection", "close");
 		headers.set("Pragma", "no-cache");
 		headers.set("If-Modified-Since","Mon, 26 Jul 1997 05:00:00 GMT");
