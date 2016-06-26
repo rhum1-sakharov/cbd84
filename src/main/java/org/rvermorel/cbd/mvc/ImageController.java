@@ -35,16 +35,7 @@ public class ImageController {
 		// http://localhost:8080/cbd/images/feeds/jpg/3
 		byte[] img = null;
 		HttpHeaders headers = new HttpHeaders();
-		//disable keepalive for guardian prerequisite
-		headers.set("Connection", "close");
-		//headers.set("Cache-Control", "no-cache");
-		headers.set("Proxy-Connection", "close");
-		//headers.set("Pragma", "no-cache");
-		long expiry = new Date().getTime() + 1000;
-		headers.set("Expires", String.valueOf(expiry));
-		headers.set("If-Modified-Since","Mon, 26 Jul 1997 05:00:00 GMT");
-		//add IE edge header for IE 11 native compatibility
-		headers.set("X-UA-Compatible", "IE=edge");
+
 
 		String filename = type;
 		if (type.equals(IDatastore.TYPE_CBDFILES)) {
