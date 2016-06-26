@@ -38,7 +38,7 @@ public class ImageController {
 		headers.set("Connection", "close");
 		//headers.set("Cache-Control", "no-cache");
 		headers.set("Proxy-Connection", "close");
-		headers.set("Pragma", "no-cache");
+		//headers.set("Pragma", "no-cache");
 		headers.set("If-Modified-Since","Mon, 26 Jul 1997 05:00:00 GMT");
 		//add IE edge header for IE 11 native compatibility
 		headers.set("X-UA-Compatible", "IE=edge");
