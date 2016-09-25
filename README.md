@@ -111,6 +111,9 @@ add the datasource to the standalone.xml with the module name com.mysql, add the
                 </drivers>
             </datasources>
 
-Start Tomcat on ubuntu server :
+## START TOMCAT ON UBUNUTU SERVER :
 sudo initctl start tomcat
 
+
+## MOD_PROXY APACHE ON UBUNUTU SERVER
+http://sharadchhetri.com/2013/08/02/how-to-install-mod_proxy-and-setup-reverse-proxy-in-apache-ubuntu/
