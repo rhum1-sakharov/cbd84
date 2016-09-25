@@ -77,7 +77,7 @@
 	<!-- Angular Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/js/vendor/angular-1.5.7/angular_locale_fr-fr${minjs}.js"></script>
+		src="resources/js/vendor/angular-1.5.7/angular-locale_fr-fr${minjs}.js"></script>
 	<%--<script type="text/javascript"
 		src="resources/js/vendor/angular-1.5.7/angular-animate${minjs}.js"></script>--%>
 	<script type="text/javascript"
