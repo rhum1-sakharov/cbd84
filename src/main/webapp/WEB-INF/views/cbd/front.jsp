@@ -12,9 +12,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	href="resources/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
 <!--  <link rel="stylesheet" type="text/css"
 	href="resources/css/ng-animation.css" />-->
 
@@ -99,21 +99,19 @@
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
 	<script async type="text/javascript"
-		src="resources/js/vendor/pdfmake/pdfmake${minjs}.js"></script>
+		src="resources/bower_components/pdfmake/build/pdfmake${minjs}.js"></script>
 
-	<script async src="resources/js/vendor/pdfmake/vfs_fonts.js"></script>
+	<script async src="resources/bower_components/pdfmake/build/vfs_fonts.js"></script>
 
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+	<script src="resources/bower_components/jquery/dist/jquery${minjs}.js"></script>
 	<script
-		src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+		src="resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-	<script
-		src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+
 
 
 	<!-- Angular Custom JavaScript
