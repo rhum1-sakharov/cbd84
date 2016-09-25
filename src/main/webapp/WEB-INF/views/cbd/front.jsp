@@ -90,11 +90,11 @@
 	<!-- Angular UI Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/js/bower_components/angular-ui-router/release/angular-ui-router${minjs}.js"></script>
+		src="resources/bower_components/angular-ui-router/release/angular-ui-router${minjs}.js"></script>
 
-	<script src="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
+	<script src="resources/vendor/angular-ui-grid/ui-grid${minjs}.js"></script>
 	
-	<script src="resources/js/bower_components/angular-filter/dist/angular-filter${minjs}.js"></script>
+	<script src="resources/bower_components/angular-filter/dist/angular-filter${minjs}.js"></script>
 
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
