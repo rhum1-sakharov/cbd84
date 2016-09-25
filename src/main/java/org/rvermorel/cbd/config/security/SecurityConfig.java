@@ -26,6 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
        http.csrf().disable();
        http.headers().cacheControl().disable();
 	   http.headers().frameOptions().sameOrigin().httpStrictTransportSecurity().disable();
+	   http.headers().disable();
 
     }
 }
