@@ -18,7 +18,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers("/cbd84/", "/cbd84/front","/cbd84/images/**","/cbd84/feeds","/cbd84/rankings","/cbd84/partners","/cbd84/cbdfiles","/cbd84/assos").permitAll().antMatchers("/back/**","/cbd84/**/add**","/cbd84/**/delete**","/cbd84/**/update**")
+        http.authorizeRequests().antMatchers("/cbd84/", "/cbd84/front","/cbd84/images/**","/cbd84/feeds","/cbd84/rankings","/cbd84/partners","/cbd84/cbdfiles","/cbd84/assos").permitAll().antMatchers("/cbd84/back","/cbd84/back/**","/cbd84/**/add**","/cbd84/**/delete**","/cbd84/**/update**")
                 .access("hasRole('ADMIN')").and().formLogin().and().exceptionHandling()
                 .accessDeniedPage("/cbd84/accessDenied");
        http.csrf().disable();     
