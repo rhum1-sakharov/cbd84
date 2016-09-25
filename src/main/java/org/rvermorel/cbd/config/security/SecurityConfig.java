@@ -18,14 +18,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers("/", "/front","/images/**","/feeds","/rankings","/partners","/cbdfiles","/assos").permitAll().antMatchers("/back/**")
-                .access("hasRole('ADMIN')").antMatchers("/**/add**").access("hasRole('ADMIN')")
-                .antMatchers("/**/delete**").access("hasRole('ADMIN')").antMatchers("/**/update**")
+        http.authorizeRequests().antMatchers("/", "/front","/images/**","/feeds","/rankings","/partners","/cbdfiles","/assos").permitAll().antMatchers("/back/**","/**/add**","/**/delete**","/**/update**")
                 .access("hasRole('ADMIN')").and().formLogin().and().exceptionHandling()
                 .accessDeniedPage("/accessDenied");
-       http.csrf().disable();
-       http.headers().cacheControl().disable();
-	   http.headers().frameOptions().sameOrigin().httpStrictTransportSecurity().disable();
+       http.csrf().disable();     
 	   http.headers().disable();
 
     }
