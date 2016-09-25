@@ -81,9 +81,11 @@
 	<%--<script type="text/javascript"
 		src="resources/js/vendor/angular-1.5.7/angular-animate${minjs}.js"></script>--%>
 	<script type="text/javascript"
-		src="resources/js/vendor/angular-1.5.7/angular-sanitize${minjs}.js"></script>
+			src="resources/bower_components/angular/angular${minjs}.js"></script>
 	<script type="text/javascript"
-		src="resources/js/vendor/angular-1.5.7/angular-resource${minjs}.js"></script>
+			src="resources/bower_components/angular-sanitize/angular-sanitize${minjs}.js"></script>
+	<script type="text/javascript"
+			src="resources/bower_components/angular-resource/angular-resource${minjs}.js"></script>
 
 	<!-- Angular UI Vendor JavaScript
     ================================================== -->
