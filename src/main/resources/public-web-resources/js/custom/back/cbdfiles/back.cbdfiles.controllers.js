@@ -1,4 +1,4 @@
-angular.module('cbd.back.cbdfiles.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
 .controller('AddCbdFileModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'cbdfiles', function(cbdUtils, $scope, $http, $q, $uibModalInstance, cbdfiles) {
 

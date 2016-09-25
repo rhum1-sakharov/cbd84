@@ -1,4 +1,4 @@
-angular.module('cbd.back.results.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
 .controller('AddResultModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'results', function(cbdUtils, $scope, $http, $q, $uibModalInstance, results) {
 

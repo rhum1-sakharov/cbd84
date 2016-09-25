@@ -1,4 +1,4 @@
-angular.module('cbd.back.config', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule', 'ui.router', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.config', [  'ngSanitize', 'ngResource', 'cbdUtilsModule', 'ui.router', 'ui.bootstrap', 'cbdUtilsModule' ])
 
 .config(function($stateProvider, $urlRouterProvider) {
 	//

@@ -1,4 +1,4 @@
-angular.module('cbd.back.feeds.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
+angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule' ])
 
 .controller('AddFeedModalInstanceCtrl', [ 'cbdUtils', '$scope', '$http', '$q', '$uibModalInstance', 'feeds', function(cbdUtils, $scope, $http, $q, $uibModalInstance, feeds) {
 

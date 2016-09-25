@@ -1,6 +1,6 @@
 angular
 		.module('cbd.back.controllers',
-				[ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+				[  'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
 		.controller(
 				'CbdBackCtrl',

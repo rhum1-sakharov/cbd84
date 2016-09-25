@@ -1,4 +1,4 @@
-angular.module('cbd.back.partners.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap' ])
+angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap' ])
 
 .controller('AddPartnerModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'partners', function($scope, $http, $q, $uibModalInstance, partners) {
 

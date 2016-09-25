@@ -1,4 +1,4 @@
-angular.module('cbd.back.assos.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap' ])
+angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap' ])
 
 .controller('AddAssoModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'assos', function($scope, $http, $q, $uibModalInstance, assos) {
 

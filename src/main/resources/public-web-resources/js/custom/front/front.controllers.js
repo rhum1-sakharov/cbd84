@@ -1,4 +1,4 @@
-angular.module('cbd.front.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
+angular.module('cbd.front.controllers', [  'ngSanitize', 'ngResource', 'cbdUtilsModule' ])
 
 .controller('FrontCtrl', [ '$resource', '$rootScope', '$timeout', '$compile', '$scope', '$http', '$log', '$window', '$sce', '$q', '$filter', 'cbdUtils', function($resource, $rootScope, $timeout, $compile, $scope, $http, $log, $window, $sce, $q, $filter, cbdUtils) {
 

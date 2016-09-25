@@ -1,4 +1,4 @@
-angular.module('cbd.back.contacts.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap' ])
+angular.module('cbd.back.contacts.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap' ])
 
 .controller('AddContactModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'contacts', function($scope, $http, $q, $uibModalInstance, contacts) {
 

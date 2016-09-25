@@ -1,4 +1,4 @@
-angular.module('cbd.back.events.controllers', [ 'ngAnimate', 'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule'  ])
+angular.module('cbd.back.events.controllers', [  'ngSanitize', 'ngResource', 'ui.bootstrap', 'cbdUtilsModule'  ])
 
 .controller('AddEventModalInstanceCtrl', [ '$scope', '$http', '$q', '$uibModalInstance', 'events', function($scope, $http, $q, $uibModalInstance, events) {
 
