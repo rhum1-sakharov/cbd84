@@ -51,9 +51,9 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         }
 
         if (isDba(roles)) {
-            url = "/db";
+            url = "/back";
         } else if (isAdmin(roles)) {
-            url = "/admin";
+            url = "/back";
         } else if (isUser(roles)) {
             url = "/back";
         } else {
