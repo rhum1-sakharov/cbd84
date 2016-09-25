@@ -30,11 +30,19 @@ public class MainController {
         return "sitemap";
     }
 	
-	@RequestMapping(value="/back",method=RequestMethod.GET)
-    public String back(Model model)
+	@RequestMapping(value="/login",method=RequestMethod.GET)
+    public String loginGet(Model model)
     {
-        return "back";
+        return "login";
     }
+
+
+
+	@RequestMapping(value="/back",method=RequestMethod.GET)
+	public String back(Model model)
+	{
+		return "back";
+	}
 	
 	 @RequestMapping(value = "/accessDenied", method = RequestMethod.GET)
 	    public String accessDeniedPage(ModelMap model) {
