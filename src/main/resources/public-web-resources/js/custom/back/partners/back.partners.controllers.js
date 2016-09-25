@@ -39,7 +39,7 @@ angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', '
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 
-				return $http.post('partners/add', $scope.partner).then(function(response) {
+				return $http.post('/cbd84/partners/add', $scope.partner).then(function(response) {
 					$scope.partner = response.data;
 					return response.data;
 				});
@@ -49,7 +49,7 @@ angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', '
 				var fd = new FormData();
 				fd.append('file', $scope.addPartnerImage);
 				
-				var url = 'partners/add/image/jpg/512/' + $scope.partner.id;
+				var url = '/cbd84/partners/add/image/jpg/512/' + $scope.partner.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -105,7 +105,7 @@ angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', '
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'partners/add/image/jpg/512/' + $scope.partner.id;
+					var url = '/cbd84/partners/add/image/jpg/512/' + $scope.partner.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -135,7 +135,7 @@ angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', '
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('partners/update', $scope.partner).then(function(response) {
+			return $http.post('/cbd84/partners/update', $scope.partner).then(function(response) {
 				$scope.partner = response.data;
 				return response.data;
 			});
@@ -170,7 +170,7 @@ angular.module('cbd.back.partners.controllers', [  'ngSanitize', 'ngResource', '
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'partners/delete/' + $scope.partner.id + '/jpg';
+			var url = '/cbd84/partners/delete/' + $scope.partner.id + '/jpg';
 			return $http.get(url).then(function(response) {
 
 				return response.data;

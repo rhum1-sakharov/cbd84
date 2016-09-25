@@ -55,7 +55,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add', $scope.feed).then(function(response) {
+			return $http.post('/cbd84/feeds/add', $scope.feed).then(function(response) {
 				$scope.feed = response.data;
 				return response.data;
 			});
@@ -66,7 +66,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 				var fd = new FormData();
 				fd.append('file', $scope.addFeedImage);
 
-				var url = 'feeds/add/image/jpg/800/' + $scope.feed.id;
+				var url = '/cbd84/feeds/add/image/jpg/800/' + $scope.feed.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -82,7 +82,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 
 			// Refresh parent view with image
 			if ($scope.addFeedImage.error === '') {
-				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
+				$scope.feed.imageUrl = 'images/get//cbd84/feeds/jpg/' + $scope.feed.id;
 				$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
 			}
 
@@ -156,7 +156,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'feeds/add/image/jpg/800/' + $scope.feed.id;
+					var url = '/cbd84/feeds/add/image/jpg/800/' + $scope.feed.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -168,7 +168,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 				var promiseEnd = promise1.then(function(result) {
 					// Refresh parent view with image
 					if ($scope.updateFeedImage.error === '') {
-						$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
+						$scope.feed.imageUrl = 'images/get//cbd84/feeds/jpg/' + $scope.feed.id;
 						$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
 					}
 					$scope.loading = false;
@@ -188,7 +188,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 	$scope.eraseImage = function() {
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(response) {
-			return $http.get('feeds/delete/image/jpg/' + $scope.feed.id);
+			return $http.get('/cbd84/feeds/delete/image/jpg/' + $scope.feed.id);
 		});
 
 		var promiseEnd = promise1.then(function(result) {
@@ -214,7 +214,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('feeds/add', $scope.feed).then(function(response) {
+			return $http.post('/cbd84/feeds/add', $scope.feed).then(function(response) {
 				$scope.feed = response.data;
 				return response.data;
 			});
@@ -252,7 +252,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'feeds/delete/' + $scope.feed.id + '/jpg';
+			var url = '/cbd84/feeds/delete/' + $scope.feed.id + '/jpg';
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});

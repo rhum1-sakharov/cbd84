@@ -12,16 +12,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
-	href="resources/bower_components/bootstrap/dist/css/bootstrap.min.css" />
+	href="/cbd84/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
+	href="/cbd84/resources/bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
 <!--  <link rel="stylesheet" type="text/css"
 	href="resources/css/ng-animation.css" />-->
 
-<link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
+<link rel="stylesheet" type="text/css" href="/cbd84/resources/css/screen.css" />
 
 <link rel="stylesheet"
-	href="resources/js/vendor/angular-ui-grid/ui-grid${minjs}.css"
+	href="/cbd84/resources/js/vendor/angular-ui-grid/ui-grid${minjs}.css"
 	type="text/css">
 </head>
 
@@ -40,7 +40,7 @@
 				</button>
 				<a class="navbar-brand" href="#" ng-click="selectMenu(1);"><span
 					class="welcome-message"><img
-						src="resources/images/logo-boule.png"></span><span>CBD 84</span></a>
+						src="/cbd84/resources/images/logo-boule.png"></span><span>CBD 84</span></a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
@@ -81,35 +81,35 @@
 	<%--<script type="text/javascript"
 		src="resources/js/vendor/angular-1.5.7/angular-animate${minjs}.js"></script>--%>
 	<script type="text/javascript"
-			src="resources/bower_components/angular/angular${minjs}.js"></script>
+			src="/cbd84/resources/bower_components/angular/angular${minjs}.js"></script>
 	<script type="text/javascript"
-			src="resources/bower_components/angular-sanitize/angular-sanitize${minjs}.js"></script>
+			src="/cbd84/resources/bower_components/angular-sanitize/angular-sanitize${minjs}.js"></script>
 	<script type="text/javascript"
-			src="resources/bower_components/angular-resource/angular-resource${minjs}.js"></script>
+			src="/cbd84/resources/bower_components/angular-resource/angular-resource${minjs}.js"></script>
 
 	<!-- Angular UI Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/bower_components/angular-ui-router/release/angular-ui-router${minjs}.js"></script>
+		src="/cbd84/resources/bower_components/angular-ui-router/release/angular-ui-router${minjs}.js"></script>
 
-	<script src="resources/bower_components/angular-ui-grid/ui-grid${minjs}.js"></script>
+	<script src="/cbd84/resources/bower_components/angular-ui-grid/ui-grid${minjs}.js"></script>
 	
-	<script src="resources/bower_components/angular-filter/dist/angular-filter${minjs}.js"></script>
+	<script src="/cbd84/resources/bower_components/angular-filter/dist/angular-filter${minjs}.js"></script>
 
 	<!-- PdfMake Vendor JavaScript
     ================================================== -->
 	<script async type="text/javascript"
-		src="resources/bower_components/pdfmake/build/pdfmake${minjs}.js"></script>
+		src="/cbd84/resources/bower_components/pdfmake/build/pdfmake${minjs}.js"></script>
 
-	<script async src="resources/bower_components/pdfmake/build/vfs_fonts.js"></script>
+	<script async src="/cbd84/resources/bower_components/pdfmake/build/vfs_fonts.js"></script>
 
 
 	<!-- Bootstrap core JavaScript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="resources/bower_components/jquery/dist/jquery${minjs}.js"></script>
+	<script src="/cbd84/resources/bower_components/jquery/dist/jquery${minjs}.js"></script>
 	<script
-		src="resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		src="/cbd84/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
 
 
@@ -119,10 +119,10 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<script type="text/javascript"
-		src="resources/js/custom/front/app-front.js"></script>
-	<script type="text/javascript" src="resources/js/custom/utils.js"></script>
+		src="/cbd84/resources/js/custom/front/app-front.js"></script>
+	<script type="text/javascript" src="/cbd84/resources/js/custom/utils.js"></script>
 	<script type="text/javascript"
-		src="resources/js/custom/front/front.config.js"></script>
+		src="/cbd84/resources/js/custom/front/front.config.js"></script>
 
 </body>
 

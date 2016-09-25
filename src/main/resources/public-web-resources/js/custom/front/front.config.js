@@ -35,7 +35,7 @@ angular
                         url: "/actus",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/news.html",
+                                templateUrl: "/cbd84/resources/partials/front/news.html",
                                 controller: function ($scope,
                                                       $q, $http, cbdUtils) {
                                     $scope.feeds = [];
@@ -45,7 +45,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'feeds')
+                                                    '/cbd84/feeds')
                                                 .then(
                                                     function (response) {
                                                         $scope.feeds = response.data;
@@ -63,7 +63,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -73,7 +73,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -91,7 +91,7 @@ angular
                         url: "/events",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/events.html",
+                                templateUrl: "/cbd84/resources/partials/front/events.html",
                                 controller: function ($scope,
                                                       $q, $http, cbdUtils,
                                                       uiGridConstants,
@@ -312,7 +312,7 @@ angular
                                         .then(function (response) {
                                             return $http
                                                 .get(
-                                                    'events')
+                                                    '/cbd84/events')
                                                 .then(
                                                     function (response) {
                                                         $scope.events = response.data;
@@ -324,7 +324,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -334,7 +334,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -352,7 +352,7 @@ angular
                         url: "/rankings",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/rankings.html",
+                                templateUrl: "/cbd84/resources/partials/front/rankings.html",
                                 controller: function ($scope,
                                                       $q, $http, cbdUtils,
                                                       uiGridConstants,
@@ -445,7 +445,7 @@ angular
                                         .then(function (response) {
                                             return $http
                                                 .get(
-                                                    'rankings')
+                                                    '/cbd84/rankings')
                                                 .then(
                                                     function (response) {
                                                         $scope.rankings = response.data;
@@ -518,7 +518,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -528,7 +528,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -546,7 +546,7 @@ angular
                         url: "/results",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/results.html",
+                                templateUrl: "/cbd84/resources/partials/front/results.html",
                                 controller: function ($scope,
                                                       $q, $http, cbdUtils) {
                                     $scope.results = [];
@@ -556,7 +556,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'results')
+                                                    '/cbd84/results')
                                                 .then(
                                                     function (response) {
                                                         $scope.results = response.data;
@@ -574,7 +574,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -584,7 +584,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -602,7 +602,7 @@ angular
                         url: "/assos",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/assos.html",
+                                templateUrl: "/cbd84/resources/partials/front/assos.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.assos = [];
@@ -612,7 +612,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'assos')
+                                                    '/cbd84/assos')
                                                 .then(
                                                     function (response) {
                                                         $scope.assos = response.data;
@@ -622,7 +622,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -632,7 +632,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -650,7 +650,7 @@ angular
                         url: "/cbdfiles",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/cbdfiles.html",
+                                templateUrl: "/cbd84/resources/partials/front/cbdfiles.html",
                                 controller: function ($scope,
                                                       $q, $http, cbdUtils) {
                                     $scope.cbdfiles = [];
@@ -660,7 +660,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'cbdfiles')
+                                                    '/cbd84/cbdfiles')
                                                 .then(
                                                     function (response) {
                                                         $scope.cbdfiles = response.data;
@@ -671,7 +671,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -681,7 +681,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -699,7 +699,7 @@ angular
                         url: "/contacts",
                         views: {
                             "main": {
-                                templateUrl: "resources/partials/front/contacts.html",
+                                templateUrl: "/cbd84/resources/partials/front/contacts.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.contacts = [];
@@ -709,7 +709,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'contacts')
+                                                    '/cbd84/contacts')
                                                 .then(
                                                     function (response) {
                                                         $scope.contacts = response.data;
@@ -719,7 +719,7 @@ angular
                                 }
                             },
                             "partners": {
-                                templateUrl: "resources/partials/front/partners.html",
+                                templateUrl: "/cbd84/resources/partials/front/partners.html",
                                 controller: function ($scope,
                                                       $q, $http) {
                                     $scope.partners = [];
@@ -729,7 +729,7 @@ angular
                                         .then(function (value) {
                                             return $http
                                                 .get(
-                                                    'partners')
+                                                    '/cbd84/partners')
                                                 .then(
                                                     function (response) {
                                                         $scope.partners = response.data;
@@ -779,10 +779,10 @@ angular
         function draw() {
             var html = '';
             for (var i = 0; i < nb; i++) {
-                html += '<img src="resources/images/star-full.png"/>';
+                html += '<img src="/cbd84/resources/images/star-full.png"/>';
             }
             for (; max && i < max; i++) {
-                html += '<img src="resources/images/empty-star.png"/>';
+                html += '<img src="/cbd84/resources/images/empty-star.png"/>';
             }
             element.html(html);
         }

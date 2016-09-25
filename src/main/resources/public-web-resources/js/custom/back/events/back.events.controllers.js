@@ -29,7 +29,7 @@ angular.module('cbd.back.events.controllers', [  'ngSanitize', 'ngResource', 'ui
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 
-				return $http.post('events/add', $scope.event).then(function(response) {
+				return $http.post('/cbd84/events/add', $scope.event).then(function(response) {
 					$scope.event = response.data;
 					return response.data;
 				});
@@ -86,7 +86,7 @@ angular.module('cbd.back.events.controllers', [  'ngSanitize', 'ngResource', 'ui
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('events/update', $scope.event).then(function(response) {
+			return $http.post('/cbd84/events/update', $scope.event).then(function(response) {
 				$scope.event = response.data;
 				return response.data;
 			});
@@ -121,7 +121,7 @@ angular.module('cbd.back.events.controllers', [  'ngSanitize', 'ngResource', 'ui
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'events/delete/' + $scope.event.id ;
+			var url = '/cbd84/events/delete/' + $scope.event.id ;
 			return $http.get(url).then(function(response) {
 
 				return response.data;

@@ -55,7 +55,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('results/add', $scope.result).then(function(response) {
+			return $http.post('/cbd84/results/add', $scope.result).then(function(response) {
 				$scope.result = response.data;
 				return response.data;
 			});
@@ -66,7 +66,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 				var fd = new FormData();
 				fd.append('file', $scope.addResultImage);
 
-				var url = 'results/add/image/jpg/800/' + $scope.result.id;
+				var url = '/cbd84/results/add/image/jpg/800/' + $scope.result.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -155,7 +155,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 
 					var fd = new FormData();
 					fd.append('file', newVal);
-					var url = 'results/add/image/jpg/800/' + $scope.result.id;
+					var url = '/cbd84/results/add/image/jpg/800/' + $scope.result.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -187,7 +187,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 	$scope.eraseImage = function() {
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(response) {
-			return $http.get('results/delete/image/jpg/' + $scope.result.id);
+			return $http.get('/cbd84/results/delete/image/jpg/' + $scope.result.id);
 		});
 
 		var promiseEnd = promise1.then(function(result) {
@@ -210,7 +210,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('results/add', $scope.result).then(function(response) {
+			return $http.post('/cbd84/results/add', $scope.result).then(function(response) {
 				$scope.result = response.data;
 				return response.data;
 			});
@@ -248,7 +248,7 @@ angular.module('cbd.back.results.controllers', [ 'ngSanitize', 'ngResource', 'ui
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'results/delete/' + $scope.result.id + '/jpg';
+			var url = '/cbd84/results/delete/' + $scope.result.id + '/jpg';
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});

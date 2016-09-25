@@ -8,14 +8,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
+	href="/cbd84/resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
+	href="/cbd84/resources/js/vendor/bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/angular-ui/ui-bootstrap-csp.css" />
+	href="/cbd84/resources/js/vendor/angular-ui/ui-bootstrap-csp.css" />
 <link rel="stylesheet" type="text/css"
-	href="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
-<link rel="stylesheet" type="text/css" href="resources/css/screen.css" />
+	href="/cbd84/resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="/cbd84/resources/css/screen.css" />
 <body role="document" class="bg-admin">
 
 	<!-- Fixed navbar -->
@@ -69,12 +69,12 @@
 	<!-- TinyMCE Vendor JavaScript
     ================================================== -->
 	<script type="text/javascript"
-		src="resources/js/vendor/tinymce-dist/tinymce.js"></script>
+		src="/cbd84/resources/js/vendor/tinymce-dist/tinymce.js"></script>
 
 	<!-- JQuery Vendor JavaScript
     ================================================== -->
-	<script src="resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
-	<script src="resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+	<script src="/cbd84/resources/js/vendor/jquery-1.11.3/jquery-1.11.3.min.js"></script>
+	<script src="/cbd84/resources/js/vendor/jquery-ui-1.11.4/jquery-ui.min.js"></script>
 
 
 	<!-- Angular Vendor JavaScript
@@ -84,26 +84,26 @@
 	<%--<script type="text/javascript"
 		src="resources/js/vendor/angular-1.5.7/angular-animate${minjs}.js"></script>--%>
 	<script type="text/javascript"
-			src="resources/bower_components/angular/angular${minjs}.js"></script>
+			src="/cbd84/resources/bower_components/angular/angular${minjs}.js"></script>
 	<script type="text/javascript"
-		src="resources/bower_components/angular-sanitize/angular-sanitize${minjs}.js"></script>
+		src="/cbd84/resources/bower_components/angular-sanitize/angular-sanitize${minjs}.js"></script>
 	<script type="text/javascript"
-		src="resources/bower_components/angular-resource/angular-resource${minjs}.js"></script>
+		src="/cbd84/resources/bower_components/angular-resource/angular-resource${minjs}.js"></script>
 </head>
 
 <!-- Angular UI  Vendor JavaScript
     ================================================== -->
 
 <script type="text/javascript"
-	src="resources/js/vendor/angular-ui/ui-bootstrap-tpls${minjs}.js"></script>
+	src="/cbd84/resources/js/vendor/angular-ui/ui-bootstrap-tpls${minjs}.js"></script>
 <script type="text/javascript"
-	src="resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
+	src="/cbd84/resources/js/vendor/angular-ui-router/angular-ui-router${minjs}.js"></script>
 
 <!-- Angular UI TinyMCE Vendor JavaScript
     ================================================== -->
 
 <script type="text/javascript"
-	src="resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
+	src="/cbd84/resources/js/vendor/angular-ui-tinymce/tinymce.js"></script>
 
 
 <!-- Angular Custom JavaScript
@@ -111,26 +111,26 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script type="text/javascript"
-	src="resources/js/custom/back/app-back.js"></script>
-<script type="text/javascript" src="resources/js/custom/utils.js"></script>
+	src="/cbd84/resources/js/custom/back/app-back.js"></script>
+<script type="text/javascript" src="/cbd84/resources/js/custom/utils.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/back.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/back.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/back.config.js"></script>
+	src="/cbd84/resources/js/custom/back/back.config.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/partners/back.partners.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/partners/back.partners.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/contacts/back.contacts.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/contacts/back.contacts.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/assos/back.assos.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/assos/back.assos.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/feeds/back.feeds.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/feeds/back.feeds.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/results/back.results.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/results/back.results.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/cbdfiles/back.cbdfiles.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/cbdfiles/back.cbdfiles.controllers.js"></script>
 <script type="text/javascript"
-	src="resources/js/custom/back/events/back.events.controllers.js"></script>
+	src="/cbd84/resources/js/custom/back/events/back.events.controllers.js"></script>
 
 
 <!-- Bootstrap core JavaScript
@@ -138,11 +138,11 @@
 <!-- Placed at the end of the document so the pages load faster -->
 
 <script
-	src="resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+	src="/cbd84/resources/js/vendor/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script
-	src="resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
+	src="/cbd84/resources/js/vendor/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 
 </html>

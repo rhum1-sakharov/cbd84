@@ -64,7 +64,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('cbdfiles/add', $scope.cbdfile).then(function(response) {
+			return $http.post('/cbd84/cbdfiles/add', $scope.cbdfile).then(function(response) {
 				$scope.cbdfile = response.data;
 				return response.data;
 			});
@@ -76,7 +76,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 				fd.append('file', $scope.addCbdFilePDF);
 
 				//"/add/file/{imgExtension}/{id}"
-				var url = 'cbdfiles/add/file/pdf/' + $scope.cbdfile.id;
+				var url = '/cbd84/cbdfiles/add/file/pdf/' + $scope.cbdfile.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -93,7 +93,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 				fd.append('file', $scope.addCbdFileExcel);
 
 				//"/add/file/{imgExtension}/{id}"
-				var url = 'cbdfiles/add/file/xls/' + $scope.cbdfile.id;
+				var url = '/cbd84/cbdfiles/add/file/xls/' + $scope.cbdfile.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -170,7 +170,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 	
-				return $http.post('cbdfiles/update', $scope.cbdfile).then(function(response) {
+				return $http.post('/cbd84/cbdfiles/update', $scope.cbdfile).then(function(response) {
 					$scope.cbdfile = response.data;
 					return response.data;
 				});
@@ -182,7 +182,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 					fd.append('file', $scope.addCbdFilePDF);
 	
 					//"/add/file/{imgExtension}/{id}"
-					var url = 'cbdfiles/add/file/pdf/' + $scope.cbdfile.id;
+					var url = '/cbd84/cbdfiles/add/file/pdf/' + $scope.cbdfile.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -199,7 +199,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 					fd.append('file', $scope.addCbdFileExcel);
 	
 					//"/add/file/{imgExtension}/{id}"
-					var url = 'cbdfiles/add/file/xls/' + $scope.cbdfile.id;
+					var url = '/cbd84/cbdfiles/add/file/xls/' + $scope.cbdfile.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -237,7 +237,7 @@ angular.module('cbd.back.cbdfiles.controllers', [  'ngSanitize', 'ngResource', '
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = 'cbdfiles/delete/' + $scope.cbdfile.id ;
+			var url = '/cbd84/cbdfiles/delete/' + $scope.cbdfile.id ;
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});

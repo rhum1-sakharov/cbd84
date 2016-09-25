@@ -11,7 +11,7 @@
 					XML</label>
 				<div class="col-sm-9"
 					ng-class="{'has-error':formRanking.xmlFile.$invalid && !formRanking.xmlFile.$pristine}">
-					<input type="file" name="xmlFile" file-model="addRankingXml" required>
+					<input type="file" id="xmlFile" name="xmlFile" file-model="addRankingXml" required>
 					<p
 						ng-show="addRankingXml.error != '' && addRankingXml.error!='pristine' "
 						class="help-block" ng-bind-html="addRankingXml.error"></p>
