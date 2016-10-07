@@ -11898,7 +11898,7 @@ module.filter('px', function() {
               search: {
                   placeholder: 'Hledat...',
                   showingItems: 'Zobrazuji položky:',
-                  selectedItems: 'Vybrané položky:',
+                  selectedItems: 'Vybran\u00E9 položky:',
                   totalItems: 'Celkem položek:',
                   size: 'Velikost strany:',
                   first: 'První strana',
@@ -11981,7 +11981,7 @@ module.filter('px', function() {
           label: 'artikler'
         },
         groupPanel:{
-          description: 'Grupér rækker udfra en kolonne ved at trække dens overskift hertil.'
+          description: 'Grup\u00E9r rækker udfra en kolonne ved at trække dens overskift hertil.'
         },
         search:{
           placeholder: 'Søg...',
@@ -12278,7 +12278,7 @@ module.filter('px', function() {
           label: 'Artículos'
         },
         groupPanel: {
-          description: 'Arrastre un encabezado de columna aquí y suéltelo para agrupar por esa columna.'
+          description: 'Arrastre un encabezado de columna aquí y su\u00E9ltelo para agrupar por esa columna.'
         },
         search: {
           placeholder: 'Buscar...',
@@ -12519,24 +12519,24 @@ module.filter('px', function() {
             removeFilter: 'Supprimer le filtre',
             columnMenuButtonLabel: 'Menu de la colonne'
           },
-          priority: 'Priorité:',
+          priority: 'Priorit\u00E9:',
           filterLabel: "Filtre de la colonne: "
         },
         aggregate: {
-          label: 'éléments'
+          label: '\u00E9l\u00E9ments'
         },
         groupPanel: {
-          description: 'Faites glisser une en-tête de colonne ici pour créer un groupe de colonnes.'
+          description: 'Faites glisser une en-tête de colonne ici pour cr\u00E9er un groupe de colonnes.'
         },
         search: {
           placeholder: 'Recherche...',
-          showingItems: 'Affichage des éléments :',
-          selectedItems: 'Éléments sélectionnés :',
-          totalItems: 'Nombre total d\'éléments:',
+          showingItems: 'Affichage des \u00E9l\u00E9ments :',
+          selectedItems: '\u00E9l\u00E9ments s\u00E9lectionn\u00E9s :',
+          totalItems: 'Nombre total d\'\u00E9l\u00E9ments:',
           size: 'Taille de page:',
           first: 'Première page',
           next: 'Page Suivante',
-          previous: 'Page précédente',
+          previous: 'Page pr\u00E9c\u00E9dente',
           last: 'Dernière page'
         },
         menu: {
@@ -12544,7 +12544,7 @@ module.filter('px', function() {
         },
         sort: {
           ascending: 'Trier par ordre croissant',
-          descending: 'Trier par ordre décroissant',
+          descending: 'Trier par ordre d\u00E9croissant',
           none: 'Aucun tri',
           remove: 'Enlever le tri'
         },
@@ -12559,9 +12559,9 @@ module.filter('px', function() {
           max: 'max: '
         },
         pinning: {
-          pinLeft: 'Épingler à gauche',
-          pinRight: 'Épingler à droite',
-          unpin: 'Détacher'
+          pinLeft: '\u00E9pingler à gauche',
+          pinRight: '\u00E9pingler à droite',
+          unpin: 'D\u00E9tacher'
         },
         columnMenu: {
           close: 'Fermer'
@@ -12572,37 +12572,37 @@ module.filter('px', function() {
           },
           columns: 'Colonnes:',
           importerTitle: 'Importer un fichier',
-          exporterAllAsCsv: 'Exporter toutes les données en CSV',
-          exporterVisibleAsCsv: 'Exporter les données visibles en CSV',
-          exporterSelectedAsCsv: 'Exporter les données sélectionnées en CSV',
-          exporterAllAsPdf: 'Exporter toutes les données en PDF',
-          exporterVisibleAsPdf: 'Exporter les données visibles en PDF',
-          exporterSelectedAsPdf: 'Exporter les données sélectionnées en PDF',
+          exporterAllAsCsv: 'Exporter toutes les donn\u00E9es en CSV',
+          exporterVisibleAsCsv: 'Exporter les donn\u00E9es visibles en CSV',
+          exporterSelectedAsCsv: 'Exporter les donn\u00E9es s\u00E9lectionn\u00E9es en CSV',
+          exporterAllAsPdf: 'Exporter toutes les donn\u00E9es en PDF',
+          exporterVisibleAsPdf: 'Exporter les donn\u00E9es visibles en PDF',
+          exporterSelectedAsPdf: 'Exporter les donn\u00E9es s\u00E9lectionn\u00E9es en PDF',
           clearAllFilters: 'Nettoyez tous les filtres'
         },
         importer: {
-          noHeaders: 'Impossible de déterminer le nom des colonnes, le fichier possède-t-il une en-tête ?',
-          noObjects: 'Aucun objet trouvé, le fichier possède-t-il des données autres que l\'en-tête ?',
-          invalidCsv: 'Le fichier n\'a pas pu être traité, le CSV est-il valide ?',
-          invalidJson: 'Le fichier n\'a pas pu être traité, le JSON est-il valide ?',
-          jsonNotArray: 'Le fichier JSON importé doit contenir un tableau, abandon.'
+          noHeaders: 'Impossible de d\u00E9terminer le nom des colonnes, le fichier possède-t-il une en-tête ?',
+          noObjects: 'Aucun objet trouv\u00E9, le fichier possède-t-il des donn\u00E9es autres que l\'en-tête ?',
+          invalidCsv: 'Le fichier n\'a pas pu être trait\u00E9, le CSV est-il valide ?',
+          invalidJson: 'Le fichier n\'a pas pu être trait\u00E9, le JSON est-il valide ?',
+          jsonNotArray: 'Le fichier JSON import\u00E9 doit contenir un tableau, abandon.'
         },
         pagination: {
           aria: {
             pageToFirst: 'Aller à la première page',
-            pageBack: 'Page précédente',
-            pageSelected: 'Page sélectionnée',
+            pageBack: 'Page pr\u00E9c\u00E9dente',
+            pageSelected: 'Page s\u00E9lectionn\u00E9e',
             pageForward: 'Page suivante',
             pageToLast: 'Aller à la dernière page'
           },
-          sizes: 'éléments par page',
-          totalItems: 'éléments',
+          sizes: '\u00E9l\u00E9ments par page',
+          totalItems: '\u00E9l\u00E9ments',
           through: 'à',
           of: 'sur'
         },
         grouping: {
           group: 'Grouper',
-          ungroup: 'Dégrouper',
+          ungroup: 'D\u00E9grouper',
           aggregate_count: 'Agg: Compter',
           aggregate_sum: 'Agg: Somme',
           aggregate_max: 'Agg: Max',
@@ -12612,9 +12612,9 @@ module.filter('px', function() {
         },
         validate: {
           error: 'Erreur:',
-          minLength: 'La valeur doit être supérieure ou égale à THRESHOLD caractères.',
-          maxLength: 'La valeur doit être inférieure ou égale à THRESHOLD caractères.',
-          required: 'Une valeur est nécéssaire.'
+          minLength: 'La valeur doit être sup\u00E9rieure ou \u00E9gale à THRESHOLD caractères.',
+          maxLength: 'La valeur doit être inf\u00E9rieure ou \u00E9gale à THRESHOLD caractères.',
+          required: 'Une valeur est n\u00E9c\u00E9ssaire.'
         }
       });
       return $delegate;
@@ -13373,9 +13373,9 @@ module.filter('px', function() {
         },
         importer: {
           noHeaders: 'Nomes de colunas não puderam ser derivados. O arquivo tem um cabeçalho?',
-          noObjects: 'Objetos não puderam ser derivados. Havia dados no arquivo, além dos cabeçalhos?',
-          invalidCsv: 'Arquivo não pode ser processado. É um CSV válido?',
-          invalidJson: 'Arquivo não pode ser processado. É um Json válido?',
+          noObjects: 'Objetos não puderam ser derivados. Havia dados no arquivo, al\u00E9m dos cabeçalhos?',
+          invalidCsv: 'Arquivo não pode ser processado. \u00E9 um CSV válido?',
+          invalidJson: 'Arquivo não pode ser processado. \u00E9 um Json válido?',
           jsonNotArray: 'Arquivo json importado tem que conter um array. Abortando.'
         },
         pagination: {
@@ -13388,7 +13388,7 @@ module.filter('px', function() {
           },
           sizes: 'itens por página',
           totalItems: 'itens',
-          through: 'através dos',
+          through: 'atrav\u00E9s dos',
           of: 'de'
         },
         grouping: {
@@ -13480,9 +13480,9 @@ module.filter('px', function() {
         },
         importer: {
           noHeaders: 'Nomes de colunas não puderam ser derivados. O ficheiro tem um cabeçalho?',
-          noObjects: 'Objetos não puderam ser derivados. Havia dados no ficheiro, além dos cabeçalhos?',
-          invalidCsv: 'Ficheiro não pode ser processado. É um CSV válido?',
-          invalidJson: 'Ficheiro não pode ser processado. É um Json válido?',
+          noObjects: 'Objetos não puderam ser derivados. Havia dados no ficheiro, al\u00E9m dos cabeçalhos?',
+          invalidCsv: 'Ficheiro não pode ser processado. \u00E9 um CSV válido?',
+          invalidJson: 'Ficheiro não pode ser processado. \u00E9 um Json válido?',
           jsonNotArray: 'Ficheiro json importado tem que conter um array. Interrompendo.'
         },
         pagination: {
@@ -13495,7 +13495,7 @@ module.filter('px', function() {
           },
           sizes: 'itens por página',
           totalItems: 'itens',
-          through: 'através dos',
+          through: 'atrav\u00E9s dos',
           of: 'de'
         },
         grouping: {
@@ -13741,7 +13741,7 @@ module.filter('px', function() {
         search: {
           placeholder: 'Hľadaj...',
           showingItems: 'Zobrazujem položky:',
-          selectedItems: 'Vybraté položky:',
+          selectedItems: 'Vybrat\u00E9 položky:',
           totalItems: 'Počet položiek:',
           size: 'Počet:',
           first: 'Prvá strana',
