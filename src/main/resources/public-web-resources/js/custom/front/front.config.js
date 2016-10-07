@@ -102,8 +102,7 @@ angular
 
                                     $scope.events = [];
 
-                                    i18nService
-                                        .setCurrentLang('fr');
+                                    i18nService.setCurrentLang('fr');
                                     $scope.gridEventOptions = {
                                         onRegisterApi: function (gridApi) {
                                             $scope.gridApi = gridApi;
