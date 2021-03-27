@@ -55,11 +55,11 @@
 				<artifactId>jackson-datatype-jsr310</artifactId>
 				<version>${jackson.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>org.santos.signware</groupId>
-				<artifactId>custom-fonts</artifactId>
-				<version>1.0</version>
-			</dependency>
+			<!--<dependency>-->
+				<!--<groupId>org.santos.signware</groupId>-->
+				<!--<artifactId>custom-fonts</artifactId>-->
+				<!--<version>1.0</version>-->
+			<!--</dependency>-->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
@@ -104,7 +104,7 @@
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>5.1.37</version>
+				<version>8.0.20</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
@@ -359,10 +359,10 @@
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.santos.signware</groupId>
-			<artifactId>custom-fonts</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.santos.signware</groupId>-->
+			<!--<artifactId>custom-fonts</artifactId>-->
+		<!--</dependency>-->
 
 		<!-- Needed for running tests (you may also use TestNG) -->
 		<dependency>

@@ -82,7 +82,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 
 			// Refresh parent view with image
 			if ($scope.addFeedImage.error === '') {
-				$scope.feed.imageUrl = 'images/get//cbd84/feeds/jpg/' + $scope.feed.id;
+				$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
 				$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
 			}
 
@@ -168,7 +168,7 @@ angular.module('cbd.back.feeds.controllers', [  'ngSanitize', 'ngResource', 'ui.
 				var promiseEnd = promise1.then(function(result) {
 					// Refresh parent view with image
 					if ($scope.updateFeedImage.error === '') {
-						$scope.feed.imageUrl = 'images/get//cbd84/feeds/jpg/' + $scope.feed.id;
+						$scope.feed.imageUrl = 'images/get/feeds/jpg/' + $scope.feed.id;
 						$scope.feed.imageUrl = cbdUtils.refreshImgSrc($scope.feed.imageUrl);
 					}
 					$scope.loading = false;

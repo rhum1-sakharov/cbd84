@@ -298,7 +298,6 @@ CREATE TABLE IF NOT EXISTS `members` (
 --
 
 INSERT INTO `members` (`id_member`, `email`, `name`, `phone_number`) VALUES
-(1, 'romain.vermorel@gmail.com', 'Romain Vermorel', '0699236193'),
 (2, 'negades.alain@wanadoo.fr', 'Alain Canonge', NULL),
 (3, 'vich.raymond@neuf.fr', 'Raymond Vich', NULL);
 

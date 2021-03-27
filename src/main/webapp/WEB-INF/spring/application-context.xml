@@ -19,8 +19,6 @@
 
 	<context:component-scan base-package="org.rvermorel.cbd.domain" />
 
-	<context:component-scan base-package="org.rvermorel.cbd.repo" />
-
 	<context:component-scan base-package="org.rvermorel.cbd.images" />
 
 	<tx:annotation-driven />
