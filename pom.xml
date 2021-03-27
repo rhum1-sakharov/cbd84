@@ -386,17 +386,6 @@
 		</dependency>
 		
 
-		<!-- Add cglib for the MemberDaoTest -->
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-		</dependency>
-
-		<!-- Add H2 dependency for embedded testing database -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
 
 		<!-- DataSource (HikariCP) -->
 		<dependency>
@@ -477,16 +466,7 @@
 			<name>Spring Releases</name>
 			<url>https://repo.spring.io/libs-release</url>
 		</repository>
-		<repository>
-			<id>org.jboss.repository.releases</id>
-			<name>JBoss Maven Release Repository</name>
-			<url>https://repository.jboss.org/nexus/content/repositories/releases</url>
-		</repository>
-		<repository>
-			<id>jasper-releases</id>
-			<name>Jasper Releases</name>
-			<url>http://jaspersoft.artifactoryonline.com/jaspersoft/third-party-ce-artifacts</url>
-		</repository>
+
 
 	</repositories>
 	<profiles>

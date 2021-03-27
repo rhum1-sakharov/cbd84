@@ -11,7 +11,7 @@
 <head><title>Login Page</title></head>
 <body onload='document.f.username.focus();'>
 <h3>Login with Username and Password</h3>
-<form name='f' action='/cbd84/login' method='POST'>
+<form name='f' action='/login' method='POST'>
     <table>
         <tr>
             <td>User:</td>

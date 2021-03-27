@@ -3,7 +3,7 @@
 
 <configuration scan="true">
 
-	<include file="/home/cbd84/config/cbd84-logback.xml" /> 
+	<include file="/home/config/cbd84-logback.xml" />
 
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">

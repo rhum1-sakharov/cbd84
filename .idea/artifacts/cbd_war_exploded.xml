@@ -70,7 +70,6 @@
           <element id="library" level="project" name="Maven: org.olap4j:olap4j:0.9.7.309-JS-3" />
           <element id="library" level="project" name="Maven: com.google.zxing:core:2.3.0" />
           <element id="library" level="project" name="Maven: joda-time:joda-time:2.1" />
-          <element id="library" level="project" name="Maven: com.h2database:h2:1.4.185" />
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:2.2.5" />
           <element id="library" level="project" name="Maven: org.javassist:javassist:3.18.1-GA" />
           <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:4.3.8.Final" />

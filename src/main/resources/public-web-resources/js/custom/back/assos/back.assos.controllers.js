@@ -36,7 +36,7 @@ angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.
 			var promiseStart = $q.when('start');
 			var promise1 = promiseStart.then(function(value) {
 
-				return $http.post('/cbd84/assos/add', $scope.asso).then(function(response) {
+				return $http.post('/assos/add', $scope.asso).then(function(response) {
 					$scope.asso = response.data;
 					return response.data;
 				});
@@ -45,7 +45,7 @@ angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.
 			var promise2 = promise1.then(function(response) {
 				var fd = new FormData();
 				fd.append('file', $scope.addAssoImage);
-				var url = '/cbd84/assos/add/image/jpg/512/' + $scope.asso.id;
+				var url = '/assos/add/image/jpg/512/' + $scope.asso.id;
 				return $http.post(url, fd, {
 					transformRequest : angular.identity,
 					headers : {
@@ -101,7 +101,7 @@ angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.
 
 					var fd = new FormData();
 					fd.append('file', newVal);					
-					var url = '/cbd84/assos/add/image/jpg/512/' + $scope.asso.id;
+					var url = '/assos/add/image/jpg/512/' + $scope.asso.id;
 					return $http.post(url, fd, {
 						transformRequest : angular.identity,
 						headers : {
@@ -131,7 +131,7 @@ angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			return $http.post('/cbd84/assos/update', $scope.asso).then(function(response) {
+			return $http.post('/assos/update', $scope.asso).then(function(response) {
 				$scope.asso = response.data;
 				return response.data;
 			});
@@ -167,7 +167,7 @@ angular.module('cbd.back.assos.controllers', [  'ngSanitize', 'ngResource', 'ui.
 		var promiseStart = $q.when('start');
 		var promise1 = promiseStart.then(function(value) {
 
-			var url = '/cbd84/assosdelete/' + $scope.asso.id + '/jpg';
+			var url = '/assosdelete/' + $scope.asso.id + '/jpg';
 			return $http.get(url).then(function(response) {
 				return response.data;
 			});

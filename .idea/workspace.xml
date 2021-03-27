@@ -11,8 +11,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2b5e103-a828-4807-9c72-b2fbbcdf317b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/cbd_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/cbd_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cbd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cbd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/assos/back.assos.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/assos/back.assos.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/contacts/back.contacts.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/contacts/back.contacts.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/events/back.events.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/events/back.events.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/partners/back.partners.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/partners/back.partners.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/results/back.results.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/results/back.results.controllers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/front/front.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/front/front.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/partners.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/results.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp" afterDir="false" />
     </list>
     <ignored path="cbd.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,91 +53,84 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="news.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="321">
-              <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-243">
-              <caret line="419" column="30" selection-start-line="419" selection-start-column="30" selection-end-line="419" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add-feeds.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/feeds/add-feeds.html">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="update-feeds.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/feeds/update-feeds.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1938" />
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="config.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="272">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="front.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-520">
+              <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="back.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="back.controllers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.controllers.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="34">
-              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+              <caret line="2" column="44" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="back.feeds.controllers.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js">
+      <file leaf-file-name="back.config.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="174" column="44" selection-start-line="174" selection-start-column="44" selection-end-line="174" selection-end-column="44" />
-              <folding>
-                <element signature="e#4831#5412#0" />
-                <element signature="e#5462#6198#0" />
-                <element signature="e#6494#7290#0" />
-              </folding>
+            <state relative-caret-position="170">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cbd84.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cbd84.sql">
+      <file leaf-file-name="assos.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="318" selection-start-line="318" selection-end-line="318" />
+            <state relative-caret-position="1020">
+              <caret line="60" column="35" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config-test.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/config-test.properties">
+      <file leaf-file-name="accessDenied.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/accessDenied.jsp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+            <state relative-caret-position="106">
+              <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FeedRepositoryService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/rvermorel/cbd/jpa/FeedRepositoryService.java">
+      <file leaf-file-name="sitemap.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/sitemap.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="656">
-              <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
+            <state relative-caret-position="272">
+              <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -142,7 +155,11 @@
       <find>addim</find>
       <find>/add</find>
       <find>images/get</find>
+      <find>/cbd84</find>
     </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="PREVIOUS_COMMIT_AUTHORS">
@@ -182,13 +199,10 @@
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/rankings/admin-rankings.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/org/rvermorel/cbd/mvc/MainController.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/rvermorel/cbd/config/security/CustomSuccessHandler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/front/front.config.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/bower_components/angular-ui-grid/ui-grid.min.js" />
         <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/bower_components/angular-ui-grid/ui-grid.js" />
@@ -205,6 +219,9 @@
         <option value="$PROJECT_DIR$/cbd84.sql" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" />
+        <option value="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" />
       </list>
     </option>
   </component>
@@ -239,8 +256,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1990" />
-    <option name="y" value="-11" />
+    <option name="x" value="-315" />
+    <option name="y" value="249" />
     <option name="width" value="3620" />
     <option name="height" value="1104" />
   </component>
@@ -252,6 +269,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
       <pane id="ProjectPane">
@@ -344,119 +362,108 @@
             </path>
             <path>
               <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+              <item name="back" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public-web-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cbd" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-aop:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-aop:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-aop-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-aop:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-aop-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="aop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-aop:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-aop-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="aop" type="462c0819:PsiDirectoryNode" />
-              <item name="framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="cglib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-core:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-core-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="cglib" type="462c0819:PsiDirectoryNode" />
-              <item name="proxy" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-web-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-web-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-web-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-web-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="cbd" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-web:4.2.3.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-web-4.2.3.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="springframework" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-              <item name="multipart" type="462c0819:PsiDirectoryNode" />
-              <item name="commons" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -629,7 +636,7 @@
       <deployment>
         <artifact name="cbd:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/cbd84" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -820,6 +827,9 @@
       <workItem from="1481304359098" duration="18000" />
       <workItem from="1616831273436" duration="101000" />
       <workItem from="1616831394070" duration="5597000" />
+      <workItem from="1616866087285" duration="779000" />
+      <workItem from="1616868577561" duration="1145000" />
+      <workItem from="1616876262210" duration="1295000" />
     </task>
     <task id="LOCAL-00001" summary="fix (ranking) : disable event handler">
       <created>1462965631910</created>
@@ -1011,10 +1021,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56890000" />
+    <option name="totallyTimeSpent" value="60109000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-42" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -1027,7 +1038,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42965367" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4440716" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
       <window_info id="Palette&#9;" order="2" />
@@ -1037,8 +1048,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.4135166" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3299435" />
       <window_info anchor="bottom" id="Spring" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.43073592" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32036248" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.43064877" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23594132" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5746753" />
       <window_info anchor="right" id="Theme Preview" order="4" />
@@ -1050,37 +1061,37 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info id="Nl-Palette" order="2" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Properties" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info id="Web" order="5" side_tool="true" />
-      <window_info anchor="right" id="Designer" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3299435" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1820623" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3299435" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3295583" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="right" id="Designer" order="5" />
       <window_info anchor="bottom" id="Spring" order="11" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.5753114" />
-      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3295711" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.398641" />
+      <window_info anchor="right" id="Database" order="6" />
       <window_info id="Palette&#9;" order="4" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.41223103" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.398641" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Java Enterprise" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="Application Servers" order="13" weight="0.3295711" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.3295583" />
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info id="Favorites" order="6" side_tool="true" />
     </layout-to-restore>
@@ -1146,34 +1157,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/partners.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/rankings.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="71" selection-start-line="28" selection-start-column="71" selection-end-line="28" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="77" selection-start-line="7" selection-start-column="77" selection-end-line="7" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/assos/add-assos.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-726">
@@ -1184,13 +1167,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/assos/delete-assos.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.controllers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2384">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/app-back.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1198,20 +1174,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
           <caret line="9" column="47" selection-start-line="9" selection-start-column="47" selection-end-line="9" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10560">
-          <caret line="480" column="52" selection-start-line="480" selection-start-column="52" selection-end-line="480" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1250,20 +1212,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1826">
-          <caret line="83" column="4" selection-start-line="83" selection-start-column="4" selection-end-line="84" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1826">
-          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/bower_components/angular-ui-grid/ui-grid.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -1275,13 +1223,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="11902" column="35" selection-start-line="11902" selection-start-column="35" selection-end-line="11902" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="60" column="35" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1426,7 +1367,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
+        <state relative-caret-position="459">
           <caret line="27" column="14" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
         </state>
       </provider>
@@ -1435,32 +1376,25 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/back/feeds/update-feeds.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1938" />
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/rvermorel/cbd/jpa/FeedRepositoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
+        <state relative-caret-position="1292">
           <caret line="89" column="18" selection-start-line="89" selection-start-column="18" selection-end-line="89" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
+        <state relative-caret-position="2958">
           <caret line="174" column="44" selection-start-line="174" selection-start-column="44" selection-end-line="174" selection-end-column="44" />
-          <folding>
-            <element signature="e#4831#5412#0" />
-            <element signature="e#5462#6198#0" />
-            <element signature="e#6494#7290#0" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cbd84.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
+        <state relative-caret-position="5406">
           <caret line="318" selection-start-line="318" selection-end-line="318" />
         </state>
       </provider>
@@ -1469,13 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -1488,8 +1415,73 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-243">
-          <caret line="419" column="30" selection-start-line="419" selection-start-column="30" selection-end-line="419" selection-end-column="30" />
+        <state relative-caret-position="6137">
+          <caret line="361" column="21" selection-start-line="361" selection-start-column="21" selection-end-line="361" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/logback.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/config.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/accessDenied.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/sitemap.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-520">
+          <caret line="64" column="30" selection-start-line="64" selection-start-column="30" selection-end-line="64" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="44" selection-start-line="2" selection-start-column="36" selection-end-line="2" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
         </state>
       </provider>
     </entry>
