@@ -1,0 +1,42 @@
+version: "2"
+
+######################################
+# CBD84 Architecture
+######################################
+
+services:
+
+  httpd:
+    container_name: ctn_cbd84_httpd
+    build: ./apache2
+    image: img_cbd84_httpd
+    ports:
+      - "8100:80"
+    networks:
+      - cbd84
+    #volumes:
+    #  - /data/apache2/www:/usr/local/apache2/htdocs
+    restart: always
+
+  tomcat:
+    container_name: ctn_cbd84_tomcat
+    build: ./tomcat8
+    image: img_cbd84_tomcat
+    ports:
+      - "8101:8080"
+    networks:
+      - cbd84
+
+  mysql:
+    container_name: ctn_cbd84_mysql
+    build: ./mysql
+    image: img_cbd84_mysql
+    ports:
+      - "8102:3606"
+    networks:
+      - cbd84
+
+
+networks:
+  cbd84:
+    driver: bridge
