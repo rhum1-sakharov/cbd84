@@ -21,8 +21,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests().antMatchers("/", "/front","/images/**","/feeds","/rankings","/partners","/cbdfiles","/assos").permitAll().antMatchers("/back","/back/**","/**/add**","/**/delete**","/**/update**")
-                .access("hasRole('ADMIN')").and().formLogin().loginPage("/login").successHandler(customSuccessHandler).usernameParameter("username").passwordParameter("password").and().exceptionHandling()
+        http.authorizeRequests()
+                .antMatchers("/", "/front","/images/**","/feeds","/rankings","/partners","/cbdfiles","/assos")
+                .permitAll().antMatchers("/back","/back/**","/**/add**","/**/delete**","/**/update**")
+                .access("hasRole('ADMIN')")
+                .and().formLogin().loginPage("/login")
+                .successHandler(customSuccessHandler)
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .and().exceptionHandling()
                 .accessDeniedPage("/accessDenied");
        http.csrf().disable();     
 	   http.headers().disable();
