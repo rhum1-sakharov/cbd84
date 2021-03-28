@@ -10,30 +10,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/org/rvermorel/cbd/mvc/ImageController.java" line="51" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2b5e103-a828-4807-9c72-b2fbbcdf317b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/cbd_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/cbd_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cbd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/cbd.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/assos/back.assos.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/assos/back.assos.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/back.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/contacts/back.contacts.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/contacts/back.contacts.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/events/back.events.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/events/back.events.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/feeds/back.feeds.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/partners/back.partners.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/partners/back.partners.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/results/back.results.controllers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/back/results/back.results.controllers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/front/front.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/js/custom/front/front.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/assos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/cbdfiles.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/contacts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/partners.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/partners.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/public-web-resources/partials/front/results.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/back.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/front.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/cbd/login.jsp" afterDir="false" />
-    </list>
+    <list default="true" id="f2b5e103-a828-4807-9c72-b2fbbcdf317b" name="Default" comment="" />
     <ignored path="cbd.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -829,7 +806,7 @@
       <workItem from="1616831394070" duration="5597000" />
       <workItem from="1616866087285" duration="779000" />
       <workItem from="1616868577561" duration="1145000" />
-      <workItem from="1616876262210" duration="1295000" />
+      <workItem from="1616876262210" duration="1904000" />
     </task>
     <task id="LOCAL-00001" summary="fix (ranking) : disable event handler">
       <created>1462965631910</created>
@@ -985,7 +962,14 @@
       <option name="project" value="LOCAL" />
       <updated>1478698848698</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix (admin) : /login was not called correctly">
+      <created>1616882004079</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1616882004079</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1021,11 +1005,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="60109000" />
+    <option name="totallyTimeSpent" value="60718000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -1038,7 +1021,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4440716" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4440716" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32900432" />
       <window_info id="Palette&#9;" order="2" />
