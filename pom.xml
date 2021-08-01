@@ -196,11 +196,7 @@
 				<artifactId>aopalliance</artifactId>
 				<version>1.0</version>
 			</dependency>
-			<dependency>
-				<groupId>net.sf.jasperreports</groupId>
-				<artifactId>jasperreports</artifactId>
-				<version>${jasperreport.version}</version>
-			</dependency>
+
 
 			<dependency>
 				<groupId>joda-time</groupId>
@@ -365,11 +361,6 @@
 			<artifactId>javacsv</artifactId>
 		</dependency>
 
-		<!-- Reports dependencies -->
-		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
